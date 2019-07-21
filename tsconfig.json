@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./app/*"
+      ],
+      "@@server/*": [
+        "./server/*"
+      ]
+    },
+    "types": [
+      "@types/node",
+      "@nuxt/vue-app",
+    ]
+  },
+  "include": ["app/**/*.vue", "app/**/*.ts", "server/**/*.ts", "scripts/**/*.ts"],
+  "exclude": ["node_modules"]
+}
