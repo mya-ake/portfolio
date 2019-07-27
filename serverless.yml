@@ -1,0 +1,50 @@
+service:
+  name: ${self:custom.NAME}
+
+frameworkVersion: ">=1.48.0"
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: ap-northeast-1
+  stage: ${self:custom.STAGE}
+
+custom:
+  NAME: portfolio
+  STAGE: dev
+
+package:
+  excludeDevDependencies: true
+  exclude:
+    - .**
+    - .**/*
+    - app/**
+    - server/**
+    - LICENSE
+    - README.md
+    - package.json
+    - yarn.lock
+    - nodemon-dev.json
+    - tsconfig.json
+    - nuxt.config.ts
+    - yarn-error.log
+  include:
+    - .lambda/**
+    - .nuxt/**
+
+
+functions:
+  app:
+    handler: .lambda/server/handler.appHandler
+    timeout: 30
+    memorySize: 128
+    environment:
+      NODE_ENV: production
+    events:
+      - http:
+          path: '/'
+          method: get
+      - http:
+          path: '{proxy+}'
+          method: get
+

@@ -11,6 +11,8 @@
     "build:client": "nuxt build",
     "prebuild:server": "rimraf .lambda",
     "build:server": "tsc -p server",
+    "predeploy": "run-s build",
+    "deploy": "sls deploy",
     "lint:script": "vue-cli-service lint . --ext .vue,ts,js"
   },
   "dependencies": {
@@ -23,6 +25,8 @@
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.8.1",
+    "@types/aws-lambda": "^8.10.31",
+    "@types/aws-serverless-express": "^3.3.1",
     "@types/express": "^4.17.0",
     "@vue/cli-plugin-eslint": "^3.9.2",
     "@vue/cli-plugin-typescript": "^3.9.0",
