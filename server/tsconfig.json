@@ -1,0 +1,15 @@
+{
+  "extends": "./../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "commonjs",
+    "sourceMap": false,
+    "noEmit": false,
+    "outDir": "./../.lambda",
+    "baseUrl": ".",
+  },
+  "include": ["./**/*.ts"],
+  "exclude": [
+    "./local.ts"
+  ]
+}
