@@ -5,6 +5,7 @@ import { getApiEndpoint } from './adapters/cloudformation';
 import {
   createOriginIdentity,
   getOriginIdentityData,
+  getOriginIdentityEtag,
   deleteOriginIdentity,
 } from './adapters/cloudfront';
 import {
@@ -51,20 +52,17 @@ class DeployPlugin {
     const stackName = buildStackName({ name, stage });
     const endpoint = await getApiEndpoint({ stackName, region });
     console.log(endpoint);
-    const originIdentityId = await createOriginIdentity({
+    await createOriginIdentity({
       bucketName: this.options.bucket,
     });
-    // await createOriginIdentity({
-    //   bucketName: this.options.bucket,
-    // });
-    // const { s3CanonicalUserId } = await getOriginIdentityData({
-    //   bucketName: this.options.bucket,
-    // });
+    const { s3CanonicalUserId } = await getOriginIdentityData({
+      bucketName: this.options.bucket,
+    });
     await createBucket({ name: this.options.bucket, region });
     await setuPublicAccessBlock({ name: this.options.bucket });
     await setupBucketPolicy({
       name: this.options.bucket,
-      identityId: originIdentityId,
+      canonicalUserId: s3CanonicalUserId,
     });
     consola.info(`Created bucket: ${this.options.bucket}`);
     // await createDistribution();
@@ -77,8 +75,8 @@ class DeployPlugin {
     const { id: identityId } = await getOriginIdentityData({
       bucketName: this.options.bucket,
     });
-    consola.info(identityId);
-    await deleteOriginIdentity({ id: identityId });
+    const etag = await getOriginIdentityEtag({ id: identityId });
+    await deleteOriginIdentity({ id: identityId, etag });
     consola.info(`Deleted Origin Access Identity`);
   }
 }

@@ -6,4 +6,4 @@ dist
 .serverless
 .env
 .configs
-.plugins
+.serverless_plugins

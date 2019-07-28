@@ -73,11 +73,44 @@ export const getOriginIdentityData = ({
   });
 };
 
-export const deleteOriginIdentity = ({ id }: { id: string }) => {
+export const getOriginIdentityEtag = ({
+  id,
+}: {
+  id: string;
+}): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    cf.getCloudFrontOriginAccessIdentity(
+      {
+        Id: id,
+      },
+      (err, data) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        const etag = data.ETag;
+        if (!etag) {
+          reject('No etag');
+          return;
+        }
+        resolve(etag);
+      },
+    );
+  });
+};
+
+export const deleteOriginIdentity = ({
+  id,
+  etag,
+}: {
+  id: string;
+  etag: string;
+}) => {
   return new Promise((resolve, reject) => {
     cf.deleteCloudFrontOriginAccessIdentity(
       {
         Id: id,
+        IfMatch: etag,
       },
       (err, data) => {
         if (err) {

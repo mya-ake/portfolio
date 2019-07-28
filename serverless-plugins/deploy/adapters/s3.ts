@@ -53,10 +53,10 @@ export const setuPublicAccessBlock = ({ name }: { name: string }) => {
 
 export const setupBucketPolicy = ({
   name,
-  identityId,
+  canonicalUserId,
 }: {
   name: string;
-  identityId: string;
+  canonicalUserId: string;
 }) => {
   return new Promise((resolve, reject) => {
     const policy = {
@@ -67,7 +67,7 @@ export const setupBucketPolicy = ({
           Sid: '1',
           Effect: 'Allow',
           Principal: {
-            AWS: `arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${identityId}`,
+            CanonicalUser: canonicalUserId,
           },
           Action: 's3:GetObject',
           Resource: `arn:aws:s3:::${name}/*`,
