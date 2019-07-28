@@ -18,6 +18,7 @@
   "dependencies": {
     "aws-serverless-express": "^3.3.6",
     "express": "^4.17.1",
+    "helmet": "^3.20.0",
     "ky": "^0.11.1",
     "ky-universal": "^0.2.2",
     "nuxt": "^2.8.1",
@@ -28,6 +29,7 @@
     "@types/aws-lambda": "^8.10.31",
     "@types/aws-serverless-express": "^3.3.1",
     "@types/express": "^4.17.0",
+    "@types/helmet": "^0.0.43",
     "@vue/cli-plugin-eslint": "^3.9.2",
     "@vue/cli-plugin-typescript": "^3.9.0",
     "@vue/cli-plugin-unit-jest": "^3.9.0",
