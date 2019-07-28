@@ -9,9 +9,16 @@ provider:
   region: ap-northeast-1
   stage: ${self:custom.STAGE}
 
+plugins:
+  - deploy
+
 custom:
   NAME: portfolio
-  STAGE: dev
+  STAGE: ${file(./.configs/env.json):STAGE}
+  AWS_SE_BUCKET_NAME: ${file(./.configs/env.json):AWS_SE_BUCKET_NAME}
+  deploy:
+    bucket: ${self:custom.AWS_SE_BUCKET_NAME}
+
 
 package:
   excludeDevDependencies: true
@@ -20,6 +27,9 @@ package:
     - .**/*
     - app/**
     - server/**
+    - serverless-plugins/**
+    - bin/**
+    - scripts/**
     - LICENSE
     - README.md
     - package.json
@@ -48,3 +58,18 @@ functions:
           path: '{proxy+}'
           method: get
 
+# resources:
+#   Resources:
+#     S3Bucket:
+#       Type: AWS::S3::Bucket
+#       Properties:
+#         BucketName: ${self:custom.AWS_SE_BUCKET_NAME}
+#         AccessControl: Private
+#         PublicAccessBlockConfiguration:
+#           BlockPublicAcls: True
+#           BlockPublicPolicy: True
+#           IgnorePublicAcls: True
+#           RestrictPublicBuckets: True
+#   Outputs:
+#     S3BucketName:
+#       Value: !Ref S3Bucket
