@@ -2,6 +2,23 @@ import { S3 } from 'aws-sdk';
 
 const s3 = new S3();
 
+export const existBucket = ({ name }: { name: string }): Promise<boolean> => {
+  return new Promise(resolve => {
+    s3.getBucketAcl(
+      {
+        Bucket: name,
+      },
+      err => {
+        if (err) {
+          resolve(false);
+          return;
+        }
+        resolve(true);
+      },
+    );
+  });
+};
+
 export const createBucket = ({
   name,
   region,
@@ -74,7 +91,6 @@ export const setupBucketPolicy = ({
         },
       ],
     };
-    console.log(JSON.stringify(policy));
     s3.putBucketPolicy(
       {
         Bucket: name,

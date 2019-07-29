@@ -1,4 +1,5 @@
 import { CloudFront, AWSError } from 'aws-sdk';
+import URL from 'url';
 
 const cf = new CloudFront({});
 
@@ -42,7 +43,7 @@ export const getOriginIdentityData = ({
   bucketName,
 }: {
   bucketName: string;
-}): Promise<{ id: string; s3CanonicalUserId: string }> => {
+}): Promise<{ id: string; s3CanonicalUserId: string; comment: string }> => {
   return new Promise((resolve, reject) => {
     cf.listCloudFrontOriginAccessIdentities((err, data) => {
       if (err) {
@@ -68,6 +69,7 @@ export const getOriginIdentityData = ({
       resolve({
         id: item.Id,
         s3CanonicalUserId: item.S3CanonicalUserId,
+        comment: item.Comment,
       });
     });
   });
@@ -123,63 +125,189 @@ export const deleteOriginIdentity = ({
   });
 };
 
-// type OriginParams = {
-//   s3: boolean;
-// };
+type CustomOriginParams = {
+  originUrl: string;
+};
 
-// const createOrigin = async ({ s3 }: OriginParams): CloudFront.Types.Origin => {
-//   if (s3) {
-//     const identity = await createOriginIdentity();
-//     return {
-//       S3OriginConfig: {
-//         OriginAccessIdentity: identity,
-//       },
-//     };
-//   } else {
-//     return {
-//       // Id:
-//     };
-//   }
-// };
+type S3OriginParams = {
+  bucketName: string;
+  originIdentityId: string;
+};
 
-// type DistributionParams = {
-//   comment: string;
-// };
+const createS3Origin = ({
+  bucketName,
+  originIdentityId,
+}: S3OriginParams): CloudFront.Types.Origin => {
+  const domainName = `${bucketName}.s3.amazonaws.com`;
+  const id = `S3-${bucketName}`;
 
-// export const createDistribution = ({
-//   comment,
-// }: DistributionParams): Promise<CloudFront.Types.GetDistributionResult> => {
-//   const origins: CloudFront.Types.Origins = {
-//     Quantity: 2,
-//     Items: [],
-//   };
+  return {
+    DomainName: domainName,
+    Id: id,
+    S3OriginConfig: {
+      OriginAccessIdentity: `origin-access-identity/cloudfront/${originIdentityId}`,
+    },
+  };
+};
 
-//   return new Promise((resolve, reject) => {
-//     const params: CloudFront.Types.DistributionConfig = {
-//       CallerReference: new Date().getTime().toString(),
-//       Comment: comment,
-//       DefaultCacheBehavior: {
-//         ForwardedValues: {
-//           Cookies: {
-//             Forward: 'all',
-//           },
-//           QueryString: true,
-//           TargetOriginId: '',
-//         },
-//       },
-//       Enabled: true,
-//       Origins: origins,
-//     };
+const craeteLambdaOrigin = ({
+  originUrl,
+}: CustomOriginParams): CloudFront.Types.Origin => {
+  const url = URL.parse(originUrl);
+  const domainName = `${url.host}`;
+  const id = `Custom-${url.host}${url.pathname}`;
 
-//     cf.createDistribution(
-//       params,
-//       (err: AWSError, data: CloudFront.Types.CreateDistributionResult) => {
-//         if (err) {
-//           reject(err);
-//         } else {
-//           resolve(data);
-//         }
-//       },
-//     );
-//   });
-// };
+  return {
+    DomainName: domainName,
+    OriginPath: url.pathname,
+    Id: id,
+    CustomOriginConfig: {
+      HTTPPort: 80,
+      HTTPSPort: 443,
+      OriginProtocolPolicy: 'https-only',
+      OriginKeepaliveTimeout: 5,
+      OriginReadTimeout: 30,
+      OriginSslProtocols: {
+        Quantity: 3,
+        Items: ['TLSv1', 'TLSv1.1', 'TLSv1.2'],
+      },
+    },
+  };
+};
+
+type CreateDistributionParams = {
+  comment: string;
+  originIdentityId: string;
+  bucketName: string;
+  originUrl: string;
+};
+
+const createDefaultBehavior = () => {
+  return {
+    ForwardedValues: {
+      Cookies: {
+        Forward: 'none',
+      },
+      QueryString: false,
+    },
+    TrustedSigners: {
+      Enabled: false,
+      Quantity: 0,
+    },
+    ViewerProtocolPolicy: 'redirect-to-https',
+    AllowedMethods: {
+      Quantity: 2,
+      Items: ['GET', 'HEAD'],
+      CachedMethods: {
+        Quantity: 2,
+        Items: ['HEAD', 'GET'],
+      },
+    },
+    SmoothStreaming: false,
+    Compress: true,
+    MinTTL: 0,
+    DefaultTTL: 86400,
+    MaxTTL: 31536000,
+  };
+};
+
+const createCacheBehavior = ({
+  pathPattern,
+  originId,
+}: {
+  pathPattern: string;
+  originId: string;
+}): CloudFront.Types.CacheBehavior => {
+  return {
+    PathPattern: pathPattern,
+    TargetOriginId: originId,
+    ...createDefaultBehavior(),
+  };
+};
+
+const createDistributionRequestParams = ({
+  comment,
+  originIdentityId,
+  bucketName,
+  originUrl,
+}: CreateDistributionParams): CloudFront.Types.CreateDistributionRequest => {
+  const s3Origin = createS3Origin({ originIdentityId, bucketName });
+  const lambdaOrigin = craeteLambdaOrigin({ originUrl });
+  const origins: CloudFront.Types.Origins = {
+    Quantity: 2,
+    Items: [lambdaOrigin, s3Origin],
+  };
+
+  return {
+    DistributionConfig: {
+      CallerReference: new Date().getTime().toString(),
+      Comment: comment,
+      HttpVersion: 'http2',
+      IsIPV6Enabled: true,
+      PriceClass: 'PriceClass_200',
+      DefaultCacheBehavior: {
+        TargetOriginId: lambdaOrigin.Id,
+        ...createDefaultBehavior(),
+        ForwardedValues: {
+          Cookies: {
+            Forward: 'all',
+          },
+          QueryString: true,
+        },
+      },
+      Enabled: true,
+      Origins: origins,
+      CacheBehaviors: {
+        Quantity: 2,
+        Items: [
+          createCacheBehavior({
+            pathPattern: '_nuxt/*',
+            originId: s3Origin.Id,
+          }),
+          createCacheBehavior({
+            pathPattern: 'assets/*',
+            originId: s3Origin.Id,
+          }),
+        ],
+      },
+    },
+  };
+};
+
+export const createDistribution = (
+  params: CreateDistributionParams,
+): Promise<{ id: string; domainName: string }> => {
+  return new Promise((resolve, reject) => {
+    const requestParams = createDistributionRequestParams(params);
+
+    cf.createDistribution(
+      requestParams,
+      (err: AWSError, data: CloudFront.Types.CreateDistributionResult) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        const distribution = data.Distribution;
+        if (!distribution) {
+          reject('No distribution');
+          return;
+        }
+        const id = distribution.Id;
+        const domainName = distribution.DomainName;
+        resolve({
+          id,
+          domainName,
+        });
+      },
+    );
+  });
+};
+
+export const getDistribution = () => {
+  return new Promise(resolve => {
+    cf.getDistributionConfig({ Id: 'E7DPZG6KULDCW' }, (err, data) => {
+      console.log(JSON.stringify(data, null, 2));
+      resolve(data);
+    });
+  });
+};
