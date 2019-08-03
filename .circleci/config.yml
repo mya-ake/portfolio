@@ -20,14 +20,14 @@ commands:
   save_builded_project:
     steps:
       - persist_to_workspace:
-          root: /home/circleci/workspace
+          root: /tmp/workspace
           paths:
             - .nuxt/*
             - .lambda/*
   load_builded_project:
     steps:
       - attach_workspace:
-          at: /home/circleci/workspace
+          at: /tmp/workspace
 
 jobs:
   install:
@@ -112,14 +112,14 @@ workflows:
               only: /.*/
             tags:
               only: /^v[0-9]+(\.[0-9]+){2}$/
-      - lint:
-          requires:
-            - install
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /^v[0-9]+(\.[0-9]+){2}$/
+      # - lint:
+      #     requires:
+      #       - install
+      #     filters:
+      #       branches:
+      #         only: /.*/
+      #       tags:
+      #         only: /^v[0-9]+(\.[0-9]+){2}$/
       # - unit-test:
       #     requires:
       #       - install
@@ -132,7 +132,7 @@ workflows:
       #         only: /.*/
       - build:
           requires:
-            - lint
+            - install
             # - unit-test
           filters:
             branches:
