@@ -19,15 +19,16 @@
       "@/*": [
         "./app/*"
       ],
-      "@@server/*": [
-        "./server/*"
-      ]
+      "@@/*": [
+        "./*"
+      ],
     },
     "types": [
       "@types/node",
       "@nuxt/vue-app",
+      "@types/jest"
     ]
   },
-  "include": ["app/**/*.vue", "app/**/*.ts", "server/**/*.ts", "scripts/**/*.ts"],
+  "include": ["app/**/*.vue", "app/**/*.ts", "server/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts"],
   "exclude": ["node_modules"]
 }
