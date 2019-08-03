@@ -36,5 +36,5 @@ export const createBucketTask = async ({
     name: bucketName,
     canonicalUserId: s3CanonicalUserId,
   });
-  consola.info(`Created bucket: ${bucketName}`);
+  consola.success(`Created bucket: ${bucketName}`);
 };

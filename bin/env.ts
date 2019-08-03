@@ -1,7 +1,7 @@
-import { envTask } from './../scripts/configs';
+import { envTask, deployConfigTask } from './../scripts/configs';
 import consola from 'consola';
 
-envTask().catch(err => {
+Promise.all([envTask(), deployConfigTask()]).catch(err => {
   consola.error(err);
   process.exit(1);
 });

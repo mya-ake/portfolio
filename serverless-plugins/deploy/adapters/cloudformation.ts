@@ -1,8 +1,7 @@
-import CloufFormation from 'aws-sdk/clients/cloudformation';
-import { CloudFormation } from 'aws-sdk/clients/all';
+import { CloudFormation } from 'aws-sdk';
 
 const describeStacks = async (
-  cf: CloufFormation,
+  cf: CloudFormation,
   stackName: string,
 ): Promise<CloudFormation.DescribeStacksOutput> => {
   return new Promise((resolve, reject) => {
@@ -24,26 +23,26 @@ export const getApiEndpoint = async ({
   region: string;
 }) => {
   console.log(stackName, region);
-  const cf = new CloufFormation({ region });
+  const cf = new CloudFormation({ region });
   const data = await describeStacks(cf, stackName);
 
   const statcks = data.Stacks;
   if (!statcks) {
-    throw new Error('[CloufFormation]No statkcs');
+    throw new Error('[CloudFormation]No statkcs');
   }
   const outputs = statcks[0].Outputs;
   if (!outputs) {
-    throw new Error('[CloufFormation]No outputs');
+    throw new Error('[CloudFormation]No outputs');
   }
   const endpointOutput = outputs.find(
     output => output.OutputKey === 'ServiceEndpoint',
   );
   if (!endpointOutput) {
-    throw new Error('[CloufFormation]No endpoint output');
+    throw new Error('[CloudFormation]No endpoint output');
   }
   const endpoint = endpointOutput.OutputValue;
   if (!endpoint) {
-    throw new Error('[CloufFormation]No endpoint');
+    throw new Error('[CloudFormation]No endpoint');
   }
   return endpoint;
 };

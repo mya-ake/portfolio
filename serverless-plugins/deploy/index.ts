@@ -5,6 +5,9 @@ import {
   createDistributinTask,
   deleteDistributionTask,
   deleteBucketTask,
+  buildFileContextsTask,
+  uploadAssetsTask,
+  deleteOldObjectsTask,
 } from './tasks';
 import { getApiEndpoint } from './adapters/cloudformation';
 
@@ -39,24 +42,30 @@ class DeployPlugin {
   async beforeDeployDeploy() {
     const { region } = this.serverless.service.provider;
     const bucketName = this.options.s3.name;
+    const config = this.options.config;
 
     await createBucketTask({ bucketName, region });
+
+    const fileContexts = await buildFileContextsTask(config.assetsDirs);
+    await uploadAssetsTask({ fileContexts, bucketName });
   }
 
   async afterDeployDeploy() {
     const name = this.serverless.service.getServiceName();
     const bucketName = this.options.s3.name;
     const comment = this.options.cloudfront.comment;
+    const deleteFileAge = this.options.config.deleteFileAge;
     const { stage, region } = this.serverless.service.provider;
 
     const stackName = buildStackName({ name, stage });
     const endpoint = await getApiEndpoint({ stackName, region });
 
-    createDistributinTask({
+    await createDistributinTask({
       endpoint,
       bucketName,
       comment,
     });
+    await deleteOldObjectsTask({ bucketName, deleteFileAge });
   }
 
   async beforeRemoveRemove() {

@@ -1,13 +1,19 @@
 import express from 'express';
 import helmet from 'helmet';
 import { nuxt } from './core/nuxt';
-import { envMiddleware } from './middlewares';
+import { cacheMiddleware, loggerMiddleware } from './middlewares';
+import { NODE_ENV } from './env/config';
 
 export const app = express();
 
 /** middleware */
 app.use(helmet());
-app.use(envMiddleware);
+
+if (NODE_ENV === 'production') {
+  app.use(cacheMiddleware);
+  app.use(loggerMiddleware);
+}
+
 app.use(async (req, res, next) => {
   await nuxt.ready();
   nuxt.render(req, res, next);

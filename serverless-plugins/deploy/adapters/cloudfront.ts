@@ -388,17 +388,6 @@ export const getDistributionEtag = async ({
   return distibution.ETag || '';
 };
 
-export const existsDistribution = async ({
-  endpoint,
-  bucketName,
-}: {
-  endpoint: string;
-  bucketName: string;
-}) => {
-  const distribution = await getTargetDistribution({ endpoint, bucketName });
-  return !!distribution;
-};
-
 export const updateDistribution = ({
   id,
   etag,

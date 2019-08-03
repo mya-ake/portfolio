@@ -1,6 +1,6 @@
 import consola from 'consola';
 import {
-  existsDistribution,
+  getTargetDistribution,
   createDistribution,
   getOriginIdentityData,
 } from '../adapters/cloudfront';
@@ -14,12 +14,13 @@ export const createDistributinTask = async ({
   bucketName: string;
   comment: string;
 }) => {
-  const distributionExists = await existsDistribution({
+  const distribution = await getTargetDistribution({
     endpoint,
     bucketName,
   });
-  if (distributionExists) {
+  if (distribution) {
     consola.info(`CloudFront distribution creation is skipped`);
+    consola.success(`CloudFront: https://${distribution.DomainName}`);
     return;
   }
 
@@ -33,7 +34,7 @@ export const createDistributinTask = async ({
     bucketName,
     originUrl: endpoint,
   });
-  consola.info(
-    `Created cloudfront distribution\nID: ${distributionId} DomainName: ${domainName}`,
+  consola.success(
+    `Created cloudfront distribution\nhttps://${domainName}\nID: ${distributionId}`,
   );
 };
