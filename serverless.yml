@@ -17,7 +17,10 @@ custom:
   STAGE: ${file(./.configs/env.json):STAGE}
   AWS_SE_BUCKET_NAME: ${file(./.configs/env.json):AWS_SE_BUCKET_NAME}
   deploy:
-    bucket: ${self:custom.AWS_SE_BUCKET_NAME}
+    s3:
+      name: ${self:custom.AWS_SE_BUCKET_NAME}
+    cloudfront:
+      comment: 'My portfolio'
 
 
 package:

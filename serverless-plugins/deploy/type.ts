@@ -1,5 +1,8 @@
 export type Options = {
-  name: string;
-  stage: string;
-  bucket: string;
+  s3: {
+    name: string;
+  };
+  cloudfront: {
+    comment: string;
+  };
 };

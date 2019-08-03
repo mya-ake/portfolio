@@ -7,6 +7,20 @@ const buildOriginIdentityComment = (bucketName: string) => {
   return `access-identity-${bucketName}.s3.amazonaws.com`;
 };
 
+const buildS3OriginId = ({ bucketName }: { bucketName: string }) => {
+  return `S3-${bucketName}`;
+};
+
+const buildCustomOriginId = ({
+  host,
+  pathname,
+}: {
+  host?: string;
+  pathname?: string;
+}) => {
+  return `Custom-${host}${pathname}`;
+};
+
 export const createOriginIdentity = ({
   bucketName,
 }: {
@@ -139,7 +153,7 @@ const createS3Origin = ({
   originIdentityId,
 }: S3OriginParams): CloudFront.Types.Origin => {
   const domainName = `${bucketName}.s3.amazonaws.com`;
-  const id = `S3-${bucketName}`;
+  const id = buildS3OriginId({ bucketName });
 
   return {
     DomainName: domainName,
@@ -155,7 +169,7 @@ const craeteLambdaOrigin = ({
 }: CustomOriginParams): CloudFront.Types.Origin => {
   const url = URL.parse(originUrl);
   const domainName = `${url.host}`;
-  const id = `Custom-${url.host}${url.pathname}`;
+  const id = buildCustomOriginId(url);
 
   return {
     DomainName: domainName,
@@ -303,11 +317,175 @@ export const createDistribution = (
   });
 };
 
-export const getDistribution = () => {
-  return new Promise(resolve => {
-    cf.getDistributionConfig({ Id: 'E7DPZG6KULDCW' }, (err, data) => {
-      console.log(JSON.stringify(data, null, 2));
-      resolve(data);
+export const getDistributions = (): Promise<
+  CloudFront.Types.ListDistributionsResult
+> => {
+  return new Promise((resolve, reject) => {
+    cf.listDistributions((err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+};
+
+export const getDistribution = ({
+  id,
+}: {
+  id: string;
+}): Promise<CloudFront.Types.GetDistributionResult> => {
+  return new Promise((resolve, reject) => {
+    cf.getDistribution({ Id: id }, (err, data) => {
+      if (err) {
+        reject(err);
+        return;
+      } else {
+        resolve(data);
+      }
+    });
+  });
+};
+
+export const getTargetDistribution = async ({
+  endpoint,
+  bucketName,
+}: {
+  endpoint: string;
+  bucketName: string;
+}) => {
+  const url = URL.parse(endpoint);
+  const s3OriginId = buildS3OriginId({ bucketName });
+  const customOriginId = buildCustomOriginId(url);
+
+  const distributions = await getDistributions();
+  const distributionList = distributions.DistributionList;
+  if (!distributionList) {
+    throw new Error('No distributions');
+  }
+  const items = distributionList.Items || [];
+  const targetDistribution = items.find(distribution => {
+    const { Origins: origins } = distribution;
+    const hasS3Origin = origins.Items.some(origin => origin.Id === s3OriginId);
+    const hasCustomOrigin = origins.Items.some(
+      origin => origin.Id === customOriginId,
+    );
+    return hasS3Origin && hasCustomOrigin;
+  });
+  return targetDistribution;
+};
+
+export const getDistributionEtag = async ({
+  id,
+}: {
+  id: string;
+}): Promise<string> => {
+  const distibution = await getDistribution({ id });
+  if (!distibution) {
+    return '';
+  }
+  return distibution.ETag || '';
+};
+
+export const existsDistribution = async ({
+  endpoint,
+  bucketName,
+}: {
+  endpoint: string;
+  bucketName: string;
+}) => {
+  const distribution = await getTargetDistribution({ endpoint, bucketName });
+  return !!distribution;
+};
+
+export const updateDistribution = ({
+  id,
+  etag,
+  config,
+}: {
+  id: string;
+  etag: string;
+  config: CloudFront.Types.DistributionConfig;
+}) => {
+  return new Promise((resolve, reject) => {
+    const params: CloudFront.Types.UpdateDistributionRequest = {
+      Id: id,
+      IfMatch: etag,
+      DistributionConfig: config,
+    };
+    cf.updateDistribution(params, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+};
+
+const printDot = () => {
+  process.stdout.write('.');
+};
+
+const waitFor = ({
+  id,
+  status,
+}: {
+  id: string;
+  status: 'distributionDeployed';
+}) => {
+  return new Promise((resolve, reject) => {
+    cf.waitFor(status, { Id: id }, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+};
+
+export const waitForDeployed = async ({ id }: { id: string }) => {
+  const dotTimer = setInterval(printDot, 10 * 1000);
+  await waitFor({ id, status: 'distributionDeployed' });
+  clearInterval(dotTimer);
+  process.stdout.write('\n');
+};
+
+export const disableDistribution = async ({ id }: { id: string }) => {
+  const distributionData = await getDistribution({ id });
+  if (!distributionData) {
+    return;
+  }
+  const etag = distributionData.ETag;
+  const distribution = distributionData.Distribution;
+  if (!etag || !distribution) {
+    return;
+  }
+  const config = distribution.DistributionConfig;
+  config.Enabled = false;
+  await updateDistribution({
+    id,
+    etag,
+    config,
+  });
+};
+
+export const deleteDistribution = ({
+  id,
+  etag,
+}: {
+  id: string;
+  etag: string;
+}) => {
+  return new Promise((resolve, reject) => {
+    cf.deleteDistribution({ Id: id, IfMatch: etag }, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
     });
   });
 };
