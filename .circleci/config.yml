@@ -61,9 +61,6 @@ jobs:
       - checkout
       - restore_modules
       - load_builded_project
-      # - run:
-      #     name: Setup puppeteer
-      #     command: 'sh bin/setup_puppeteer.sh'
       - run:
           name: E2E test
           command: yarn test:e2e
