@@ -61,19 +61,3 @@ functions:
       - http:
           path: '{proxy+}'
           method: get
-
-# resources:
-#   Resources:
-#     S3Bucket:
-#       Type: AWS::S3::Bucket
-#       Properties:
-#         BucketName: ${self:custom.AWS_SE_BUCKET_NAME}
-#         AccessControl: Private
-#         PublicAccessBlockConfiguration:
-#           BlockPublicAcls: True
-#           BlockPublicPolicy: True
-#           IgnorePublicAcls: True
-#           RestrictPublicBuckets: True
-#   Outputs:
-#     S3BucketName:
-#       Value: !Ref S3Bucket
