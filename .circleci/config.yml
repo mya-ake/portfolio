@@ -20,14 +20,14 @@ commands:
   save_builded_project:
     steps:
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: ~/workspace
           paths:
             - .nuxt/*
             - .lambda/*
   load_builded_project:
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: ~/workspace
 
 jobs:
   install:
