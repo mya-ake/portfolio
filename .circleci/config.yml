@@ -4,7 +4,7 @@ executors:
   default:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:10.16.0
+      - image: circleci/node:10.16.0-browsers
 
 commands:
   save_modules:
@@ -63,7 +63,7 @@ jobs:
       - load_builded_project
       - run:
           name: check
-          command: ls
+          command: ls -al
       - run:
           name: Setup puppeteer
           command: 'sh bin/setup_puppeteer.sh'
