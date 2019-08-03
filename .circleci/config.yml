@@ -120,13 +120,13 @@ workflows:
       # - unit-test:
       #     requires:
       #       - install
-      - build-tset:
-          requires:
-            - lint
-            # - unit-test
-          filters:
-            branches:
-              only: /.*/
+      # - build-tset:
+      #     requires:
+      #       - lint
+      #       # - unit-test
+      #     filters:
+      #       branches:
+      #         only: /.*/
       - build:
           requires:
             - lint
