@@ -1,0 +1,137 @@
+version: 2.1
+
+executors:
+  default:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:10.15.3
+  # cypress:
+  #   working_directory: ~/workspace
+  #   docker:
+  #     - image: cypress/base:10.15.3
+
+commands:
+  save_modules:
+    steps:
+      - save_cache:
+          paths:
+            - ~/workspace/node_modules
+          key: modules-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
+  restore_modules:
+    steps:
+      - restore_cache:
+          key: modules-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
+  # save_e2e_modules:
+  #   steps:
+  #     - save_cache:
+  #         paths:
+  #           - ~/workspace/node_modules
+  #           - ~/.cache/Cypress
+  #         key: cypress-modules-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
+  # restore_e2e_modules:
+  #   steps:
+  #     - restore_cache:
+  #         key: cypress-modules-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
+  save_builded_project:
+    steps:
+      - persist_to_workspace:
+          root: .nuxt
+          paths:
+            - .
+  load_builded_project:
+    steps:
+      - attach_workspace:
+          at: .nuxt
+
+jobs:
+  install:
+    executor: default
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: Install
+          command: yarn
+      - save_modules
+  lint:
+    executor: default
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: Lint
+          command: yarn lint
+  # unit-test:
+  #   executor: default
+  #   steps:
+  #     - checkout
+  #     - restore_modules
+  #     - run:
+  #         name: Unit test
+  #         command: yarn test:unit
+  # e2e-test:
+  #   executor: cypress
+  #   steps:
+  #     - checkout
+  #     - restore_e2e_modules
+  #     - run:
+  #         name: Install
+  #         command: yarn
+  #     - save_e2e_modules
+  #     - load_builded_project
+  #     - run:
+  #         name: E2E test
+  #         command: yarn test:e2e
+  build-tset:
+    executor: default
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: Build project
+          command: yarn build
+      - run:
+          name: Build package
+          command: yarn sls:package
+  build:
+    executor: default
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: Build project
+          command: yarn build
+      # - save_builded_project
+  deploy:
+    executor: default
+    steps:
+      - checkout
+      - restore_modules
+      - load_builded_project
+      - run:
+          name: Deploy
+          command: yarn deploy
+
+workflows:
+  process:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      # - unit-test:
+      #     requires:
+      #       - install
+      - build-tset:
+          requires:
+            - lint
+            # - unit-test
+      # - e2e-test:
+      #     requires:
+      #       - build
+      - deploy:
+          # requires:
+          #   - e2e-test
+          filters:
+            branches:
+              ignore: /.*/

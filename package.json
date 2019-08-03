@@ -13,9 +13,11 @@
     "build:server": "tsc -p server",
     "predeploy": "run-s setup:env plugin:build build",
     "deploy": "sls deploy",
+    "sls:package": "sls package",
     "setup:env": "ts-node --project scripts/tsconfig.json bin/env.ts",
     "preplugin:build": "rimraf .serverless_plugins",
     "plugin:build": "tsc -p serverless-plugins",
+    "lint": "run-s list:*",
     "lint:script": "vue-cli-service lint . --ext .vue,ts,js"
   },
   "dependencies": {
