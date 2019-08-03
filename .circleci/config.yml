@@ -88,10 +88,13 @@ jobs:
       - checkout
       - restore_modules
       - run:
-          name: Build project
+          name: Build App
           command: yarn build
       - run:
-          name: Build package
+          name: Build Plugins
+          command: yarn plugin:build
+      - run:
+          name: Build Deploy Package
           command: yarn sls:package
   build:
     executor: default
