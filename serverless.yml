@@ -23,7 +23,7 @@ custom:
     s3:
       name: ${self:custom.AWS_S3_BUCKET_NAME}
     cloudfront:
-      comment: 'My portfolio'
+      comment: 'My portfolio: ${file(./.configs/env.json):STAGE}'
 
 
 package:
