@@ -1,6 +1,6 @@
 import path from 'path';
 import consola from 'consola';
-import nuxtConfig from '../../nuxt.config';
+// import nuxtConfig from '../../nuxt.config';
 import { writeFile } from '../utils/file';
 import { CONFIG_DIR } from '../constants';
 
