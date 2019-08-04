@@ -2,15 +2,15 @@ import express from 'express';
 import helmet from 'helmet';
 import { nuxt } from './core/nuxt';
 import { cacheMiddleware, loggerMiddleware } from './middlewares';
-import { APP_ENV } from './env/config';
+import { SERVER_ENV } from './env/config';
 
 export const app = express();
 
 /** middleware */
 app.use(helmet());
 
-switch (APP_ENV) {
-  case 'production':
+switch (SERVER_ENV) {
+  case 'lambda':
     app.use(cacheMiddleware);
     app.use(loggerMiddleware);
     break;

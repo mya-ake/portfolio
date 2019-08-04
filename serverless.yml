@@ -16,6 +16,8 @@ custom:
   NAME: portfolio
   STAGE: ${file(./.configs/env.json):STAGE}
   AWS_S3_BUCKET_NAME: ${file(./.configs/env.json):AWS_S3_BUCKET_NAME}
+  APP_ENV: ${file(./.configs/env.json):APP_ENV}
+  SERVER_ENV: ${file(./.configs/env.json):SERVER_ENV}
   deploy:
     config: ${file(./.configs/deploy.config.json)}
     s3:
@@ -54,6 +56,8 @@ functions:
     memorySize: 128
     environment:
       NODE_ENV: production
+      APP_ENV: ${self:custom.APP_ENV}
+      SERVER_ENV: ${self:custom.SERVER_ENV}
     events:
       - http:
           path: '/'

@@ -24,6 +24,8 @@ commands:
           paths:
             - .nuxt/*
             - .lambda/*
+            - .configs/*
+            - .serverless_plugins/*
   load_builded_project:
     steps:
       - attach_workspace:
@@ -72,9 +74,6 @@ jobs:
       - run:
           name: Build App
           command: yarn build
-      - run:
-          name: Build Plugins
-          command: yarn plugin:build
       - run:
           name: Build Deploy Package
           command: yarn sls:package
