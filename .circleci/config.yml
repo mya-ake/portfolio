@@ -136,6 +136,7 @@ workflows:
       - e2e-test:
           requires:
             - build
+          filters:
             branches:
               ignore: /.*/
             tags:
