@@ -5,3 +5,4 @@ export * from './deleteBucket';
 export * from './buildFileContext';
 export * from './uploadAssets';
 export * from './deleteOldObjects';
+export * from './deleteAllObjects';

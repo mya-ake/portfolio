@@ -8,6 +8,7 @@ import {
   buildFileContextsTask,
   uploadAssetsTask,
   deleteOldObjectsTask,
+  deleteAllObjectsTask,
 } from './tasks';
 import { getApiEndpoint } from './adapters/cloudformation';
 
@@ -81,6 +82,7 @@ class DeployPlugin {
 
   async afterRemoveRemove() {
     const bucketName = this.options.s3.name;
+    await deleteAllObjectsTask({ bucketName });
     await deleteBucketTask({ bucketName });
   }
 }

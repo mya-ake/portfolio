@@ -124,11 +124,13 @@ export const deleteBucket = ({ name }: { name: string }) => {
   });
 };
 
-export const listObjects = (
-  params: S3.ListObjectsV2Request,
-): Promise<S3.Object[]> => {
+export const listObjects = ({
+  name,
+}: {
+  name: string;
+}): Promise<S3.Object[]> => {
   return new Promise((resolve, reject) => {
-    s3.listObjectsV2(params, (err, data) => {
+    s3.listObjectsV2({ Bucket: name }, (err, data) => {
       if (err) {
         reject(err);
         return;
@@ -154,14 +156,28 @@ export const putObject = (params: S3.PutObjectRequest) => {
   });
 };
 
-export const deleteObjects = (params: S3.DeleteObjectsRequest) => {
+export const deleteObjects = ({
+  name,
+  objects,
+}: {
+  name: string;
+  objects: { Key: string }[];
+}) => {
   return new Promise((resolve, reject) => {
-    s3.deleteObjects(params, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
+    s3.deleteObjects(
+      {
+        Bucket: name,
+        Delete: {
+          Objects: objects,
+        },
+      },
+      (err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      },
+    );
   });
 };

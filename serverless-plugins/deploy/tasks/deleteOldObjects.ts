@@ -19,7 +19,7 @@ const listS3Objects = async ({
 }: {
   bucketName: string;
 }): Promise<S3ObjectContext[]> => {
-  const objects = await listObjects({ Bucket: bucketName });
+  const objects = await listObjects({ name: bucketName });
   return objects.map(({ Key, LastModified }) => ({
     key: Key || '',
     lastModified: buildLastModified(LastModified),
@@ -45,10 +45,8 @@ const deleteS3Objects = async ({
 }): Promise<void> => {
   const objects = objectsToDelete.map(({ key }) => ({ Key: key }));
   await deleteObjects({
-    Bucket: bucketName,
-    Delete: {
-      Objects: objects,
-    },
+    name: bucketName,
+    objects,
   });
   objectsToDelete.forEach(({ key }) => consola.success(`Deleted: ${key}`));
 };
