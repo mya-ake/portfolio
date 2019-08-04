@@ -15,11 +15,11 @@ plugins:
 custom:
   NAME: portfolio
   STAGE: ${file(./.configs/env.json):STAGE}
-  AWS_SE_BUCKET_NAME: ${file(./.configs/env.json):AWS_SE_BUCKET_NAME}
+  AWS_S3_BUCKET_NAME: ${file(./.configs/env.json):AWS_S3_BUCKET_NAME}
   deploy:
     config: ${file(./.configs/deploy.config.json)}
     s3:
-      name: ${self:custom.AWS_SE_BUCKET_NAME}
+      name: ${self:custom.AWS_S3_BUCKET_NAME}
     cloudfront:
       comment: 'My portfolio'
 
