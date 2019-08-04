@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --config nodemon-dev.json",
+    "start": "cross-env NODE_ENV=production node .lambda/server/local.js",
     "build": "cross-env NODE_ENV=production run-s build:*",
     "build:client": "nuxt build",
     "prebuild:server": "rimraf .lambda",
@@ -19,7 +20,10 @@
     "plugin:build": "tsc -p serverless-plugins",
     "lint": "run-s lint:*:ci",
     "lint:script": "vue-cli-service lint . --ext .vue,ts,js",
-    "lint:script:ci": "vue-cli-service lint . --ext .vue,ts,js --no-fix"
+    "lint:script:ci": "vue-cli-service lint . --ext .vue,ts,js --no-fix",
+    "test:e2e": "cross-env APP_ENV=test ts-node --project scripts/tsconfig.json bin/e2e.ts",
+    "test:e2e:test": "jest --config ./tests/e2e/jest.config.js",
+    "test:e2e:test:ci": "jest --config ./tests/e2e/jest.config.js --ci --maxWorkers=2"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.3.0",
@@ -40,6 +44,8 @@
     "@types/cross-spawn": "^6.0.0",
     "@types/express": "^4.17.0",
     "@types/helmet": "^0.0.43",
+    "@types/jest": "^24.0.16",
+    "@types/puppeteer": "^1.19.0",
     "@types/serverless": "^1.18.2",
     "@vue/cli-plugin-eslint": "^3.9.2",
     "@vue/cli-plugin-typescript": "^3.9.0",
@@ -57,11 +63,14 @@
     "eslint": "5.x",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.2.3",
+    "jest": "^24.8.0",
     "minimatch": "^3.0.4",
     "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
+    "puppeteer": "^1.19.0",
     "rimraf": "^2.6.3",
     "serverless": "^1.48.2",
+    "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
