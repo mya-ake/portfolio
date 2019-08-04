@@ -8,10 +8,10 @@ const CONFIG_FILE_NAME = path.join(CONFIG_DIR, 'deploy.config.json');
 
 export const task = async () => {
   const ROOT_DIR = process.cwd();
-  const SRC_DIR = path.join(ROOT_DIR, nuxtConfig.srcDir || '');
+  // const SRC_DIR = path.join(ROOT_DIR, nuxtConfig.srcDir || '');
   const NUXT_DIR = path.join(ROOT_DIR, '.nuxt');
   const NUXT_CLIENT_DIR = path.join(NUXT_DIR, 'dist', 'client');
-  const NUXT_STATIC_DIR = path.join(SRC_DIR, 'static');
+  // const NUXT_STATIC_DIR = path.join(SRC_DIR, 'static');
 
   const CACHE_TIME = 60 * 60 * 24 * 7 * 4;
   const CACHE_CONTROL = `public, max-age=${CACHE_TIME}, stale-while-revalidat=${CACHE_TIME}, must-revalidate`;
