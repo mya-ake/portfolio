@@ -23,12 +23,12 @@ export const task = async () => {
         cacheControl: CACHE_CONTROL,
       },
     },
-    {
-      pathname: NUXT_STATIC_DIR,
-      options: {
-        cacheControl: CACHE_CONTROL,
-      },
-    },
+    // {
+    //   pathname: NUXT_STATIC_DIR,
+    //   options: {
+    //     cacheControl: CACHE_CONTROL,
+    //   },
+    // },
   ];
 
   const deployConfigString = JSON.stringify({
