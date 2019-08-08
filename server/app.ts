@@ -1,7 +1,11 @@
 import express from 'express';
 import helmet from 'helmet';
 import { nuxt } from './core/nuxt';
-import { cacheMiddleware, loggerMiddleware } from './middlewares';
+import {
+  cacheMiddleware,
+  loggerMiddleware,
+  contentsMiddleware,
+} from './middlewares';
 import { SERVER_ENV } from './env/config';
 
 export const app = express();
@@ -18,6 +22,8 @@ switch (SERVER_ENV) {
     app.use(cacheMiddleware);
     break;
 }
+
+app.get('/:page', contentsMiddleware);
 
 app.use(async (req, res, next) => {
   await nuxt.ready();

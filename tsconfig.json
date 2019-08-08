@@ -27,8 +27,12 @@
       "@types/node",
       "@nuxt/vue-app",
       "@types/jest"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "types"
     ]
   },
-  "include": ["app/**/*.vue", "app/**/*.ts", "server/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts"],
+  "include": ["app/**/*.vue", "app/**/*.ts", "server/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "types/*.ts"],
   "exclude": ["node_modules"]
 }
