@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { envTask, deployConfigTask } from './../scripts/configs';
 import consola from 'consola';
 
