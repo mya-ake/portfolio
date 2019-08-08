@@ -37,7 +37,7 @@
     "ky": "^0.11.1",
     "ky-universal": "^0.2.2",
     "nuxt": "^2.8.1",
-    "vue-function-api": "^2.0.6"
+    "vue-function-api": "^2.1.1"
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.8.1",
