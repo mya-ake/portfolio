@@ -15,9 +15,13 @@ export default Vue.extend({
     thumbnailUrl: '',
   }),
 
-  asyncData({ req }) {
+  asyncData({ req, error }) {
     if (process.server) {
-      return { ...req.content };
+      if (req.content) {
+        return { ...req.content };
+      } else {
+        error({ statusCode: 404 });
+      }
     } else {
       return {};
     }

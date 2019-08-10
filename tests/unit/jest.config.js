@@ -4,7 +4,11 @@ module.exports = {
   transform: {
     '^.+\\.ts$': 'ts-jest',
   },
-  testMatch: ['**/app/**/*.spec.ts', '**/scripts/**/*.spec.ts'],
+  testMatch: [
+    '**/app/**/*.spec.ts',
+    '**/scripts/**/*.spec.ts',
+    '**/server/**/*.spec.ts',
+  ],
   testURL: 'http://localhost/',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/app/$1',

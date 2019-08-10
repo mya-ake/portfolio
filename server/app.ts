@@ -6,6 +6,7 @@ import {
   loggerMiddleware,
   contentsMiddleware,
 } from './middlewares';
+import { apiRouter } from './routers';
 import { SERVER_ENV } from './env/config';
 
 export const app = express();
@@ -24,6 +25,8 @@ switch (SERVER_ENV) {
 }
 
 app.get('/:page', contentsMiddleware);
+
+app.use('/api', apiRouter);
 
 app.use(async (req, res, next) => {
   await nuxt.ready();

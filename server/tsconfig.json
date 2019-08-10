@@ -9,5 +9,5 @@
     "baseUrl": ".",
   },
   "include": ["./**/*.ts", "./../types/*.ts"],
-  "exclude": []
+  "exclude": ["./**/*.spec.ts"]
 }
