@@ -23,6 +23,7 @@
     "lint:script:ci": "vue-cli-service lint . --ext .vue,ts,js --no-fix",
     "test:unit": "vue-cli-service test:unit --config ./tests/unit/jest.config.js",
     "test:unit:ci": "vue-cli-service test:unit --config ./tests/unit/jest.config.js --ci --maxWorkers=2",
+    "test:unit:coverage": "vue-cli-service test:unit --config ./tests/unit/jest.config.js --coverage",
     "test:e2e": "cross-env APP_ENV=test SERVER_ENV=test ts-node --project scripts/tsconfig.json bin/e2e.ts",
     "test:e2e:test": "jest --config ./tests/e2e/jest.config.js",
     "test:e2e:test:ci": "jest --config ./tests/e2e/jest.config.js --ci --maxWorkers=2"
@@ -30,16 +31,18 @@
   "dependencies": {
     "@nuxtjs/dotenv": "^1.3.0",
     "@types/dotenv": "^6.1.1",
+    "aws-sdk": "^2.507.0",
     "aws-serverless-express": "^3.3.6",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "helmet": "^3.20.0",
-    "ky": "^0.11.1",
+    "ky": "^0.11.2",
     "ky-universal": "^0.2.2",
     "nuxt": "^2.8.1",
     "vue-function-api": "^2.1.1"
   },
   "devDependencies": {
+    "@nuxt/types": "^0.2.0",
     "@nuxt/typescript": "^2.8.1",
     "@types/aws-lambda": "^8.10.31",
     "@types/aws-serverless-express": "^3.3.1",
@@ -55,7 +58,6 @@
     "@vue/cli-service": "^3.9.3",
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/eslint-config-typescript": "^4.0.0",
-    "aws-sdk": "^2.501.0",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
     "consola": "^2.9.0",

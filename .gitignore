@@ -8,3 +8,4 @@ dist
 .configs
 .serverless_plugins
 .test-fixtures
+coverage

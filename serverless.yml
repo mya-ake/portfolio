@@ -44,6 +44,7 @@ package:
     - tsconfig.json
     - nuxt.config.ts
     - yarn-error.log
+    - node_modules/aws-sdk/**
   include:
     - .lambda/**
     - .nuxt/**
