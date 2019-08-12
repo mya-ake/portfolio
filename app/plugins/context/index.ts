@@ -2,7 +2,7 @@ import ky from 'ky-universal';
 import { Plugin } from '@nuxt/types';
 import { Http } from '@/lib/http';
 import { API_ORIGIN } from '@/conifg/env';
-import { Context } from './type';
+import { AppContext } from './type';
 
 const plugin: Plugin = (_, inject) => {
   const client = ky.create({
@@ -12,7 +12,7 @@ const plugin: Plugin = (_, inject) => {
 
   const http = new Http<undefined>(client);
 
-  const context: Context = {
+  const context: AppContext = {
     http,
   };
 

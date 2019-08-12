@@ -14,6 +14,8 @@ export const task = async () => {
     STAGE: process.env.STAGE,
     APP_ENV: process.env.APP_ENV,
     SERVER_ENV: process.env.SERVER_ENV,
+    CONTENTS_BUCKET_NAME: process.env.CONTENTS_BUCKET_NAME,
+    CONTENTS_KEY_PREFIX: process.env.CONTENTS_KEY_PREFIX || '',
   };
   if (!truthyProperties(config)) {
     consola.error(
@@ -22,6 +24,7 @@ export const task = async () => {
         'STAGE',
         'APP_ENV',
         'SERVER_ENV',
+        'CONTENTS_BUCKET_NAME',
       ].join(', ')}`,
     );
     process.exit(1);

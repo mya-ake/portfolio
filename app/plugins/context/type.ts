@@ -1,5 +1,5 @@
 import { IHttp } from '@/lib/http';
 
-export type Context = {
+export type AppContext = {
   http: IHttp<undefined>;
 };
