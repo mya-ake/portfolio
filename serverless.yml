@@ -8,6 +8,17 @@ provider:
   runtime: nodejs10.x
   region: ap-northeast-1
   stage: ${self:custom.STAGE}
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 's3:GetObject'
+      Resource:
+        Fn::Join:
+          - ''
+          - - 'arn:aws:s3:::'
+            - ${self:custom.CONTENTS_BUCKET_NAME}/
+            - ${self:custom.CONTENTS_KEY_PREFIX}/
+            - '*'
 
 plugins:
   - deploy
@@ -18,6 +29,8 @@ custom:
   AWS_S3_BUCKET_NAME: ${file(./.configs/env.json):AWS_S3_BUCKET_NAME}
   APP_ENV: ${file(./.configs/env.json):APP_ENV}
   SERVER_ENV: ${file(./.configs/env.json):SERVER_ENV}
+  CONTENTS_BUCKET_NAME: ${file(./.configs/env.json):CONTENTS_BUCKET_NAME}
+  CONTENTS_KEY_PREFIX: ${file(./.configs/env.json):CONTENTS_KEY_PREFIX}
   deploy:
     config: ${file(./.configs/deploy.config.json)}
     s3:
@@ -59,6 +72,8 @@ functions:
       NODE_ENV: production
       APP_ENV: ${self:custom.APP_ENV}
       SERVER_ENV: ${self:custom.SERVER_ENV}
+      CONTENTS_BUCKET_NAME: ${self:custom.CONTENTS_BUCKET_NAME}
+      CONTENTS_KEY_PREFIX: ${self:custom.CONTENTS_KEY_PREFIX}
     events:
       - http:
           path: '/'

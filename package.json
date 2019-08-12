@@ -6,7 +6,7 @@
   "author": "mya-ake <make.app.ts@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --config nodemon-dev.json",
+    "dev": "cross-env SERVER_ENV=local nodemon --config nodemon-dev.json",
     "start": "cross-env NODE_ENV=production node .lambda/server/local.js",
     "build:app": "cross-env NODE_ENV=production run-s build:app:*",
     "build:app:client": "nuxt build",
@@ -42,7 +42,7 @@
     "vue-function-api": "^2.1.1"
   },
   "devDependencies": {
-    "@nuxt/types": "^0.2.0",
+    "@nuxt/types": "^0.2.1",
     "@nuxt/typescript": "^2.8.1",
     "@types/aws-lambda": "^8.10.31",
     "@types/aws-serverless-express": "^3.3.1",

@@ -22,7 +22,6 @@ export const getApiEndpoint = async ({
   stackName: string;
   region: string;
 }) => {
-  console.log(stackName, region);
   const cf = new CloudFormation({ region });
   const data = await describeStacks(cf, stackName);
 
