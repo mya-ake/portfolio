@@ -7,6 +7,8 @@ const config: NuxtConfiguration = {
       next();
     },
   },
+
+  plugins: ['@/plugins/context'],
 };
 
 export default config;
