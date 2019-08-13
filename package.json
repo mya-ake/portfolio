@@ -21,8 +21,10 @@
     "lint": "run-s lint:*:ci",
     "lint:script": "vue-cli-service lint . --ext .vue,ts,js",
     "lint:script:ci": "vue-cli-service lint . --ext .vue,ts,js --no-fix",
+    "lint:script:staged": "vue-cli-service lint --ext .vue,.ts,.js",
     "lint:style": "vue-cli-service lint:style app/**/*.css app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
     "lint:style:ci": "vue-cli-service lint:style --no-fix  app/**/*.css app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
+    "lint:style:staged": "vue-cli-service lint:style",
     "test:unit": "vue-cli-service test:unit --config ./tests/unit/jest.config.js",
     "test:unit:ci": "vue-cli-service test:unit --config ./tests/unit/jest.config.js --ci --maxWorkers=2",
     "test:unit:coverage": "vue-cli-service test:unit --config ./tests/unit/jest.config.js --coverage",
@@ -71,7 +73,9 @@
     "eslint": "5.x",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.2.3",
+    "husky": "^3.0.3",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
     "minimatch": "^3.0.4",
     "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
@@ -85,5 +89,20 @@
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "yarn lint:script:staged",
+      "git add"
+    ],
+    "*.{css,vue}": [
+      "yarn lint:style:staged",
+      "git add"
+    ]
   }
 }
