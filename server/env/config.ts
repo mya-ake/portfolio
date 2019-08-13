@@ -7,3 +7,4 @@ export const PORT = process.env.PORT || '3000';
 export const SERVER_ENV = process.env.SERVER_ENV || 'local';
 export const CONTENTS_BUCKET_NAME = process.env.CONTENTS_BUCKET_NAME || '';
 export const CONTENTS_KEY_PREFIX = process.env.CONTENTS_KEY_PREFIX || '';
+export const CONTENTS_DOMAIN = process.env.CONTENTS_DOMAIN || '';

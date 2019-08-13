@@ -1,5 +1,6 @@
 import express from 'express';
 import helmet from 'helmet';
+import proxy from 'express-http-proxy';
 import { nuxt } from './core/nuxt';
 import {
   cacheMiddleware,
@@ -7,7 +8,7 @@ import {
   contentsMiddleware,
 } from './middlewares';
 import { apiRouter } from './routers';
-import { SERVER_ENV } from './env/config';
+import { SERVER_ENV, CONTENTS_DOMAIN } from './env/config';
 
 export const app = express();
 
@@ -22,6 +23,18 @@ switch (SERVER_ENV) {
   case 'test':
     app.use(cacheMiddleware);
     break;
+}
+
+if (CONTENTS_DOMAIN.length > 0) {
+  app.use(
+    '/contents',
+    proxy(CONTENTS_DOMAIN, {
+      https: true,
+      proxyReqPathResolver(req) {
+        return `/contents${req.url}`;
+      },
+    }),
+  );
 }
 
 app.get('/:page', contentsMiddleware);
