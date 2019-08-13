@@ -12,11 +12,11 @@ commands:
       - save_cache:
           paths:
             - ~/workspace/node_modules
-          key: modules-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
+          key: modules-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
   restore_modules:
     steps:
       - restore_cache:
-          key: modules-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
+          key: modules-{{ checksum "yarn.lock" }}-{{ checksum ".node-version" }}
   save_builded_project:
     steps:
       - persist_to_workspace:
