@@ -8,7 +8,11 @@ const config: NuxtConfiguration = {
     },
   },
 
+  css: ['@/assets/css/styles.css'],
+
   plugins: ['@/plugins/context'],
+
+  devModules: ['@nuxtjs/tailwindcss'],
 };
 
 export default config;
