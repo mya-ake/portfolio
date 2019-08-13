@@ -96,7 +96,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,vue}": [
+    "*.{ts,js,vue}": [
       "yarn lint:script:staged",
       "git add"
     ],
