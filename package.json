@@ -43,6 +43,7 @@
     "helmet": "^3.20.0",
     "ky": "^0.11.2",
     "ky-universal": "^0.2.2",
+    "lru-cache": "^5.1.1",
     "nuxt": "^2.8.1",
     "vue-function-api": "^2.1.1"
   },
@@ -58,6 +59,7 @@
     "@types/express-http-proxy": "^1.5.11",
     "@types/helmet": "^0.0.43",
     "@types/jest": "^24.0.16",
+    "@types/lru-cache": "^5.1.0",
     "@types/puppeteer": "^1.19.0",
     "@types/serverless": "^1.18.2",
     "@vue/cli-plugin-eslint": "^3.9.2",
