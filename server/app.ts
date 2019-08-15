@@ -7,6 +7,7 @@ import {
   loggerMiddleware,
   pageContentsMiddleware,
   postContentsMiddleware,
+  errorMiddleware,
 } from './middlewares';
 import { apiRouter } from './routers';
 import { SERVER_ENV, CONTENTS_DOMAIN } from './env/config';
@@ -47,3 +48,5 @@ app.use(async (req, res, next) => {
   await nuxt.ready();
   nuxt.render(req, res, next);
 });
+
+app.use(errorMiddleware);
