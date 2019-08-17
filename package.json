@@ -45,7 +45,7 @@
     "ky-universal": "^0.2.2",
     "lru-cache": "^5.1.1",
     "nuxt": "^2.8.1",
-    "vue-function-api": "^2.1.1"
+    "vue-function-api": "^2.2.0"
   },
   "devDependencies": {
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",

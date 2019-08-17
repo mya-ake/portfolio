@@ -23,7 +23,7 @@ export const postController = async (
   const cachedContent = postCache.get(slug);
   if (!isUndefined(cachedContent)) {
     console.log('[info]', 'from cache', `posts/${slug}`);
-    res.json(cachedContent);
+    res.json({ post: { ...cachedContent } });
     return;
   }
 
@@ -31,7 +31,7 @@ export const postController = async (
 
   if (response.ok) {
     postCache.set(slug, response.data);
-    res.json(response.data);
+    res.json({ post: { ...response.data } });
   } else {
     next(createNotFoundError());
   }
