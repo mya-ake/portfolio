@@ -1,0 +1,15 @@
+@import '_variables.scss';
+
+@mixin media ($breakpoint: small) {
+  @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin wordWrap() {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}

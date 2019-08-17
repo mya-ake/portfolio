@@ -22,8 +22,8 @@
     "lint:script": "vue-cli-service lint . --ext .vue,ts,js",
     "lint:script:ci": "vue-cli-service lint . --ext .vue,ts,js --no-fix",
     "lint:script:staged": "vue-cli-service lint --ext .vue,.ts,.js",
-    "lint:style": "vue-cli-service lint:style app/**/*.css app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
-    "lint:style:ci": "vue-cli-service lint:style --no-fix  app/**/*.css app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
+    "lint:style": "vue-cli-service lint:style app/**/*.css app/**/*.scss app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
+    "lint:style:ci": "vue-cli-service lint:style --no-fix  app/**/*.css app/**/*.scss app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
     "lint:style:staged": "vue-cli-service lint:style",
     "test:unit": "vue-cli-service test:unit --config ./tests/unit/jest.config.js",
     "test:unit:ci": "vue-cli-service test:unit --config ./tests/unit/jest.config.js --ci --maxWorkers=2",
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.3.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "@types/dotenv": "^6.1.1",
     "aws-sdk": "^2.507.0",
     "aws-serverless-express": "^3.3.6",
@@ -81,14 +82,17 @@
     "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
     "minimatch": "^3.0.4",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
     "puppeteer": "^1.19.0",
     "rimraf": "^2.6.3",
+    "sass-loader": "^7.2.0",
     "serverless": "^1.48.2",
     "stylelint-config-property-sort-order-smacss": "^5.0.0",
     "stylelint-config-recommended": "^2.2.0",
     "stylelint-order": "^3.0.1",
+    "stylelint-scss": "^3.9.3",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
@@ -104,7 +108,7 @@
       "yarn lint:script:staged",
       "git add"
     ],
-    "*.{css,vue}": [
+    "*.{css,scss,vue}": [
       "yarn lint:style:staged",
       "git add"
     ]
