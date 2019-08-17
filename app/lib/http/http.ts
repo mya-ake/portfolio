@@ -9,7 +9,7 @@ import {
   HttpErrorResponse,
   HttpCancelResponse,
 } from './type';
-import { isUndefined } from '@@/types/type-guards';
+import { isUndefined } from '@/types/guards';
 
 type Ky = typeof ky;
 

@@ -10,8 +10,9 @@ const config: NuxtConfiguration = {
 
   css: ['@/assets/css/styles.css'],
 
-  plugins: ['@/plugins/context'],
+  plugins: ['@/plugins/plugins', '@/plugins/context'],
 
+  modules: [['@nuxtjs/dotenv', { path: './' }]],
   devModules: ['@nuxtjs/tailwindcss'],
 };
 

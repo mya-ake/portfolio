@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { apiController } from '../controllers';
+import { postController } from '../controllers';
 
 export const apiRouter = Router();
-apiRouter.use(apiController);
+apiRouter.use('/posts/:slug', postController);

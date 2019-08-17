@@ -1,1 +1,1 @@
-export * from './api.controller';
+export * from './post.controller';

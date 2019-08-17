@@ -5,7 +5,9 @@ import { nuxt } from './core/nuxt';
 import {
   cacheMiddleware,
   loggerMiddleware,
-  contentsMiddleware,
+  pageContentsMiddleware,
+  postContentsMiddleware,
+  errorMiddleware,
 } from './middlewares';
 import { apiRouter } from './routers';
 import { SERVER_ENV, CONTENTS_DOMAIN } from './env/config';
@@ -37,7 +39,8 @@ if (CONTENTS_DOMAIN.length > 0) {
   );
 }
 
-app.get('/:page', contentsMiddleware);
+app.get('/:slug', pageContentsMiddleware);
+app.get('/posts/:slug', postContentsMiddleware);
 
 app.use('/api', apiRouter);
 
@@ -45,3 +48,5 @@ app.use(async (req, res, next) => {
   await nuxt.ready();
   nuxt.render(req, res, next);
 });
+
+app.use(errorMiddleware);

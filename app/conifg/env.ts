@@ -1,1 +1,1 @@
-export const API_ORIGIN = process.env.API_ORIGIN || '';
+export const API_URL = process.env.API_URL || '';
