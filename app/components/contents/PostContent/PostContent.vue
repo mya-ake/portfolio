@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="post-content">
     <template v-if="post">
-      <div v-html="post.body"></div>
+      <div class="content" v-html="post.body"></div>
     </template>
 
     <template v-else-if="requesting">
@@ -39,3 +39,22 @@ export default createComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.post-content {
+  max-width: var(--width-content);
+  margin: 0 auto;
+  padding: 0 space(4);
+  @include media(small) {
+    padding: 0;
+  }
+}
+</style>
+
+<style lang="scss">
+.post-content {
+  p {
+    margin: 1em 0;
+  }
+}
+</style>
