@@ -1,71 +1,54 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils';
-import { plugin } from 'vue-function-api';
+import { shallowMount, Wrapper } from '@vue/test-utils';
 import PostContent from './PostContent.vue';
 import { Content } from '@@/types/content.type';
+import {
+  createComponentLocalVue,
+  createContextMock,
+  createOkResponse,
+  createPostData,
+  clearMocks,
+} from '@@/tests/fixtures';
+import { CombinedVueInstance } from 'vue/types/vue';
 
-const localVue = createLocalVue();
-localVue.use(plugin);
-
-const mocks = {
-  http: jest.fn(),
-};
-
-const createMocks = () => {
-  return {
-    $_context: {
-      http: {
-        request: mocks.http,
-      },
-    },
-  };
-};
-
-const createResponse = ({
-  status = 200,
-  ok = true,
-  data = {},
-}: {
-  status?: number | undefined;
-  ok?: boolean;
-  data?: unknown;
-} = {}) => ({
-  ok,
-  status,
-  data: { ...data },
-});
-
-const createPostData = (): { post: Content } => {
-  return {
-    post: {
-      title: 'post title',
-      description: 'post description',
-      body: '<h1>post title</h1>',
-      thumbnailUrl: 'https://example.com/image.png',
-      createdAt: '2019-08-01',
-      updatedAt: '2019-08-01',
-      twitterCardType: 'summary',
-    },
-  };
-};
+const localVue = createComponentLocalVue();
+const { mocks, createMock } = createContextMock();
 
 afterEach(() => {
-  mocks.http.mockClear();
+  clearMocks(mocks);
 });
 
 describe('components/contents/PostContent', () => {
   describe('mountable', () => {
-    it('is vue instance', () => {
+    let wrapper: Wrapper<
+      CombinedVueInstance<
+        PostContent,
+        object,
+        object,
+        object,
+        Record<never, any>
+      >
+    >;
+
+    beforeEach(() => {
       mocks.http.mockReturnValueOnce(
-        createResponse({ data: createPostData() }),
+        createOkResponse<Content>({ data: createPostData() }),
       );
-      const wrappre = shallowMount(PostContent, {
+
+      wrapper = shallowMount(PostContent, {
         propsData: {
           slug: 'post-slug',
         },
-        mocks: createMocks(),
+        mocks: createMock(),
         localVue,
       });
-      expect(wrappre.isVueInstance()).toBe(true);
+    });
+
+    it('is vue instance', () => {
+      expect(wrapper.isVueInstance()).toBe(true);
+    });
+
+    it('snapshot', () => {
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });
