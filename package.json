@@ -30,7 +30,8 @@
     "test:unit:coverage": "vue-cli-service test:unit --config ./tests/unit/jest.config.js --coverage",
     "test:e2e": "cross-env APP_ENV=test SERVER_ENV=test ts-node --project scripts/tsconfig.json bin/e2e.ts",
     "test:e2e:test": "jest --config ./tests/e2e/jest.config.js",
-    "test:e2e:test:ci": "jest --config ./tests/e2e/jest.config.js --ci --maxWorkers=2"
+    "test:e2e:test:ci": "jest --config ./tests/e2e/jest.config.js --ci --maxWorkers=2",
+    "gen:c": "hygen new component"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.3.0",
@@ -80,6 +81,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.2.3",
     "husky": "^3.0.3",
+    "hygen": "^4.0.8",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
     "lodash.clonedeepwith": "^4.5.0",
