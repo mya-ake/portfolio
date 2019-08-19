@@ -1,6 +1,5 @@
 import Express from 'express';
 import { hasExtension, isEmptyStringWithTrim } from '../validators';
-import { isString } from '../../types/type-guards';
 import { Gateway } from './../gateways/type';
 import { Content } from './../../types/content.type';
 
@@ -12,11 +11,7 @@ export const createContentsMiddleware = (
     res: Express.Response,
     next: Express.NextFunction,
   ) => {
-    const { slug } = req.params;
-    if (!isString(slug)) {
-      next();
-      return;
-    }
+    const { slug } = req.params as { slug: string };
     if (isEmptyStringWithTrim(slug) || hasExtension(slug)) {
       next();
       return;
