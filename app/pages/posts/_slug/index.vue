@@ -31,7 +31,7 @@ export default Vue.extend({
   },
 
   asyncData({ params, req, error }) {
-    const { slug } = params;
+    const { slug } = params as { slug: string };
     if (process.server) {
       if (req.content) {
         return { slug, ...req.content };

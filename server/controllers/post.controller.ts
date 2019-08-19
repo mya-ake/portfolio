@@ -1,6 +1,6 @@
 import Express from 'express';
 import { hasExtension, isEmptyStringWithTrim } from '../validators';
-import { isString, isUndefined } from '../../types/type-guards';
+import { isUndefined } from '../../types/type-guards';
 import { createNotFoundError } from './../error';
 import { getPostContent } from '../gateways/post.gateway';
 import { postCache } from './../adapters/cache';
@@ -10,11 +10,7 @@ export const postController = async (
   res: Express.Response,
   next: Express.NextFunction,
 ) => {
-  const { slug } = req.params;
-  if (!isString(slug)) {
-    next(createNotFoundError());
-    return;
-  }
+  const { slug } = req.params as { slug: string };
   if (isEmptyStringWithTrim(slug) || hasExtension(slug)) {
     next(createNotFoundError());
     return;
