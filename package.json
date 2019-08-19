@@ -45,8 +45,7 @@
     "ky-universal": "^0.2.2",
     "lru-cache": "^5.1.1",
     "nuxt": "^2.8.1",
-    "vue-function-api": "^2.2.0",
-    "vue-jest": "^4.0.0-beta.2"
+    "vue-function-api": "^2.2.0"
   },
   "devDependencies": {
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
@@ -96,7 +95,8 @@
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "vue-jest": "^4.0.0-beta.2"
   },
   "husky": {
     "hooks": {
