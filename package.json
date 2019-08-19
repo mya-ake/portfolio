@@ -23,7 +23,7 @@
     "lint:script:ci": "vue-cli-service lint . --ext .vue,ts,js --no-fix",
     "lint:script:staged": "vue-cli-service lint --ext .vue,.ts,.js",
     "lint:style": "vue-cli-service lint:style app/**/*.css app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
-    "lint:style:ci": "vue-cli-service lint:style --no-fix  app/**/*.css app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
+    "lint:style:ci": "vue-cli-service lint:style --no-fix app/**/*.css app/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
     "lint:style:staged": "vue-cli-service lint:style",
     "test:unit": "vue-cli-service test:unit --config ./tests/unit/jest.config.js",
     "test:unit:ci": "vue-cli-service test:unit --config ./tests/unit/jest.config.js --ci --maxWorkers=2",

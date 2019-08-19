@@ -4,6 +4,10 @@ executors:
   default:
     working_directory: ~/workspace
     docker:
+      - image: circleci/node:10.16.0
+  browsers:
+    working_directory: ~/workspace
+    docker:
       - image: circleci/node:10.16.0-browsers
 
 commands:
@@ -58,10 +62,14 @@ jobs:
           name: Unit test
           command: yarn test:unit:ci
   e2e-test:
-    executor: default
+    executor: browsers
     steps:
       - checkout
       - restore_modules
+      - run:
+          name: Install
+          command: yarn
+      - save_modules
       - load_builded_project
       - run:
           name: E2E test
