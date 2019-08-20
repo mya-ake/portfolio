@@ -110,7 +110,7 @@
       "yarn lint:script:staged",
       "git add"
     ],
-    "*.{css,vue}": [
+    "*.{css,scss,vue}": [
       "yarn lint:style:staged",
       "git add"
     ]
