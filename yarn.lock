@@ -1942,14 +1942,14 @@
     webpack ">=4 < 4.29"
     yorkie "^2.0.0"
 
-"@vue/cli-plugin-unit-jest@^4.0.0-beta.3":
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-4.0.0-beta.3.tgz#5997cbb5e3691a1969e9c9d17b4b782fc0eea86f"
-  integrity sha512-6egadxcHey2WYYCaVM5Jpbn645+5dkglD7oltPaL//HCVtsSYOQRzDR41eYkwYpqqDwmBQSevbRFVtD8iWp+0w==
+"@vue/cli-plugin-unit-jest@^4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-4.0.0-rc.3.tgz#f5eaab37984e392bc605e302c0c0c56a92259457"
+  integrity sha512-l7obG6obChrF59i9pu0xVTIuKuSVYwYnZKyNrueTd8WqEOhCupYo/TXZs6fRnQRraI/DED3+5DYs9ddo70NgyA==
   dependencies:
     "@babel/core" "^7.4.5"
     "@babel/plugin-transform-modules-commonjs" "^7.4.4"
-    "@vue/cli-shared-utils" "^4.0.0-beta.3"
+    "@vue/cli-shared-utils" "^4.0.0-rc.3"
     babel-core "7.0.0-bridge.0"
     babel-jest "^24.8.0"
     jest "^24.8.0"
@@ -2038,10 +2038,10 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-shared-utils@^4.0.0-beta.3":
-  version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-beta.3.tgz#a49e63b12c49bd8c2e2b2793807c8d2db6862d33"
-  integrity sha512-Mjj+8SlAQd7wq0NbFDjIZmJMUAM3vcLwD65boz9iq/hvb9NyqlP0yPKlITgybKaZE/25zn/r8gF9adgsrn3YAg==
+"@vue/cli-shared-utils@^4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.0.0-rc.3.tgz#6b45532035b7a1331deafb6f86821af1eee7c72f"
+  integrity sha512-KzbM8HW24pTwp4vR3zncdSTxhP71u0W6EvyhRXfdCvVZgRroKbKa+daB1M/FbYNJ5OU/zjFyQkJdBzDsVvzsvQ==
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.1"
