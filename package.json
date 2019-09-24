@@ -64,7 +64,7 @@
     "@types/lru-cache": "^5.1.0",
     "@types/puppeteer": "^1.19.0",
     "@types/serverless": "^1.18.2",
-    "@vue/cli-plugin-eslint": "^3.9.2",
+    "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-typescript": "^3.9.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0-rc.3",
     "@vue/cli-service": "^3.11.0",
