@@ -44,7 +44,7 @@
     "ky": "^0.11.2",
     "ky-universal": "^0.2.2",
     "lru-cache": "^5.1.1",
-    "nuxt": "^2.8.1",
+    "nuxt": "^2.10.1",
     "vue-function-api": "^2.2.0"
   },
   "devDependencies": {
