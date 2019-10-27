@@ -1,7 +1,7 @@
-import NuxtConfiguration from '@nuxt/config';
+import { Configuration } from '@nuxt/types';
 
-const config: NuxtConfiguration = {
-  srcDir: 'app',
+const config: Configuration = {
+  srcDir: 'client',
   render: {
     compressor: (req, res, next) => {
       next();
@@ -13,6 +13,7 @@ const config: NuxtConfiguration = {
   plugins: ['@/plugins/plugins', '@/plugins/context'],
 
   modules: [['@nuxtjs/dotenv', { path: './' }]],
+  buildModules: ['@nuxt/typescript-build'],
   devModules: ['@nuxtjs/tailwindcss'],
 };
 

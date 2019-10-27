@@ -9,19 +9,19 @@ module.exports = {
   },
   transformIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/app/$1',
+    '^@/(.*)$': '<rootDir>/client/$1',
     '^@@/(.*)$': '<rootDir>/$1',
   },
   snapshotSerializers: ['jest-serializer-vue'],
   testMatch: [
-    '**/app/**/*.spec.ts',
+    '**/client/**/*.spec.ts',
     '**/scripts/**/*.spec.ts',
     '**/server/**/*.spec.ts',
   ],
   testURL: 'http://localhost/',
   globals: {
     'ts-jest': {
-      tsConfig: '<rootDir>/tsconfig.json',
+      tsConfig: '<rootDir>/tests/unit/tsconfig.json',
     },
   },
 };

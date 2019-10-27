@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./app/*"
+        "./client/*"
       ],
       "@@/*": [
         "./*"
@@ -33,6 +33,6 @@
       "types"
     ]
   },
-  "include": ["app/**/*.vue", "app/**/*.ts", "server/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "types/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["client/**/*.vue", "client/**/*.ts", "server/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "types/*.ts"],
+  "exclude": ["node_modules", "client/**/*.spec.ts"]
 }

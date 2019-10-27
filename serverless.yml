@@ -44,7 +44,7 @@ package:
   exclude:
     - .**
     - .**/*
-    - app/**
+    - client/**
     - server/**
     - serverless-plugins/**
     - bin/**
