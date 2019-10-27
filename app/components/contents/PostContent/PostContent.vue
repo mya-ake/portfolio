@@ -15,20 +15,20 @@
 </template>
 
 <script lang="ts">
-import { createComponent, onMounted } from 'vue-function-api';
+import { createComponent, onMounted } from '@vue/composition-api';
 import { usePost } from '@/hooks';
 import { PostContentType } from './type';
 
 export default createComponent({
   props: {
-    slug: {},
-  } as PostContentType.PropsType,
+    slug: { required: true },
+  },
 
-  setup({ slug }, { root }) {
+  setup(props: PostContentType.Props, { root }) {
     const { request, requesting, post, hasPost } = usePost(root.$_context);
 
     onMounted(async () => {
-      await request(slug);
+      await request(props.slug);
     });
 
     return {

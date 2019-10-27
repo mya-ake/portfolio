@@ -1,11 +1,11 @@
-import { value, computed } from 'vue-function-api';
+import { ref, computed } from '@vue/composition-api';
 import { getPost } from '@/gateways/post.gateway';
 import { AppHttp, Content } from '@/types';
 
 export const usePost = ({ http }: { http: AppHttp }) => {
-  const post = value<Content | null>(null);
+  const post = ref<Content | null>(null);
   const hasPost = computed(() => post !== null);
-  const requesting = value(false);
+  const requesting = ref(false);
 
   const request = async (slug: string) => {
     requesting.value = true;

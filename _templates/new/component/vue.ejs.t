@@ -7,7 +7,7 @@ to: app/components/<%= category %>/<%= name %>/<%= name %>.vue
 </template>
 
 <script lang="ts">
-import { createComponent } from 'vue-function-api';
+import { createComponent } from '@vue/composition-api';
 
 export default createComponent({
   setup({}) {

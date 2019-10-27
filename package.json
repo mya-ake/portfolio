@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
+    "@vue/composition-api": "^0.3.2",
     "aws-sdk": "^2.533.0",
     "aws-serverless-express": "^3.3.6",
     "dotenv": "^8.0.0",
@@ -44,8 +45,7 @@
     "ky": "^0.11.2",
     "ky-universal": "^0.2.2",
     "lru-cache": "^5.1.1",
-    "nuxt": "^2.8.1",
-    "vue-function-api": "^2.2.0"
+    "nuxt": "^2.8.1"
   },
   "devDependencies": {
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
