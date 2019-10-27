@@ -4,7 +4,7 @@ executors:
   default:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:10.16.0
+      - image: circleci/node:10.16.3
   browsers:
     working_directory: ~/workspace
     docker:
