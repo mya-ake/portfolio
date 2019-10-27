@@ -61,6 +61,7 @@ package:
   include:
     - .lambda/**
     - .nuxt/**
+    - client/tailwind.config.js
 
 
 functions:
