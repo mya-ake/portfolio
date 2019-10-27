@@ -39,7 +39,7 @@
     "aws-serverless-express": "^3.3.6",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "express-http-proxy": "^1.5.1",
+    "express-http-proxy": "^1.6.0",
     "helmet": "^3.20.0",
     "ky": "^0.11.2",
     "ky-universal": "^0.2.2",
