@@ -34,8 +34,10 @@
     "gen:c": "hygen new component"
   },
   "dependencies": {
+    "@nuxt/typescript-build": "^0.3.2",
     "@nuxt/typescript-runtime": "^0.2.2",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/tailwindcss": "^1.1.2",
     "@vue/composition-api": "^0.3.2",
     "aws-sdk": "^2.533.0",
     "aws-serverless-express": "^3.3.6",
@@ -52,8 +54,6 @@
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
     "@nuxt/types": "^0.2.15",
     "@nuxt/typescript": "^2.8.1",
-    "@nuxt/typescript-build": "^0.3.2",
-    "@nuxtjs/tailwindcss": "^1.1.2",
     "@types/aws-lambda": "^8.10.33",
     "@types/aws-serverless-express": "^3.3.1",
     "@types/cross-spawn": "^6.0.0",
