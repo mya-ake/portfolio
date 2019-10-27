@@ -1,4 +1,4 @@
-import { PropType } from 'vue-function-api';
+import { PropType } from '@vue/composition-api';
 
 export namespace PostContentType {
   export type Props = {

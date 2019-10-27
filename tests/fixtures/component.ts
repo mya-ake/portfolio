@@ -1,8 +1,8 @@
 import { createLocalVue } from '@vue/test-utils';
-import { plugin } from 'vue-function-api';
+import VueCompositionApi from '@vue/composition-api';
 
 export const createComponentLocalVue = () => {
   const localVue = createLocalVue();
-  localVue.use(plugin);
+  localVue.use(VueCompositionApi);
   return localVue;
 };
