@@ -43,7 +43,7 @@ jobs:
       - restore_modules
       - run:
           name: Install
-          command: yarn
+          command: yarn install --frozen-lockfile
       - save_modules
   lint:
     executor: default
