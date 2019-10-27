@@ -43,8 +43,8 @@ const replaceToRoute = (page: string) => {
 
 export const getRoutes = async () => {
   const rootDir = process.cwd();
-  const appDir = path.join(rootDir, 'app');
-  const pagesDir = path.join(appDir, 'pages');
+  const clientDir = path.join(rootDir, 'client');
+  const pagesDir = path.join(clientDir, 'pages');
   const testsDir = path.join(rootDir, TEST_FIXTURES_DIR);
   const testRoutesFilePathname = path.join(testsDir, 'routes.json');
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-if mkdir app/components/$1
+if mkdir client/components/$1
 then
-  touch app/components/$1/index.ts
+  touch client/components/$1/index.ts
 fi

@@ -1,5 +1,5 @@
 ---
-to: app/components/<%= category %>/<%= name %>/<%= name %>.vue
+to: client/components/<%= category %>/<%= name %>/<%= name %>.vue
 ---
 <template>
   <div>

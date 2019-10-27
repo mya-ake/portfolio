@@ -1,7 +1,7 @@
 import { Configuration } from '@nuxt/types';
 
 const config: Configuration = {
-  srcDir: 'app',
+  srcDir: 'client',
   render: {
     compressor: (req, res, next) => {
       next();

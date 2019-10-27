@@ -7,7 +7,7 @@ module.exports = {
   testMatch: ['**/tests/e2e/**/*.spec.ts'],
   testURL: 'http://localhost/',
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/app/$1',
+    '^@/(.*)$': '<rootDir>/client/$1',
     '^@@/(.*)$': '<rootDir>/$1',
   },
 };

@@ -1,5 +1,5 @@
 ---
-to: app/components/<%= category %>/<%= name %>/<%= name %>.spec.ts
+to: client/components/<%= category %>/<%= name %>/<%= name %>.spec.ts
 ---
 import { shallowMount, Wrapper } from '@vue/test-utils';
 import <%= name %> from './<%= name %>.vue';
