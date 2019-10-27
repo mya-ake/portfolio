@@ -130,7 +130,7 @@ describe('lib/http', () => {
       });
     });
 
-    describe('csncelAll method', () => {
+    describe('cancelAll method', () => {
       it('called all abort', () => {
         const abortController1 = createAbortController();
         const abortController2 = createAbortController();
