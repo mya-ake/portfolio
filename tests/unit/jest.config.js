@@ -21,7 +21,7 @@ module.exports = {
   testURL: 'http://localhost/',
   globals: {
     'ts-jest': {
-      tsConfig: '<rootDir>/tsconfig.json',
+      tsConfig: '<rootDir>/tests/unit/tsconfig.json',
     },
   },
 };

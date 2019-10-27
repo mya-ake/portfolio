@@ -34,5 +34,5 @@
     ]
   },
   "include": ["app/**/*.vue", "app/**/*.ts", "server/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "types/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "app/**/*.spec.ts"]
 }
