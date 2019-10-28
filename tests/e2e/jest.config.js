@@ -7,7 +7,12 @@ module.exports = {
   testMatch: ['**/tests/e2e/**/*.spec.ts'],
   testURL: 'http://localhost/',
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/client/$1',
     '^@@/(.*)$': '<rootDir>/$1',
+  },
+  preset: 'jest-puppeteer',
+  globals: {
+    'ts-jest': {
+      tsConfig: '<rootDir>/tests/e2e/tsconfig.json',
+    },
   },
 };

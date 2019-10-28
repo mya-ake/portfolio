@@ -14,7 +14,9 @@ export const isDirectory = async (pathname: string) => {
   return pathState.isDirectory();
 };
 
-export const getFilePathnames = async (dirPathname: string) => {
+export const getFilePathnames = async (
+  dirPathname: string,
+): Promise<string[]> => {
   const pathnames = await fs.promises.readdir(dirPathname);
   let allPathnames: string[] = [];
   for (const pathname of pathnames) {

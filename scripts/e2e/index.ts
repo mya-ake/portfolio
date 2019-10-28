@@ -12,7 +12,6 @@ export const e2eTest = async () => {
 
   const testCommand = isCI ? 'test:e2e:test:ci' : 'test:e2e:test';
   try {
-    nuxtPs = await spawn('yarn', ['start'], { pararel: true });
     await spawn('yarn', [testCommand]);
   } catch (err) {
     error = err;
@@ -41,6 +40,20 @@ const replaceToRoute = (page: string) => {
   return replacement === null ? page : page.replace(pageName, replacement);
 };
 
+type ParamReplacer = (page: string) => string | string[];
+
+const replaceParamerter = (
+  page: string,
+  replacer: ParamReplacer,
+): string | string[] => {
+  return typeof replacer === 'function' ? replacer(page) : page;
+};
+
+const paramReplacerMap: { [page: string]: ParamReplacer } = {
+  '/_slug/': () => [],
+  '/posts/_slug/': () => [],
+};
+
 export const getRoutes = async () => {
   const rootDir = process.cwd();
   const clientDir = path.join(rootDir, 'client');
@@ -52,7 +65,13 @@ export const getRoutes = async () => {
 
   const routes = pathnames
     .map(pathname => pathname.replace(pagesDir, '').replace('.vue', ''))
-    .map(replaceToRoute);
+    .map(replaceToRoute)
+    .map(page => replaceParamerter(page, paramReplacerMap[page]))
+    .reduce((routes: string[], page): string[] => {
+      const flatPage = Array.isArray(page) ? page : [page];
+      return routes.concat(...flatPage);
+    }, []);
+  console.log(routes);
   const routesString = JSON.stringify(routes);
   await writeFile(testRoutesFilePathname, routesString);
 };

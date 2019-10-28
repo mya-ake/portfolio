@@ -26,7 +26,8 @@
     "types": [
       "@types/node",
       "@nuxt/types",
-      "@types/jest"
+      "@types/jest",
+      "@types/jest-environment-puppeteer"
     ],
     "typeRoots": [
       "node_modules/@types",
