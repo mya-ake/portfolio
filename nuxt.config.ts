@@ -13,8 +13,7 @@ const config: Configuration = {
   plugins: ['@/plugins/plugins', '@/plugins/context'],
 
   modules: [['@nuxtjs/dotenv', { path: './' }]],
-  buildModules: ['@nuxt/typescript-build'],
-  devModules: ['@nuxtjs/tailwindcss'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/tailwindcss'],
 };
 
 export default config;
