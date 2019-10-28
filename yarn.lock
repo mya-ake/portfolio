@@ -7043,10 +7043,10 @@ husky@^3.0.9:
     run-node "^1.0.0"
     slash "^3.0.0"
 
-hygen@^4.0.9:
-  version "4.0.11"
-  resolved "https://registry.yarnpkg.com/hygen/-/hygen-4.0.11.tgz#a6126ba62c24b371ee561439ecc50cef1bfd4318"
-  integrity sha512-p4pHsn1J+l2xXa/XeCKTVBGlM9uM1v5e7aYSotnhHgGdRlsatybnsvxo5o/0r3f1JrYZH1zx+DiogfQeYo8Iag==
+hygen@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/hygen/-/hygen-5.0.1.tgz#6a47a12a4e6b9872aae059ca6274033cb2944104"
+  integrity sha512-cnTK95HQOP3lSJthQxtR+dm7LkJJ3Z557qBiN5VO0zmTIwfy4iGzjgk2gTf+rHg7V6ZYE7H6TkUUFD/Lo3YRiw==
   dependencies:
     chalk "^2.4.2"
     change-case "^3.1.0"
@@ -7057,6 +7057,7 @@ hygen@^4.0.9:
     fs-extra "^7.0.1"
     ignore-walk "^3.0.2"
     inflection "^1.12.0"
+    ts-jest "^24.1.0"
     yargs-parser "^13.0.0"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
