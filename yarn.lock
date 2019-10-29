@@ -2746,10 +2746,10 @@ autoprefixer@^9.0.0, autoprefixer@^9.4.5, autoprefixer@^9.5.1, autoprefixer@^9.6
     postcss "^7.0.19"
     postcss-value-parser "^4.0.2"
 
-aws-sdk@^2.533.0, aws-sdk@^2.554.0:
-  version "2.556.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.556.0.tgz#5c96bacf7942b530b20c94f3307e6650a97fd7be"
-  integrity sha512-qILMUNl/a7FYWU67Y24OGsXFhyDHM4qYdplMR2tps/g17pN9bEQ5ijxvGzW2T8VVyAsTanmn+dFyl/CH38pC5Q==
+aws-sdk@^2.554.0, aws-sdk@^2.559.0:
+  version "2.559.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.559.0.tgz#2f39dad7428839b4fc7a87f943eef1c94a110aec"
+  integrity sha512-hRbomjpfj+rSaWYO/FHRqMMRw0TubZlqQXDbghgEvdJzQGZJfduJqckUgtAvDX0TGnLj2mKkGp3bqtwCfSH5sg==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
