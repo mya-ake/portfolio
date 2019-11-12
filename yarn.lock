@@ -1126,7 +1126,7 @@
     "@types/webpack-dev-middleware" "^2.0.3"
     "@types/webpack-hot-middleware" "^2.16.5"
 
-"@nuxt/types@^0.3.4":
+"@nuxt/types@0.3.4", "@nuxt/types@^0.3.4":
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/@nuxt/types/-/types-0.3.4.tgz#b3c164684c611a92631bd22e096b333f07a16833"
   integrity sha512-BhJEsS0QBXbLZpF7y/zrUbvHflUXlFIWACdL5eraReyLlzP5jKMBxv5eCe9JUGx9jgI0nyKeKRlOcE0poRL/3w==
@@ -1146,15 +1146,15 @@
     "@types/webpack-dev-middleware" "^2.0.3"
     "@types/webpack-hot-middleware" "^2.16.5"
 
-"@nuxt/typescript-build@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@nuxt/typescript-build/-/typescript-build-0.3.2.tgz#5037d64bf2c21c2b440ed931875dafc2ca53ef23"
-  integrity sha512-z73z2dU48UTfE+cl50JIN53GcKsnlNy5e1VC/JQhJG6gS31Z13gR5AKcTBOrF5j5pfL9bmVgWx7gsiO19H2KkQ==
+"@nuxt/typescript-build@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/typescript-build/-/typescript-build-0.3.4.tgz#bf7ccb17b826def212f1cdf858e438a648b9d8e1"
+  integrity sha512-pCM4T8eNPr5t0dU2aUatjjUfQLzG4fKYaqHAHeKY0R4xl+qUKR1jiRPG2mgT2OT0QsS8gN6VCksCx6O7XBbmaA==
   dependencies:
-    "@nuxt/types" "0.3.2"
+    "@nuxt/types" "0.3.4"
     consola "^2.10.1"
-    fork-ts-checker-webpack-plugin "^1.5.1"
-    ts-loader "^6.2.0"
+    fork-ts-checker-webpack-plugin "^3.0.1"
+    ts-loader "^6.2.1"
     typescript "~3.6"
 
 "@nuxt/typescript-runtime@^0.2.2":
@@ -6138,6 +6138,20 @@ fork-ts-checker-webpack-plugin@^1.3.5, fork-ts-checker-webpack-plugin@^1.5.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-1.6.0.tgz#a81fd1c6bf5258fa5318cf3e9a7e9bac006f7917"
   integrity sha512-vqOY5gakcoon2s12V7MMe01OPwfgqulUWFzm+geQaPPOBKjW1I7aqqoBVlU0ECn97liMB0ECs16pRdIGe9qdRw==
+  dependencies:
+    babel-code-frame "^6.22.0"
+    chalk "^2.4.1"
+    chokidar "^2.0.4"
+    micromatch "^3.1.10"
+    minimatch "^3.0.4"
+    semver "^5.6.0"
+    tapable "^1.0.0"
+    worker-rpc "^0.1.0"
+
+fork-ts-checker-webpack-plugin@^3.0.1:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-3.1.0.tgz#fb411a4b2c3697e1cd7f83436d4feeacbcc70c7b"
+  integrity sha512-6OkRfjuNMNqb14f01xokcWcKV5Ekknc2FvziNpcTYru+kxIYFA2MtuuBI19MHThZnjSBhoi35Dcq+I0oUkFjmQ==
   dependencies:
     babel-code-frame "^6.22.0"
     chalk "^2.4.1"
