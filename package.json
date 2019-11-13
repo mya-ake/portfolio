@@ -81,7 +81,7 @@
     "dayjs": "^1.8.16",
     "eslint": "5.x",
     "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-vue": "^5.2.3",
+    "eslint-plugin-vue": "^6.0.1",
     "husky": "^3.0.9",
     "hygen": "^5.0.1",
     "jest": "^24.8.0",
