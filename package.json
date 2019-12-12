@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-build": "^0.3.2",
-    "@nuxt/typescript-runtime": "^0.2.2",
+    "@nuxt/typescript-runtime": "^0.3.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/tailwindcss": "^1.1.2",
     "@vue/composition-api": "^0.3.2",
