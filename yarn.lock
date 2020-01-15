@@ -1289,15 +1289,15 @@
     consola "^2.10.1"
     dotenv "^8.1.0"
 
-"@nuxtjs/tailwindcss@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-1.1.2.tgz#fb1c687c4f72797388f8c6a49a6e376f634ac7ff"
-  integrity sha512-/zda1/42glYtdNcZRPwu6WyKPOSmTTTVY1jXCM4ZrPrXqyH7aXb+C5LwS7ujM2UYm5D7rPECqMnTKaI1m3F4dg==
+"@nuxtjs/tailwindcss@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-1.3.1.tgz#f582ccb7c6eb2279dd773e04fe1720fc52d4421d"
+  integrity sha512-j2idwToJ+o4IOTfYLa/yUdlI5WYdgxVAF3ew2s5AelrtGevNvisalTNShiZYMJWfi4D8DujBZjcXWNJxdLMAqw==
   dependencies:
-    consola "^2.10.1"
+    consola "^2.11.3"
     fs-extra "^8.1.0"
     nuxt-purgecss "^0.2.1"
-    tailwindcss "^1.1.0"
+    tailwindcss "^1.1.4"
 
 "@nuxtjs/youch@^4.2.3":
   version "4.2.3"
@@ -4045,10 +4045,10 @@ consola@^1.4.5:
     lodash "^4.17.5"
     std-env "^1.1.0"
 
-consola@^2.10.0, consola@^2.10.1, consola@^2.6.0, consola@^2.7.1, consola@^2.9.0:
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/consola/-/consola-2.10.1.tgz#4693edba714677c878d520e4c7e4f69306b4b927"
-  integrity sha512-4sxpH6SGFYLADfUip4vuY65f/gEogrzJoniVhNUYkJHtng0l8ZjnDCqxxrSVRHOHwKxsy8Vm5ONZh1wOR3/l/w==
+consola@^2.10.0, consola@^2.10.1, consola@^2.11.3, consola@^2.6.0, consola@^2.7.1, consola@^2.9.0:
+  version "2.11.3"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-2.11.3.tgz#f7315836224c143ac5094b47fd4c816c2cd1560e"
+  integrity sha512-aoW0YIIAmeftGR8GSpw6CGQluNdkWMWh3yEFjH/hmynTYnMtibXszii3lxCXmk8YxJtI3FAK5aTiquA5VH68Gw==
 
 console-browserify@^1.1.0:
   version "1.1.0"
@@ -13231,10 +13231,10 @@ tabtab@^3.0.2:
     mkdirp "^0.5.1"
     untildify "^3.0.3"
 
-tailwindcss@^1.1.0:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.1.3.tgz#ad154f78e1e44060e32e3ed44b27287c2be126a6"
-  integrity sha512-8sa/QO+blnu3WXUylsgvYZlUbBpVH36QeGuZxgSGqp1dF3g4AGe1azt8FsO8i8Hfe9Oyvwhx3iSjRDak3nngeQ==
+tailwindcss@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.1.4.tgz#786bd5faaf485c9eddcb821dd55666c56baa814e"
+  integrity sha512-p4AxVa4CKpX7IbNxImwNMGG9MHuLgratOaOE/iGriNd4AsRQRM2xMisoQ3KQHqShunrWuObga7rI7xbNsVoWGA==
   dependencies:
     autoprefixer "^9.4.5"
     bytes "^3.0.0"
