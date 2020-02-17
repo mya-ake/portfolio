@@ -34,7 +34,7 @@
     "gen:c": "hygen new component"
   },
   "dependencies": {
-    "@nuxt/typescript-build": "^0.3.2",
+    "@nuxt/typescript-build": "^0.5.7",
     "@nuxt/typescript-runtime": "^0.2.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/tailwindcss": "^1.1.2",
