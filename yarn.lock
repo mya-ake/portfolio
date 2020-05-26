@@ -4045,10 +4045,10 @@ consola@^1.4.5:
     lodash "^4.17.5"
     std-env "^1.1.0"
 
-consola@^2.10.0, consola@^2.10.1, consola@^2.6.0, consola@^2.7.1, consola@^2.9.0:
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/consola/-/consola-2.10.1.tgz#4693edba714677c878d520e4c7e4f69306b4b927"
-  integrity sha512-4sxpH6SGFYLADfUip4vuY65f/gEogrzJoniVhNUYkJHtng0l8ZjnDCqxxrSVRHOHwKxsy8Vm5ONZh1wOR3/l/w==
+consola@^2.10.0, consola@^2.10.1, consola@^2.12.2, consola@^2.6.0, consola@^2.7.1, consola@^2.9.0:
+  version "2.12.2"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-2.12.2.tgz#9610f158e7b0a9ecc8f8bb0c4fc8e7c52bf41d05"
+  integrity sha512-c9mzemrAk57s3UIjepn8KKkuEH5fauMdot5kFSJUnqHcnApVS9Db8Rbv5AZ1Iz6lXzaGe9z1crQXhJtGX4h/Og==
 
 console-browserify@^1.1.0:
   version "1.1.0"
