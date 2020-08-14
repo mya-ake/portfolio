@@ -46,7 +46,7 @@
     "express-http-proxy": "^1.6.0",
     "helmet": "^3.20.0",
     "ky": "^0.15.0",
-    "ky-universal": "^0.2.2",
+    "ky-universal": "^0.8.1",
     "lru-cache": "^5.1.1",
     "nuxt": "^2.10.2"
   },
