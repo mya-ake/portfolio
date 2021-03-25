@@ -54,7 +54,7 @@
     "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
     "@nuxt/types": "^0.3.4",
     "@nuxt/typescript": "^2.8.1",
-    "@types/aws-lambda": "^8.10.33",
+    "@types/aws-lambda": "^8.10.73",
     "@types/aws-serverless-express": "^3.3.1",
     "@types/cross-spawn": "^6.0.0",
     "@types/dotenv": "^8.2.0",
