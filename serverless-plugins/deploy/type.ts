@@ -1,15 +1,22 @@
+export interface Config {
+  assetsDirs: AssetsDirContext[];
+  deleteFileAge: number;
+  deleteFileIgnore?: string[];
+}
+
+export interface S3Option {
+  name: string;
+}
+
+export interface CloudFrontOption {
+  comment: string;
+  alias: string;
+}
+
 export type Options = {
-  config: {
-    assetsDirs: AssetsDirContext[];
-    deleteFileAge: number;
-  };
-  s3: {
-    name: string;
-  };
-  cloudfront: {
-    comment: string;
-    alias: string;
-  };
+  config: Config;
+  s3: S3Option;
+  cloudfront: CloudFrontOption;
 };
 
 export interface FileContext {
