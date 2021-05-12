@@ -1,0 +1,8 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mya-ake/portfolio.git",
+  "author": "mya-ake <make.app.ts@gmail.com>",
+  "license": "MIT"
+}
