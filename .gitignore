@@ -1,11 +1,1 @@
 node_modules
-.nuxt
-yarn-error.log
-dist
-.lambda
-.serverless
-.env
-.configs
-.serverless_plugins
-.test-fixtures
-coverage
