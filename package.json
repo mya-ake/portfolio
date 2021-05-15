@@ -4,5 +4,22 @@
   "main": "index.js",
   "repository": "https://github.com/mya-ake/portfolio.git",
   "author": "mya-ake <make.app.ts@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "lerna run lint",
+    "lint:fix": "lerna run lint:fix",
+    "format": "lerna run format",
+    "format:check": "lerna run format:check"
+  },
+  "devDependencies": {
+    "@mya-ake/eslint-config-ts": "^1.0.4",
+    "eslint": "^7.26.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.2.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
