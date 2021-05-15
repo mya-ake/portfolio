@@ -1,38 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2015",
     "module": "esnext",
-    "moduleResolution": "node",
-    "lib": [
-      "esnext",
-      "esnext.asynciterable",
-      "dom"
-    ],
-    "esModuleInterop": true,
-    "sourceMap": true,
+    "lib": ["esnext", "dom"],
+    "types": [],
     "strict": true,
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./client/*"
-      ],
-      "@@/*": [
-        "./*"
-      ],
-    },
-    "types": [
-      "@types/node",
-      "@nuxt/types",
-      "@types/jest"
-    ],
-    "typeRoots": [
-      "node_modules/@types",
-      "types"
-    ]
-  },
-  "include": ["client/**/*.vue", "client/**/*.ts", "server/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "types/*.ts"],
-  "exclude": ["node_modules", "client/**/*.spec.ts"]
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  }
 }
