@@ -10,16 +10,22 @@
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint:fix",
     "format": "lerna run format",
-    "format:check": "lerna run format:check"
+    "format:check": "lerna run format:check",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@mya-ake/eslint-config-ts": "^1.0.4",
     "eslint": "^7.26.0",
+    "husky": "^6.0.0",
     "lerna": "^4.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
     "typescript": "^4.2.4"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,yml,html}": "prettier --write"
+  }
 }
