@@ -753,9 +753,9 @@
     write-file-atomic "^3.0.3"
 
 "@mya-ake/eslint-config-react@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@mya-ake/eslint-config-react/-/eslint-config-react-1.0.3.tgz#e5afc6ba08f23db695bf44806b4c30632d7258c2"
-  integrity sha512-CBD3CzQ4h9FZMB0jubrfX6MeEPv+KxBCpexv5OaDDSTesd6vnKVtXbErH8O5vGw/IlXFjAVk+9PBlsUGvrY+1w==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@mya-ake/eslint-config-react/-/eslint-config-react-1.1.0.tgz#6b53c20d508afdff00e07b95bed83c4ba9bc7dca"
+  integrity sha512-OVMpOF/CQVXlLsjS3i3CNgIQBiYNNp8oggHJ6iVjCVVt+LIp4EcnjfLd5Q0/YiFd4NCX+mEs4tljHT+ux6qOwQ==
   dependencies:
     eslint-plugin-react "^7.23.2"
     eslint-plugin-react-hooks "^4.2.0"
