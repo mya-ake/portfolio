@@ -1,11 +1,30 @@
-import type { NextPage } from 'next';
+import Link from 'next/link';
+import { graphQLSdk } from '../gateways/graphql';
+import type { NextPage, GetStaticProps } from 'next';
 
-const Home: NextPage = () => {
+type Props = {
+  message: string;
+};
+
+const Home: NextPage<Props> = ({ message }) => {
   return (
     <>
       <h1>Home</h1>
+      <p>{message}</p>
+      <div>
+        <Link href="/about">to About</Link>
+      </div>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const { data } = await graphQLSdk.hello();
+  const message = data?.hello?.message ?? '';
+  return {
+    props: { message },
+    revalidate: 10,
+  };
 };
 
 export default Home;

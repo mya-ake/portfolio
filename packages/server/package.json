@@ -1,7 +1,7 @@
 {
-  "name": "@mya-ake-com/client",
+  "name": "@mya-ake-com/server",
   "version": "1.0.0",
-  "description": "portfolio client",
+  "description": "portfolio server",
   "author": "mya-ake <make.app.ts@gmail.com> (https://github.com/mya-ake)",
   "homepage": "https://github.com/mya-ake/portfolio#readme",
   "license": "MIT",
@@ -11,8 +11,10 @@
     "url": "git+https://github.com/mya-ake/portfolio.git"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "ts-node-dev --transpile-only src/index.ts",
+    "prebuild": "rimraf ./dist",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write .",
@@ -22,13 +24,13 @@
     "url": "https://github.com/mya-ake/portfolio/issues"
   },
   "dependencies": {
-    "graphql-request": "^3.4.0",
-    "next": "^10.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@mya-ake-com/graphql-schema": "^1.0.0",
+    "apollo-server-lambda": "^2.24.0",
+    "graphql": "^15.5.0"
   },
   "devDependencies": {
-    "@mya-ake/eslint-config-react": "^1.1.0",
-    "@types/react": "^17.0.5"
+    "apollo-server-express": "^2.24.0",
+    "express": "^4.17.1",
+    "ts-node-dev": "^1.1.6"
   }
 }

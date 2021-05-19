@@ -1,2 +1,7 @@
 node_modules
 .next
+yarn-error.log
+dist
+generated
+graphql.schema.json
+.vercel

@@ -1,0 +1,5 @@
+query hello {
+  hello {
+    message
+  }
+}

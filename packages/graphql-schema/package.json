@@ -1,9 +1,10 @@
 {
-  "name": "@mya-ake-com/client",
+  "name": "@mya-ake-com/graphql-schema",
   "version": "1.0.0",
-  "description": "portfolio client",
+  "description": "GraphQL Schemas.",
   "author": "mya-ake <make.app.ts@gmail.com> (https://github.com/mya-ake)",
   "homepage": "https://github.com/mya-ake/portfolio#readme",
+  "main": "dist/index.js",
   "license": "MIT",
   "private": true,
   "repository": {
@@ -11,24 +12,16 @@
     "url": "git+https://github.com/mya-ake/portfolio.git"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "build": "tsc",
+    "lint": "lerna run lint",
+    "lint:fix": "lerna run lint:fix",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
   },
-  "dependencies": {
-    "graphql-request": "^3.4.0",
-    "next": "^10.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "devDependencies": {
-    "@mya-ake/eslint-config-react": "^1.1.0",
-    "@types/react": "^17.0.5"
+    "@types/node": "^15.3.0"
   }
 }
