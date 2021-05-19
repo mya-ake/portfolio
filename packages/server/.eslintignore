@@ -1,6 +1,3 @@
 node_modules
 dist
-coverage
-.next
 generated
-out

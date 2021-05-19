@@ -15,8 +15,8 @@
     "prebuild": "rimraf ./dist",
     "build": "tsc",
     "start": "node dist/index.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint": "eslint --config ./.eslintrc.js .",
+    "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

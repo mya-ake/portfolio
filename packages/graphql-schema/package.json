@@ -13,8 +13,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "lerna run lint",
-    "lint:fix": "lerna run lint:fix",
+    "lint": "eslint --config ./.eslintrc.js .",
+    "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

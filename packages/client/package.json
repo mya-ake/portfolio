@@ -13,8 +13,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint": "eslint --config ./.eslintrc.js .",
+    "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
