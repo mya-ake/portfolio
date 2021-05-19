@@ -11,10 +11,10 @@
     "url": "git+https://github.com/mya-ake/portfolio.git"
   },
   "scripts": {
-    "dev": "ts-node-dev --transpile-only src/index.ts",
+    "dev": "ts-node-dev --transpile-only src/local-start.ts",
     "prebuild": "rimraf ./dist",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/local-start.js",
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
