@@ -23,7 +23,7 @@ jobs:
         run: yarn format:check
       - name: Build
         run: yarn build
-      - name: Deploy client to dev
+      - name: Deploy client to development environment
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
