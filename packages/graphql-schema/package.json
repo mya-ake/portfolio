@@ -12,6 +12,7 @@
     "url": "git+https://github.com/mya-ake/portfolio.git"
   },
   "scripts": {
+    "prebuild": "rimraf ./dist",
     "build": "tsc",
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
