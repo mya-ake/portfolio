@@ -18,7 +18,8 @@
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "deploy": "sls deploy"
   },
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
@@ -31,6 +32,8 @@
   "devDependencies": {
     "apollo-server-express": "^2.24.0",
     "express": "^4.17.1",
+    "serverless": "^2.42.0",
+    "serverless-plugin-monorepo": "^0.10.0",
     "ts-node-dev": "^1.1.6"
   }
 }
