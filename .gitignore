@@ -6,3 +6,4 @@ out
 generated
 graphql.schema.json
 .vercel
+.env

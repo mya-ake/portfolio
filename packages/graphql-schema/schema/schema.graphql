@@ -1,7 +1,29 @@
-type Hello {
-  message: String
+type Article {
+  id: ID!
+  title: String!
+  body: String!
+  createdAt: String!
+  updatedAt: String!
+  revisedAt: String!
+}
+
+type Pagination {
+  totalCount: Int!
+  offset: Int!
+  limit: Int!
+}
+
+type ArticleEdges {
+  node: [Article!]!
+}
+
+type Articles {
+  edges: ArticleEdges!
+  pagination: Pagination!
 }
 
 type Query {
-  hello: Hello
+  hello: String # tmp
+  article(id: ID!): Article!
+  artiles: Articles!
 }

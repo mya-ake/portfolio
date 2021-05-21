@@ -8,8 +8,11 @@ export const applyApolloServer = async (
 ): Promise<ApolloServer> => {
   const typeDefs = getSchema();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const server = new ApolloServer({ typeDefs, resolvers: resolvers as any });
+  const server = new ApolloServer({
+    typeDefs,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolvers: resolvers as any,
+  });
   await server.start();
 
   server.applyMiddleware({ app });
