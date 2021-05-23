@@ -1,6 +1,7 @@
 service: ${self:custom.NAME}
 
 frameworkVersion: '2'
+useDotenv: false
 
 provider:
   name: aws
@@ -34,6 +35,8 @@ functions:
     timeout: 10
     environment:
       APP_ENV: 'lambda'
+      MICRO_CMS_ENDPOINT: ${env:MICRO_CMS_ENDPOINT}
+      MICRO_CMS_API_KEY: ${env:MICRO_CMS_API_KEY}
     events:
       - http:
           path: '/graphql'
