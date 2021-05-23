@@ -17,6 +17,7 @@
     "format:check": "lerna run format:check",
     "gen:graphql": "graphql-codegen --config codegen.yml",
     "prepare": "husky install",
+    "deploy": "ts-node --project scripts/tsconfig.json scripts/build-and-deploy/index.ts",
     "deploy:client:dev": "vercel --token ${VERCEL_TOKEN}",
     "deploy:client:prod": "vercel --token ${VERCEL_TOKEN} --prod",
     "deploy:server:dev": "lerna run --scope @mya-ake-com/server deploy:dev",

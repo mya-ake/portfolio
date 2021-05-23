@@ -28,18 +28,16 @@ jobs:
         run: yarn lint
       - name: Check format
         run: yarn format:check
-      - name: Build
-        run: yarn build
-      - name: Deploy client to development environment
+      - name: Deploy to development environment
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-        run: yarn deploy:client:dev
-      - name: Deploy server to development environment
-        env:
+          APP_ENV: dev
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           MICRO_CMS_ENDPOINT: ${{ secrets.MICRO_CMS_ENDPOINT }}
           MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
-        run: yarn deploy:server:dev
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
+          API_KEY_DEV: ${{ secrets.API_KEY_DEV }}
+        run: yarn deploy
