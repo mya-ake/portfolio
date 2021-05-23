@@ -18,7 +18,9 @@
     "gen:graphql": "graphql-codegen --config codegen.yml",
     "prepare": "husky install",
     "deploy:client:dev": "vercel --token ${VERCEL_TOKEN}",
-    "deploy:client:prod": "vercel --token ${VERCEL_TOKEN} --prod"
+    "deploy:client:prod": "vercel --token ${VERCEL_TOKEN} --prod",
+    "deploy:server:dev": "lerna run --scope @mya-ake-com/server deploy:dev",
+    "deploy:server:prod": "lerna run --scope @mya-ake-com/server deploy:prod"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.4",

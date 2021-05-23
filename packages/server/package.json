@@ -19,7 +19,8 @@
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "deploy": "sls deploy"
+    "deploy:dev": "SERVER_STAGE=dev sls deploy",
+    "deploy:prod": "SERVER_STAGE=prod sls deploy"
   },
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
