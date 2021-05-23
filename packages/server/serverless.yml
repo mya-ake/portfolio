@@ -34,7 +34,8 @@ functions:
     handler: dist/handler.graphql
     timeout: 10
     environment:
-      APP_ENV: 'lambda'
+      APP_ENV: ${self:custom.STAGE}
+      NODE_ENV: 'production'
       MICRO_CMS_ENDPOINT: ${env:MICRO_CMS_ENDPOINT}
       MICRO_CMS_API_KEY: ${env:MICRO_CMS_API_KEY}
     events:
