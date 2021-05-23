@@ -20,7 +20,7 @@ const Home: NextPage<Props> = ({ message }) => {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const { data } = await graphQLSdk.hello();
-  const message = data?.hello?.message ?? '';
+  const message = data?.hello ?? '';
   return {
     props: { message },
     revalidate: 10,
