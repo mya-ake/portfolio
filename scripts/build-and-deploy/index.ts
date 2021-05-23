@@ -12,8 +12,7 @@ const APP_ENV = process.env.APP_ENV;
 
 const buildAndDeploy = async () => {
   if (!APP_ENV) {
-    console.error('APP_ENV is not set');
-    process.exit(1);
+    return Promise.reject(new Error('APP_ENV is not set'));
   }
 
   // schema
@@ -28,4 +27,7 @@ const buildAndDeploy = async () => {
   await spawn('yarn', [`deploy:client:${APP_ENV}`]);
 };
 
-buildAndDeploy();
+buildAndDeploy().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
