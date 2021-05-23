@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "@mya-ake-com/graphql-schema": "^1.0.0",
+    "apollo-datasource-rest": "^0.13.0",
     "apollo-server-lambda": "^2.24.0",
-    "got": "^11.8.2",
     "graphql": "^15.5.0"
   },
   "devDependencies": {

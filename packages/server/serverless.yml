@@ -25,7 +25,6 @@ package:
     - 'dist/**'
     - 'node_modules/**'
     - '!dist/local-start.js'
-    - '!dist/servers/express.js'
     - '!.'
     - '!src/**'
 
