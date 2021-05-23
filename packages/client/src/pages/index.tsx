@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { graphQLSdk } from '../gateways/graphql';
+import { graphQLSdk } from '~/gateways/graphql';
 import type { NextPage, GetStaticProps } from 'next';
 
 type Props = {

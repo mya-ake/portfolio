@@ -1,6 +1,6 @@
 import { GraphQLClient } from 'graphql-request';
-import { getSdk } from '../../generated/graphql-request';
-import { getAPIEndpoint, getAPIKey } from '../../shared/env';
+import { getSdk } from '~/generated/graphql-request';
+import { getAPIEndpoint, getAPIKey } from '~/shared/env';
 
 const createHeaders = () => {
   const headers: Record<string, string> = {};
