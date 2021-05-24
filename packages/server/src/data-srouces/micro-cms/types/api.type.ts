@@ -1,10 +1,10 @@
-import { Article } from './articles.type';
+import { Post } from './posts.type';
 
-export type ArticleRequest = { id: Article['id'] };
-export type ArticleResponse = Article;
+export type PostRequest = { id: Post['id'] };
+export type PostResponse = Post;
 
-export type ArticlesResponse = {
-  contents: Article[];
+export type PostsResponse = {
+  contents: Post[];
   totalCount: number;
   offset: number;
   limit: number;

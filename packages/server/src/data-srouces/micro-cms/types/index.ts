@@ -1,2 +1,2 @@
-export * from './articles.type';
+export * from './posts.type';
 export * from './api.type';

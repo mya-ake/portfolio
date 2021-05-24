@@ -1,9 +1,5 @@
 import { RESTDataSource, RequestOptions } from 'apollo-datasource-rest';
-import type {
-  ArticleRequest,
-  ArticleResponse,
-  ArticlesResponse,
-} from './types';
+import type { PostRequest, PostResponse, PostsResponse } from './types';
 
 type Config = {
   baseURL: string;
@@ -23,11 +19,11 @@ export class MicroCMSDataSource extends RESTDataSource {
     request.headers.set('x-api-key', this.apiKey);
   }
 
-  getArticle({ id }: ArticleRequest): Promise<ArticleResponse> {
-    return this.get(`articles/${id}`);
+  getPost({ id }: PostRequest): Promise<PostResponse> {
+    return this.get(`posts/${id}`);
   }
 
-  getArticles(): Promise<ArticlesResponse> {
-    return this.get<ArticlesResponse>('articles');
+  getPosts(): Promise<PostsResponse> {
+    return this.get<PostsResponse>('posts');
   }
 }

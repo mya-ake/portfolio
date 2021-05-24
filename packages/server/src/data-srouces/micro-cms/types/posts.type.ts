@@ -1,4 +1,4 @@
-export type Article = {
+export type Post = {
   id: string;
   createdAt: string;
   updatedAt: string;

@@ -1,4 +1,4 @@
-type Article {
+type Post {
   id: ID!
   title: String!
   body: String!
@@ -13,17 +13,16 @@ type Pagination {
   limit: Int!
 }
 
-type ArticleEdges {
-  node: [Article!]!
+type PostEdges {
+  node: [Post!]!
 }
 
-type Articles {
-  edges: ArticleEdges!
+type Posts {
+  edges: PostEdges!
   pagination: Pagination!
 }
 
 type Query {
-  hello: String # tmp
-  article(id: ID!): Article!
-  artiles: Articles!
+  post(id: ID!): Post!
+  posts: Posts!
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { graphQLSdk } from '~/gateways/graphql';
+// import { graphQLSdk } from '~/gateways/graphql';
 import type { NextPage, GetStaticProps } from 'next';
 
 type Props = {
@@ -19,10 +19,8 @@ const Home: NextPage<Props> = ({ message }) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { data } = await graphQLSdk.hello();
-  const message = data?.hello ?? '';
   return {
-    props: { message },
+    props: { message: '' },
     revalidate: 10,
   };
 };
