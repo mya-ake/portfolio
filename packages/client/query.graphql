@@ -1,22 +1,29 @@
+fragment postDetails on Post {
+  id
+  title
+  body
+  updatedAt
+  revisedAt
+}
+
 query getPost($id: ID!) {
   post(id: $id) {
-    id
-    title
-    body
-    updatedAt
-    revisedAt
+    ...postDetails
   }
+}
+
+fragment postListItem on Post {
+  id
+  title
+  updatedAt
+  revisedAt
 }
 
 query getPosts {
   posts {
     edges {
       node {
-        id
-        title
-        body
-        updatedAt
-        revisedAt
+        ...postListItem
       }
     }
   }
