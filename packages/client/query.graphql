@@ -2,7 +2,7 @@ fragment postDetails on Post {
   id
   title
   body
-  updatedAt
+  publishedAt
   revisedAt
 }
 
@@ -12,10 +12,10 @@ query getPost($id: ID!) {
   }
 }
 
-fragment postListItem on Post {
+fragment postListItem on PostInList {
   id
   title
-  updatedAt
+  publishedAt
   revisedAt
 }
 

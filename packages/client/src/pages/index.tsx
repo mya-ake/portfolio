@@ -31,7 +31,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const { data } = await graphQLSdk.getPosts();
-  const posts = data?.posts.edges.node ?? [];
+  const posts = data?.posts.edges.map(({ node }) => node) ?? [];
   return {
     props: { posts },
     revalidate: 10,

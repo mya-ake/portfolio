@@ -1,5 +1,10 @@
 import { RESTDataSource, RequestOptions } from 'apollo-datasource-rest';
-import type { PostRequest, PostResponse, PostsResponse } from './types';
+import type {
+  PostRequest,
+  PostResponse,
+  PostsRequest,
+  PostsResponse,
+} from './types';
 
 type Config = {
   baseURL: string;
@@ -23,7 +28,30 @@ export class MicroCMSDataSource extends RESTDataSource {
     return this.get(`posts/${id}`);
   }
 
-  getPosts(): Promise<PostsResponse> {
-    return this.get<PostsResponse>('posts');
+  getPosts({
+    limit,
+    orderType,
+    referenceDate,
+  }: PostsRequest): Promise<PostsResponse> {
+    const filters: string[] = [];
+    const orders: string[] = [];
+
+    if (!referenceDate) {
+      const order = orderType === 'ASC' ? 'publishedAt' : '-publishedAt';
+      orders.push(order);
+    } else if (orderType === 'ASC') {
+      orders.push('publishedAt');
+      filters.push(`publishedAt[greater_than]${referenceDate}`);
+    } else {
+      orders.push('-publishedAt');
+      filters.push(`publishedAt[less_than]${referenceDate}`);
+    }
+
+    return this.get<PostsResponse>('posts', {
+      fields: ['id', 'title', 'publishedAt', 'revisedAt'].join(','),
+      limit,
+      filters: filters.join('[and]'),
+      orders: orders.join(','),
+    });
   }
 }

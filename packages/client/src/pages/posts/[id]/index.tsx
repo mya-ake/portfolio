@@ -21,7 +21,7 @@ const Home: NextPage<Props> = ({ post }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await graphQLSdk.getPosts();
-  const posts = data?.posts.edges.node ?? [];
+  const posts = data?.posts.edges.map(({ node }) => node) ?? [];
 
   const paths = posts.map((post) => ({ params: { id: post.id } }));
   return { paths, fallback: false };

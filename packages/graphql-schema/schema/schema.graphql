@@ -2,9 +2,29 @@ type Post {
   id: ID!
   title: String!
   body: String!
-  createdAt: String!
-  updatedAt: String!
+  publishedAt: String!
   revisedAt: String!
+}
+
+type PostInList {
+  id: ID!
+  title: String!
+  publishedAt: String!
+  revisedAt: String!
+}
+
+input ConnectionInput {
+  first: Int
+  after: String
+  last: Int
+  before: String
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String!
+  endCursor: String!
 }
 
 type Pagination {
@@ -13,16 +33,17 @@ type Pagination {
   limit: Int!
 }
 
-type PostEdges {
-  node: [Post!]!
+type PostEdge {
+  node: PostInList!
+  cursor: String!
 }
 
-type Posts {
-  edges: PostEdges!
-  pagination: Pagination!
+type PostConnection {
+  edges: [PostEdge!]!
+  pageInfo: PageInfo!
 }
 
 type Query {
   post(id: ID!): Post!
-  posts: Posts!
+  posts(input: ConnectionInput): PostConnection!
 }
