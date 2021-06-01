@@ -15,13 +15,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.17.0
-      - name: Mask
-        env:
-          API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
-          API_KEY_DEV: ${{ secrets.API_KEY_DEV }}
-        run: |
-          echo "::add-mask::$API_ENDPOINT_DEV"
-          echo "::add-mask::$API_KEY_DEV"
       - name: Intall
         run: yarn install --frozen-lockfile
       - name: Lint
