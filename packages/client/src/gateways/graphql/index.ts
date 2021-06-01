@@ -10,9 +10,9 @@ const createHeaders = () => {
     headers['x-api-key'] = apiKey;
   }
 
-  console.log('--------------');
+  console.log('--------------=');
   console.log(getAPIEndpoint(), headers);
-  console.log('--------------');
+  console.log('--------------=');
 
   return headers;
 };
