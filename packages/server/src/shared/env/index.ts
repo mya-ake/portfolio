@@ -7,5 +7,6 @@ export const getMicroCMSEndpoint = (): string =>
 export const getMicroCMSAPIKey = (): string =>
   process.env.MICRO_CMS_API_KEY ?? '';
 
-export type AppEnv = 'dev' | 'prod';
-export const getAppEnv = (): AppEnv => (process.env.APP_ENV as AppEnv) ?? 'dev';
+export type AppEnv = 'dev' | 'prod' | 'local';
+export const getAppEnv = (): AppEnv =>
+  (process.env.APP_ENV as AppEnv) ?? 'local';
