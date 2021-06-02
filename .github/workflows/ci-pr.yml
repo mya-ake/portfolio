@@ -24,6 +24,5 @@ jobs:
       - name: Build
         env:
           APP_ENV: local
-          MICRO_CMS_ENDPOINT: ${{ secrets.MICRO_CMS_ENDPOINT }}
-          MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+          USE_MOCK_SERVER: true
         run: yarn build
