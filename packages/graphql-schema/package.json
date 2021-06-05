@@ -22,9 +22,7 @@
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
   },
-  "devDependencies": {
-    "@types/node": "^15.3.0"
-  },
+  "devDependencies": {},
   "files": [
     "schema",
     "dist"
