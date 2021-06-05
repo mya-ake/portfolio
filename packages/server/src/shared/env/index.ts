@@ -10,3 +10,5 @@ export const getMicroCMSAPIKey = (): string =>
 export type AppEnv = 'dev' | 'prod' | 'local';
 export const getAppEnv = (): AppEnv =>
   (process.env.APP_ENV as AppEnv) ?? 'local';
+
+export const getUseMock = (): boolean => Boolean(process.env.USE_MOCK);

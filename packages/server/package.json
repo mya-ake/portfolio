@@ -12,6 +12,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --transpile-only src/local-start.ts",
+    "dev:mock": "USE_MOCK=true run-s dev",
     "prebuild": "rimraf ./dist",
     "build": "tsc",
     "start": "node dist/local-start.js",
