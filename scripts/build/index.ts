@@ -14,16 +14,10 @@ const build = async () => {
   await spawn('yarn', [...graphqlSchemaScriptsArgs, 'build']);
   await spawn('yarn', [...serverScriptsArgs, 'build']);
 
-  let serverPs: ChildProcess;
-  if (getUseMockServer()) {
-    serverPs = await spawn('yarn', [...clientScriptsArgs, 'mock:start'], {
-      pararel: true,
-    });
-  } else {
-    serverPs = await spawn('yarn', [...serverScriptsArgs, 'start'], {
-      pararel: true,
-    });
-  }
+  const startCommand = getUseMockServer() ? 'start:mock' : 'start';
+  const serverPs = await spawn('yarn', [...serverScriptsArgs, startCommand], {
+    pararel: true,
+  });
 
   await spawn('yarn', [...clientScriptsArgs, 'build']);
 

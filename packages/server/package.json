@@ -16,6 +16,7 @@
     "prebuild": "rimraf ./dist",
     "build": "tsc",
     "start": "node dist/local-start.js",
+    "start:mock": "USE_MOCK=true run-s start",
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",

@@ -16,8 +16,7 @@
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "mock:start": "ts-node  --transpile-only --project mock/tsconfig.json mock/index.ts"
+    "format:check": "prettier --check ."
   },
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
