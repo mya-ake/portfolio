@@ -13,6 +13,9 @@ generates:
       - 'typescript-graphql-request'
     config:
       rawRequest: true
+  ./packages/mock/src/types/graphql.type.ts:
+    plugins:
+      - 'typescript'
   ./graphql.schema.json:
     plugins:
       - 'introspection'
