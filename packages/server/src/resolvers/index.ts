@@ -2,7 +2,7 @@ import {
   createPageInfo,
   hasNextPage,
   hasPreviousPage,
-} from '../shared/pagination/pagination';
+} from '../shared/pagination';
 import type { Context } from '../context';
 import type { Resolvers } from '../generated/resolvers';
 
