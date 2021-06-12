@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseHtml deep children list 1`] = `
+Array [
+  Object {
+    "attrs": Array [],
+    "childNodes": Array [
+      Object {
+        "attrs": Array [],
+        "childNodes": Array [
+          Object {
+            "content": "item 1",
+            "nodeType": "text",
+          },
+        ],
+        "nodeType": "tag",
+        "tagName": "li",
+      },
+      Object {
+        "attrs": Array [],
+        "childNodes": Array [
+          Object {
+            "content": "item 1",
+            "nodeType": "text",
+          },
+        ],
+        "nodeType": "tag",
+        "tagName": "li",
+      },
+    ],
+    "nodeType": "tag",
+    "tagName": "ul",
+  },
+]
+`;
+
+exports[`parseHtml deep children some content 1`] = `
+Array [
+  Object {
+    "attrs": Array [],
+    "childNodes": Array [
+      Object {
+        "content": "no wrapped",
+        "nodeType": "text",
+      },
+      Object {
+        "attrs": Array [],
+        "childNodes": Array [
+          Object {
+            "content": "item 1",
+            "nodeType": "text",
+          },
+        ],
+        "nodeType": "tag",
+        "tagName": "p",
+      },
+      Object {
+        "attrs": Array [
+          Object {
+            "name": "src",
+            "value": "/static/sample.png",
+          },
+          Object {
+            "name": "alt",
+            "value": "",
+          },
+        ],
+        "childNodes": Array [],
+        "nodeType": "tag",
+        "tagName": "img",
+      },
+    ],
+    "nodeType": "tag",
+    "tagName": "div",
+  },
+]
+`;
+
+exports[`parseHtml web components list 1`] = `
+Array [
+  Object {
+    "attrs": Array [],
+    "childNodes": Array [
+      Object {
+        "content": "text",
+        "nodeType": "text",
+      },
+    ],
+    "nodeType": "tag",
+    "tagName": "custom-p",
+  },
+]
+`;
