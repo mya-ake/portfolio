@@ -3,10 +3,10 @@
 exports[`parseHtml deep children list 1`] = `
 Array [
   Object {
-    "attrs": Array [],
+    "attrs": Object {},
     "childNodes": Array [
       Object {
-        "attrs": Array [],
+        "attrs": Object {},
         "childNodes": Array [
           Object {
             "content": "item 1",
@@ -17,7 +17,7 @@ Array [
         "tagName": "li",
       },
       Object {
-        "attrs": Array [],
+        "attrs": Object {},
         "childNodes": Array [
           Object {
             "content": "item 1",
@@ -37,14 +37,14 @@ Array [
 exports[`parseHtml deep children some content 1`] = `
 Array [
   Object {
-    "attrs": Array [],
+    "attrs": Object {},
     "childNodes": Array [
       Object {
         "content": "no wrapped",
         "nodeType": "text",
       },
       Object {
-        "attrs": Array [],
+        "attrs": Object {},
         "childNodes": Array [
           Object {
             "content": "item 1",
@@ -55,16 +55,10 @@ Array [
         "tagName": "p",
       },
       Object {
-        "attrs": Array [
-          Object {
-            "name": "src",
-            "value": "/static/sample.png",
-          },
-          Object {
-            "name": "alt",
-            "value": "",
-          },
-        ],
+        "attrs": Object {
+          "alt": "",
+          "src": "/static/sample.png",
+        },
         "childNodes": Array [],
         "nodeType": "tag",
         "tagName": "img",
@@ -79,7 +73,7 @@ Array [
 exports[`parseHtml web components list 1`] = `
 Array [
   Object {
-    "attrs": Array [],
+    "attrs": Object {},
     "childNodes": Array [
       Object {
         "content": "text",

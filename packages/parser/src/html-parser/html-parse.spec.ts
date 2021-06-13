@@ -8,7 +8,7 @@ describe('parseHtml', () => {
         {
           nodeType: 'tag',
           tagName: 'p',
-          attrs: [],
+          attrs: {},
           childNodes: [
             {
               nodeType: 'text',
@@ -27,20 +27,11 @@ describe('parseHtml', () => {
         {
           nodeType: 'tag',
           tagName: 'button',
-          attrs: [
-            {
-              name: 'type',
-              value: 'button',
-            },
-            {
-              name: 'disabled',
-              value: '',
-            },
-            {
-              name: 'aria-pressed',
-              value: 'false',
-            },
-          ],
+          attrs: {
+            type: 'button',
+            disabled: '',
+            'aria-pressed': 'false',
+          },
           childNodes: [
             {
               nodeType: 'text',
@@ -61,12 +52,9 @@ describe('parseHtml', () => {
         {
           nodeType: 'tag',
           tagName: 'p',
-          attrs: [
-            {
-              name: 'class',
-              value: 'p p1',
-            },
-          ],
+          attrs: {
+            class: 'p p1',
+          },
           childNodes: [
             {
               nodeType: 'text',
@@ -77,12 +65,9 @@ describe('parseHtml', () => {
         {
           nodeType: 'tag',
           tagName: 'p',
-          attrs: [
-            {
-              name: 'class',
-              value: 'p',
-            },
-          ],
+          attrs: {
+            class: 'p',
+          },
           childNodes: [
             {
               nodeType: 'text',

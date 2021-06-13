@@ -2,24 +2,21 @@
 import parse5 from 'parse5';
 
 type NodeType = 'tag' | 'text';
-type Attr = {
-  name: string;
-  value: string;
-};
+type Attributes = Record<string, string>;
 
-type TagNode = {
+export type TagNode = {
   nodeType: 'tag';
   tagName: string;
-  attrs: Attr[];
+  attrs: Attributes;
   childNodes: Node[];
 };
 
-type TextNode = {
+export type TextNode = {
   nodeType: 'text';
   content: string;
 };
 
-type Node = TagNode | TextNode;
+export type Node = TagNode | TextNode;
 
 const getNodeType = (nodeName: string): NodeType => {
   switch (nodeName) {
@@ -30,25 +27,28 @@ const getNodeType = (nodeName: string): NodeType => {
   }
 };
 
-const createTagNode = (childNode: parse5.ChildNode): TagNode => ({
+const createTagNode = (childNode: parse5.Element): TagNode => ({
   nodeType: 'tag',
-  tagName: (childNode as any).tagName as string,
-  attrs: (childNode as any).attrs,
+  tagName: childNode.tagName,
+  attrs: childNode.attrs.reduce<Attributes>((attrs, attrItem) => {
+    attrs[attrItem.name] = attrItem.value;
+    return attrs;
+  }, {}),
   childNodes: convertNodes((childNode as any).childNodes ?? []),
 });
 
-const createTextNode = (childNode: parse5.ChildNode): TextNode => ({
+const createTextNode = (childNode: parse5.TextNode): TextNode => ({
   nodeType: 'text',
-  content: (childNode as any).value,
+  content: childNode.value,
 });
 
 const convertNode = (childNode: parse5.ChildNode): Node => {
   const nodeType = getNodeType(childNode.nodeName);
   switch (nodeType) {
     case 'tag':
-      return createTagNode(childNode);
+      return createTagNode(childNode as parse5.Element);
     case 'text':
-      return createTextNode(childNode);
+      return createTextNode(childNode as parse5.TextNode);
   }
 };
 
