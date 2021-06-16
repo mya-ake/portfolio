@@ -40,6 +40,11 @@ describe('tags', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  it('br', () => {
+    const { container } = render(<RenderHTML htmlNodes={parseHtml(`<br/>`)} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   it('ul li', () => {
     const { container } = render(
       <RenderHTML

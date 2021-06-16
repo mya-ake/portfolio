@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     return { notFound: true };
   }
   const { post } = data;
-  const parsedBody = parseHtml(post.body.replace(/\\/g, ''));
+  const parsedBody = parseHtml(post.body);
   return {
     props: { post, parsedBody },
     revalidate: 10,

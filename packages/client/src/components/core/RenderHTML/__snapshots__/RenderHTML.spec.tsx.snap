@@ -17,6 +17,8 @@ exports[`tags a 1`] = `
 </a>
 `;
 
+exports[`tags br 1`] = `<br />`;
+
 exports[`tags div 1`] = `
 <div>
   content

@@ -44,6 +44,7 @@ const render: Render = (nodes, replacer?) => {
 
         switch (node.tagName) {
           case 'img':
+          case 'br':
             return createElement(node.tagName, attrs);
           case 'script':
           case 'style':
