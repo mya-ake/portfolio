@@ -99,4 +99,50 @@ describe('parseHtml', () => {
       expect(result).toMatchSnapshot();
     });
   });
+
+  describe(`include '\\'`, () => {
+    it(`with '"'`, () => {
+      const result = parseHtml(
+        `<a href=\\"https://example.com\\" rel=\\"noopener noreferrer\\">https://example.com</a>`,
+      );
+      expect(result).toEqual([
+        {
+          nodeType: 'tag',
+          tagName: 'a',
+          attrs: {
+            href: 'https://example.com',
+            rel: 'noopener noreferrer',
+          },
+          childNodes: [
+            {
+              nodeType: 'text',
+              content: 'https://example.com',
+            },
+          ],
+        },
+      ]);
+    });
+
+    it(`with '"' and has '\\' text`, () => {
+      const result = parseHtml(
+        `<a href=\\"https://example.com\\" rel=\\"noopener noreferrer\\">\\</a>`,
+      );
+      expect(result).toEqual([
+        {
+          nodeType: 'tag',
+          tagName: 'a',
+          attrs: {
+            href: 'https://example.com',
+            rel: 'noopener noreferrer',
+          },
+          childNodes: [
+            {
+              nodeType: 'text',
+              content: '\\',
+            },
+          ],
+        },
+      ]);
+    });
+  });
 });

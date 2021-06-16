@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import parse5 from 'parse5';
+import { removeBackslashOfHTMLAttribute } from './processor';
 
 type NodeType = 'tag' | 'text';
 type Attributes = Record<string, string>;
@@ -56,6 +57,12 @@ const convertNodes = (childNodes: parse5.ChildNode[]): Node[] =>
   childNodes.map(convertNode);
 
 export const parseHtml = (html: string): Node[] => {
-  const documentFragment = parse5.parseFragment(html);
+  const processedHtml = [removeBackslashOfHTMLAttribute].reduce(
+    (html, processor) => {
+      return processor(html);
+    },
+    html,
+  );
+  const documentFragment = parse5.parseFragment(processedHtml);
   return convertNodes(documentFragment.childNodes);
 };
