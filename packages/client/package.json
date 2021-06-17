@@ -27,13 +27,15 @@
     "graphql-request": "^3.4.0",
     "next": "^10.2.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@mya-ake/eslint-config-react": "^1.1.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/react-hooks": "^7.0.0",
     "@types/react": "^17.0.5",
+    "@types/uuid": "^8.3.0",
     "apollo-server-express": "^2.25.0",
     "express": "^4.17.1"
   }
