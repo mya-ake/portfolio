@@ -8,11 +8,13 @@ const graphqlSchemaScriptsArgs = [
   ...singlePackageScriptArgs,
   '@mya-ake-com/graphql-schema',
 ];
+const parserScriptsArgs = [...singlePackageScriptArgs, '@mya-ake-com/parser'];
 const mockScriptsArgs = [...singlePackageScriptArgs, '@mya-ake-com/mock'];
 
 const build = async () => {
   await spawn('yarn', [...graphqlSchemaScriptsArgs, 'build']);
   await spawn('yarn', [...mockScriptsArgs, 'build']);
+  await spawn('yarn', [...parserScriptsArgs, 'build']);
   await spawn('yarn', [...serverScriptsArgs, 'build']);
 
   const startCommand = getUseMockServer() ? 'start:mock' : 'start';
