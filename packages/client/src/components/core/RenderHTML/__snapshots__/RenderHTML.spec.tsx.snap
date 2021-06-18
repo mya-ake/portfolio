@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replacer p tag to Paragraph 1`] = `
+<p
+  class="p-0"
+>
+  content
+</p>
+`;
+
+exports[`tags a 1`] = `
+<a
+  href="/to-link"
+  rel="noopener"
+>
+  content
+</a>
+`;
+
+exports[`tags br 1`] = `<br />`;
+
+exports[`tags div 1`] = `
+<div>
+  content
+</div>
+`;
+
+exports[`tags img 1`] = `
+<img
+  alt="sample"
+  src="https://example.com/sample.png"
+/>
+`;
+
+exports[`tags p with class 1`] = `
+<p
+  class="text"
+>
+  content
+</p>
+`;
+
+exports[`tags ul li 1`] = `
+<ul>
+  <li>
+    item 1
+  </li>
+  <li>
+    item 2
+  </li>
+</ul>
+`;

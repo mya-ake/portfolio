@@ -13,7 +13,8 @@ export const createApolloConfig = (): Config => {
 
   return {
     typeDefs: getSchema(),
-    resolvers,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolvers: resolvers as any,
     dataSources: () => ({
       microCMS: new MicroCMSDataSource({
         baseURL: getMicroCMSEndpoint(),

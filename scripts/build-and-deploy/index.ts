@@ -7,6 +7,7 @@ const graphqlSchemaScriptsArgs = [
   ...singlePackageScriptArgs,
   '@mya-ake-com/graphql-schema',
 ];
+const parserScriptsArgs = [...singlePackageScriptArgs, '@mya-ake-com/parser'];
 const mockScriptsArgs = [...singlePackageScriptArgs, '@mya-ake-com/mock'];
 
 const APP_ENV = process.env.APP_ENV;
@@ -20,6 +21,8 @@ const buildAndDeploy = async () => {
   await spawn('yarn', [...graphqlSchemaScriptsArgs, 'build']);
   // mock
   await spawn('yarn', [...mockScriptsArgs, 'build']);
+  // parser
+  await spawn('yarn', [...parserScriptsArgs, 'build']);
 
   // server
   await spawn('yarn', [...serverScriptsArgs, 'build']);

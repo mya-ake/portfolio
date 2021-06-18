@@ -1,18 +1,19 @@
 {
-  "name": "@mya-ake-com/client",
+  "name": "@mya-ake-com/parser",
   "version": "1.0.0",
-  "description": "portfolio client",
+  "description": "parsers",
   "author": "mya-ake <make.app.ts@gmail.com> (https://github.com/mya-ake)",
   "homepage": "https://github.com/mya-ake/portfolio#readme",
   "license": "MIT",
+  "main": "dist/index.js",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mya-ake/portfolio.git"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "prebuild": "rimraf ./dist",
+    "build": "tsc",
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
@@ -23,20 +24,9 @@
     "url": "https://github.com/mya-ake/portfolio/issues"
   },
   "dependencies": {
-    "@mya-ake-com/parser": "^1.0.0",
-    "graphql-request": "^3.4.0",
-    "next": "^10.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "uuid": "^8.3.2"
+    "parse5": "^6.0.1"
   },
   "devDependencies": {
-    "@mya-ake/eslint-config-react": "^1.1.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/react-hooks": "^7.0.0",
-    "@types/react": "^17.0.5",
-    "@types/uuid": "^8.3.0",
-    "apollo-server-express": "^2.25.0",
-    "express": "^4.17.1"
+    "@types/parse5": "^6.0.0"
   }
 }
