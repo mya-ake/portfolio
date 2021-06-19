@@ -1,4 +1,4 @@
-import { spawn } from '@mya-ake/command-line-utils';
+import { spawn, SpawnOption } from '@mya-ake/command-line-utils';
 import type { ChildProcess } from 'child_process';
 
 type RepositoryName =
@@ -13,6 +13,7 @@ const singlePackageScriptArgs = ['lerna', 'run', '--stream', '--scope'];
 export const run = (
   name: RepositoryName,
   args: string[],
+  option?: SpawnOption,
 ): Promise<ChildProcess> => {
-  return spawn('yarn', [...singlePackageScriptArgs, name, ...args]);
+  return spawn('yarn', [...singlePackageScriptArgs, name, ...args], option);
 };
