@@ -9,6 +9,7 @@
   "scripts": {
     "prebuild": "run-s gen:graphql",
     "build": "ts-node --project scripts/tsconfig.json scripts/build/index.ts",
+    "build:vercel": "ts-node --project scripts/tsconfig.json scripts/build-on-vercel/index.ts",
     "predev": "run-s gen:graphql",
     "dev": "lerna run dev",
     "lint": "lerna run lint",
