@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { graphQLSdk } from '~/gateways/graphql';
 import { parseHtml, Node as HTMLNode } from '@mya-ake-com/parser';
+import { DefaultLayout } from '~/components/layout';
 import { RenderHTML } from '~/components/core/RenderHTML';
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import type { PostDetailsFragment } from '~/graphql';
@@ -12,13 +13,13 @@ type Props = {
 
 const Home: NextPage<Props> = ({ post, parsedBody = [] }) => {
   return (
-    <>
+    <DefaultLayout>
       <h1>{post.title}</h1>
       <RenderHTML htmlNodes={parsedBody} />
       <div>
         <Link href="/">to Home</Link>
       </div>
-    </>
+    </DefaultLayout>
   );
 };
 

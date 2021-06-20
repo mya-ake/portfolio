@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { graphQLSdk } from '~/gateways/graphql';
+import { DefaultLayout } from '~/components/layout';
 import type { NextPage, GetStaticProps } from 'next';
 import type { PostListItemFragment } from '~/graphql';
 
@@ -9,7 +10,7 @@ type Props = {
 
 const Home: NextPage<Props> = ({ posts }) => {
   return (
-    <>
+    <DefaultLayout>
       <h1>Posts</h1>
       <div>
         <Link href="/about">to About</Link>
@@ -25,7 +26,7 @@ const Home: NextPage<Props> = ({ posts }) => {
           </article>
         ))}
       </div>
-    </>
+    </DefaultLayout>
   );
 };
 
