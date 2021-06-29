@@ -12,7 +12,7 @@ export const DefaultLayout: FC = ({ children }) => {
         <DefaultHeader />
       </div>
       <main className="container h-full mx-auto">{children}</main>
-      <div className="mt-auto">
+      <div>
         <DefaultFooter />
       </div>
     </div>
