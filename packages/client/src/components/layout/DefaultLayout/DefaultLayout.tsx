@@ -1,10 +1,13 @@
+import { css } from '@emotion/css';
 import { DefaultHeader } from '../DefaultHeader';
 import { DefaultFooter } from '../DefaultFooter';
 import type { FC } from 'react';
 
 export const DefaultLayout: FC = ({ children }) => {
   return (
-    <div className="min-h-screen overflow-auto layout bg-gray-50 text-gray-800">
+    <div
+      className={`${layout} min-h-screen overflow-auto bg-gray-50 text-gray-800`}
+    >
       <div>
         <DefaultHeader />
       </div>
@@ -12,14 +15,11 @@ export const DefaultLayout: FC = ({ children }) => {
       <div className="mt-auto">
         <DefaultFooter />
       </div>
-      <style jsx>
-        {`
-          .layout {
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-          }
-        `}
-      </style>
     </div>
   );
 };
+
+const layout = css`
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+`;
