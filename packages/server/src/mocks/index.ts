@@ -1,6 +1,7 @@
 import { setupStore, findOnePost, findAllPosts, Store } from './store';
 import { ApolloError, IMocks } from 'apollo-server-express';
 import { createPageInfo } from '../shared/pagination';
+import { ERROR_CODES } from '@mya-ake-com/error';
 import type {
   QueryPostArgs,
   Post,
@@ -13,7 +14,7 @@ export const createMocks = (store: Store): IMocks => {
       const { id } = args as QueryPostArgs;
       const post = findOnePost(store.getState().posts, id);
       if (!post) {
-        throw new ApolloError('Not found post');
+        throw new ApolloError('Not found post', ERROR_CODES.NOT_FOUND);
       }
       return post;
     },

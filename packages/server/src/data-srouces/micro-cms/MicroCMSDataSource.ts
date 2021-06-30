@@ -1,10 +1,39 @@
 import { RESTDataSource, RequestOptions } from 'apollo-datasource-rest';
+import { ApolloError } from 'apollo-server-core';
+import { ERROR_CODES } from '@mya-ake-com/error';
 import type {
   PostRequest,
   PostResponse,
   PostsRequest,
   PostsResponse,
 } from './types';
+
+type ErrorResponse = {
+  message: string;
+  extensions: {
+    response: {
+      status: number;
+    };
+  };
+};
+
+const isErrorResponse = (input: unknown): input is ErrorResponse => {
+  console.log(input);
+  if (typeof input !== 'object' || input === null) {
+    return false;
+  }
+  return 'extensions' in input;
+};
+
+// TODO: moce error package
+const getErrorCode = (status: number): string => {
+  switch (status) {
+    case 404:
+      return ERROR_CODES.NOT_FOUND;
+    default:
+      return ERROR_CODES.UNKNOWN;
+  }
+};
 
 type Config = {
   baseURL: string;
@@ -24,8 +53,19 @@ export class MicroCMSDataSource extends RESTDataSource {
     request.headers.set('x-api-key', this.apiKey);
   }
 
+  private handleError(error: unknown) {
+    if (!isErrorResponse(error)) {
+      return Promise.reject(
+        new ApolloError('Unknown error', ERROR_CODES.UNKNOWN),
+      );
+    }
+    const status = error.extensions.response.status;
+    const code = getErrorCode(status);
+    return Promise.reject(new ApolloError(error.message, code));
+  }
+
   getPost({ id }: PostRequest): Promise<PostResponse> {
-    return this.get(`posts/${id}`);
+    return this.get(`posts/${id}`).catch(this.handleError);
   }
 
   getPosts({
