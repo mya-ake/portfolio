@@ -18,6 +18,7 @@ export const ERROR_CODES = {
   INTERNAL: 'INTERNAL',
   UNAVAILABLE: 'UNAVAILABLE',
   DATA_LOSS: 'DATA_LOSS',
+  NOT_IMPLEMENTED: 'NOT_IMPLEMENTED',
 } as const;
 
 type ErrorCodes = typeof ERROR_CODES;

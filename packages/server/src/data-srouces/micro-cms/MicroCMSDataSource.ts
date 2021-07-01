@@ -1,6 +1,6 @@
 import { RESTDataSource, RequestOptions } from 'apollo-datasource-rest';
 import { ApolloError } from 'apollo-server-core';
-import { ERROR_CODES } from '@mya-ake-com/error';
+import { getErrorCode, ERROR_CODES } from '@mya-ake-com/error';
 import type {
   PostRequest,
   PostResponse,
@@ -18,21 +18,10 @@ type ErrorResponse = {
 };
 
 const isErrorResponse = (input: unknown): input is ErrorResponse => {
-  console.log(input);
   if (typeof input !== 'object' || input === null) {
     return false;
   }
   return 'extensions' in input;
-};
-
-// TODO: moce error package
-const getErrorCode = (status: number): string => {
-  switch (status) {
-    case 404:
-      return ERROR_CODES.NOT_FOUND;
-    default:
-      return ERROR_CODES.UNKNOWN;
-  }
 };
 
 type Config = {
@@ -92,6 +81,6 @@ export class MicroCMSDataSource extends RESTDataSource {
       limit,
       filters: filters.join('[and]'),
       orders: orders.join(','),
-    });
+    }).catch(this.handleError);
   }
 }
