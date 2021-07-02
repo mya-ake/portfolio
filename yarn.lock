@@ -889,12 +889,12 @@
     tslib "~2.2.0"
 
 "@graphql-codegen/typescript-graphql-request@^3.2.0":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-graphql-request/-/typescript-graphql-request-3.2.3.tgz#925ac5d40e885159cb1bd4dd14daa71ce5eda13b"
-  integrity sha512-cwgMnX0BpCd/EI7+ajgTYX7bmzu+cyJChELMw8Y8Wkn4AT+UDMfJJ2HVz9WiWi1rgHnaB5FchW7ovu6g0/GGig==
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-graphql-request/-/typescript-graphql-request-3.2.4.tgz#b02333c817dc890968a0e4a4d4309832c5c51a76"
+  integrity sha512-+xoEwQn7oKDZal95hS0I7P7WlNAgThghrZg9KOQpsXqln92vOn7vRpqf+OV8XplDke1gBoL4n7arc5j+hMZl3w==
   dependencies:
     "@graphql-codegen/plugin-helpers" "^1.18.7"
-    "@graphql-codegen/visitor-plugin-common" "1.21.2"
+    "@graphql-codegen/visitor-plugin-common" "1.21.3"
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
