@@ -38,7 +38,7 @@
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.1",
     "eslint": "^7.26.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "jest": "26",
     "lerna": "^4.0.0",
     "lint-staged": "^11.0.0",
