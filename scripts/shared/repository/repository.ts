@@ -6,7 +6,8 @@ type RepositoryName =
   | '@mya-ake-com/client'
   | '@mya-ake-com/graphql-schema'
   | '@mya-ake-com/parser'
-  | '@mya-ake-com/mock';
+  | '@mya-ake-com/mock'
+  | '@mya-ake-com/error';
 
 const singlePackageScriptArgs = ['lerna', 'run', '--stream', '--scope'];
 

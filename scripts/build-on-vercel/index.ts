@@ -10,6 +10,9 @@ const build = async () => {
   // parser
   await run('@mya-ake-com/parser', ['build']);
 
+  // error
+  await run('@mya-ake-com/error', ['build']);
+
   // client
   await run('@mya-ake-com/client', ['build']);
 };

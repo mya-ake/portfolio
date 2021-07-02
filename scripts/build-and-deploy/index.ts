@@ -17,6 +17,9 @@ const buildAndDeploy = async () => {
   // parser
   await run('@mya-ake-com/parser', ['build']);
 
+  // error
+  await run('@mya-ake-com/error', ['build']);
+
   // server
   await run('@mya-ake-com/server', ['build']);
   await spawn('yarn', [`deploy:server:${appEnv}`]);
