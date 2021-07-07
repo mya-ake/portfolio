@@ -3,6 +3,13 @@ import { createDate } from './shared/date';
 import type { Post } from './types';
 
 const createBody = () => `
+<h1>${faker.lorem.lines(1)}</h1>
+<h2>${faker.lorem.lines(1)}</h2>
+<h3>${faker.lorem.lines(1)}</h3>
+<h4>${faker.lorem.lines(1)}</h4>
+<h5>${faker.lorem.lines(1)}</h5>
+<h6>${faker.lorem.lines(1)}</h6>
+
 <p>${faker.lorem.lines(1)}</p>
 <p>${faker.lorem.lines(3)}</p>
 

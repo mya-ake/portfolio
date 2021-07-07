@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import useSWR from 'swr';
 import { graphQLSdk, handleError, convertAppError } from '~/gateways/graphql';
-import { parseHtml } from '@mya-ake-com/parser';
 import { DefaultLayout } from '~/components/layout';
+import { PostBody } from '~/components/post';
 import { RenderHTML } from '~/components/core/RenderHTML';
 import type { NextPage, GetStaticPaths } from 'next';
 import type { PostDetailsFragment } from '~/graphql';
@@ -22,14 +22,12 @@ const Home: NextPage<Props> = ({ postId, post: propsPost }) => {
     revalidateOnMount: true,
   });
 
-  const parsedBody = useMemo(() => {
-    return parseHtml(post?.body ?? '');
-  }, [post]);
-
   return (
     <DefaultLayout>
       <h1>{post?.title}</h1>
-      <RenderHTML htmlNodes={parsedBody} />
+      <div className="py-4">
+        <PostBody body={post?.body ?? ''} />
+      </div>
     </DefaultLayout>
   );
 };
