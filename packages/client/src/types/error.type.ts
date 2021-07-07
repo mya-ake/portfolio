@@ -1,2 +1,6 @@
-import { Error } from '~/components/core';
-export type AppError = Error;
+import { ErrorCode } from '@mya-ake-com/error';
+
+export type AppError = {
+  code: ErrorCode;
+  message?: string;
+};

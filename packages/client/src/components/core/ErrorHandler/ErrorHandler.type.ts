@@ -1,10 +1,5 @@
-import { ErrorCode } from '@mya-ake-com/error';
-
-export type Error = {
-  message?: string;
-  code?: ErrorCode;
-};
+import type { AppError } from '~/types';
 
 export type ErrorHandlerProps = {
-  error?: Error;
+  error?: AppError;
 };

@@ -3,7 +3,7 @@ import type {
   GraphQLResponse,
   GraphQLError,
 } from 'graphql-request/dist/types';
-import { AppError } from '~/types';
+import type { AppError } from '~/types';
 import type { ErrorCode } from '@mya-ake-com/error';
 
 type GraphQLErrorWithExtensions = GraphQLError & {

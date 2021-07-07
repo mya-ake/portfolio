@@ -4,8 +4,9 @@ import { graphQLSdk, handleError, convertAppError } from '~/gateways/graphql';
 import { parseHtml } from '@mya-ake-com/parser';
 import { DefaultLayout } from '~/components/layout';
 import { RenderHTML } from '~/components/core/RenderHTML';
-import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import type { NextPage, GetStaticPaths } from 'next';
 import type { PostDetailsFragment } from '~/graphql';
+import type { GetStaticPropsWithError } from '~/types';
 
 const fetchPost = (id: string) =>
   graphQLSdk.getPost({ id }).then(({ data }) => data?.post);
@@ -41,33 +42,34 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: 'blocking' };
 };
 
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  if (!params || !params.id) {
-    return { notFound: true };
-  }
-  const postId = params.id.toString();
-  const response = await graphQLSdk
-    .getPost({
-      id: postId,
-    })
-    .catch(handleError);
+export const getStaticProps: GetStaticPropsWithError<Props, { id: string }> =
+  async ({ params }) => {
+    if (!params || !params.id) {
+      return { notFound: true };
+    }
+    const postId = params.id;
+    const response = await graphQLSdk
+      .getPost({
+        id: postId,
+      })
+      .catch(handleError);
 
-  if (response.errors) {
+    if (response.errors) {
+      return {
+        props: {
+          postId,
+          error: convertAppError(response.errors),
+        },
+        notFound: false,
+      };
+    }
+
+    const { post } = response.data;
     return {
-      props: {
-        postId,
-        error: convertAppError(response.errors),
-      },
+      props: { postId, post },
+      revalidate: 60,
       notFound: false,
     };
-  }
-
-  const { post } = response.data;
-  return {
-    props: { postId, post },
-    revalidate: 60,
-    notFound: false,
   };
-};
 
 export default Home;
