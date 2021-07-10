@@ -1,9 +1,7 @@
-import { useMemo } from 'react';
 import useSWR from 'swr';
 import { graphQLSdk, handleError, convertAppError } from '~/gateways/graphql';
 import { DefaultLayout } from '~/components/layout';
 import { PostBody } from '~/components/post';
-import { RenderHTML } from '~/components/core/RenderHTML';
 import type { NextPage, GetStaticPaths } from 'next';
 import type { PostDetailsFragment } from '~/graphql';
 import type { GetStaticPropsWithError } from '~/types';
