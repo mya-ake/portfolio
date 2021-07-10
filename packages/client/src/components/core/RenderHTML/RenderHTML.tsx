@@ -19,7 +19,7 @@ export type RenderHTMLProps = {
   replacer?: Replacer;
 };
 
-const render: Render = (nodes, replacer?) => {
+const render: Render = (nodes, replacer) => {
   const elements = nodes.map((node) => {
     switch (node.nodeType) {
       case 'tag': {
@@ -36,7 +36,7 @@ const render: Render = (nodes, replacer?) => {
           tagNode: node,
           childNodes: node.childNodes,
           attrs,
-          render: render,
+          render: (ns) => render(ns, replacer),
         });
         if (replacerResult) {
           return replacerResult;
@@ -50,7 +50,11 @@ const render: Render = (nodes, replacer?) => {
           case 'style':
             return null;
           default:
-            return createElement(node.tagName, attrs, render(node.childNodes));
+            return createElement(
+              node.tagName,
+              attrs,
+              render(node.childNodes, replacer),
+            );
         }
       }
       case 'text':

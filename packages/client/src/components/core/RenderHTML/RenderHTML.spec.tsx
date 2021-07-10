@@ -20,6 +20,13 @@ describe('tags', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  it('p with em', () => {
+    const { container } = render(
+      <RenderHTML htmlNodes={parseHtml(`<p><em>content</em></p>`)} />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   it('a', () => {
     const { container } = render(
       <RenderHTML
@@ -96,8 +103,12 @@ describe('not render tags', () => {
 });
 
 describe('replacer', () => {
+  const Paragraph: FC = ({ children }) => <p className="p-0">{children}</p>;
+  const Emphasis: FC = ({ children }) => (
+    <em className="text-bold">{children}</em>
+  );
+
   it('p tag to Paragraph', () => {
-    const Paragraph: FC = ({ children }) => <p className="p-0">{children}</p>;
     const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
       switch (tagNode.tagName) {
         case 'p':
@@ -110,6 +121,27 @@ describe('replacer', () => {
     const { container } = render(
       <RenderHTML
         htmlNodes={parseHtml(`<p class="text">content</p>`)}
+        replacer={replacer}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('p tag to Paragraph, em tag to Emphasis', () => {
+    const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
+      switch (tagNode.tagName) {
+        case 'p':
+          return <Paragraph {...attrs}>{render(childNodes)}</Paragraph>;
+        case 'em':
+          return <Emphasis {...attrs}>{render(childNodes)}</Emphasis>;
+        default:
+          return null;
+      }
+    };
+
+    const { container } = render(
+      <RenderHTML
+        htmlNodes={parseHtml(`<p><em>content</em></p>`)}
         replacer={replacer}
       />,
     );

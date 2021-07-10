@@ -8,6 +8,18 @@ exports[`replacer p tag to Paragraph 1`] = `
 </p>
 `;
 
+exports[`replacer p tag to Paragraph, em tag to Emphasis 1`] = `
+<p
+  class="p-0"
+>
+  <em
+    class="text-bold"
+  >
+    content
+  </em>
+</p>
+`;
+
 exports[`tags a 1`] = `
 <a
   href="/to-link"
@@ -37,6 +49,14 @@ exports[`tags p with class 1`] = `
   class="text"
 >
   content
+</p>
+`;
+
+exports[`tags p with em 1`] = `
+<p>
+  <em>
+    content
+  </em>
 </p>
 `;
 
