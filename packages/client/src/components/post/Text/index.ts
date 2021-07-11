@@ -5,3 +5,4 @@ export * from './Underline';
 export * from './Strikethrough';
 export * from './Code';
 export * from './TextLink';
+export * from './Blockquote';
