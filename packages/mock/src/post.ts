@@ -22,7 +22,10 @@ const createBody = () => `
 <p><a href=\\"https://example.com\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">https://example.com</a></p>
 
 <blockquote>${faker.lorem.lines(1)}</blockquote>
+<br/>
 <blockquote>${faker.lorem.lines(3)}</blockquote>
+
+<hr/>
 
 <pre><code>const print = (): string =&gt; &#x27;test content&#x27;</code></pre>
 
@@ -37,7 +40,7 @@ const createBody = () => `
       ${faker.lorem.word(2)}
       <ul>
         <li>${faker.lorem.word(3)}</li>
-      </li>
+      </ul>
     </ul>
   </li>
 </ul>
