@@ -4,3 +4,4 @@ export * from './Strong';
 export * from './Underline';
 export * from './Strikethrough';
 export * from './Code';
+export * from './TextLink';

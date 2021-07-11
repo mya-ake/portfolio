@@ -13,6 +13,8 @@ import {
   Underline,
   Strikethrough,
   Code,
+  TextLink,
+  Blockquote,
 } from '../Text';
 import type { RenderHTMLProps } from '~/components/core';
 
@@ -44,6 +46,15 @@ export const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
       return <Strikethrough {...attrs}>{render(childNodes)}</Strikethrough>;
     case 'code':
       return <Code {...attrs}>{render(childNodes)}</Code>;
+    case 'a': {
+      return 'href' in attrs ? (
+        <TextLink href={attrs.href} {...attrs}>
+          {render(childNodes)}
+        </TextLink>
+      ) : null;
+    }
+    case 'blockquote':
+      return <Blockquote {...attrs}>{render(childNodes)}</Blockquote>;
     default:
       return null;
   }
