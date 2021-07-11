@@ -1,5 +1,5 @@
 import { InternalLink } from '~/components/core';
-import { LinkText } from '~/components/text';
+import { StyledLinkText } from '~/components/styled';
 import type { VFC } from 'react';
 
 export type BaseErrorScreenProps = {
@@ -13,7 +13,7 @@ export const BaseErrorScreen: VFC<BaseErrorScreenProps> = ({ title }) => {
         <h1 className="text-4xl">{title}</h1>
         <p className="mt-8">
           <InternalLink href="/" className="text-lg">
-            <LinkText>Move to the top</LinkText>
+            <StyledLinkText>Move to the top</StyledLinkText>
           </InternalLink>
         </p>
       </div>
