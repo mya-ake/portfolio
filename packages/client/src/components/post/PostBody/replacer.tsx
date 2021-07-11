@@ -16,6 +16,7 @@ import {
   TextLink,
   Blockquote,
 } from '../Text';
+import { HorizontalRule } from '../others';
 import type { RenderHTMLProps } from '~/components/core';
 
 type Replacer = Required<RenderHTMLProps>['replacer'];
@@ -55,6 +56,8 @@ export const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
     }
     case 'blockquote':
       return <Blockquote {...attrs}>{render(childNodes)}</Blockquote>;
+    case 'hr':
+      return <HorizontalRule {...attrs} />;
     default:
       return null;
   }
