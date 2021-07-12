@@ -31,7 +31,7 @@
   "dependencies": {
     "@mya-ake-com/error": "^1.0.0",
     "@mya-ake-com/graphql-schema": "^1.0.0",
-    "apollo-datasource-rest": "^0.14.0",
+    "apollo-datasource-rest": "^3.0.0",
     "apollo-server-core": "^2.25.2",
     "apollo-server-lambda": "^3.0.0",
     "dotenv": "^10.0.0",
