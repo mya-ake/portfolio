@@ -16,6 +16,7 @@ import {
   TextLink,
   Blockquote,
 } from '../Text';
+import { UnorderedList, OrderedList, ListItem } from '../List';
 import { HorizontalRule } from '../others';
 import type { RenderHTMLProps } from '~/components/core';
 
@@ -56,6 +57,12 @@ export const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
     }
     case 'blockquote':
       return <Blockquote {...attrs}>{render(childNodes)}</Blockquote>;
+    case 'ul':
+      return <UnorderedList {...attrs}>{render(childNodes)}</UnorderedList>;
+    case 'ol':
+      return <OrderedList {...attrs}>{render(childNodes)}</OrderedList>;
+    case 'li':
+      return <ListItem {...attrs}>{render(childNodes)}</ListItem>;
     case 'hr':
       return <HorizontalRule {...attrs} />;
     default:
