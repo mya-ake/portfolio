@@ -51,7 +51,7 @@ const createBody = () => `
   <li>${faker.lorem.sentence(3)}</li>
 </ol>
 
-<p><img src=\\"${faker.image.imageUrl()}\\" alt></p>
+<img src=\\"${faker.image.imageUrl()}\\" alt="content:480:300">
 `;
 
 export const createPost = (): Post => {

@@ -17,6 +17,7 @@ import {
   Blockquote,
 } from '../Text';
 import { UnorderedList, OrderedList, ListItem } from '../List';
+import { Image } from '../Image';
 import { HorizontalRule } from '../others';
 import type { RenderHTMLProps } from '~/components/core';
 
@@ -63,6 +64,14 @@ export const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
       return <OrderedList {...attrs}>{render(childNodes)}</OrderedList>;
     case 'li':
       return <ListItem {...attrs}>{render(childNodes)}</ListItem>;
+    case 'img': {
+      if ('src' in attrs && 'alt' in attrs) {
+        const [alt, _, height] = attrs.alt.split(':');
+        return <Image {...attrs} src={attrs.src} alt={alt} height={height} />;
+      } else {
+        return null;
+      }
+    }
     case 'hr':
       return <HorizontalRule {...attrs} />;
     default:

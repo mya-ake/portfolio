@@ -11,7 +11,7 @@
     "url": "git+https://github.com/mya-ake/portfolio.git"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "APP_ENV=local next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --config ./.eslintrc.js .",
