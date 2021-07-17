@@ -1,3 +1,4 @@
+import { findTargetTagNode } from '@mya-ake-com/parser';
 import {
   Heading1,
   Heading2,
@@ -18,6 +19,7 @@ import {
 } from '../Text';
 import { UnorderedList, OrderedList, ListItem } from '../List';
 import { Image } from '../Image';
+import { CodePresenter } from '../CodePresenter';
 import { HorizontalRule } from '../others';
 import type { RenderHTMLProps } from '~/components/core';
 
@@ -74,6 +76,18 @@ export const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
     }
     case 'hr':
       return <HorizontalRule {...attrs} />;
+    case 'pre': {
+      const codeNode = findTargetTagNode('code', childNodes);
+      if (codeNode) {
+        return (
+          <CodePresenter {...attrs}>
+            {render(codeNode.childNodes)}
+          </CodePresenter>
+        );
+      } else {
+        return null;
+      }
+    }
     default:
       return null;
   }
