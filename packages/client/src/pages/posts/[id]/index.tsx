@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { graphQLSdk, handleError, convertAppError } from '~/gateways/graphql';
 import { DefaultLayout } from '~/components/layout';
-import { PostBody } from '~/components/post';
+import { PostBody, PostHeader } from '~/components/post';
 import type { NextPage, GetStaticPaths } from 'next';
 import type { PostDetailsFragment } from '~/graphql';
 import type { GetStaticPropsWithError } from '~/types';
@@ -22,8 +22,12 @@ const Home: NextPage<Props> = ({ postId, post: propsPost }) => {
 
   return (
     <DefaultLayout>
-      <h1>{post?.title}</h1>
-      <div className="py-4">
+      <PostHeader
+        title={post?.title ?? ''}
+        publishedAt={post?.publishedAt}
+        revisedAt={post?.revisedAt}
+      />
+      <div className="">
         <PostBody body={post?.body ?? ''} />
       </div>
     </DefaultLayout>
