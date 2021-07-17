@@ -8,7 +8,7 @@ export const DefaultFooter: VFC = () => {
   const currentYear = useMemo(() => getCurrentYear(), []);
 
   return (
-    <footer className="bg-gray-700 text-gray-50 pt-2 px-4">
+    <footer className="bg-gray-900 text-gray-100 pt-2 px-4">
       <nav>
         <h1 className="sr-only">Global Navigation</h1>
         <ul>

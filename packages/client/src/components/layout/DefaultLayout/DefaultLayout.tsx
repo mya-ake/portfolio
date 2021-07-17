@@ -5,9 +5,7 @@ import type { FC } from 'react';
 
 export const DefaultLayout: FC = ({ children }) => {
   return (
-    <div
-      className={`${layout} min-h-screen overflow-auto bg-gray-50 text-gray-800`}
-    >
+    <div className={`${layout} min-h-screen overflow-auto`}>
       <div>
         <DefaultHeader />
       </div>
