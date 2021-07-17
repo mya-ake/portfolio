@@ -1,7 +1,8 @@
 import { useMemo, useEffect, VFC } from 'react';
 import { RenderHTML } from '~/components/core';
 import { parseHtml } from '@mya-ake-com/parser';
-import Prism from 'prismjs';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github-dark-dimmed.css';
 import { replacer } from './replacer';
 
 export type PostBodyProps = {
@@ -14,7 +15,7 @@ export const PostBody: VFC<PostBodyProps> = ({ body }) => {
   }, [body]);
 
   useEffect(() => {
-    Prism.highlightAll();
+    hljs.highlightAll();
   }, [parsedBody]);
 
   return <RenderHTML htmlNodes={parsedBody} replacer={replacer} />;
