@@ -12,5 +12,7 @@
     "outDir": "dist",
     "resolveJsonModule": true,
     "declaration": true
-  }
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./src/**/*.spec.ts"]
 }
