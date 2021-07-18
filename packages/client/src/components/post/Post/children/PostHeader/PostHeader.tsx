@@ -19,10 +19,10 @@ export const PostHeader: VFC<PostHeader> = ({
       <div className="py-2 text-gray-300">
         {revisedAt && publishedAt !== revisedAt ? (
           <>
-            <Time time={publishedAt ?? ''} />
+            <Time time={revisedAt ?? ''} />
             <span className="pl-1">更新</span>
             <span>（</span>
-            <Time time={revisedAt ?? ''} />
+            <Time time={publishedAt ?? ''} />
             <span className="pl-1">公開</span>
             <span>）</span>
           </>
