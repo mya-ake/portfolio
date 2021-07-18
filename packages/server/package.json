@@ -34,6 +34,7 @@
     "@mya-ake-com/graphql-schema": "^1.0.0",
     "apollo-datasource-rest": "^3.0.1",
     "apollo-server-core": "^3.0.1",
+    "apollo-server-express": "^3.0.1",
     "apollo-server-lambda": "^3.0.1",
     "dotenv": "^10.0.0",
     "graphql": "^15.5.0"
@@ -41,7 +42,6 @@
   "devDependencies": {
     "@mya-ake-com/mock": "^1.0.0",
     "@reduxjs/toolkit": "^1.5.1",
-    "apollo-server-express": "^3.0.1",
     "express": "^4.17.1",
     "serverless": "^2.42.0",
     "serverless-plugin-monorepo": "^0.10.0",
