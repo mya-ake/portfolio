@@ -3529,15 +3529,15 @@ anymatch@^3.0.3, anymatch@~3.1.1, anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apollo-datasource-rest@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-3.0.0.tgz#0ff8eb585f0e3a6e327b6d39db243669dd56ef23"
-  integrity sha512-pjx2uOvQSGHCE6fEeItTUniqYshL3OvD02ybwhbISg+7iQXKsyvgYKDgzY77tDjIiNSdUZsFOkNw2lmfnORBxA==
+apollo-datasource-rest@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-3.0.1.tgz#5fa9d6d485fa889189ca4e5b4f2c720f51de622c"
+  integrity sha512-mnQQLpQyxuaoEdlswclkRm4ggMwfKJzx6TlBxs99ADPqs4pRQv7Za4Rp11VG7KHOsSIHkCtIgu+fQmEhN5HhRQ==
   dependencies:
-    apollo-datasource "^3.0.0"
-    apollo-server-caching "^3.0.0"
-    apollo-server-env "^4.0.0"
-    apollo-server-errors "^3.0.0"
+    apollo-datasource "^3.0.1"
+    apollo-server-caching "^3.0.1"
+    apollo-server-env "^4.0.1"
+    apollo-server-errors "^3.0.1"
     http-cache-semantics "^4.1.0"
 
 apollo-datasource@^3.0.0:
@@ -3700,15 +3700,15 @@ apollo-server-express@^3.0.1:
     cors "^2.8.5"
     parseurl "^1.3.3"
 
-apollo-server-lambda@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-3.0.0.tgz#5d5edc8619303ea2486b102c229de63ea2d7df24"
-  integrity sha512-3ojhi0TskjPrwXK7CEGg5gljwo/NsXJSKHiepbuLI5oiLIbcPDZG4JH0mR0P2tF7sqaDNzPGDwhGzxV28SYt0Q==
+apollo-server-lambda@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-3.0.1.tgz#81f7254124576980da86bce3705ebb6cfe8372d0"
+  integrity sha512-IQ0oxmV+JUI4aqW0jowgtx8RncuM5KnJ53+MY1CrhcLpgsnVxGTTS9Q9DyT8wGJZKR2WdtVLsIt5jABG4YE3Pg==
   dependencies:
     "@types/aws-lambda" "^8.10.76"
     "@vendia/serverless-express" "^4.3.9"
-    apollo-server-core "^3.0.0"
-    apollo-server-express "^3.0.0"
+    apollo-server-core "^3.0.1"
+    apollo-server-express "^3.0.1"
     express "^4.17.1"
 
 apollo-server-plugin-base@^3.0.0:

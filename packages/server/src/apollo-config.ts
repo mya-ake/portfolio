@@ -1,6 +1,7 @@
 import {
   ApolloServerPluginLandingPageDisabled,
   ApolloServerPluginLandingPageGraphQLPlayground,
+  ApolloServerPluginCacheControl,
   Config,
   PluginDefinition,
 } from 'apollo-server-core';
@@ -17,14 +18,26 @@ export const createApolloConfig = (): Config => {
   const enablePlayground = getAppEnv() !== 'prod';
 
   const plugins: PluginDefinition[] = [];
-  const playgroundPlugin = enablePlayground
-    ? ApolloServerPluginLandingPageGraphQLPlayground()
-    : ApolloServerPluginLandingPageDisabled();
-  plugins.push(playgroundPlugin);
+  {
+    // Playground
+    const playgroundPlugin = enablePlayground
+      ? ApolloServerPluginLandingPageGraphQLPlayground()
+      : ApolloServerPluginLandingPageDisabled();
+    plugins.push(playgroundPlugin);
+  }
+  {
+    // Cache
+    plugins.push(
+      ApolloServerPluginCacheControl({
+        defaultMaxAge: 60,
+      }),
+    );
+  }
 
   return {
     typeDefs: getSchema(),
-    resolvers: resolvers,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolvers: resolvers as any,
     dataSources: () => ({
       microCMS: new MicroCMSDataSource({
         baseURL: getMicroCMSEndpoint(),
