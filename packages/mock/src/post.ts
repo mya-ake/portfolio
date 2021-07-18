@@ -58,6 +58,7 @@ export const createPost = (): Post => {
   return {
     id: faker.datatype.uuid(),
     title: faker.lorem.lines(1),
+    description: faker.lorem.lines(3),
     body: createBody(),
     publishedAt: createDate(),
     revisedAt: createDate(),

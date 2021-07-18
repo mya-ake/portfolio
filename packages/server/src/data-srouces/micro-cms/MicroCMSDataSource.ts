@@ -77,7 +77,9 @@ export class MicroCMSDataSource extends RESTDataSource {
     }
 
     return this.get<PostsResponse>('posts', {
-      fields: ['id', 'title', 'publishedAt', 'revisedAt'].join(','),
+      fields: ['id', 'title', 'description', 'publishedAt', 'revisedAt'].join(
+        ',',
+      ),
       limit,
       filters: filters.join('[and]'),
       orders: orders.join(','),

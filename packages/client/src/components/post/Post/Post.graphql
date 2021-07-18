@@ -1,6 +1,7 @@
 fragment postDetails on Post {
   id
   title
+  description
   body
   publishedAt
   revisedAt

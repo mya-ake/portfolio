@@ -1,6 +1,7 @@
 fragment postListItem on PostInList {
   id
   title
+  description
   publishedAt
   revisedAt
 }
@@ -11,6 +12,12 @@ query getPosts {
       node {
         ...postListItem
       }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
     }
   }
 }
