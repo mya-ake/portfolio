@@ -8,4 +8,7 @@ module.exports = {
   images: {
     domains: allowedImageOptimizationDomains,
   },
+  env: {
+    APP_ENV: process.env.APP_ENV,
+  },
 };
