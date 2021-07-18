@@ -6,8 +6,6 @@ import {
   Heading4,
   Heading5,
   Heading6,
-} from '../Heading';
-import {
   Paragraph,
   Emphasis,
   Strong,
@@ -16,11 +14,13 @@ import {
   Code,
   TextLink,
   Blockquote,
-} from '../Text';
-import { UnorderedList, OrderedList, ListItem } from '../List';
-import { Image } from '../Image';
-import { CodePresenter } from '../CodePresenter';
-import { HorizontalRule } from '../others';
+  Image,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+  CodePresenter,
+  HorizontalRule,
+} from './children';
 import type { RenderHTMLProps } from '~/components/core';
 
 type Replacer = Required<RenderHTMLProps>['replacer'];
