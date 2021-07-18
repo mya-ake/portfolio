@@ -11,20 +11,3 @@ query getPost($id: ID!) {
     ...postDetails
   }
 }
-
-fragment postListItem on PostInList {
-  id
-  title
-  publishedAt
-  revisedAt
-}
-
-query getPosts {
-  posts {
-    edges {
-      node {
-        ...postListItem
-      }
-    }
-  }
-}
