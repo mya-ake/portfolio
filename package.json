@@ -36,7 +36,7 @@
     "@mya-ake/command-line-utils": "^0.1.1",
     "@mya-ake/eslint-config-ts": "^1.0.4",
     "@types/jest": "^26.0.23",
-    "@types/node": "14",
+    "@types/node": "^16.3.3",
     "eslint": "^7.26.0",
     "husky": "^7.0.0",
     "jest": "26",
