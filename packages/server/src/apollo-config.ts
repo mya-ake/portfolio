@@ -1,3 +1,9 @@
+import {
+  ApolloServerPluginLandingPageDisabled,
+  ApolloServerPluginLandingPageGraphQLPlayground,
+  Config,
+  PluginDefinition,
+} from 'apollo-server-core';
 import { getSchema } from '@mya-ake-com/graphql-schema';
 import { resolvers } from './resolvers';
 import { MicroCMSDataSource } from './data-srouces';
@@ -6,22 +12,26 @@ import {
   getMicroCMSAPIKey,
   getAppEnv,
 } from './shared/env';
-import type { Config } from 'apollo-server-core';
 
 export const createApolloConfig = (): Config => {
   const enablePlayground = getAppEnv() !== 'prod';
 
+  const plugins: PluginDefinition[] = [];
+  const playgroundPlugin = enablePlayground
+    ? ApolloServerPluginLandingPageGraphQLPlayground()
+    : ApolloServerPluginLandingPageDisabled();
+  plugins.push(playgroundPlugin);
+
   return {
     typeDefs: getSchema(),
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    resolvers: resolvers as any,
+    resolvers: resolvers,
     dataSources: () => ({
       microCMS: new MicroCMSDataSource({
         baseURL: getMicroCMSEndpoint(),
         apiKey: getMicroCMSAPIKey(),
       }),
     }),
-    playground: enablePlayground,
     introspection: enablePlayground,
+    plugins,
   };
 };
