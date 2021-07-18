@@ -1,7 +1,8 @@
 import { setupStore, findOnePost, findAllPosts, Store } from './store';
-import { ApolloError, IMocks } from 'apollo-server-express';
+import { ApolloError } from 'apollo-server-express';
 import { createPageInfo } from '../shared/pagination';
 import { ERROR_CODES } from '@mya-ake-com/error';
+import type { IMocks } from '@graphql-tools/mock';
 import type {
   QueryPostArgs,
   Post,
@@ -10,8 +11,8 @@ import type {
 
 export const createMocks = (store: Store): IMocks => {
   return {
-    Post: (_, args): Post => {
-      const { id } = args as QueryPostArgs;
+    Post: (_: unknown, args: QueryPostArgs): Post => {
+      const { id } = args;
       const post = findOnePost(store.getState().posts, id);
       if (!post) {
         throw new ApolloError('Not found post', ERROR_CODES.NOT_FOUND);
@@ -27,10 +28,19 @@ export const createMocks = (store: Store): IMocks => {
       pageInfo.endCursor = posts[posts.length - 1].publishedAt;
 
       return {
-        edges: posts.map((post) => ({
-          node: { ...post, __typename: 'PostInList' },
-          cursor: post.publishedAt,
-        })),
+        edges: posts.map((post) => {
+          return {
+            node: {
+              id: post.id,
+              title: post.title,
+              description: post.description,
+              publishedAt: post.publishedAt,
+              revisedAt: post.revisedAt,
+              __typename: 'PostInList',
+            },
+            cursor: post.publishedAt,
+          };
+        }),
         pageInfo,
       };
     },
