@@ -1,14 +1,26 @@
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
+import { addMocksToSchema } from '@graphql-tools/mock';
+import { makeExecutableSchema } from '@graphql-tools/schema';
 import { createApolloConfig } from './apollo-config';
 import { setupMocks } from './mocks';
 import { getUseMock } from './shared/env';
 
 const main = async () => {
   const app = express();
+  const config = createApolloConfig();
   const server = new ApolloServer({
-    ...createApolloConfig(),
-    mocks: getUseMock() ? setupMocks() : false,
+    ...config,
+    schema: getUseMock()
+      ? addMocksToSchema({
+          schema: makeExecutableSchema({
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            typeDefs: config.typeDefs as any,
+            resolvers: config.resolvers,
+          }),
+          resolvers: setupMocks(),
+        })
+      : undefined,
   });
   await server.start();
 

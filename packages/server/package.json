@@ -30,6 +30,8 @@
   },
   "dependencies": {
     "@graphql-tools/mock": "^8.1.3",
+    "@graphql-tools/schema": "^7.1.5",
+    "@graphql-tools/utils": "^7.10.0",
     "@mya-ake-com/error": "^1.0.0",
     "@mya-ake-com/graphql-schema": "^1.0.0",
     "apollo-datasource-rest": "^3.0.1",
