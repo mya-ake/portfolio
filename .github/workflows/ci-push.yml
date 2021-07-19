@@ -17,10 +17,10 @@ jobs:
           node-version: 14.17.3
       - name: Mask
         env:
-          NEXT_PUBLIC_API_ENDPOINT_DEV: ${{ secrets.NEXT_PUBLIC_API_ENDPOINT_DEV }}
+          API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
           NEXT_PUBLIC_API_KEY_DEV: ${{ secrets.NEXT_PUBLIC_API_KEY_DEV }}
         run: |
-          echo "::add-mask::$NEXT_PUBLIC_API_ENDPOINT_DEV"
+          echo "::add-mask::$API_ENDPOINT_DEV"
           echo "::add-mask::$NEXT_PUBLIC_API_KEY_DEV"
       - name: Intall
         run: yarn install --frozen-lockfile
@@ -38,6 +38,6 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          NEXT_PUBLIC_API_ENDPOINT_DEV: ${{ secrets.NEXT_PUBLIC_API_ENDPOINT_DEV }}
+          API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
           NEXT_PUBLIC_API_KEY_DEV: ${{ secrets.NEXT_PUBLIC_API_KEY_DEV }}
         run: yarn deploy
