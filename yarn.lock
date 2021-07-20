@@ -3594,7 +3594,7 @@ apollo-server-errors@^3.0.1:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-3.0.1.tgz#0dfcc1fe8b10eab311fc7e4f6da93189ea6bcdae"
   integrity sha512-PSp64IFeN1YK5EYZ3V/8iDRESMMyE00h1vE5aCr83wHL3T0mN7VRiMKoOIZ+2rUtnn7CpK73o6QLmouhxPtXsQ==
 
-apollo-server-express@^3.0.0, apollo-server-express@^3.0.1:
+apollo-server-express@^3.0.0, apollo-server-express@^3.0.1, apollo-server-express@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-3.0.2.tgz#0d83f0ab47cc3cc9a8b83b71c6690ac16976b02d"
   integrity sha512-JQ3NS5Fm0ul4VMEVbIMG3Z26U1Ab7jMZ92DrToVu8wvdJKGAOZdlypLIn7odz6zlU7afZtCXyYhgc5Tb0DkAUA==
@@ -3612,14 +3612,14 @@ apollo-server-express@^3.0.0, apollo-server-express@^3.0.1:
     parseurl "^1.3.3"
 
 apollo-server-lambda@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-3.0.1.tgz#81f7254124576980da86bce3705ebb6cfe8372d0"
-  integrity sha512-IQ0oxmV+JUI4aqW0jowgtx8RncuM5KnJ53+MY1CrhcLpgsnVxGTTS9Q9DyT8wGJZKR2WdtVLsIt5jABG4YE3Pg==
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-3.0.2.tgz#75dd65407fed0ab3e98a7df5acff0d2efd729695"
+  integrity sha512-K5sHcaeiaT3eMkbYCOJi2a99msoBAxgNzeMvhNPDtzKJ2rm3uA+WgY1lajP4PucReJRepzx2fDu10MWguiRbhQ==
   dependencies:
     "@types/aws-lambda" "^8.10.76"
     "@vendia/serverless-express" "^4.3.9"
-    apollo-server-core "^3.0.1"
-    apollo-server-express "^3.0.1"
+    apollo-server-core "^3.0.2"
+    apollo-server-express "^3.0.2"
     express "^4.17.1"
 
 apollo-server-plugin-base@^3.0.2:
