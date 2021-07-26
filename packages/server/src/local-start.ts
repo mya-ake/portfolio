@@ -27,6 +27,7 @@ const main = async () => {
   server.applyMiddleware({
     app,
     path: '/graphql',
+    cors: false,
   });
 
   await new Promise<void>((resolve) => app.listen({ port: 4000 }, resolve));
