@@ -3487,26 +3487,18 @@ anymatch@^3.0.3, anymatch@~3.1.1, anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apollo-datasource-rest@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-3.0.2.tgz#12b36972338a11d223ababbd4c68b9da4ee66d05"
-  integrity sha512-U5jz3AryMPfOO4Rq4YjDe/WI2xcw8YHzkc8rmHewrfIqzPLXJo+RPT7bARZfN/Y1yBbodlbWixEi5NJoQtGqGw==
+apollo-datasource-rest@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-3.1.1.tgz#2d4e8afb0745a65de211df238a1d098efd428c66"
+  integrity sha512-C+aAPe+q7OfpOrWmfNNajq42AJHPuUHe5IuLJqkmXGE7YYA3Y5mLP+/19UQ9ppDStp3P9do+X/ZXta/8aEoIdQ==
   dependencies:
-    apollo-datasource "^3.0.2"
+    apollo-datasource "^3.0.3"
     apollo-server-caching "^3.0.1"
-    apollo-server-env "^4.0.2"
+    apollo-server-env "^4.0.3"
     apollo-server-errors "^3.0.1"
     http-cache-semantics "^4.1.0"
 
-apollo-datasource@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/apollo-datasource/-/apollo-datasource-3.0.2.tgz#5602ded79657d9ffd0e150c4f9ca472753830200"
-  integrity sha512-pZ7RDW2UVxxgSovshM27OHQ+rPlDjvGWdAQux6WswJrYEDx8sbJOr39GuyUBVL6yvNuIloOY6rsoG0NRqZ5mbQ==
-  dependencies:
-    apollo-server-caching "^3.0.1"
-    apollo-server-env "^4.0.2"
-
-apollo-datasource@^3.0.3:
+apollo-datasource@^3.0.2, apollo-datasource@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/apollo-datasource/-/apollo-datasource-3.0.3.tgz#616ccf2cbfaa6d9bf04520bf7d80da0e372eee5c"
   integrity sha512-oboGz50DbGW6LNaNvB/bpJRypXvYFE1SRO5VxYSUnkz1P7TDcemWfJLRjNnfxCIMVyd0hmmwrmSaGKPQZvmT9Q==
@@ -3591,14 +3583,7 @@ apollo-server-core@^3.1.1:
     sha.js "^2.4.11"
     uuid "^8.0.0"
 
-apollo-server-env@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/apollo-server-env/-/apollo-server-env-4.0.2.tgz#e21c283b0506584c96286cf1e59bb2952b4653d9"
-  integrity sha512-4SVYcW30o+/99M02yQl4zHiFWB11UE/We0lwgw/ylNvf7hsc7j6J0lQKITMqlt3ElFpIqPriEWqy4W5GmG9H2A==
-  dependencies:
-    node-fetch "^2.6.1"
-
-apollo-server-env@^4.0.3:
+apollo-server-env@^4.0.2, apollo-server-env@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/apollo-server-env/-/apollo-server-env-4.0.3.tgz#082a5c1dd4dfb3b34de5e1fa7dc170dd15a5062f"
   integrity sha512-B32+RUOM4GUJAwnQqQE1mT1BG7+VfW3a0A87Bp3gv/q8iNnhY2BIWe74Qn03pX8n27g3EGVCt0kcBuHhjG5ltA==
