@@ -1038,15 +1038,6 @@
     unixify "1.0.0"
     valid-url "1.0.9"
 
-"@graphql-tools/merge@6.2.15":
-  version "6.2.15"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.2.15.tgz#d5136a5b7a47807b187d8156573c3185321838f5"
-  integrity sha512-HmM7o00ecvxIm2xqMycGNf8018iv8+UbGmaj4nAa/EhVjGQefYJTB8ihW2RhpfpcMSq2830e8XskwvZ/MoIi9g==
-  dependencies:
-    "@graphql-tools/schema" "^8.0.0"
-    "@graphql-tools/utils" "^8.0.0"
-    tslib "~2.3.0"
-
 "@graphql-tools/merge@6.2.16", "@graphql-tools/merge@^6.0.0", "@graphql-tools/merge@^6.2.12", "@graphql-tools/merge@^6.2.14":
   version "6.2.16"
   resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.2.16.tgz#5dd5f582075c21ef4d74ef84dfcc4e8d0c2db186"
@@ -1057,15 +1048,14 @@
     tslib "~2.3.0"
 
 "@graphql-tools/mock@^8.1.2", "@graphql-tools/mock@^8.1.3":
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/mock/-/mock-8.1.4.tgz#4d2ef054f83bd71dfe294a9750c19f90b6dedb91"
-  integrity sha512-jqCBzeTW7T7DpFIKC8tI9G9oa1abHftRHub8sxp9HirRZvBbmAQRxKbt35moicYMdnLK65dhmL0GyPSSuawIXQ==
+  version "8.1.6"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/mock/-/mock-8.1.6.tgz#a549d141e0f702ef123040bedf5944c06f96dfa9"
+  integrity sha512-ciEFfzAz+Ny/wMq+VRlBAzCVtLcIJiRYbnO7nWE+qFtiUUjmAh9Ahz6UVB1+5Fy6uqaGU6zCMgoDNVFQFtzhJg==
   dependencies:
-    "@graphql-tools/merge" "6.2.15"
-    "@graphql-tools/schema" "^8.0.0"
-    "@graphql-tools/utils" "^8.0.0"
+    "@graphql-tools/merge" "6.2.16"
+    "@graphql-tools/schema" "^8.0.1"
+    "@graphql-tools/utils" "8.0.1"
     fast-json-stable-stringify "^2.1.0"
-    ts-is-defined "^1.0.0"
     tslib "~2.3.0"
 
 "@graphql-tools/optimize@^1.0.1":
@@ -14082,13 +14072,6 @@ triple-beam@^1.2.0, triple-beam@^1.3.0:
   resolved "https://registry.yarnpkg.com/triple-beam/-/triple-beam-1.3.0.tgz#a595214c7298db8339eeeee083e4d10bd8cb8dd9"
   integrity sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
 
-ts-is-defined@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ts-is-defined/-/ts-is-defined-1.0.0.tgz#8f106af8c43ba6200beaac0a8013dc3745451ae7"
-  integrity sha512-HmzqN8xWETXnfpXyUqMf5nvcZszn9aTNjxVIJ6R2aNNg14oLo3PCi9IRhsv+vg2C7TI90M7PyjBOrg4f6/nupA==
-  dependencies:
-    ts-tiny-invariant "0.0.3"
-
 ts-jest@^26.5.6:
   version "26.5.6"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.6.tgz#c32e0746425274e1dfe333f43cd3c800e014ec35"
@@ -14169,11 +14152,6 @@ ts-pnp@^1.1.6:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
-
-ts-tiny-invariant@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/ts-tiny-invariant/-/ts-tiny-invariant-0.0.3.tgz#6f51c153c285a7839bb59b1e5a2721fcb25a5e39"
-  integrity sha512-EiaBUsUta7PPzVKpvZurcSDgaSkymxwiUc2rhX6Wu30bws2maipT6ihbEY072dU9lz6/FoFWEc6psXdlo0xqtg==
 
 tsconfig-paths@^3.9.0:
   version "3.9.0"
