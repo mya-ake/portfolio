@@ -30,7 +30,7 @@
     "@graphql-codegen/cli": "^1.21.4",
     "@graphql-codegen/introspection": "^2.0.0",
     "@graphql-codegen/typescript": "^2.0.0",
-    "@graphql-codegen/typescript-graphql-request": "^3.2.0",
+    "@graphql-codegen/typescript-graphql-request": "^4.0.0",
     "@graphql-codegen/typescript-operations": "^1.17.16",
     "@graphql-codegen/typescript-resolvers": "^2.0.0",
     "@mya-ake/command-line-utils": "^0.1.1",
