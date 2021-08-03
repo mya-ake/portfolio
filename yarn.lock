@@ -3565,7 +3565,7 @@ apollo-server-caching@^3.0.1:
   dependencies:
     lru-cache "^6.0.0"
 
-apollo-server-core@3.1.2, apollo-server-core@^3.1.1, apollo-server-core@^3.1.2:
+apollo-server-core@3.1.2, apollo-server-core@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-3.1.2.tgz#a9d24b9453b7aad89df464f6527d80e2f46b0a6f"
   integrity sha512-bFmzPDGBT97vMzdhhjlycL9Ey4YDa0eCVaHjI5TcYQM8Vphzvndd033DvvQFVRPWoZr8uwupeUyVa82Ne/iM6A==
@@ -3604,7 +3604,7 @@ apollo-server-errors@^3.0.1:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-3.0.1.tgz#0dfcc1fe8b10eab311fc7e4f6da93189ea6bcdae"
   integrity sha512-PSp64IFeN1YK5EYZ3V/8iDRESMMyE00h1vE5aCr83wHL3T0mN7VRiMKoOIZ+2rUtnn7CpK73o6QLmouhxPtXsQ==
 
-apollo-server-express@3.1.2, apollo-server-express@^3.0.0, apollo-server-express@^3.1.1:
+apollo-server-express@3.1.2, apollo-server-express@^3.0.0, apollo-server-express@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-3.1.2.tgz#274c71c0269fb126d1c6fd30889fbcd661493f4e"
   integrity sha512-GeeQlFjFqugiGfLApBNmgLtyDXGVqacLdGhBccn7GQaxzpJ9YSsREUsoN+Fze6RVQ4/Igaq3QoNgBhrahXwBBQ==
@@ -3621,15 +3621,15 @@ apollo-server-express@3.1.2, apollo-server-express@^3.0.0, apollo-server-express
     cors "^2.8.5"
     parseurl "^1.3.3"
 
-apollo-server-lambda@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-3.1.1.tgz#a6c66e9172353656d69c10a055cd81f06e8675b4"
-  integrity sha512-Zp+wE1dFFeZLxZsK1aqr4FuBTz74Yd7WSXYGGZuhjeAYXOnD9zB64078g8NVkBH3HDVCWEhmAuvSdNWVrazKyw==
+apollo-server-lambda@3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-3.1.2.tgz#db6eabce24e76dad88fe8d84bf5b827f577cba5b"
+  integrity sha512-jGWvrigreC2JbIYc7OL+FY43MOKeMuu/Bb3KxjVdmFSS3KQIeqRbSCpu8XcS4g8kMcBjkztwDKhsRzbWij8b1Q==
   dependencies:
     "@types/aws-lambda" "^8.10.76"
     "@vendia/serverless-express" "^4.3.9"
-    apollo-server-core "^3.1.1"
-    apollo-server-express "^3.1.1"
+    apollo-server-core "^3.1.2"
+    apollo-server-express "^3.1.2"
     express "^4.17.1"
 
 apollo-server-plugin-base@^3.1.1:
