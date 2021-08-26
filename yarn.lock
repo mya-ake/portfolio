@@ -951,13 +951,13 @@
     tslib "~2.3.0"
 
 "@graphql-codegen/typescript-operations@^2.0.1":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.1.0.tgz#c7e50de7470d673216484b1bd7fe282535ea5479"
-  integrity sha512-IR17AOYx1WXQv4Vd3lw8tfX4fHXOvsBoOSxIy2U72UZptxUg2IstwpIvLqpjWGbxr+NEjeeKAPX7Hezs0BlBKw==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.1.2.tgz#fe93ec2e1fe6c036f6d60210d8259a24b2e9434d"
+  integrity sha512-4Eqn2TREH3mFY7yiGFlFN+UWGxhPX0HcEt/WIxLydvR57tOEMDYpDdPmaIQ/BQ8vntPA6h/FHIs6wnwFMvJ9jQ==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.1.0"
-    "@graphql-codegen/typescript" "^2.1.0"
-    "@graphql-codegen/visitor-plugin-common" "2.1.0"
+    "@graphql-codegen/plugin-helpers" "^2.1.1"
+    "@graphql-codegen/typescript" "^2.1.2"
+    "@graphql-codegen/visitor-plugin-common" "2.1.2"
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
@@ -973,7 +973,7 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript@^2.0.0", "@graphql-codegen/typescript@^2.1.0":
+"@graphql-codegen/typescript@^2.0.0", "@graphql-codegen/typescript@^2.1.0", "@graphql-codegen/typescript@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.1.2.tgz#410d69b9d89cf5f6d712ed08687f45e750986ee8"
   integrity sha512-9CHTeMyNwUaIaRYOC06XTdmZbgOoX0pM8c7D8oXfAgV6clEcoGX9cUYcybxZOO3XQvsOGSL/GhyiHpXvjiTffA==
