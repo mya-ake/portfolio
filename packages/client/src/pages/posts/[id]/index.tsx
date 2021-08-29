@@ -16,7 +16,7 @@ type Props = {
 
 const Home: NextPage<Props> = ({ postId, post: propsPost }) => {
   const { data: post } = useSWR(`/posts/${postId}`, () => fetchPost(postId), {
-    initialData: propsPost,
+    fallbackData: propsPost,
     revalidateOnMount: true,
   });
 
