@@ -2176,11 +2176,11 @@
   integrity sha512-ToQlAtmaMIMxVEwqhQrQ7lY24jKwV5HUaTF2oLyAdinWxA6pMFuhPmG+RwvDBf4DT4G8Sp5n44wc/mVUm5PFKg==
 
 "@mya-ake/eslint-config-react@^1.1.0":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@mya-ake/eslint-config-react/-/eslint-config-react-1.1.4.tgz#09afd898cb99e600cac77ff6008da77e9a9ababe"
-  integrity sha512-GL10WRKIbfdPuSZ87K/tZS4zhAHsaQXdS0KD1e6tehUnsiCpaOUeaj9PoZA/TKHtYkXnRp10x41On1J4MEIMAw==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@mya-ake/eslint-config-react/-/eslint-config-react-1.1.5.tgz#77513fb4025fd12ea2b14aee00cb9fa24d2b0db9"
+  integrity sha512-AutzCdZrZn0BGmFAoslr0R13cE0/nNIlcthfyctrGBvOvTG5+7xOnkqKK0NR5b1H4OdpBVsZx418dQYgfQaCFw==
   dependencies:
-    eslint-plugin-react "7.26.0"
+    eslint-plugin-react "7.26.1"
     eslint-plugin-react-hooks "4.2.0"
 
 "@mya-ake/eslint-config-ts@^1.0.4":
@@ -6659,10 +6659,10 @@ eslint-plugin-react-hooks@4.2.0, eslint-plugin-react-hooks@^4.2.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.0.tgz#8c229c268d468956334c943bb45fc860280f5556"
   integrity sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ==
 
-eslint-plugin-react@7.26.0, eslint-plugin-react@^7.23.1:
-  version "7.26.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.26.0.tgz#3ae019a35d542b98e5af9e2f96b89c232c74b55b"
-  integrity sha512-dceliS5itjk4EZdQYtLMz6GulcsasguIs+VTXuiC7Q5IPIdGTkyfXVdmsQOqEhlD9MciofH4cMcT1bw1WWNxCQ==
+eslint-plugin-react@7.26.1, eslint-plugin-react@^7.23.1:
+  version "7.26.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.26.1.tgz#41bcfe3e39e6a5ac040971c1af94437c80daa40e"
+  integrity sha512-Lug0+NOFXeOE+ORZ5pbsh6mSKjBKXDXItUD2sQoT+5Yl0eoT82DqnXeTMfUare4QVCn9QwXbfzO/dBLjLXwVjQ==
   dependencies:
     array-includes "^3.1.3"
     array.prototype.flatmap "^1.2.4"
