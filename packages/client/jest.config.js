@@ -3,6 +3,7 @@ module.exports = {
     '^.+\\.(t|j)sx?$': [
       '@swc/jest',
       {
+        sourceMaps: true,
         jsc: {
           parser: {
             syntax: 'typescript',
