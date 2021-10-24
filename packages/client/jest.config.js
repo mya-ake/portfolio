@@ -1,5 +1,18 @@
 module.exports = {
-  preset: 'ts-jest',
+  transform: {
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
+      {
+        jsc: {
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
+          },
+        },
+      },
+    ],
+  },
   testURL: 'http://localhost/',
   moduleNameMapper: {
     '^~/(.*)$': '<rootDir>/src/$1',
