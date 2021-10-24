@@ -68,8 +68,7 @@ export const replacer: Replacer = ({ tagNode, childNodes, attrs, render }) => {
       return <ListItem {...attrs}>{render(childNodes)}</ListItem>;
     case 'img': {
       if ('src' in attrs && 'alt' in attrs) {
-        const [alt, _, height] = attrs.alt.split(':');
-        return <Image {...attrs} src={attrs.src} alt={alt} height={height} />;
+        return <Image {...attrs} src={attrs.src} alt={attrs.alt} />;
       } else {
         return null;
       }

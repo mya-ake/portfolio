@@ -4,7 +4,9 @@ const { getApiEndpoint } = require('./app.config');
 const APP_ENV = process.env.APP_ENV ?? 'local';
 
 const allowedImageOptimizationDomains =
-  APP_ENV === 'local' ? ['placeimg.com'] : ['images.microcms-assets.io'];
+  APP_ENV === 'local'
+    ? ['placeimg.com', 'images.microcms-assets.io']
+    : ['images.microcms-assets.io'];
 
 const API_ENDPOINT = getApiEndpoint(APP_ENV);
 
