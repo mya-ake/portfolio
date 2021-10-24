@@ -28,8 +28,6 @@ jobs:
         run: yarn lint
       - name: Check format
         run: yarn format:check
-      - name: Unit Test
-        run: yarn test:unit
       - name: Deploy to development environment
         env:
           APP_ENV: dev
