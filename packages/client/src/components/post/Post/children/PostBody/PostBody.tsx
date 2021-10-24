@@ -1,4 +1,4 @@
-import { useMemo, useEffect, VFC } from 'react';
+import { memo, useMemo, useEffect, VFC } from 'react';
 import { RenderHTML } from '~/components/core';
 import { parseHtml } from '@mya-ake-com/parser';
 import hljs from 'highlight.js';
@@ -9,7 +9,7 @@ export type PostBodyProps = {
   body: string;
 };
 
-export const PostBody: VFC<PostBodyProps> = ({ body }) => {
+export const PostBody = memo<PostBodyProps>(({ body }) => {
   const parsedBody = useMemo(() => {
     return parseHtml(body ?? '');
   }, [body]);
@@ -19,4 +19,5 @@ export const PostBody: VFC<PostBodyProps> = ({ body }) => {
   }, [parsedBody]);
 
   return <RenderHTML htmlNodes={parsedBody} replacer={replacer} />;
-};
+});
+PostBody.displayName = 'PostBody';
