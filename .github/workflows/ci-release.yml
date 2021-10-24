@@ -26,8 +26,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn lint
-      - name: Check format
-        run: yarn format:check
+      - name: Unit Test
+        run: yarn test:unit
       - name: Deploy to production environment
         env:
           APP_ENV: prod

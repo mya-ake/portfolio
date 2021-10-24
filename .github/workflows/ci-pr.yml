@@ -21,6 +21,8 @@ jobs:
         run: yarn lint
       - name: Check format
         run: yarn format:check
+      - name: Unit Test
+        run: yarn test:unit
       - name: Build
         env:
           APP_ENV: local
