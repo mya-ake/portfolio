@@ -1,4 +1,4 @@
-import { memo, useMemo, useEffect, VFC } from 'react';
+import { memo, useMemo, useEffect } from 'react';
 import { RenderHTML } from '~/components/core';
 import { parseHtml } from '@mya-ake-com/parser';
 import hljs from 'highlight.js';
