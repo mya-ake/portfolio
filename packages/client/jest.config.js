@@ -19,6 +19,7 @@ module.exports = {
     ],
   },
   testURL: 'http://localhost/',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
     '^~/(.*)$': '<rootDir>/src/$1',
     '^~fixtures/(.*)$': '<rootDir>/tests/fixtures/$1',
