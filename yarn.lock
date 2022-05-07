@@ -12230,10 +12230,10 @@ serve-static@1.14.1:
     parseurl "~1.3.3"
     send "0.17.1"
 
-serverless-plugin-monorepo@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/serverless-plugin-monorepo/-/serverless-plugin-monorepo-0.10.0.tgz#33532e1c6d803fe416942ca6f3c489678d386b54"
-  integrity sha512-YWmyb+DmtiefsjZTaYc1InAjRQuyPItn+QEqdsfgSXY+0fVEUSy+I2Q8kUiSR7O97ym6hhN/42UKuUZG+jMtrw==
+serverless-plugin-monorepo@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/serverless-plugin-monorepo/-/serverless-plugin-monorepo-0.11.0.tgz#10462ee64b73a9b708d88e72b1e9710baee8ea35"
+  integrity sha512-9pP45L71+MUfzCcw0/sMo27XB41H3axy6FRL8ewBX1alRKDEzx19jBl+Ut8KTG8siMOxONvGXjc41srQG7cP3g==
   dependencies:
     fs-extra "^9.0.1"
 
