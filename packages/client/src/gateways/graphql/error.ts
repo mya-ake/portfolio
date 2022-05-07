@@ -61,5 +61,11 @@ export const isGraphQLErrorResponse = (
   if (typeof value !== 'object' || value === null) {
     return false;
   }
-  return 'errors' in value;
+  if ('errors' in value === false) {
+    return false;
+  }
+  if (!Array.isArray((value as { errors: unknown }).errors)) {
+    return false;
+  }
+  return (value as { errors: [] }).errors.length > 0;
 };
