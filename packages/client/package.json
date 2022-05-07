@@ -29,7 +29,7 @@
     "@mya-ake-com/parser": "^1.0.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.10.5",
-    "graphql-request": "^3.4.0",
+    "graphql-request": "^4.2.0",
     "highlight.js": "^11.1.0",
     "next": "^12.0.1",
     "react": "^17.0.2",
