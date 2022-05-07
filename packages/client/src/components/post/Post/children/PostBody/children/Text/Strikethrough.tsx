@@ -1,5 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const Strikethrough: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Strikethrough: FC<Props> = ({ children }) => {
   return <s className="line-through">{children}</s>;
 };

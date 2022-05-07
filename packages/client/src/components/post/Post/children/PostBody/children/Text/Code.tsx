@@ -1,6 +1,10 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const Code: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Code: FC<Props> = ({ children }) => {
   return (
     <code className="bg-gray-600 text-sm py-[0.125rem] px-1 rounded-sm">
       {children}

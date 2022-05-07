@@ -1,5 +1,10 @@
 import useSWR from 'swr';
-import { graphQLSdk, handleError, convertAppError } from '~/gateways/graphql';
+import {
+  graphQLSdk,
+  handleError,
+  convertAppError,
+  isGraphQLErrorResponse,
+} from '~/gateways/graphql';
 import { DefaultLayout } from '~/components/layout';
 import { Post } from '~/components/post';
 import type { NextPage, GetStaticPaths } from 'next';
@@ -43,7 +48,7 @@ export const getStaticProps: GetStaticPropsWithError<Props, { id: string }> =
       })
       .catch(handleError);
 
-    if (response.errors) {
+    if (isGraphQLErrorResponse(response)) {
       return {
         props: {
           postId,

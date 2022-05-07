@@ -1,7 +1,11 @@
 import { css } from '@emotion/css';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const CodePresenter: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const CodePresenter: FC<Props> = ({ children }) => {
   return (
     <pre className={code}>
       <code>{children}</code>

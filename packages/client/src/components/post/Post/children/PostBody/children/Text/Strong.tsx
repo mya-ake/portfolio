@@ -1,5 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const Strong: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Strong: FC<Props> = ({ children }) => {
   return <strong className="font-bold">{children}</strong>;
 };

@@ -1,8 +1,8 @@
 import { Logo } from '~/components/symbol';
 import { InternalLink } from '~/components/core';
-import type { VFC } from 'react';
+import type { FC } from 'react';
 
-export const DefaultHeader: VFC = () => {
+export const DefaultHeader: FC = () => {
   return (
     <header className="text-center py-2">
       <InternalLink href="/" className="text-2xl leading-none">

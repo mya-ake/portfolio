@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type InternalLinkPorps = {
   href: string;
   className?: string;
+  children: ReactNode;
 };
 
 export const InternalLink: FC<InternalLinkPorps> = ({

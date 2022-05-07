@@ -27,12 +27,12 @@
     "deploy:server:prod": "lerna run --scope @mya-ake-com/server deploy:prod"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.0.1",
-    "@graphql-codegen/introspection": "^2.0.0",
-    "@graphql-codegen/typescript": "^2.0.0",
-    "@graphql-codegen/typescript-graphql-request": "^4.0.0",
-    "@graphql-codegen/typescript-operations": "^2.0.1",
-    "@graphql-codegen/typescript-resolvers": "^2.0.0",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/introspection": "^2.1.1",
+    "@graphql-codegen/typescript": "^2.4.10",
+    "@graphql-codegen/typescript-graphql-request": "^4.4.7",
+    "@graphql-codegen/typescript-operations": "^2.3.7",
+    "@graphql-codegen/typescript-resolvers": "^2.6.3",
     "@mya-ake/command-line-utils": "^0.1.1",
     "@mya-ake/eslint-config-ts": "^1.0.4",
     "@swc/core": "^1.2.102",

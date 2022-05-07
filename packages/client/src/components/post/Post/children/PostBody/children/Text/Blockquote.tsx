@@ -1,6 +1,10 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const Blockquote: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Blockquote: FC<Props> = ({ children }) => {
   return (
     <div className="px-4">
       <blockquote className="border-l-4 pl-2 border-gray-100">

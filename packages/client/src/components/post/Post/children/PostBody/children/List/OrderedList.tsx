@@ -1,5 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const OrderedList: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const OrderedList: FC<Props> = ({ children }) => {
   return <ol className="ml-4 list-decimal list-inside">{children}</ol>;
 };

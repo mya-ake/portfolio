@@ -1,5 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const ListItem: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const ListItem: FC<Props> = ({ children }) => {
   return <li>{children}</li>;
 };

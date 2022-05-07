@@ -1,8 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export type ExternalLinkProps = {
   href: string;
   className?: string;
+  children: ReactNode;
 };
 
 export const ExternalLink: FC<ExternalLinkProps> = ({

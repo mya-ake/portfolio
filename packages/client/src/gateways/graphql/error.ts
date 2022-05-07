@@ -50,3 +50,16 @@ export const convertAppError = (errors: GraphQLError[]): AppError => {
     code: extensions?.code,
   };
 };
+
+export type GraphQLErrorResponse = GraphQLResponse & {
+  errors: GraphQLError[];
+};
+
+export const isGraphQLErrorResponse = (
+  value: unknown,
+): value is GraphQLErrorResponse => {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  return 'errors' in value;
+};

@@ -1,5 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const Underline: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Underline: FC<Props> = ({ children }) => {
   return <u className="underline">{children}</u>;
 };

@@ -1,5 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const Emphasis: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Emphasis: FC<Props> = ({ children }) => {
   return <em className="not-italic font-semibold">{children}</em>;
 };

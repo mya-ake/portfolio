@@ -1,5 +1,9 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const Paragraph: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const Paragraph: FC<Props> = ({ children }) => {
   return <p className="text-base px-4">{children}</p>;
 };

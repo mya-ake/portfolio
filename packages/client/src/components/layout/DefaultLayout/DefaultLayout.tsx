@@ -1,9 +1,13 @@
 import { css } from '@emotion/css';
 import { DefaultHeader } from '../DefaultHeader';
 import { DefaultFooter } from '../DefaultFooter';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-export const DefaultLayout: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+};
+
+export const DefaultLayout: FC<Props> = ({ children }) => {
   return (
     <div className={`${layout} min-h-screen overflow-auto`}>
       <div>

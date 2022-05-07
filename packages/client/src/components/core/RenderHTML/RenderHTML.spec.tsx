@@ -1,7 +1,11 @@
 import { render } from '@testing-library/react';
 import { parseHtml } from '@mya-ake-com/parser';
 import { RenderHTML, RenderHTMLProps } from './RenderHTML';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
+
+type WithChidlrenProps = {
+  children: ReactNode;
+};
 
 type Replacer = Required<RenderHTMLProps>['replacer'];
 
@@ -103,8 +107,10 @@ describe('not render tags', () => {
 });
 
 describe('replacer', () => {
-  const Paragraph: FC = ({ children }) => <p className="p-0">{children}</p>;
-  const Emphasis: FC = ({ children }) => (
+  const Paragraph: FC<WithChidlrenProps> = ({ children }) => (
+    <p className="p-0">{children}</p>
+  );
+  const Emphasis: FC<WithChidlrenProps> = ({ children }) => (
     <em className="text-bold">{children}</em>
   );
 
