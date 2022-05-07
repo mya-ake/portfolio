@@ -1,9 +1,15 @@
-import { configureStore, EnhancedStore } from '@reduxjs/toolkit';
+import { configureStore, EnhancedStore, AnyAction } from '@reduxjs/toolkit';
 import { createPost } from '@mya-ake-com/mock';
 import { postsSlice, State as PostsState } from './posts.slice';
+import type { ThunkMiddleware } from 'redux-thunk';
 export * from './selectors';
 
-export type Store = EnhancedStore<{ posts: PostsState }>;
+type State = { posts: PostsState };
+export type Store = EnhancedStore<
+  State,
+  AnyAction,
+  [ThunkMiddleware<State, AnyAction, undefined>]
+>;
 
 const createStore = (): Store => {
   const store = configureStore({
