@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { createDate } from './shared/date';
 import type { Post } from './types';
 
