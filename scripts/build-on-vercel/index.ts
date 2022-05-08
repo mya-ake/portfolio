@@ -17,4 +17,7 @@ const build = async () => {
   await run('@mya-ake-com/client', ['build']);
 };
 
-build();
+build().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

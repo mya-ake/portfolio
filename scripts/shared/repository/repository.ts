@@ -9,12 +9,10 @@ type RepositoryName =
   | '@mya-ake-com/mock'
   | '@mya-ake-com/error';
 
-const singlePackageScriptArgs = ['lerna', 'run', '--stream', '--scope'];
-
 export const run = (
   name: RepositoryName,
   args: string[],
   option?: SpawnOption,
 ): Promise<ChildProcess> => {
-  return spawn('yarn', [...singlePackageScriptArgs, name, ...args], option);
+  return spawn('yarn', ['nx', 'run', `--project=${name}`, ...args], option);
 };
