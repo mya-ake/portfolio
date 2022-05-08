@@ -27,4 +27,7 @@ const build = async () => {
   serverPs.kill();
 };
 
-build();
+build().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
