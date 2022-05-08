@@ -8,6 +8,18 @@
         "script": "start:mock"
       }
     },
+    "format-check": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "format:check"
+      }
+    },
+    "lint-fix": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "lint:fix"
+      }
+    },
     "deploy-dev": {
       "executor": "@nrwl/workspace:run-script",
       "options": {

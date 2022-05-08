@@ -1,5 +1,18 @@
 {
   "root": "packages/parser/",
   "sourceRoot": "packages/parser/src",
-  "targets": {}
+  "targets": {
+    "format-check": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "format:check"
+      }
+    },
+    "lint-fix": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "lint:fix"
+      }
+    }
+  }
 }
