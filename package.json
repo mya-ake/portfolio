@@ -23,8 +23,8 @@
     "deploy": "ts-node --project scripts/tsconfig.json scripts/build-and-deploy/index.ts",
     "deploy:client:dev": "vercel --token ${VERCEL_TOKEN}",
     "deploy:client:prod": "vercel --token ${VERCEL_TOKEN} --prod",
-    "deploy:server:dev": "nx run @mya-ake-com/server:deploy:dev",
-    "deploy:server:prod": "nx run @mya-ake-com/server:deploy:prod"
+    "deploy:server:dev": "nx run @mya-ake-com/server:deploy-dev",
+    "deploy:server:prod": "nx run @mya-ake-com/server:deploy-prod"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
