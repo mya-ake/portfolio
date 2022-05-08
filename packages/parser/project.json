@@ -1,0 +1,5 @@
+{
+  "root": "packages/parser/",
+  "sourceRoot": "packages/parser/src",
+  "targets": {}
+}

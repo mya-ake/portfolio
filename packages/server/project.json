@@ -1,0 +1,24 @@
+{
+  "root": "packages/server/",
+  "sourceRoot": "packages/server/src",
+  "targets": {
+    "start-mock": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "start:mock"
+      }
+    },
+    "deploy-dev": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "deploy:dev"
+      }
+    },
+    "deploy-prod": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "deploy:prod"
+      }
+    }
+  }
+}

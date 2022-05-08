@@ -1,6 +1,6 @@
 {
   "extends": "nx/presets/npm.json",
-  "npmScope": "portfolio",
+  "npmScope": "@mya-ake-com",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",

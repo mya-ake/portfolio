@@ -1,0 +1,5 @@
+{
+  "root": "packages/graphql-schema/",
+  "sourceRoot": "packages/graphql-schema/src",
+  "targets": {}
+}

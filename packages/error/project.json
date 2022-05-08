@@ -1,0 +1,5 @@
+{
+  "root": "packages/error/",
+  "sourceRoot": "packages/error/src",
+  "targets": {}
+}

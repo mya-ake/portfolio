@@ -1,0 +1,5 @@
+{
+  "root": "packages/mock/",
+  "sourceRoot": "packages/mock/src",
+  "targets": {}
+}
