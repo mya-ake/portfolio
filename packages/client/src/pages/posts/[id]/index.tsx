@@ -36,34 +36,36 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: 'blocking' };
 };
 
-export const getStaticProps: GetStaticPropsWithError<Props, { id: string }> =
-  async ({ params }) => {
-    if (!params || !params.id) {
-      return { notFound: true };
-    }
-    const postId = params.id;
-    const response = await graphQLSdk
-      .getPost({
-        id: postId,
-      })
-      .catch(handleError);
+export const getStaticProps: GetStaticPropsWithError<
+  Props,
+  { id: string }
+> = async ({ params }) => {
+  if (!params || !params.id) {
+    return { notFound: true };
+  }
+  const postId = params.id;
+  const response = await graphQLSdk
+    .getPost({
+      id: postId,
+    })
+    .catch(handleError);
 
-    if (isGraphQLErrorResponse(response)) {
-      return {
-        props: {
-          postId,
-          error: convertAppError(response.errors),
-        },
-        notFound: false,
-      };
-    }
-
-    const { post } = response.data;
+  if (isGraphQLErrorResponse(response)) {
     return {
-      props: { postId, post },
-      revalidate: 60,
+      props: {
+        postId,
+        error: convertAppError(response.errors),
+      },
       notFound: false,
     };
+  }
+
+  const { post } = response.data;
+  return {
+    props: { postId, post },
+    revalidate: 60,
+    notFound: false,
   };
+};
 
 export default Home;
