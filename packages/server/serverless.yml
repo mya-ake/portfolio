@@ -1,6 +1,6 @@
 service: ${self:custom.NAME}
 
-frameworkVersion: '2'
+frameworkVersion: '3'
 useDotenv: false
 
 provider:
