@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import parse5 from 'parse5';
+import { parse, DefaultTreeAdapterMap } from 'parse5';
 import { removeBackslashOfHTMLAttribute } from './processor';
 
 type NodeType = 'tag' | 'text';
 type Attributes = Record<string, string>;
+type Document = DefaultTreeAdapterMap['document'];
+type ChildNode = Document['childNodes'][number];
+type Element = DefaultTreeAdapterMap['element'];
+type Parse5TextNode = DefaultTreeAdapterMap['textNode'];
 
 export type TagNode = {
   nodeType: 'tag';
@@ -28,33 +32,44 @@ const getNodeType = (nodeName: string): NodeType => {
   }
 };
 
-const createTagNode = (childNode: parse5.Element): TagNode => ({
+const createTagNode = (childNode: Element): TagNode => ({
   nodeType: 'tag',
   tagName: childNode.tagName,
   attrs: childNode.attrs.reduce<Attributes>((attrs, attrItem) => {
     attrs[attrItem.name] = attrItem.value;
     return attrs;
   }, {}),
-  childNodes: convertNodes((childNode as any).childNodes ?? []),
+  childNodes: convertNodes(childNode.childNodes ?? []),
 });
 
-const createTextNode = (childNode: parse5.TextNode): TextNode => ({
+const createTextNode = (childNode: Parse5TextNode): TextNode => ({
   nodeType: 'text',
   content: childNode.value,
 });
 
-const convertNode = (childNode: parse5.ChildNode): Node => {
+const convertNode = (childNode: ChildNode): Node => {
   const nodeType = getNodeType(childNode.nodeName);
   switch (nodeType) {
     case 'tag':
-      return createTagNode(childNode as parse5.Element);
+      return createTagNode(childNode as Element);
     case 'text':
-      return createTextNode(childNode as parse5.TextNode);
+      return createTextNode(childNode as Parse5TextNode);
   }
 };
 
-const convertNodes = (childNodes: parse5.ChildNode[]): Node[] =>
+const convertNodes = (childNodes: ChildNode[]): Node[] =>
   childNodes.map(convertNode);
+
+const extractBaseNodes = (nodes: Node[]): Node[] => {
+  return nodes.reduce((currentNodes, node) => {
+    if (node.nodeType === 'tag') {
+      if (['html', 'body'].includes(node.tagName)) {
+        return extractBaseNodes(node.childNodes);
+      }
+    }
+    return [...currentNodes, node];
+  }, [] as Node[]);
+};
 
 export const parseHtml = (html: string): Node[] => {
   const processedHtml = [removeBackslashOfHTMLAttribute].reduce(
@@ -63,6 +78,7 @@ export const parseHtml = (html: string): Node[] => {
     },
     html,
   );
-  const documentFragment = parse5.parseFragment(processedHtml);
-  return convertNodes(documentFragment.childNodes);
+  const documentFragment = parse(processedHtml, {});
+  const nodes = convertNodes(documentFragment.childNodes);
+  return extractBaseNodes(nodes);
 };
