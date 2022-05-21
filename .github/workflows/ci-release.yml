@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14.17.3
+          node-version: 16.15.0
       - name: Mask
         env:
           API_ENDPOINT_PROD: ${{ secrets.API_ENDPOINT_PROD }}
