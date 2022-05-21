@@ -2358,7 +2358,7 @@
     traverse "^0.6.6"
     ws "^7.5.3"
 
-"@serverless/utils@^6.0.3", "@serverless/utils@^6.3.0":
+"@serverless/utils@^6.0.3":
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/@serverless/utils/-/utils-6.4.0.tgz#fe248ab599224bb3a2005f16be0a32449b85cd33"
   integrity sha512-N93Vd55docYMg2d8Gqb4/MagG4GDOStpUsWZak4QpBenkzE3Q+MK7TkeNCeBpmK+PzRiL6/4K6p81QPvZel+Pw==
@@ -2366,6 +2366,44 @@
     archive-type "^4.0.0"
     chalk "^4.1.2"
     ci-info "^3.3.0"
+    cli-progress-footer "^2.3.1"
+    content-disposition "^0.5.4"
+    d "^1.0.1"
+    decompress "^4.2.1"
+    event-emitter "^0.3.5"
+    ext "^1.6.0"
+    ext-name "^5.0.0"
+    file-type "^16.5.3"
+    filenamify "^4.3.0"
+    get-stream "^6.0.1"
+    got "^11.8.3"
+    inquirer "^8.2.4"
+    js-yaml "^4.1.0"
+    jwt-decode "^3.1.2"
+    lodash "^4.17.21"
+    log "^6.3.1"
+    log-node "^8.0.3"
+    make-dir "^3.1.0"
+    memoizee "^0.4.15"
+    ncjsm "^4.3.0"
+    node-fetch "^2.6.7"
+    open "^7.4.2"
+    p-event "^4.2.0"
+    supports-color "^8.1.1"
+    timers-ext "^0.1.7"
+    type "^2.6.0"
+    uni-global "^1.0.0"
+    uuid "^8.3.2"
+    write-file-atomic "^4.0.1"
+
+"@serverless/utils@^6.6.0":
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/@serverless/utils/-/utils-6.6.0.tgz#ebb116b34b2b7389ee58448f701725c578a010d1"
+  integrity sha512-+zw5m41L44psgKh9Snj0tVaXKI2mg/MW2l7VlySjAEK5jqLKHNmFMw0n2oD75nbaJvr2xYhc05wmeFdLqVF6Sw==
+  dependencies:
+    archive-type "^4.0.0"
+    chalk "^4.1.2"
+    ci-info "^3.3.1"
     cli-progress-footer "^2.3.1"
     content-disposition "^0.5.4"
     d "^1.0.1"
@@ -3575,10 +3613,10 @@ autoprefixer@^10.2.6:
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
 
-aws-sdk@^2.1131.0:
-  version "2.1135.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1135.0.tgz#8c14aa6894be529cb5fb7b6d19f3dc70e4f35816"
-  integrity sha512-bl9n4QgrEh52hmQ+Jo76BgJXM/p+PwfVZvImEQHFeel/33H/PDLcTJquEw5bzxM1HRNI24iH+FNPwyWLMrttTw==
+aws-sdk@^2.1139.0:
+  version "2.1140.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1140.0.tgz#7f19b821aac87dc6edf4d5ce256d496106779dfe"
+  integrity sha512-cNdq56UQrUzXmCgwo0/J5GGLmfHn+Vp38qgcK/Xd86Sch8P9v2o8tNv7J82mYU98YY2vO007BMxRylA4Sd8PkQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -4179,7 +4217,7 @@ ci-info@^2.0.0:
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
 
-ci-info@^3.2.0, ci-info@^3.3.0:
+ci-info@^3.2.0, ci-info@^3.3.0, ci-info@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.3.1.tgz#58331f6f472a25fe3a50a351ae3052936c2c7f32"
   integrity sha512-SXgeMX9VwDe7iFFaEWkA5AstuER9YKqy4EhHqr4DVqkwmD9rpVimkMKWHdjn30Ja45txyjhSn63lVX69eVCckg==
@@ -10102,23 +10140,23 @@ serverless-plugin-monorepo@^0.11.0:
   dependencies:
     fs-extra "^9.0.1"
 
-serverless@^3.17.0:
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-3.17.0.tgz#f4a719a3608d44121fd86b56df94a0a6c10787f3"
-  integrity sha512-M3VJc8PW/elxCAU/vQeNYPdjp3m7Ms/WyE+A+s2TTJYOVBVUuQhX2s+4u6GulTkxeBF3s83EvX26eAJ4RdXCTQ==
+serverless@^3.18.1:
+  version "3.18.1"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-3.18.1.tgz#b80619f035608ae7bbdf1f210dfceb05326722dc"
+  integrity sha512-cdUdG7RW/0A2sfTnXVwHAgHTOZ4nt45lbYddyR2rMDXST+6CGghPaK7i6c7pdV8UUuU2iS00y/R5TwtKFU9AOg==
   dependencies:
     "@serverless/dashboard-plugin" "^6.2.2"
     "@serverless/platform-client" "^4.3.2"
-    "@serverless/utils" "^6.3.0"
+    "@serverless/utils" "^6.6.0"
     ajv "^8.11.0"
     ajv-formats "^2.1.1"
     archiver "^5.3.1"
-    aws-sdk "^2.1131.0"
+    aws-sdk "^2.1139.0"
     bluebird "^3.7.2"
     cachedir "^2.3.0"
     chalk "^4.1.2"
     child-process-ext "^2.1.1"
-    ci-info "^3.3.0"
+    ci-info "^3.3.1"
     cli-progress-footer "^2.3.1"
     d "^1.0.1"
     dayjs "^1.11.2"
