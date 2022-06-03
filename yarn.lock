@@ -3490,10 +3490,10 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apollo-datasource-rest@3.5.3:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-3.5.3.tgz#37f88063a59b76605d8da440a1a8aca087bcdc8d"
-  integrity sha512-xKzXl5TA0YEPHmIZXyPfDGtl/bnOjeI4ieOn1xQPLtsrtDRBjt46cXpGwNlsS8v9F4g7bG9GTcgOeNPHSxGy6A==
+apollo-datasource-rest@3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-3.6.0.tgz#6cb7178abc7cec13553f5bc4d8af1a70f345626f"
+  integrity sha512-bPR4EuXcpCwkMZppSdtqI5dCC1giD8FTqDQNv4bxCYrqEE2YikTvVnbXS8es6C2MaECI1UN7uX6DF5CoBGgIKw==
   dependencies:
     apollo-datasource "^3.3.1"
     apollo-server-caching "^3.3.0"
