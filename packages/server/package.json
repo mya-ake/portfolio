@@ -37,7 +37,7 @@
     "apollo-datasource-rest": "3.6.0",
     "apollo-server-core": "3.8.2",
     "apollo-server-express": "3.9.0",
-    "apollo-server-lambda": "3.8.2",
+    "apollo-server-lambda": "3.9.0",
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "graphql": "^16.5.0"
