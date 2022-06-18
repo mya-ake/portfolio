@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { parseHtml } from './html-parser';
 
 describe('parseHtml', () => {

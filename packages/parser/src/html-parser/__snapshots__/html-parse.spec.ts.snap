@@ -1,14 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`parseHtml deep children list 1`] = `
-Array [
-  Object {
-    "attrs": Object {},
-    "childNodes": Array [
-      Object {
-        "attrs": Object {},
-        "childNodes": Array [
-          Object {
+exports[`parseHtml > deep children > list 1`] = `
+[
+  {
+    "attrs": {},
+    "childNodes": [
+      {
+        "attrs": {},
+        "childNodes": [
+          {
             "content": "item 1",
             "nodeType": "text",
           },
@@ -16,10 +16,10 @@ Array [
         "nodeType": "tag",
         "tagName": "li",
       },
-      Object {
-        "attrs": Object {},
-        "childNodes": Array [
-          Object {
+      {
+        "attrs": {},
+        "childNodes": [
+          {
             "content": "item 1",
             "nodeType": "text",
           },
@@ -34,19 +34,19 @@ Array [
 ]
 `;
 
-exports[`parseHtml deep children some content 1`] = `
-Array [
-  Object {
-    "attrs": Object {},
-    "childNodes": Array [
-      Object {
+exports[`parseHtml > deep children > some content 1`] = `
+[
+  {
+    "attrs": {},
+    "childNodes": [
+      {
         "content": "no wrapped",
         "nodeType": "text",
       },
-      Object {
-        "attrs": Object {},
-        "childNodes": Array [
-          Object {
+      {
+        "attrs": {},
+        "childNodes": [
+          {
             "content": "item 1",
             "nodeType": "text",
           },
@@ -54,12 +54,12 @@ Array [
         "nodeType": "tag",
         "tagName": "p",
       },
-      Object {
-        "attrs": Object {
+      {
+        "attrs": {
           "alt": "",
           "src": "/static/sample.png",
         },
-        "childNodes": Array [],
+        "childNodes": [],
         "nodeType": "tag",
         "tagName": "img",
       },
@@ -70,12 +70,12 @@ Array [
 ]
 `;
 
-exports[`parseHtml web components list 1`] = `
-Array [
-  Object {
-    "attrs": Object {},
-    "childNodes": Array [
-      Object {
+exports[`parseHtml > web components > list 1`] = `
+[
+  {
+    "attrs": {},
+    "childNodes": [
+      {
         "content": "text",
         "nodeType": "text",
       },

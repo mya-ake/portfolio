@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { findTargetTagNode, hasTargetTagNode } from './utils';
 import type { Node } from './html-parser';
 
