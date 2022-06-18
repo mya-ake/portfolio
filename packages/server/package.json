@@ -21,7 +21,7 @@
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:unit": "jest",
+    "test:unit": "vitest run",
     "deploy:dev": "SERVER_STAGE=dev sls deploy",
     "deploy:prod": "SERVER_STAGE=prod sls deploy"
   },
