@@ -21,6 +21,7 @@ const buildAndDeploy = async () => {
   await run('@mya-ake-com/error', ['build']);
 
   // server
+  console.log('has?', String(process.env.MICRO_CMS_ENDPOINT).length);
   await run('@mya-ake-com/server', ['build']);
   await spawn('yarn', [`deploy:server:${appEnv}`]);
 
