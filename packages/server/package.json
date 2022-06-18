@@ -36,7 +36,7 @@
     "@mya-ake-com/graphql-schema": "^1.0.0",
     "apollo-datasource-rest": "3.6.0",
     "apollo-server-core": "3.8.2",
-    "apollo-server-express": "3.8.1",
+    "apollo-server-express": "3.9.0",
     "apollo-server-lambda": "3.8.2",
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
