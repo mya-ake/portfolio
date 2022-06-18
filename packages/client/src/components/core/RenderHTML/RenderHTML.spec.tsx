@@ -1,3 +1,7 @@
+/**
+ * @vitest-environment jsdom
+ */
+import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import { parseHtml } from '@mya-ake-com/parser';
 import { RenderHTML, RenderHTMLProps } from './RenderHTML';

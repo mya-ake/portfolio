@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`replacer p tag to Paragraph 1`] = `
+exports[`replacer > p tag to Paragraph 1`] = `
 <p
   class="p-0"
 >
@@ -8,7 +8,7 @@ exports[`replacer p tag to Paragraph 1`] = `
 </p>
 `;
 
-exports[`replacer p tag to Paragraph, em tag to Emphasis 1`] = `
+exports[`replacer > p tag to Paragraph, em tag to Emphasis 1`] = `
 <p
   class="p-0"
 >
@@ -20,7 +20,7 @@ exports[`replacer p tag to Paragraph, em tag to Emphasis 1`] = `
 </p>
 `;
 
-exports[`tags a 1`] = `
+exports[`tags > a 1`] = `
 <a
   href="/to-link"
   rel="noopener"
@@ -29,22 +29,22 @@ exports[`tags a 1`] = `
 </a>
 `;
 
-exports[`tags br 1`] = `<br />`;
+exports[`tags > br 1`] = `<br />`;
 
-exports[`tags div 1`] = `
+exports[`tags > div 1`] = `
 <div>
   content
 </div>
 `;
 
-exports[`tags img 1`] = `
+exports[`tags > img 1`] = `
 <img
   alt="sample"
   src="https://example.com/sample.png"
 />
 `;
 
-exports[`tags p with class 1`] = `
+exports[`tags > p with class 1`] = `
 <p
   class="text"
 >
@@ -52,7 +52,7 @@ exports[`tags p with class 1`] = `
 </p>
 `;
 
-exports[`tags p with em 1`] = `
+exports[`tags > p with em 1`] = `
 <p>
   <em>
     content
@@ -60,7 +60,7 @@ exports[`tags p with em 1`] = `
 </p>
 `;
 
-exports[`tags ul li 1`] = `
+exports[`tags > ul li 1`] = `
 <ul>
   <li>
     item 1
