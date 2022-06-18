@@ -9,7 +9,6 @@
   "scripts": {
     "prebuild": "run-s gen:graphql",
     "build": "ts-node --project scripts/tsconfig.json scripts/build/index.ts",
-    "build:vercel": "ts-node --project scripts/tsconfig.json scripts/build-on-vercel/index.ts",
     "predev": "run-s gen:graphql",
     "dev": "nx run-many --target=dev --all --parallel",
     "lint": "nx run-many --target=lint --all --parallel",
@@ -21,8 +20,8 @@
     "prepare": "husky install",
     "predeploy": "run-s gen:graphql",
     "deploy": "ts-node --project scripts/tsconfig.json scripts/build-and-deploy/index.ts",
-    "deploy:client:dev": "vercel --token ${VERCEL_TOKEN}",
-    "deploy:client:prod": "vercel --token ${VERCEL_TOKEN} --prod",
+    "deploy:client:dev": "echo 'No deploy script'",
+    "deploy:client:prod": "echo 'No delpoy script'",
     "deploy:server:dev": "nx run @mya-ake-com/server:deploy-dev",
     "deploy:server:prod": "nx run @mya-ake-com/server:deploy-prod"
   },
@@ -50,8 +49,7 @@
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "ts-node": "^10.0.0",
-    "typescript": "^4.2.4",
-    "vercel": "^25.0.0"
+    "typescript": "^4.2.4"
   },
   "workspaces": [
     "packages/*"
