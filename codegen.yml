@@ -1,19 +1,19 @@
 overwrite: true
-schema: './packages/graphql-schema/schema/**/*.graphql'
-documents: './packages/client/**/*.graphql'
+schema: './libs/graphql-schema/schema/**/*.graphql'
+documents: './apps/client/**/*.graphql'
 generates:
-  ./packages/server/src/generated/resolvers.ts:
+  ./apps/server/src/generated/resolvers.ts:
     plugins:
       - 'typescript'
       - 'typescript-resolvers'
-  ./packages/client/src/generated/graphql-request.ts:
+  ./apps/client/src/generated/graphql-request.ts:
     plugins:
       - 'typescript'
       - 'typescript-operations'
       - 'typescript-graphql-request'
     config:
       rawRequest: true
-  ./packages/mock/src/types/graphql.type.ts:
+  ./libs/mock/src/types/graphql.type.ts:
     plugins:
       - 'typescript'
   ./graphql.schema.json:

@@ -1,7 +1,20 @@
 {
-  "root": "packages/server/",
-  "sourceRoot": "packages/server/src",
+  "root": "apps/server",
+  "sourceRoot": "apps/server/src",
+  "projectType": "application",
   "targets": {
+    "dev": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "dev"
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "build"
+      }
+    },
     "start-mock": {
       "executor": "@nrwl/workspace:run-script",
       "options": {

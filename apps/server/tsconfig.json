@@ -1,16 +1,15 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2020",
     "module": "CommonJS",
     "lib": ["esnext"],
-    "types": ["node"],
+    "types": [],
     "strict": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "resolveJsonModule": true,
-    "declaration": true
+    "resolveJsonModule": true
   }
 }

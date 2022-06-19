@@ -1,6 +1,8 @@
 {
-  "root": "packages/client/",
-  "sourceRoot": "packages/client/src",
+  "root": "libs/error/",
+  "sourceRoot": "libs/error/src",
+  "projectType": "library",
+  "tags": [],
   "targets": {
     "format-check": {
       "executor": "@nrwl/workspace:run-script",

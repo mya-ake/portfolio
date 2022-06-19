@@ -1,6 +1,8 @@
 {
-  "root": "packages/parser/",
-  "sourceRoot": "packages/parser/src",
+  "root": "libs/graphql-schema/",
+  "sourceRoot": "libs/graphql-schema/src",
+  "projectType": "library",
+  "tags": [],
   "targets": {
     "format-check": {
       "executor": "@nrwl/workspace:run-script",

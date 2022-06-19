@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@mya-ake-com/error": ["libs/mock/src/index.ts"],
+      "@mya-ake-com/graphql-schema": ["libs/graphql-schema/src/index.ts"],
+      "@mya-ake-com/mock": ["libs/mock/src/index.ts"],
+      "@mya-ake-com/parser": ["libs/parser/src/index.ts"]
+    },
+    "strict": true
+  },
+  "exclude": ["node_modules", "tmp"]
+}

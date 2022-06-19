@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const withNx = require('@nrwl/next/plugins/with-nx');
 const { getApiEndpoint } = require('./app.config');
 
 const APP_ENV = process.env.APP_ENV ?? 'local';
@@ -10,7 +11,10 @@ const allowedImageOptimizationDomains =
 
 const API_ENDPOINT = getApiEndpoint(APP_ENV);
 
-module.exports = {
+/**
+ * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
+ **/
+const nextConfig = {
   poweredByHeader: false,
   images: {
     domains: allowedImageOptimizationDomains,
@@ -30,4 +34,9 @@ module.exports = {
 
     return sources;
   },
+  nx: {
+    svgr: false,
+  },
 };
+
+module.exports = withNx(nextConfig);

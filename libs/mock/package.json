@@ -1,11 +1,11 @@
 {
-  "name": "@mya-ake-com/graphql-schema",
+  "name": "@mya-ake-com/mock",
   "version": "1.0.0",
-  "description": "GraphQL Schemas.",
+  "description": "mock datum",
   "author": "mya-ake <make.app.ts@gmail.com> (https://github.com/mya-ake)",
   "homepage": "https://github.com/mya-ake/portfolio#readme",
-  "main": "dist/index.js",
   "license": "MIT",
+  "main": "src/index.ts",
   "private": true,
   "repository": {
     "type": "git",
@@ -22,9 +22,9 @@
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
   },
-  "devDependencies": {},
-  "files": [
-    "schema",
-    "dist"
-  ]
+  "dependencies": {
+    "@faker-js/faker": "^7.1.0",
+    "dayjs": "^1.10.5"
+  },
+  "devDependencies": {}
 }

@@ -1,6 +1,8 @@
 {
-  "root": "packages/mock/",
-  "sourceRoot": "packages/mock/src",
+  "root": "libs/parser/",
+  "sourceRoot": "libs/parser/src",
+  "projectType": "library",
+  "tags": [],
   "targets": {
     "format-check": {
       "executor": "@nrwl/workspace:run-script",

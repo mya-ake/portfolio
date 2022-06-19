@@ -1,11 +1,11 @@
 {
-  "name": "@mya-ake-com/error",
+  "name": "@mya-ake-com/graphql-schema",
   "version": "1.0.0",
-  "description": "errors",
+  "description": "GraphQL Schemas.",
   "author": "mya-ake <make.app.ts@gmail.com> (https://github.com/mya-ake)",
   "homepage": "https://github.com/mya-ake/portfolio#readme",
+  "main": "src/index.ts",
   "license": "MIT",
-  "main": "dist/index.js",
   "private": true,
   "repository": {
     "type": "git",
@@ -17,10 +17,14 @@
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "test:unit": "echo 'No test'"
+    "format:check": "prettier --check ."
   },
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
-  }
+  },
+  "devDependencies": {},
+  "files": [
+    "schema",
+    "dist"
+  ]
 }

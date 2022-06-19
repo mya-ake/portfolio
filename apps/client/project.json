@@ -1,0 +1,47 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "apps/client",
+  "sourceRoot": "apps/client/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/client",
+        "outputPath": "dist/apps/client"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "dev": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "@mya-ake-com/client:build",
+        "dev": true
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "@mya-ake-com/client:build:production"
+      }
+    },
+    "format-check": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "format:check"
+      }
+    },
+    "lint-fix": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "lint:fix"
+      }
+    }
+  }
+}

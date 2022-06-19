@@ -1,6 +1,8 @@
 {
-  "root": "packages/graphql-schema/",
-  "sourceRoot": "packages/graphql-schema/src",
+  "root": "libs/mock/",
+  "sourceRoot": "libs/mock/src",
+  "projectType": "library",
+  "tags": [],
   "targets": {
     "format-check": {
       "executor": "@nrwl/workspace:run-script",

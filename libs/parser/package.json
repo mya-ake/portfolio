@@ -1,11 +1,11 @@
 {
-  "name": "@mya-ake-com/mock",
+  "name": "@mya-ake-com/parser",
   "version": "1.0.0",
-  "description": "mock datum",
+  "description": "parsers",
   "author": "mya-ake <make.app.ts@gmail.com> (https://github.com/mya-ake)",
   "homepage": "https://github.com/mya-ake/portfolio#readme",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "private": true,
   "repository": {
     "type": "git",
@@ -17,14 +17,14 @@
     "lint": "eslint --config ./.eslintrc.js .",
     "lint:fix": "eslint --config ./.eslintrc.js --fix .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test:unit": "vitest run"
   },
   "bugs": {
     "url": "https://github.com/mya-ake/portfolio/issues"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.1.0",
-    "dayjs": "^1.10.5"
+    "parse5": "^7.0.0"
   },
   "devDependencies": {}
 }
