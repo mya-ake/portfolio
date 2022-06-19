@@ -28,13 +28,20 @@ jobs:
         run: yarn lint
       - name: Check format
         run: yarn format:check
-      - name: Deploy to development environment
+      - name: Unit Test
+        run: yarn test:unit
+      - name: Build Test
         env:
-          APP_ENV: dev
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          MICRO_CMS_ENDPOINT: ${{ secrets.MICRO_CMS_ENDPOINT }}
-          MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
-          API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
-          NEXT_PUBLIC_API_KEY_DEV: ${{ secrets.NEXT_PUBLIC_API_KEY_DEV }}
-        run: yarn deploy
+          APP_ENV: local
+        run: yarn build:server
+
+      # - name: Deploy to development environment
+      #   env:
+      #     APP_ENV: dev
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     MICRO_CMS_ENDPOINT: ${{ secrets.MICRO_CMS_ENDPOINT }}
+      #     MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+      #     API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
+      #     NEXT_PUBLIC_API_KEY_DEV: ${{ secrets.NEXT_PUBLIC_API_KEY_DEV }}
+      #   run: yarn deploy
