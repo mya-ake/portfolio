@@ -16,7 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@mya-ake-com/error": ["libs/mock/src/index.ts"],
+      "@mya-ake-com/error": ["libs/error/src/index.ts"],
       "@mya-ake-com/graphql-schema": ["libs/graphql-schema/src/index.ts"],
       "@mya-ake-com/mock": ["libs/mock/src/index.ts"],
       "@mya-ake-com/parser": ["libs/parser/src/index.ts"]

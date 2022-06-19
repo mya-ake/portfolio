@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "prebuild": "run-s gen:graphql",
+    "build:client": "nx build --project=@mya-ake-com/client",
     "build:server": "nx build --project=@mya-ake-com/server",
     "predev": "run-s gen:graphql",
     "dev": "APP_ENV=local nx run-many --target=dev --projects=@mya-ake-com/client,@mya-ake-com/server --parallel",
