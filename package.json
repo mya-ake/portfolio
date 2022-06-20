@@ -8,9 +8,10 @@
   "private": true,
   "scripts": {
     "prebuild": "run-s gen:graphql",
-    "build": "ts-node --project scripts/tsconfig.json scripts/build/index.ts",
+    "build:client": "nx build --project=@mya-ake-com/client",
+    "build:server": "nx build --project=@mya-ake-com/server",
     "predev": "run-s gen:graphql",
-    "dev": "nx run-many --target=dev --all --parallel",
+    "dev": "APP_ENV=local nx run-many --target=dev --projects=@mya-ake-com/client,@mya-ake-com/server --parallel",
     "lint": "nx run-many --target=lint --all --parallel",
     "lint:fix": "nx run-many --target=lint-fix --all --parallel",
     "format": "nx run-many --target=format --all --parallel",
@@ -35,8 +36,12 @@
     "@mya-ake/command-line-utils": "^0.1.1",
     "@mya-ake/eslint-config-ts": "^1.0.4",
     "@nrwl/cli": "14.3.6",
+    "@nrwl/next": "14.3.6",
+    "@nrwl/react": "14.3.6",
+    "@nrwl/web": "14.3.6",
     "@nrwl/workspace": "14.3.6",
     "@types/node": "16",
+    "@types/react": "^18.0.14",
     "@vitejs/plugin-react": "^1.3.2",
     "eslint": "^8.15.0",
     "husky": "^8.0.1",
@@ -50,10 +55,16 @@
     "vitest": "^0.15.1"
   },
   "workspaces": [
-    "packages/*"
+    "libs/*",
+    "apps/*"
   ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{js,jsx,ts,tsx,json,md,yml,html,graphql}": "prettier --write"
+  },
+  "dependencies": {
+    "next": "^12.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

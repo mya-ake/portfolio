@@ -26,13 +26,13 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn lint
-      - name: Deploy to production environment
-        env:
-          APP_ENV: prod
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          MICRO_CMS_ENDPOINT: ${{ secrets.MICRO_CMS_ENDPOINT }}
-          MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
-          API_ENDPOINT_PROD: ${{ secrets.API_ENDPOINT_PROD }}
-          NEXT_PUBLIC_API_KEY_PROD: ${{ secrets.NEXT_PUBLIC_API_KEY_PROD }}
-        run: yarn deploy
+      # - name: Deploy to production environment
+      #   env:
+      #     APP_ENV: prod
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     MICRO_CMS_ENDPOINT: ${{ secrets.MICRO_CMS_ENDPOINT }}
+      #     MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+      #     API_ENDPOINT_PROD: ${{ secrets.API_ENDPOINT_PROD }}
+      #     NEXT_PUBLIC_API_KEY_PROD: ${{ secrets.NEXT_PUBLIC_API_KEY_PROD }}
+      #   run: yarn deploy

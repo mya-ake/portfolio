@@ -1,0 +1,49 @@
+{
+  "root": "apps/server",
+  "sourceRoot": "apps/server/src",
+  "projectType": "application",
+  "targets": {
+    "dev": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "dev"
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "build"
+      }
+    },
+    "start-mock": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "start:mock"
+      }
+    },
+    "format-check": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "format:check"
+      }
+    },
+    "lint-fix": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "lint:fix"
+      }
+    },
+    "deploy-dev": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "deploy:dev"
+      }
+    },
+    "deploy-prod": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "deploy:prod"
+      }
+    }
+  }
+}

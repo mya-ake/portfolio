@@ -1,0 +1,20 @@
+{
+  "root": "libs/mock/",
+  "sourceRoot": "libs/mock/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "format-check": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "format:check"
+      }
+    },
+    "lint-fix": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "lint:fix"
+      }
+    }
+  }
+}

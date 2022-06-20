@@ -1,0 +1,25 @@
+{
+  "name": "@mya-ake-com/error",
+  "version": "1.0.0",
+  "description": "errors",
+  "author": "mya-ake <make.app.ts@gmail.com> (https://github.com/mya-ake)",
+  "homepage": "https://github.com/mya-ake/portfolio#readme",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mya-ake/portfolio.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --config ./.eslintrc.js .",
+    "lint:fix": "eslint --config ./.eslintrc.js --fix .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:unit": "echo 'No test'"
+  },
+  "bugs": {
+    "url": "https://github.com/mya-ake/portfolio/issues"
+  }
+}
