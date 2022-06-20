@@ -23,6 +23,8 @@ jobs:
         run: yarn format:check
       - name: Unit Test
         run: yarn test:unit
+      - name: Prepare
+        run: yarn prebuild
       - name: Build Test
         env:
           APP_ENV: local
