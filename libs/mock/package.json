@@ -22,7 +22,7 @@
     "url": "https://github.com/mya-ake/portfolio/issues"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.1.0",
+    "@faker-js/faker": "^7.3.0",
     "dayjs": "^1.10.5"
   },
   "devDependencies": {}
