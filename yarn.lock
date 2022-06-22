@@ -3690,35 +3690,7 @@ apollo-server-caching@^3.3.0:
   dependencies:
     lru-cache "^6.0.0"
 
-apollo-server-core@3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-3.8.2.tgz#a065e00220d6c709b11b824197520adee6d897d2"
-  integrity sha512-cbzG928HG27W+juMVCIL1O//iyAj/Q2hnOu6YwrGrcqeE75ZIJSgSBm/gPHK20cI7nEjK2IWACx8Hj1nGAQ5Zg==
-  dependencies:
-    "@apollo/utils.logger" "^1.0.0"
-    "@apollo/utils.usagereporting" "^1.0.0"
-    "@apollographql/apollo-tools" "^0.5.3"
-    "@apollographql/graphql-playground-html" "1.6.29"
-    "@graphql-tools/mock" "^8.1.2"
-    "@graphql-tools/schema" "^8.0.0"
-    "@josephg/resolvable" "^1.0.0"
-    apollo-datasource "^3.3.1"
-    apollo-reporting-protobuf "^3.3.1"
-    apollo-server-caching "^3.3.0"
-    apollo-server-env "^4.2.1"
-    apollo-server-errors "^3.3.1"
-    apollo-server-plugin-base "^3.6.0"
-    apollo-server-types "^3.6.0"
-    async-retry "^1.2.1"
-    fast-json-stable-stringify "^2.1.0"
-    graphql-tag "^2.11.0"
-    loglevel "^1.6.8"
-    lru-cache "^6.0.0"
-    sha.js "^2.4.11"
-    uuid "^8.0.0"
-    whatwg-mimetype "^3.0.0"
-
-apollo-server-core@^3.9.0:
+apollo-server-core@3.9.0, apollo-server-core@^3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-3.9.0.tgz#44b39e378314cfc0596be7003d3f1f1397c88eea"
   integrity sha512-WS54C33cTriDaBIcj7ijWv/fgeJICcrQKlP1Cn6pnZp/eumpMraezLeJ3gFWAXprOuR2E3fZe64lNlup0fMu8w==
@@ -3786,14 +3758,14 @@ apollo-server-lambda@3.9.0:
     apollo-server-express "^3.9.0"
     express "^4.17.1"
 
-apollo-server-plugin-base@^3.6.0, apollo-server-plugin-base@^3.6.1:
+apollo-server-plugin-base@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/apollo-server-plugin-base/-/apollo-server-plugin-base-3.6.1.tgz#33e9f26433d5a8b8ed5d27e9fa88de9ef0c2c704"
   integrity sha512-bFpxzWO0LTTtSAkGVBeaAtnQXJ5ZCi8eaLN/eMSju8RByifmF3Kr6gAqcOZhOH/geQEt3Y6G8n3bR0eHTGxljQ==
   dependencies:
     apollo-server-types "^3.6.1"
 
-apollo-server-types@^3.6.0, apollo-server-types@^3.6.1:
+apollo-server-types@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/apollo-server-types/-/apollo-server-types-3.6.1.tgz#704e5309bd947306030df01f982e36d1d4753eaa"
   integrity sha512-XOPlBlRdwP00PrG03OffGGWuzyei+J9t1rAnvyHsSdP0JCgQWigHJfvL1N9Bhgi4UTjl9JadKOJh1znLNlqIFQ==
