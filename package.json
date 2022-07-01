@@ -36,7 +36,7 @@
     "@mya-ake/command-line-utils": "^0.1.1",
     "@mya-ake/eslint-config-ts": "^1.1.11",
     "@nrwl/cli": "14.3.6",
-    "@nrwl/next": "14.3.6",
+    "@nrwl/next": "14.4.0",
     "@nrwl/react": "14.3.6",
     "@nrwl/web": "14.3.6",
     "@nrwl/workspace": "14.3.6",
