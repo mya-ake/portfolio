@@ -38,7 +38,7 @@
     "@nrwl/cli": "14.4.0",
     "@nrwl/next": "14.4.0",
     "@nrwl/react": "14.4.0",
-    "@nrwl/web": "14.4.0",
+    "@nrwl/web": "14.4.1",
     "@nrwl/workspace": "14.4.0",
     "@types/node": "16",
     "@types/react": "^18.0.14",
