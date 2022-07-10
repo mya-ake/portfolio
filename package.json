@@ -37,7 +37,7 @@
     "@mya-ake/eslint-config-ts": "^1.1.12",
     "@nrwl/cli": "14.4.0",
     "@nrwl/next": "14.4.2",
-    "@nrwl/react": "14.4.0",
+    "@nrwl/react": "14.4.2",
     "@nrwl/web": "14.4.2",
     "@nrwl/workspace": "14.4.2",
     "@types/node": "16",
