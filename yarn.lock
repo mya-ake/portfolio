@@ -1428,7 +1428,7 @@
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/visitor-plugin-common@2.11.1":
+"@graphql-codegen/visitor-plugin-common@2.11.1", "@graphql-codegen/visitor-plugin-common@^2.11.0":
   version "2.11.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.11.1.tgz#2653e25a8888767a6422a204441083299c3a83a4"
   integrity sha512-AlrtGWKn2o89SPna75ATEHYAu95MUMucgBqLgcRvK9n/PHhVAbkDrNCH5pL03fE0HLOup3GpjX8DcnFBMU46IA==
@@ -1453,22 +1453,6 @@
     "@graphql-tools/optimize" "^1.0.1"
     "@graphql-tools/relay-operation-optimizer" "^6.4.14"
     "@graphql-tools/utils" "^8.3.0"
-    auto-bind "~4.0.0"
-    change-case-all "1.0.14"
-    dependency-graph "^0.11.0"
-    graphql-tag "^2.11.0"
-    parse-filepath "^1.0.2"
-    tslib "~2.4.0"
-
-"@graphql-codegen/visitor-plugin-common@^2.11.0":
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.11.1.tgz#2653e25a8888767a6422a204441083299c3a83a4"
-  integrity sha512-AlrtGWKn2o89SPna75ATEHYAu95MUMucgBqLgcRvK9n/PHhVAbkDrNCH5pL03fE0HLOup3GpjX8DcnFBMU46IA==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.5.0"
-    "@graphql-tools/optimize" "^1.3.0"
-    "@graphql-tools/relay-operation-optimizer" "^6.5.0"
-    "@graphql-tools/utils" "^8.8.0"
     auto-bind "~4.0.0"
     change-case-all "1.0.14"
     dependency-graph "^0.11.0"
@@ -2270,19 +2254,19 @@
     tmp "~0.2.1"
     tslib "^2.3.0"
 
-"@nrwl/next@14.4.0":
-  version "14.4.0"
-  resolved "https://registry.yarnpkg.com/@nrwl/next/-/next-14.4.0.tgz#51c71a996e52528bc60ddb34cacdaccf1b37f362"
-  integrity sha512-bBgDIIrbfo6tyn9U5jlgA63xwT4L5HDUSv3pScJ+1RsZboajm1pDNd3j8tg22di/VrejFmwwE2IsYGpyDC3MvQ==
+"@nrwl/next@14.4.2":
+  version "14.4.2"
+  resolved "https://registry.yarnpkg.com/@nrwl/next/-/next-14.4.2.tgz#a27124957ea5520a30dd59bb9cadf8f80e74165f"
+  integrity sha512-T8F8Fy7jJ7dNhLET14FhslD9lGzpUrzOQQfES5mb8LK0Y3kNyumGfCetAuFwkUEp/7aC5FxsZSc/32l4b6dxZA==
   dependencies:
     "@babel/plugin-proposal-decorators" "^7.14.5"
-    "@nrwl/cypress" "14.4.0"
-    "@nrwl/devkit" "14.4.0"
-    "@nrwl/jest" "14.4.0"
-    "@nrwl/linter" "14.4.0"
-    "@nrwl/react" "14.4.0"
-    "@nrwl/web" "14.4.0"
-    "@nrwl/workspace" "14.4.0"
+    "@nrwl/cypress" "14.4.2"
+    "@nrwl/devkit" "14.4.2"
+    "@nrwl/jest" "14.4.2"
+    "@nrwl/linter" "14.4.2"
+    "@nrwl/react" "14.4.2"
+    "@nrwl/web" "14.4.2"
+    "@nrwl/workspace" "14.4.2"
     "@svgr/webpack" "^6.1.2"
     chalk "4.1.0"
     eslint-config-next "^12.1.0"
@@ -2321,6 +2305,35 @@
     webpack "^5.58.1"
     webpack-merge "^5.8.0"
 
+"@nrwl/react@14.4.2":
+  version "14.4.2"
+  resolved "https://registry.yarnpkg.com/@nrwl/react/-/react-14.4.2.tgz#ab2d441d54b0ae0c7e3f4d456bbbe144f237d749"
+  integrity sha512-5OlTpa5wRgADkNuP55Ii0myZLqzcefwR+lMRSBFquwOzxQ5VEU9JCyZVeO4pBdVr1ibbIJoj1EfO+NnVpCtELg==
+  dependencies:
+    "@babel/core" "^7.15.0"
+    "@babel/preset-react" "^7.14.5"
+    "@nrwl/cypress" "14.4.2"
+    "@nrwl/devkit" "14.4.2"
+    "@nrwl/jest" "14.4.2"
+    "@nrwl/js" "14.4.2"
+    "@nrwl/linter" "14.4.2"
+    "@nrwl/storybook" "14.4.2"
+    "@nrwl/web" "14.4.2"
+    "@nrwl/workspace" "14.4.2"
+    "@pmmmwh/react-refresh-webpack-plugin" "^0.5.1"
+    "@storybook/node-logger" "6.1.20"
+    "@svgr/webpack" "^6.1.2"
+    chalk "4.1.0"
+    eslint-plugin-import "^2.25.2"
+    eslint-plugin-jsx-a11y "^6.5.1"
+    eslint-plugin-react "7.30.0"
+    eslint-plugin-react-hooks "^4.3.0"
+    react-refresh "^0.10.0"
+    semver "7.3.4"
+    url-loader "^4.1.1"
+    webpack "^5.58.1"
+    webpack-merge "^5.8.0"
+
 "@nrwl/storybook@14.4.0":
   version "14.4.0"
   resolved "https://registry.yarnpkg.com/@nrwl/storybook/-/storybook-14.4.0.tgz#355c586fd1635cb075631d3b060584d3c4ce2b22"
@@ -2330,6 +2343,20 @@
     "@nrwl/devkit" "14.4.0"
     "@nrwl/linter" "14.4.0"
     "@nrwl/workspace" "14.4.0"
+    core-js "^3.6.5"
+    semver "7.3.4"
+    ts-loader "^9.2.6"
+    tsconfig-paths-webpack-plugin "3.5.2"
+
+"@nrwl/storybook@14.4.2":
+  version "14.4.2"
+  resolved "https://registry.yarnpkg.com/@nrwl/storybook/-/storybook-14.4.2.tgz#7cf295e846cb78965c66cb1ff5e362f070efd777"
+  integrity sha512-G6h3jQT+pIY0RAEbeclguEFSAIXsToRVKEeRyq1bk6fWJHy7y//bCeJrINL9xPf9zk12cWyKkjJvwsOcy0Z1Mw==
+  dependencies:
+    "@nrwl/cypress" "14.4.2"
+    "@nrwl/devkit" "14.4.2"
+    "@nrwl/linter" "14.4.2"
+    "@nrwl/workspace" "14.4.2"
     core-js "^3.6.5"
     semver "7.3.4"
     ts-loader "^9.2.6"
