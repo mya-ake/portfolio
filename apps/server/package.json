@@ -32,7 +32,7 @@
     "@graphql-tools/schema": "^8.5.0",
     "@graphql-tools/utils": "^8.8.0",
     "apollo-datasource-rest": "3.6.1",
-    "apollo-server-core": "3.9.0",
+    "apollo-server-core": "3.10.0",
     "apollo-server-express": "3.9.0",
     "apollo-server-lambda": "3.9.0",
     "dotenv": "^16.0.1",
