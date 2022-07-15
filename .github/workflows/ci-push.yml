@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  basic_spec:
+  basic_specs:
     runs-on: ubuntu-latest
 
     steps:
