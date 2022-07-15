@@ -34,7 +34,7 @@
     "@graphql-codegen/typescript-operations": "^2.5.1",
     "@graphql-codegen/typescript-resolvers": "^2.7.1",
     "@mya-ake/command-line-utils": "^0.1.1",
-    "@mya-ake/eslint-config-ts": "^1.1.13",
+    "@mya-ake/eslint-config-ts": "^1.1.14",
     "@nrwl/cli": "14.4.2",
     "@nrwl/next": "14.4.2",
     "@nrwl/react": "14.4.2",
