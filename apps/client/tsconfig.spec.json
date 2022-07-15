@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "types": ["node"]
-  },
-  "include": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.d.ts"]
-}

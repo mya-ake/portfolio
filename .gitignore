@@ -1,9 +1,0 @@
-node_modules
-.next
-yarn-error.log
-dist
-out
-generated
-graphql.schema.json
-.vercel
-.env

@@ -11,21 +11,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
         with:
-          node-version: 16.15.1
-      - name: Intall
-        run: yarn install --frozen-lockfile
+          deno-version: v1.23.3
       - name: Lint
-        run: yarn lint
+        run: deno lint
       - name: Check format
-        run: yarn format:check
-      - name: Unit Test
-        run: yarn test:unit
-      - name: Prepare
-        run: yarn prebuild
-      - name: Build Test
-        env:
-          APP_ENV: local
-        run: yarn build:server
+        run: deno fmt --check
+      - name: Check types
+        run: deno check ./main.ts
