@@ -21,3 +21,5 @@ jobs:
         run: deno fmt --check
       - name: Check types
         run: deno check ./main.ts
+      - name: Testing
+        run: deno test
