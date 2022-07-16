@@ -29,7 +29,7 @@ Deno.test({
   name: "parse html with attrs",
   fn() {
     const result = parseHtml(
-      `<button type="button" disabled aria-pressed="false">text</button>`
+      `<button type="button" disabled aria-pressed="false">text</button>`,
     );
     assertEquals(result, [
       {
@@ -58,7 +58,7 @@ Deno.test({
   name: "parse multi rool html",
   fn() {
     const result = parseHtml(
-      `<p class="p p1">text 1</p><p class="p">text 2</p>`
+      `<p class="p p1">text 1</p><p class="p">text 2</p>`,
     );
     assertEquals(result, [
       {
@@ -105,7 +105,9 @@ Deno.test({
 Deno.test({
   name: "parse some content",
   async fn(t) {
-    const result = parseHtml(`<div>no wrapped<p>item 1</p><img src="/static/sample.png" alt=""/></div>`);
+    const result = parseHtml(
+      `<div>no wrapped<p>item 1</p><img src="/static/sample.png" alt=""/></div>`,
+    );
     await assertSnapshot(t, result);
   },
 });
@@ -113,7 +115,7 @@ Deno.test({
 /**
  * web components
  */
- Deno.test({
+Deno.test({
   name: "parse some content",
   async fn(t) {
     const result = parseHtml(`<custom-p>text</custom-p>`);
