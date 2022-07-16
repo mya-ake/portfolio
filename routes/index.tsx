@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { DefaultLayout } from "@shared/layouts/DefaultLayout.tsx";
-import { h1Style } from '@shared/styles/text.ts'
+import { h1Style } from "@shared/styles/text.ts";
 
 export default function Home() {
   return (
