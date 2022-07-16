@@ -4,6 +4,16 @@
 /// <reference lib="deno.ns" />
 /// <reference lib="deno.unstable" />
 
-import { start } from "$fresh/server.ts";
+import { InnerRenderFunction, RenderContext, start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
-await start(manifest);
+import { getCssText, reset } from "@shared/stitches.ts";
+
+function render(ctx: RenderContext, render: InnerRenderFunction) {
+  ctx.lang = "ja";
+
+  reset();
+  render();
+  ctx.styles.push(getCssText());
+}
+
+await start(manifest, { render });
