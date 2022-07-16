@@ -22,4 +22,4 @@ jobs:
       - name: Check types
         run: deno check ./main.ts
       - name: Testing
-        run: deno test
+        run: deno test --allow-read
