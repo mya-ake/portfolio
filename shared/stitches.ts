@@ -7,9 +7,12 @@ export const { css, getCssText, reset, globalCss } = createStitches({
       gray800: "#1e293b",
     },
     space: {
+      1: "0.25rem",
       2: "0.5rem",
+      4: "1rem",
     },
     fontSizes: {
+      sm: "0.875rem",
       base: "1rem",
       "2xl": "1.5rem",
     },
@@ -22,6 +25,10 @@ export const { css, getCssText, reset, globalCss } = createStitches({
     py: (value: string) => ({
       paddingTop: value,
       paddingBottom: value,
+    }),
+    mx: (value: string) => ({
+      marginLeft: value,
+      marginRight: value,
     }),
   },
 });

@@ -8,6 +8,7 @@
     "preact-render-to-string": "https://esm.sh/preact-render-to-string@5.2.0?deps=preact@10.8.2",
     "parse5": "https://esm.sh/parse5@7.0.0",
     "stitches": "https://esm.sh/@stitches/core@1.2.8",
+    "dayjs": "https://esm.sh/dayjs@1.11.3",
     "@shared/": "./shared/"
   }
 }
