@@ -6,44 +6,20 @@ on:
       - master
 
 jobs:
-  build:
+  basic_specs:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
         with:
-          node-version: 16.15.1
-      - name: Mask
-        env:
-          API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
-          NEXT_PUBLIC_API_KEY_DEV: ${{ secrets.NEXT_PUBLIC_API_KEY_DEV }}
-        run: |
-          echo "::add-mask::$API_ENDPOINT_DEV"
-          echo "::add-mask::$NEXT_PUBLIC_API_KEY_DEV"
-      - name: Intall
-        run: yarn install --frozen-lockfile
+          deno-version: v1.23.3
       - name: Lint
-        run: yarn lint
+        run: deno lint
       - name: Check format
-        run: yarn format:check
-      - name: Unit Test
-        run: yarn test:unit
-      - name: Prepare
-        run: yarn prebuild
-      - name: Build Test
-        env:
-          APP_ENV: local
-        run: yarn build:server
-
-      # - name: Deploy to development environment
-      #   env:
-      #     APP_ENV: dev
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     MICRO_CMS_ENDPOINT: ${{ secrets.MICRO_CMS_ENDPOINT }}
-      #     MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
-      #     API_ENDPOINT_DEV: ${{ secrets.API_ENDPOINT_DEV }}
-      #     NEXT_PUBLIC_API_KEY_DEV: ${{ secrets.NEXT_PUBLIC_API_KEY_DEV }}
-      #   run: yarn deploy
+        run: deno fmt --check
+      - name: Check types
+        run: deno check ./main.ts
+      - name: Testing
+        run: deno test --allow-read
