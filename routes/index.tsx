@@ -1,14 +1,13 @@
 /** @jsx h */
 import { h } from "preact";
-import { DefaultLayout } from "@shared/layouts/DefaultLayout.tsx";
-import { h1Style } from "@shared/styles/text.ts";
+import { DefaultAppShell } from "@shared/app-shells/DefaultAppShell.tsx";
 
 export default function Home() {
   return (
-    <DefaultLayout>
+    <DefaultAppShell>
       <main>
-        <h1 class={h1Style()}>Top Page</h1>
+        <h1>Top Page</h1>
       </main>
-    </DefaultLayout>
+    </DefaultAppShell>
   );
 }
