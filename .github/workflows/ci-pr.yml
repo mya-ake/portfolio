@@ -8,6 +8,9 @@ on:
 jobs:
   basic_specs:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v2
@@ -23,3 +26,9 @@ jobs:
         run: deno check ./main.ts
       - name: Testing
         run: deno test --allow-read
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "mya-ake-portfolio"
+          entrypoint: "./main.ts"
+          import-map: "./import_map.json"
