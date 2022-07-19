@@ -1,6 +1,6 @@
 /** @jsx h */
 import { h } from "preact";
-import { DefaultAppShell } from "@shared/app-shells/DefaultAppShell.tsx";
+import { DefaultAppShell } from "@shared/app_shells/DefaultAppShell.tsx";
 
 export default function Home() {
   return (
