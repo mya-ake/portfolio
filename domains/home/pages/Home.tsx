@@ -8,6 +8,10 @@ export function Home() {
       <h1>Top Page</h1>
 
       <section>
+        <h2>About</h2>
+      </section>
+
+      <section>
         <h2>Recent Activities</h2>
       </section>
 
