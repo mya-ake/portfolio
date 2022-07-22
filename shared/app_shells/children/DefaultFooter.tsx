@@ -11,11 +11,35 @@ const styles = {
   }),
   profile: {
     container: css({}),
-    avatar: css({}),
-    name: css({}),
-    icon: css({}),
+    content: css({
+      display: "grid",
+      gridTemplateColumns: "auto",
+      gap: "$4",
+    }),
+    avatar: css({
+      display: "grid",
+      gridTemplateColumns: "auto auto",
+      justifyContent: "start",
+      alignItems: "center",
+      gap: "$4",
+    }),
+    name: css({
+      margin: "0",
+      order: "1",
+      fontWeight: "bolder",
+      fontSize: "$xl",
+      lineHeight: "1",
+    }),
+    icon: css({
+      borderRadius: "50%",
+      order: "0",
+    }),
     bio: css({}),
-    bioText: css({}),
+    bioText: css({
+      margin: "0",
+      fontSize: "$base",
+      lineHeight: "1.5",
+    }),
   },
   copyright: css({
     textAlign: "center",
@@ -33,14 +57,16 @@ export function DefaultFooter() {
     <footer class={styles.footer()}>
       <div class={styles.profile.container()}>
         <h1>Profile</h1>
-        <div class={styles.profile.avatar()}>
-          <p class={styles.profile.name()}>mya-ake</p>
-          <img
-            src="/images/avatar.jpg"
-            width="60"
-            height="60"
-            class={styles.profile.icon()}
-          />
+        <div class={styles.profile.content()}>
+          <div class={styles.profile.avatar()}>
+            <p class={styles.profile.name()}>mya-ake</p>
+            <img
+              src="/images/avatar.jpg"
+              width="60"
+              height="60"
+              class={styles.profile.icon()}
+            />
+          </div>
           <div class={styles.profile.bio()}>
             <p class={styles.profile.bioText()}>猫好きのwebエンジニア。</p>
           </div>
