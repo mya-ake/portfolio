@@ -3,6 +3,7 @@ import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
+import { translate } from "@shared/i18n/mod.ts";
 
 const styles = {
   footer: css({
@@ -59,7 +60,7 @@ export function DefaultFooter() {
         <h1>Profile</h1>
         <div class={styles.profile.content()}>
           <div class={styles.profile.avatar()}>
-            <p class={styles.profile.name()}>mya-ake</p>
+            <p class={styles.profile.name()}>{translate("profile:name")}</p>
             <img
               src="/images/avatar.jpg"
               width="60"
@@ -68,7 +69,7 @@ export function DefaultFooter() {
             />
           </div>
           <div class={styles.profile.bio()}>
-            <p class={styles.profile.bioText()}>猫好きのwebエンジニア。</p>
+            <p class={styles.profile.bioText()}>{translate("profile:bio")}</p>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@
     "parse5": "https://esm.sh/parse5@7.0.0",
     "stitches": "https://esm.sh/@stitches/core@1.2.8",
     "dayjs": "https://esm.sh/dayjs@1.11.3",
+    "i18next": "https://deno.land/x/i18next@v21.8.14/index.js",
     "@shared/": "./shared/",
     "@home/": "./domains/home/"
   }
