@@ -17,5 +17,3 @@ export const init = async ({ lang }: Option) => {
     },
   });
 };
-
-export const translate = i18n.t;
