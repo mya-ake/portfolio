@@ -57,7 +57,7 @@ export function DefaultFooter() {
   return (
     <footer class={styles.footer()}>
       <div class={styles.profile.container()}>
-        <h1>Profile</h1>
+        <h1>{translate("profile:heading")}</h1>
         <div class={styles.profile.content()}>
           <div class={styles.profile.avatar()}>
             <p class={styles.profile.name()}>{translate("profile:name")}</p>
@@ -76,7 +76,7 @@ export function DefaultFooter() {
 
       <div class={styles.copyright()}>
         <span class={styles.copyrightText()}>
-          &copy; {currentYear} <Logo />
+          {translate("footer:copyright", { year: currentYear })} <Logo />
         </span>
       </div>
     </footer>
