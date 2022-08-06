@@ -40,6 +40,7 @@ const styles = {
       margin: "0",
       fontSize: "$base",
       lineHeight: "1.5",
+      whiteSpace: "break-spaces",
     }),
   },
   copyright: css({

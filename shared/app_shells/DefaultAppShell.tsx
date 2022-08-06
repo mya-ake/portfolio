@@ -10,7 +10,18 @@ const styles = {
     display: "grid",
     gridTemplateRows: "auto 1fr auto",
     minHeight: "100vh",
+    mx: 'auto',
     overflow: "auto",
+
+    "@sm": {
+      maxWidth: "$sm",
+    },
+    "@md": {
+      maxWidth: "$md",
+    },
+    "@lg": {
+      maxWidth: "$lg",
+    },
   }),
   main: css({
     width: "100%",
