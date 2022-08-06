@@ -53,9 +53,6 @@ export const { css, getCssText, reset, globalCss } = createStitches({
       "@md": {
         maxWidth: "$md",
       },
-      "@lg": {
-        maxWidth: "$lg",
-      },
     }),
   },
 });

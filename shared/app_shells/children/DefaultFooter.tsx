@@ -11,7 +11,9 @@ const styles = {
   }),
   profile: {
     container: css({
-      container: '',
+      container: "",
+      px: "$4",
+      paddingBottom: "$4",
     }),
     content: css({
       display: "grid",
@@ -44,14 +46,16 @@ const styles = {
       whiteSpace: "break-spaces",
     }),
   },
-  copyright: css({
-    textAlign: "center",
-    py: "$2",
-  }),
-  copyrightText: css({
-    fontSize: "$sm",
-    lineHeight: "1",
-  }),
+  copyright: {
+    container: css({
+      textAlign: "center",
+      py: "$2",
+    }),
+    text: css({
+      fontSize: "$sm",
+      lineHeight: "1",
+    }),
+  },
 };
 
 export function DefaultFooter() {
@@ -76,8 +80,8 @@ export function DefaultFooter() {
         </div>
       </div>
 
-      <div class={styles.copyright()}>
-        <span class={styles.copyrightText()}>
+      <div class={styles.copyright.container()}>
+        <span class={styles.copyright.text()}>
           {translate("footer:copyright", { year: currentYear })} <Logo />
         </span>
       </div>

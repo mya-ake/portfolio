@@ -6,6 +6,7 @@ import { DefaultAppShell } from "@shared/app_shells/DefaultAppShell.tsx";
 const styles = {
   container: css({
     container: "",
+    px: "$4",
   }),
 };
 
