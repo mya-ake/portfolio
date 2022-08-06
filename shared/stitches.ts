@@ -45,5 +45,17 @@ export const { css, getCssText, reset, globalCss } = createStitches({
       marginLeft: value,
       marginRight: value,
     }),
+    container: () => ({
+      mx: "auto",
+      "@sm": {
+        maxWidth: "$sm",
+      },
+      "@md": {
+        maxWidth: "$md",
+      },
+      "@lg": {
+        maxWidth: "$lg",
+      },
+    }),
   },
 });

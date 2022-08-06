@@ -8,10 +8,11 @@ import { translate } from "@shared/i18n/mod.ts";
 const styles = {
   footer: css({
     paddingTop: "$2",
-    px: "$4",
   }),
   profile: {
-    container: css({}),
+    container: css({
+      container: '',
+    }),
     content: css({
       display: "grid",
       gridTemplateColumns: "auto",
