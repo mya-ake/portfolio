@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
-import { h1Style } from "@shared/styles/basic_style.ts";
+import { h1Style } from "@shared/styles/basic_styles.ts";
 import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";

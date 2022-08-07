@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
-import { h1Style, h2Style } from "@shared/styles/basic_style.ts";
+import { h1Style, h2Style } from "@shared/styles/basic_styles.ts";
 import { DefaultAppShell } from "@shared/app_shells/DefaultAppShell.tsx";
 
 const styles = {
