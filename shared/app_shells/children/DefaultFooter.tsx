@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
+import { h1Style } from "@shared/styles/basic_style.ts";
 import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";
@@ -63,7 +64,7 @@ export function DefaultFooter() {
   return (
     <footer class={styles.footer()}>
       <div class={styles.profile.container()}>
-        <h1>{translate("profile:heading")}</h1>
+        <h1 class={h1Style()}>{translate("profile:heading")}</h1>
         <div class={styles.profile.content()}>
           <div class={styles.profile.avatar()}>
             <p class={styles.profile.name()}>{translate("profile:name")}</p>
