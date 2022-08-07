@@ -64,8 +64,8 @@ export function DefaultFooter() {
   return (
     <footer class={styles.footer()}>
       <div class={styles.profile.container()}>
-        <h1 class={h1Style()}>{translate("profile:heading")}</h1>
         <div class={styles.profile.content()}>
+          <h1 class={h1Style()}>{translate("profile:heading")}</h1>
           <div class={styles.profile.avatar()}>
             <p class={styles.profile.name()}>{translate("profile:name")}</p>
             <img
