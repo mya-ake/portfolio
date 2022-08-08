@@ -5,6 +5,7 @@ import { h1Style } from "@shared/styles/basic_styles.ts";
 import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";
+import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 
 const styles = {
   footer: css({
@@ -59,6 +60,20 @@ const styles = {
   },
 };
 
+const socialItems: { label: string; name: string; uri: string }[] = [{
+  label: "GitHub",
+  name: "mya-ake",
+  uri: "https://github.com/mya-ake",
+}, {
+  label: "Twitter",
+  name: "mya_ake",
+  uri: "https://twitter.com/mya_ake",
+}, {
+  label: "Zenn",
+  name: "mya_ake",
+  uri: "https://zenn.dev/mya_ake",
+}];
+
 export function DefaultFooter() {
   const currentYear = getCurrentYear();
   return (
@@ -80,6 +95,20 @@ export function DefaultFooter() {
           <div class={styles.profile.bio()}>
             <p class={styles.profile.bioText()}>{translate("profile:bio")}</p>
           </div>
+
+          <section>
+            <h2>Social</h2>
+            <ul>
+              {socialItems.map(({ label, name, uri }) => (
+                <li key={label}>
+                  <p>
+                    {label}:{" "}
+                    <StyledExternalLink href={uri}>{name}</StyledExternalLink>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </div>
 

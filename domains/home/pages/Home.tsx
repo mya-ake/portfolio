@@ -3,7 +3,7 @@ import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { h2Style } from "@shared/styles/basic_styles.ts";
 import { srOnly } from "@shared/styles/utility_styles.ts";
-import { DefaultAppShell } from "@shared/app_shells/DefaultAppShell.tsx";
+import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 
 const styles = {

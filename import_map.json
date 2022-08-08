@@ -11,6 +11,7 @@
     "dayjs": "https://esm.sh/dayjs@1.11.3",
     "i18next": "https://deno.land/x/i18next@v21.8.14/index.js",
     "@shared/": "./shared/",
+    "@core/": "./core/",
     "@home/": "./domains/home/"
   }
 }
