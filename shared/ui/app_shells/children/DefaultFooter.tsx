@@ -7,6 +7,7 @@ import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
+import { Text } from "@shared/ui/text/Text.tsx";
 
 const styles = {
   footer: css({
@@ -31,23 +32,13 @@ const styles = {
       gap: "$4",
     }),
     name: css({
-      margin: "0",
       order: "1",
-      fontWeight: "bolder",
-      fontSize: "$xl",
-      lineHeight: "1",
     }),
     icon: css({
       borderRadius: "50%",
       order: "0",
     }),
     bio: css({}),
-    bioText: css({
-      margin: "0",
-      fontSize: "$base",
-      lineHeight: "1.5",
-      whiteSpace: "break-spaces",
-    }),
   },
   copyright: {
     container: css({
@@ -83,9 +74,14 @@ export function DefaultFooter() {
         <div class={styles.profile.content()}>
           <h1 class={h1Style()}>{translate("profile:heading")}</h1>
           <div class={styles.profile.avatar()}>
-            <p class={styles.profile.name()}>
+            <Text
+              fontSize="xl"
+              leading="none"
+              fontWeight="bolder"
+              class={styles.profile.name()}
+            >
               {translate("profile:nameWithYomi")}
-            </p>
+            </Text>
             <img
               src="/images/avatar.jpg"
               width="60"
@@ -94,7 +90,9 @@ export function DefaultFooter() {
             />
           </div>
           <div class={styles.profile.bio()}>
-            <p class={styles.profile.bioText()}>{translate("profile:bio")}</p>
+            <Text leading="paragraph">
+              {translate("profile:bio")}
+            </Text>
           </div>
 
           <section>
@@ -102,10 +100,10 @@ export function DefaultFooter() {
             <UnorderList listStyleType="none">
               {socialItems.map(({ label, name, uri }) => (
                 <ListItem key={label}>
-                  <p>
+                  <Text>
                     {label}:{" "}
                     <StyledExternalLink href={uri}>{name}</StyledExternalLink>
-                  </p>
+                  </Text>
                 </ListItem>
               ))}
             </UnorderList>
@@ -114,9 +112,9 @@ export function DefaultFooter() {
       </div>
 
       <div class={styles.copyright.container()}>
-        <span class={styles.copyright.text()}>
+        <Text fontSize="sm">
           {translate("footer:copyright", { year: currentYear })} <Logo />
-        </span>
+        </Text>
       </div>
     </footer>
   );

@@ -1,6 +1,11 @@
 import { createStitches, CSS } from "stitches";
 export type { CSS };
 
+export type FontSize = "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
+const createFontSize = (sizes: Record<FontSize, string>) => sizes;
+
+export type FontWeight = CSS["fontWeight"];
+
 export const stitches = createStitches({
   theme: {
     colors: {
@@ -21,7 +26,7 @@ export const stitches = createStitches({
       xl: "1280px",
       "2xl": "1536px",
     },
-    fontSizes: {
+    fontSizes: createFontSize({
       sm: "0.875rem",
       base: "1rem",
       lg: "1.125rem",
@@ -29,7 +34,7 @@ export const stitches = createStitches({
       "2xl": "1.5rem",
       "3xl": "1.875rem",
       "4xl": "2.25rem",
-    },
+    }),
   },
   media: {
     sm: "(min-width: 640px)",

@@ -10,6 +10,7 @@
     "stitches": "https://esm.sh/@stitches/core@1.2.8",
     "dayjs": "https://esm.sh/dayjs@1.11.3",
     "i18next": "https://deno.land/x/i18next@v21.8.14/index.js",
+    "clsx": "https://esm.sh/clsx@1.2.1",
     "@shared/": "./shared/",
     "@core/": "./core/",
     "@home/": "./domains/home/"
