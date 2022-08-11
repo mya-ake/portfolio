@@ -4,7 +4,10 @@ import { h } from "preact";
 import { ExternalLink, ExternalLinkProps } from "./ExternalLink.tsx";
 import { css } from "@shared/styles/css.ts";
 
-const style = css({});
+const style = css({
+  color: "$link",
+  fontSize: "inherit",
+});
 
 export type StyledExternalLinkProps = ExternalLinkProps;
 

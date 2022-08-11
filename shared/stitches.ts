@@ -5,6 +5,7 @@ export const { css, getCssText, reset, globalCss } = createStitches({
     colors: {
       gray100: "#f3f4f6",
       gray800: "#1e293b",
+      link: "#7dd3fc",
     },
     space: {
       1: "0.25rem",
