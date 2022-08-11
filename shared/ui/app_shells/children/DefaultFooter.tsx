@@ -6,6 +6,7 @@ import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
+import { StyledListItem, StyledUnorderList } from "@shared/ui/list/mod.ts";
 
 const styles = {
   footer: css({
@@ -98,16 +99,16 @@ export function DefaultFooter() {
 
           <section>
             <h2>Social</h2>
-            <ul>
+            <StyledUnorderList listStyleType="none">
               {socialItems.map(({ label, name, uri }) => (
-                <li key={label}>
+                <StyledListItem key={label}>
                   <p>
                     {label}:{" "}
                     <StyledExternalLink href={uri}>{name}</StyledExternalLink>
                   </p>
-                </li>
+                </StyledListItem>
               ))}
-            </ul>
+            </StyledUnorderList>
           </section>
         </div>
       </div>
