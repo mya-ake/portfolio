@@ -1,11 +1,12 @@
 import { createStitches, CSS } from "stitches";
 export type { CSS };
-export const { css, getCssText, reset, globalCss } = createStitches({
+
+export const stitches = createStitches({
   theme: {
     colors: {
-      gray100: "#f3f4f6",
-      gray800: "#1e293b",
-      link: "#7dd3fc",
+      text: "#f3f4f6", // #gray100
+      background: "#1e293b", // gray800
+      link: "#7dd3fc", // sky300
     },
     space: {
       1: "0.25rem",

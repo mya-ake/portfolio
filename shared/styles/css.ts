@@ -1,2 +1,2 @@
-export { css } from "@shared/stitches.ts";
-export type { CSS } from "@shared/stitches.ts";
+export { css } from "./core.ts";
+export type { CSS } from "./core.ts";

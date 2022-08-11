@@ -7,7 +7,7 @@
 import { InnerRenderFunction, RenderContext, start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
 import { readNormalizeCss } from "./core/css/mod.ts";
-import { getCssText, reset } from "@shared/stitches.ts";
+import { getCssText, reset } from "@shared/styles/core.ts";
 import { globalStyles } from "@shared/styles/global_styles.ts";
 import { getCurrentLang } from "@shared/i18n/mod.ts";
 
