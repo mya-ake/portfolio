@@ -8,7 +8,7 @@ type Props = {
   children: ComponentChildren;
 };
 
-export function StyledListItem(props: Props) {
+export function ListItem(props: Props) {
   const { children } = props;
   return <li class={style()}>{children}</li>;
 }

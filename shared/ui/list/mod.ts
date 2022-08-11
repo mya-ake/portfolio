@@ -1,2 +1,2 @@
-export * from "./StyledUnorderList.tsx";
-export * from "./StyledListItem.tsx";
+export * from "./UnorderList.tsx";
+export * from "./ListItem.tsx";

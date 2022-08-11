@@ -22,7 +22,7 @@ const computePadding = (listStyleType: ListStyleType) => {
   }
 };
 
-export function StyledUnorderList(props: Props) {
+export function UnorderList(props: Props) {
   const { children, listStyleType = "disc" } = props;
 
   return (
