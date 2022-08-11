@@ -1,10 +1,8 @@
 import { ComponentChildren, createElement, VNode } from "preact";
 
-type CreateActionComponentParameters = Parameters<typeof createElement>;
-
 type ElementType = "a" | "button";
 
-export function createActionComponent<P = {}>(
+export function createActionComponent<P = Record<string, unknown>>(
   type: ElementType,
   props: P,
   children: ComponentChildren,
