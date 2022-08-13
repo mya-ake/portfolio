@@ -1,10 +1,9 @@
-import { createStitches, CSS } from "stitches";
-export type { CSS };
+import { createStitches, CSS as BaseCSS } from "stitches";
 
 export type FontSize = "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
 const createFontSize = (sizes: Record<FontSize, string>) => sizes;
 
-export type FontWeight = CSS["fontWeight"];
+export type FontWeight = BaseCSS["fontWeight"];
 
 export const stitches = createStitches({
   theme: {
@@ -67,3 +66,7 @@ export const stitches = createStitches({
     }),
   },
 });
+
+type Config = typeof stitches.config;
+type CSS = BaseCSS<Config>;
+export type { CSS };
