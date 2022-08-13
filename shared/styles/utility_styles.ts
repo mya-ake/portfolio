@@ -1,6 +1,6 @@
 import { css } from "@shared/styles/css.ts";
 
-export const srOnly = css({
+export const srOnlyStyle = css({
   position: "absolute",
   width: "1px",
   height: "1px",

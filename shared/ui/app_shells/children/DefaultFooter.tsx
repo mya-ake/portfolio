@@ -8,6 +8,7 @@ import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { Text } from "@shared/ui/text/Text.tsx";
+import { Section } from "@shared/ui/section/Section.tsx";
 
 const styles = {
   footer: css({
@@ -71,8 +72,11 @@ export function DefaultFooter() {
   return (
     <footer class={styles.footer()}>
       <div class={styles.profile.container()}>
-        <div class={styles.profile.content()}>
-          <h1 class={h1Style()}>{translate("profile:heading")}</h1>
+        <Section
+          level="1"
+          heading={translate("profile:heading")}
+          class={styles.profile.content()}
+        >
           <div class={styles.profile.avatar()}>
             <Text
               fontSize="xl"
@@ -95,8 +99,7 @@ export function DefaultFooter() {
             </Text>
           </div>
 
-          <section>
-            <h2>Social</h2>
+          <Section level="2" heading="Social">
             <UnorderList listStyleType="none">
               {socialItems.map(({ label, name, uri }) => (
                 <ListItem key={label}>
@@ -107,8 +110,8 @@ export function DefaultFooter() {
                 </ListItem>
               ))}
             </UnorderList>
-          </section>
-        </div>
+          </Section>
+        </Section>
       </div>
 
       <div class={styles.copyright.container()}>

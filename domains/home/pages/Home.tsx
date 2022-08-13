@@ -1,9 +1,8 @@
 /** @jsx h */
 import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
-import { h2Style } from "@shared/styles/basic_styles.ts";
-import { srOnly } from "@shared/styles/utility_styles.ts";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
+import { Section } from "@shared/ui/section/Section.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 
 const styles = {
@@ -25,22 +24,22 @@ const styles = {
 export function Home() {
   return (
     <DefaultAppShell>
-      <div class={styles.container()}>
-        <h1 class={srOnly()}>{translate("home:heading")}</h1>
-
-        <section>
-          <h2 class={h2Style()}>About</h2>
+      <Section
+        level="1"
+        heading={translate("home:heading")}
+        headingIsSrOnly={true}
+        class={styles.container()}
+      >
+        <Section level="2" heading={"About"}>
           <p class={styles.section.text()}>mya-ake(みゃけ)です。</p>
-        </section>
+        </Section>
 
-        <section>
-          <h2 class={h2Style()}>Recent Activities</h2>
-        </section>
+        <Section level="2" heading={"Recent Activities"}>
+        </Section>
 
-        <section>
-          <h2 class={h2Style()}>GitHub Activities</h2>
-        </section>
-      </div>
+        <Section level="2" heading={"GitHub Activities"}>
+        </Section>
+      </Section>
     </DefaultAppShell>
   );
 }

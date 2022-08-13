@@ -1,4 +1,3 @@
-/** @jsx h */
 import { ComponentChildren, createElement } from "preact";
 import { clsx } from "clsx";
 import { CSS, css, FontSize, FontWeight } from "@shared/styles/css.ts";
