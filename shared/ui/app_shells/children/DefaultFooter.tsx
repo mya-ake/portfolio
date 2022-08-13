@@ -11,9 +11,7 @@ import { Text } from "@shared/ui/text/Text.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 
 const styles = {
-  footer: css({
-    paddingTop: "$2",
-  }),
+  footer: css({}),
   profile: {
     container: css({
       container: "",

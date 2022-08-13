@@ -15,6 +15,7 @@ const styles = {
   main: css({
     width: "100%",
     mx: "auto",
+    paddingBottom: "$4",
   }),
 };
 
