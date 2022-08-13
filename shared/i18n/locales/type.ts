@@ -11,4 +11,13 @@ export type LocaleResouce = {
   footer: {
     copyright: string;
   };
+  social: {
+    heading: string;
+    github: "GitHub";
+    gitHubName: string;
+    twitter: "Twitter";
+    twitterName: string;
+    zenn: "Zenn";
+    zennName: string;
+  };
 };

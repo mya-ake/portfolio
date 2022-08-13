@@ -1,7 +1,6 @@
 /** @jsx h */
 import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
-import { h1Style } from "@shared/styles/basic_styles.ts";
 import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";
@@ -51,19 +50,21 @@ const styles = {
   },
 };
 
-const socialItems: { label: string; name: string; uri: string }[] = [{
-  label: "GitHub",
-  name: "mya-ake",
-  uri: "https://github.com/mya-ake",
-}, {
-  label: "Twitter",
-  name: "mya_ake",
-  uri: "https://twitter.com/mya_ake",
-}, {
-  label: "Zenn",
-  name: "mya_ake",
-  uri: "https://zenn.dev/mya_ake",
-}];
+function getSocialItems(): { label: string; name: string; uri: string }[] {
+  return [{
+    label: translate("social:github"),
+    name: translate("social:gitHubName"),
+    uri: "https://github.com/mya-ake",
+  }, {
+    label: translate("social:twitter"),
+    name: translate("social:twitterName"),
+    uri: "https://twitter.com/mya_ake",
+  }, {
+    label: translate("social:zenn"),
+    name: translate("social:zennName"),
+    uri: "https://zenn.dev/mya_ake",
+  }];
+}
 
 export function DefaultFooter() {
   const currentYear = getCurrentYear();
@@ -97,9 +98,9 @@ export function DefaultFooter() {
             </Text>
           </div>
 
-          <Section level="2" heading="Social">
+          <Section level="2" heading={translate("social:heading")}>
             <UnorderList listStyleType="none">
-              {socialItems.map(({ label, name, uri }) => (
+              {getSocialItems().map(({ label, name, uri }) => (
                 <ListItem key={label}>
                   <Text>
                     {label}:{" "}

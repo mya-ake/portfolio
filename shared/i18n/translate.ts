@@ -4,7 +4,8 @@ import { LocaleResouce } from "./locales/mod.ts";
 type TranslateKey =
   | `profile:${keyof LocaleResouce["profile"]}`
   | `footer:${keyof LocaleResouce["footer"]}`
-  | `home:${keyof LocaleResouce["home"]}`;
+  | `home:${keyof LocaleResouce["home"]}`
+  | `social:${keyof LocaleResouce["social"]}`;
 
 // https://www.i18next.com/translation-function/essentials#overview-options
 type TranslateOption = {

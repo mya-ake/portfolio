@@ -12,6 +12,7 @@ export const init = async ({ lang }: Option) => {
 
   await i18n.init({
     lng: lang,
+    fallbackLng: "ja",
     resources: {
       ja,
     },

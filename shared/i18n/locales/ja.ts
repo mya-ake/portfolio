@@ -14,4 +14,13 @@ export const ja: LocaleResouce = {
   footer: {
     copyright: "© {{year}}",
   },
+  social: {
+    heading: "Social",
+    github: "GitHub",
+    gitHubName: "mya-ake",
+    twitter: "Twitter",
+    twitterName: "mya_ake",
+    zenn: "Zenn",
+    zennName: "mya_ake",
+  },
 };
