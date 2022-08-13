@@ -1,13 +1,13 @@
 /** @jsx h */
-import { h } from "preact";
+import { Fragment, h } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
-import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
+import { Grid } from "@shared/ui/layout/Grid.tsx";
 
 const styles = {
   footer: css({}),
@@ -99,16 +99,16 @@ export function DefaultFooter() {
           </div>
 
           <Section level="2" heading={translate("social:heading")}>
-            <UnorderList listStyleType="none">
+            <Grid templateColumns="auto 1fr" gap="$1 $2">
               {getSocialItems().map(({ label, name, uri }) => (
-                <ListItem key={label}>
+                <Fragment>
+                  <Text>{label}:</Text>
                   <Text>
-                    {label}:{" "}
                     <StyledExternalLink href={uri}>{name}</StyledExternalLink>
                   </Text>
-                </ListItem>
+                </Fragment>
               ))}
-            </UnorderList>
+            </Grid>
           </Section>
         </Section>
       </div>
