@@ -1,16 +1,19 @@
 /** @jsx h */
 import { ComponentChildren, h } from "preact";
-import { CSS, css } from "@shared/styles/css.ts";
+import { CSS, css, filterInvalidStyle } from "@shared/styles/css.ts";
 
 const style = css({
   display: "grid",
 });
 
 type Props = {
-  templateColumns?: string;
+  templateColumns?: CSS["gridTemplateColumns"];
+  templateRows?: CSS["gridTemplateRows"];
   gap?: CSS["gap"];
   rowGap?: CSS["rowGap"];
   columnGap?: CSS["columnGap"];
+  justifyContent?: CSS["justifyContent"];
+  alignItems?: CSS["alignItems"];
   children: ComponentChildren;
   css?: CSS;
 };
@@ -18,17 +21,17 @@ type Props = {
 export function Grid(props: Props) {
   const { children, css = {} } = props;
 
-  const selfCss: CSS = {};
-  if (props.templateColumns) {
-    selfCss.gridTemplateColumns = props.templateColumns;
-  }
-  if (props.gap) selfCss.gap = props.gap;
-  if (props.rowGap) selfCss.rowGap = props.rowGap;
-  if (props.columnGap) selfCss.columnGap = props.columnGap;
-
   const className = style({
     css: {
-      ...selfCss,
+      ...filterInvalidStyle({
+        gridTemplateColumns: props.templateColumns,
+        gridTemplateRows: props.templateRows,
+        gap: props.gap,
+        rowGap: props.rowGap,
+        columnGap: props.columnGap,
+        justifyContent: props.justifyContent,
+        alignItems: props.alignItems,
+      }),
       ...css,
     },
   });

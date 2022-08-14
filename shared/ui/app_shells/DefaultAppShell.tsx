@@ -2,16 +2,11 @@
 import { ComponentChildren, h } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { css } from "@shared/styles/css.ts";
+import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { DefaultHeader } from "./children/DefaultHeader.tsx";
 import { DefaultFooter } from "./children/DefaultFooter.tsx";
 
 const styles = {
-  container: css({
-    display: "grid",
-    gridTemplateRows: "auto 1fr auto",
-    minHeight: "100vh",
-    overflow: "auto",
-  }),
   main: css({
     width: "100%",
     mx: "auto",
@@ -26,7 +21,10 @@ type Props = {
 export function DefaultAppShell(props: Props) {
   const { children } = props;
   return (
-    <div class={styles.container()}>
+    <Grid
+      templateRows="auto 1fr auto"
+      css={{ minHeight: "100vh", overflow: "auto" }}
+    >
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -45,6 +43,6 @@ export function DefaultAppShell(props: Props) {
       <main class={styles.main()}>{children}</main>
 
       <DefaultFooter />
-    </div>
+    </Grid>
   );
 }

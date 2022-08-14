@@ -17,18 +17,8 @@ const styles = {
       px: "$4",
       paddingBottom: "$4",
     }),
-    content: css({
-      display: "grid",
-      gridTemplateColumns: "auto",
-      gap: "$4",
-    }),
-    avatar: css({
-      display: "grid",
-      gridTemplateColumns: "auto auto",
-      justifyContent: "start",
-      alignItems: "center",
-      gap: "$4",
-    }),
+    content: css({}),
+    avatar: css({}),
     name: css({
       order: "1",
     }),
@@ -43,10 +33,7 @@ const styles = {
       textAlign: "center",
       py: "$2",
     }),
-    text: css({
-      fontSize: "$sm",
-      lineHeight: "1",
-    }),
+    text: css({}),
   },
 };
 
@@ -74,42 +61,48 @@ export function DefaultFooter() {
         <Section
           level="1"
           heading={translate("profile:heading")}
-          class={styles.profile.content()}
         >
-          <div class={styles.profile.avatar()}>
-            <Text
-              fontSize="xl"
-              leading="none"
-              fontWeight="bolder"
-              class={styles.profile.name()}
+          <Grid templateColumns="auto" gap="$4">
+            <Grid
+              templateColumns="auto auto"
+              justifyContent="start"
+              alignItems="center"
+              gap="$4"
             >
-              {translate("profile:nameWithYomi")}
-            </Text>
-            <img
-              src="/images/avatar.jpg"
-              width="60"
-              height="60"
-              class={styles.profile.icon()}
-            />
-          </div>
-          <div class={styles.profile.bio()}>
-            <Text leading="paragraph">
-              {translate("profile:bio")}
-            </Text>
-          </div>
-
-          <Section level="2" heading={translate("social:heading")}>
-            <Grid templateColumns="auto 1fr" gap="$1 $2">
-              {getSocialItems().map(({ label, name, uri }) => (
-                <Fragment>
-                  <Text>{label}:</Text>
-                  <Text>
-                    <StyledExternalLink href={uri}>{name}</StyledExternalLink>
-                  </Text>
-                </Fragment>
-              ))}
+              <Text
+                fontSize="xl"
+                leading="none"
+                fontWeight="bolder"
+                class={styles.profile.name()}
+              >
+                {translate("profile:nameWithYomi")}
+              </Text>
+              <img
+                src="/images/avatar.jpg"
+                width="60"
+                height="60"
+                class={styles.profile.icon()}
+              />
             </Grid>
-          </Section>
+            <div class={styles.profile.bio()}>
+              <Text leading="paragraph">
+                {translate("profile:bio")}
+              </Text>
+            </div>
+
+            <Section level="2" heading={translate("social:heading")}>
+              <Grid templateColumns="auto 1fr" gap="$1 $2">
+                {getSocialItems().map(({ label, name, uri }) => (
+                  <Fragment>
+                    <Text>{label}:</Text>
+                    <Text>
+                      <StyledExternalLink href={uri}>{name}</StyledExternalLink>
+                    </Text>
+                  </Fragment>
+                ))}
+              </Grid>
+            </Section>
+          </Grid>
         </Section>
       </div>
 
