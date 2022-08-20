@@ -85,7 +85,7 @@ export function DefaultFooter() {
               />
             </Grid>
             <div class={styles.profile.bio()}>
-              <Text leading="paragraph">
+              <Text>
                 {translate("profile:bio")}
               </Text>
             </div>
@@ -94,8 +94,8 @@ export function DefaultFooter() {
               <Grid templateColumns="auto 1fr" gap="$1 $2">
                 {getSocialItems().map(({ label, name, uri }) => (
                   <Fragment>
-                    <Text>{label}:</Text>
-                    <Text>
+                    <Text leading="none">{label}:</Text>
+                    <Text leading="none">
                       <StyledExternalLink href={uri}>{name}</StyledExternalLink>
                     </Text>
                   </Fragment>
@@ -107,7 +107,7 @@ export function DefaultFooter() {
       </div>
 
       <div class={styles.copyright.container()}>
-        <Text fontSize="sm">
+        <Text fontSize="sm" leading="none">
           {translate("footer:copyright", { year: currentYear })} <Logo />
         </Text>
       </div>

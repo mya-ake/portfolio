@@ -4,6 +4,8 @@ import { css } from "@shared/styles/css.ts";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
+import { Text } from "@shared/ui/text/Text.tsx";
+import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 
 const styles = {
@@ -11,12 +13,6 @@ const styles = {
     container: "",
     px: "$4",
   }),
-  section: {
-    text: css({
-      margin: 0,
-      fontSize: "$base",
-    }),
-  },
 };
 
 export function Home() {
@@ -30,7 +26,17 @@ export function Home() {
       >
         <Grid templateColumns="auto" gap="$8">
           <Section level="2" heading={"About"}>
-            <p class={styles.section.text()}>mya-ake(みゃけ)です。</p>
+            <Text>
+              猫好きのwebエンジニアが気まぐれで運営してるサイトです。リニューアルしようとしてますが、ずっと完成してないです。
+            </Text>
+            <Text>
+              手早く作るためにNext.js/GraphQLで作っていたの止めて、<StyledExternalLink href="https://fresh.deno.dev/">
+                Fresh
+              </StyledExternalLink>で改めて作り直し中。
+            </Text>
+
+            <Section level="3" heading={"Status"}>
+            </Section>
           </Section>
 
           <Section level="2" heading={"Recent Activities"}>
