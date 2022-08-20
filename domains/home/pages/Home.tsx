@@ -35,7 +35,15 @@ export function Home() {
               </StyledExternalLink>で改めて作り直し中。
             </Text>
 
-            <Section level="3" heading={"Status"}>
+            <Section level="3" heading={"Current Status"}>
+              <Grid templateColumns="auto 1fr" columnGap="$2">
+                <Text>Home:</Text>
+                <Text>Fresh</Text>
+                <Text>Blog:</Text>
+                <Text>Nuxt.js v2</Text>
+                <Text>Other:</Text>
+                <Text>Vue.js v2</Text>
+              </Grid>
             </Section>
           </Section>
 
