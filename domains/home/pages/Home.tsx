@@ -6,6 +6,7 @@ import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
+import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { translate } from "@shared/i18n/mod.ts";
 
 const styles = {
@@ -48,6 +49,13 @@ export function Home() {
           </Section>
 
           <Section level="2" heading={"Recent Activities"}>
+            <UnorderList>
+              <ListItem>
+                <StyledExternalLink href="https://zenn.dev/mya_ake/articles/5517a5001db48e">
+                  Reactのchildrenの型で子コンポーネントを制御する（したかった）
+                </StyledExternalLink>
+              </ListItem>
+            </UnorderList>
           </Section>
 
           <Section level="2" heading={"GitHub Activities"}>
