@@ -3,6 +3,7 @@ import { ComponentChildren, h } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import { css } from "@shared/styles/css.ts";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
+import { Box } from "@shared/ui/layout/Box.tsx";
 import { DefaultHeader } from "./children/DefaultHeader.tsx";
 import { DefaultFooter } from "./children/DefaultFooter.tsx";
 
@@ -10,7 +11,6 @@ const styles = {
   main: css({
     width: "100%",
     mx: "auto",
-    paddingBottom: "$4",
   }),
 };
 
@@ -42,7 +42,9 @@ export function DefaultAppShell(props: Props) {
 
       <main class={styles.main()}>{children}</main>
 
-      <DefaultFooter />
+      <Box css={{ marginTop: "$16" }}>
+        <DefaultFooter />
+      </Box>
     </Grid>
   );
 }

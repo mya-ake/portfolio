@@ -29,16 +29,17 @@ export type HeadingProps = {
   srOnly?: boolean;
   children?: ComponentChildren;
   leading?: Leading;
+  fontSize?: FontSize;
 };
 
 export function Heading(props: HeadingProps) {
-  const { level, leading = "base", srOnly = false, children } = props;
+  const { level, leading = "base", srOnly = false, children, fontSize } = props;
 
   const className = clsx(
     srOnly && srOnlyStyle().toString(),
     style({
       css: {
-        fontSize: `$${fontSizeMap[level]}`,
+        fontSize: fontSize ? `$${fontSize}` : `$${fontSizeMap[level]}`,
         lineHeight: leadingMap[leading],
       },
     }).toString(),

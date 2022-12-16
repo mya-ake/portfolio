@@ -31,6 +31,8 @@ export function UnorderList(props: Props) {
         css: {
           padding: computePadding(listStyleType),
           listStyleType,
+          display: "grid",
+          rowGap: "$2",
         },
       })}
     >

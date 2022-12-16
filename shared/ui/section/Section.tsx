@@ -1,7 +1,7 @@
 import { ComponentChildren, createElement } from "preact";
 import { clsx } from "clsx";
 import { Heading, HeadingProps, Level } from "../text/Heading.tsx";
-import { CSS, css } from "@shared/styles/css.ts";
+import { CSS, css, FontSize } from "@shared/styles/css.ts";
 
 const styles = {
   wrapper: css({}),
@@ -12,7 +12,7 @@ type Props = {
   level: Level;
   heading: string;
   children: ComponentChildren;
-  headingIsSrOnly?: boolean;
+  headingProps?: Omit<HeadingProps, "level">;
   class?: string;
   css?: CSS;
 };
@@ -27,8 +27,7 @@ const wrapTag: Record<Level, "div" | "section"> = {
 };
 
 export function Section(props: Props) {
-  const { as, level, heading, headingIsSrOnly = false, children, css = {} } =
-    props;
+  const { as, level, heading, headingProps = {}, children, css = {} } = props;
 
   const className = clsx(
     props.class?.toString(),
@@ -44,7 +43,7 @@ export function Section(props: Props) {
     { class: className },
     createElement<HeadingProps>(
       Heading,
-      { level, srOnly: headingIsSrOnly },
+      { level, ...headingProps },
       heading,
     ),
     children,

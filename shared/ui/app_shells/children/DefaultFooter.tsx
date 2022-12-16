@@ -61,6 +61,7 @@ export function DefaultFooter() {
         <Section
           level="1"
           heading={translate("profile:heading")}
+          headingProps={{ fontSize: "2xl" }}
         >
           <Grid templateColumns="auto" gap="$4">
             <Grid
@@ -68,6 +69,7 @@ export function DefaultFooter() {
               justifyContent="start"
               alignItems="center"
               gap="$4"
+              css={{ marginTop: "$2" }}
             >
               <Text
                 fontSize="xl"

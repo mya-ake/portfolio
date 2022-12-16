@@ -9,7 +9,7 @@ export const ja: LocaleResouce = {
       "福岡在住の猫好きwebエンジニア。\n最近はwebのフロントエンドを中心にやってます。PWAとかサーバーレスアーキテクチャとかが好きです。",
   },
   home: {
-    heading: "neko note home",
+    heading: "ネコノテ ホーム",
   },
   footer: {
     copyright: "© {{year}}",
