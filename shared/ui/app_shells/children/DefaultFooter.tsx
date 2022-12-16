@@ -80,7 +80,7 @@ export function DefaultFooter() {
                 {translate("profile:nameWithYomi")}
               </Text>
               <img
-                src="/images/avatar.jpg"
+                src="/assets/v3/images/avatar.jpg"
                 width="60"
                 height="60"
                 class={styles.profile.icon()}
