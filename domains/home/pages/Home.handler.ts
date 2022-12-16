@@ -16,7 +16,6 @@ function getRepositories() {
 
 export const handler: Handlers<Data> = {
   async GET(_, ctx) {
-    console.log("call");
     const repositories = await getRepositories();
     const data: Data = { repositories };
     return ctx.render(data);
