@@ -1,5 +1,6 @@
 /** @jsx h */
 import { Fragment, h } from "preact";
+import { Head } from "$fresh/runtime.ts";
 import { css } from "@shared/styles/css.ts";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
@@ -22,6 +23,9 @@ const styles = {
 export function Home({ data }: PageProps<Data>) {
   return (
     <DefaultAppShell>
+      <Head>
+        <title>neko-note'</title>
+      </Head>
       <Section
         level="1"
         heading={translate("home:heading")}
