@@ -23,7 +23,7 @@ export function SimpleAppShell(props: Props) {
   return (
     <Grid
       templateRows="auto 1fr auto"
-      css={{ minHeight: "100vh", overflow: "auto" }}
+      css={{ minHeight: "100dvh", overflow: "auto" }}
     >
       <DefaultMeta />
 
