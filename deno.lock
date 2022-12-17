@@ -398,6 +398,8 @@
     "https://deno.land/x/i18next@v21.8.14/utils.js": "2e4e677216df70676e3ac12af4bde63f1b45a5b39c086eeb46f2cf784f538099",
     "https://deno.land/x/importmap@0.2.1/_util.ts": "ada9a9618b537e6c0316c048a898352396c882b9f2de38aba18fd3f2950ede89",
     "https://deno.land/x/importmap@0.2.1/mod.ts": "ae3d1cd7eabd18c01a4960d57db471126b020f23b37ef14e1359bbb949227ade",
+    "https://deno.land/x/resvg_wasm@0.2.0/lib/resvg_wasm.generated.js": "29247e1c473c35f302d8c3741d369e2e999df6b3978cf2c975f701d2fb39c63e",
+    "https://deno.land/x/resvg_wasm@0.2.0/mod.ts": "be79306e8e038f6ac8a1151127b7a29d52125e4b4b671bf8c4a248d85c41c7fd",
     "https://deno.land/x/rutt@0.0.13/mod.ts": "af981cfb95131152bf50fc9140fc00cb3efb6563df2eded1d408361d8577df20",
     "https://deno.land/x/ts_morph@16.0.0/common/DenoRuntime.ts": "537800e840d0994f9055164e11bf33eadf96419246af0d3c453793c3ae67bdb3",
     "https://deno.land/x/ts_morph@16.0.0/common/mod.ts": "01985d2ee7da8d1caee318a9d07664774fbee4e31602bc2bb6bb62c3489555ed",
@@ -438,76 +440,8 @@
     "https://esm.sh/v99/preact@10.11.3/src/jsx.d.ts": "77ce5bd7324455c9f6dc85bfc3c94b733acb92cc98fdf82e4b1059c8bca7866d"
   },
   "npm": {
-    "specifiers": {
-      "@resvg/resvg-js@2.2.0": "@resvg/resvg-js@2.2.0",
-      "satori@0.0.44": "satori@0.0.44"
-    },
+    "specifiers": { "satori@0.0.44": "satori@0.0.44" },
     "packages": {
-      "@resvg/resvg-js-android-arm-eabi@2.2.0": {
-        "integrity": "sha512-w3lAI6R5cfxGM5oxX6XhEFob4mJkkyfKm0veUQJOg65J4dznwcaJ54lGuQPfjAPhcHxSk/w+7BvFLjbbjV09qw==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-android-arm64@2.2.0": {
-        "integrity": "sha512-rzo0IqUErz1GzPthmU3wB25Vvdyr6KGI+J2WqALgSqmFxJ/sDygT2/6tirb4Lp1IjbvLhzO3uA6SP/sMwcWNfw==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-darwin-arm64@2.2.0": {
-        "integrity": "sha512-MHJBjUh+xlZeMXcHqGiBO5d5CcgNAd0pXXaOmQtcamfBN5oc9SCJP3z137BEN5RhE6bgz6Wl88Sv1Jh3Wn0nlA==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-darwin-x64@2.2.0": {
-        "integrity": "sha512-y6uaW/lWgvqpoeTA2hrgPlvNS7kbduBpUfYCpmk7KzOEMBzUUssOHT+DgqlQ7SZOi01mL6DHeDpAjvzM7K4Ocw==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-linux-arm-gnueabihf@2.2.0": {
-        "integrity": "sha512-G32NqLnuYilT3z5oD5AKXZvpD/ZPRzP1t2T0dvqQC6kBE6c5ckhdCbyT0gnnarcvMoXP+J/xh7kadEp3V8wFDg==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-linux-arm64-gnu@2.2.0": {
-        "integrity": "sha512-R0KJCCyjFcTDFT+nAVlP/CYUMIEjxSkSJsEED9QesulCxMY/aoO52p91FgQrGjecORkASNXovlqS3HsNYbCTOg==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-linux-arm64-musl@2.2.0": {
-        "integrity": "sha512-Ir83lcBsuB6YVkAVPW4AAOzYo/F9kjlx2HA/O3vCjy/Rn5u5Xf2fGANfJxfCHUCtDMcqmM4hjdF2fOzqS9fusw==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-linux-x64-gnu@2.2.0": {
-        "integrity": "sha512-pH1GdShtIDF3fmQZM9NTEEdZPkNKQ+XUJb7r1jaD8gusdXeD2ejWWi/uvlsugaoMoG0tUmMZi78eVm4IjlY+gw==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-linux-x64-musl@2.2.0": {
-        "integrity": "sha512-7n2d4gfcyLb06RE/7aMGwiiMiqeCf/Ze/fBhKs9F2L60GX6rpgDC2PGJmWBiXIwz48PifvxmBiqD9XCUH5YGoA==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-win32-arm64-msvc@2.2.0": {
-        "integrity": "sha512-rJWhnui1+P9lakfx92zhm+HInZUU1NdvkL/G5KrFcRI8HH0rfdNHokfKknvuko4e7iUSia7kTsbuKDNe4fErtQ==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-win32-ia32-msvc@2.2.0": {
-        "integrity": "sha512-GlckTgsrlF9PQlWcXs1EySeGaT8TAkrSGhVZPRvSv46DUpZlhyVVvKMjsvpbDfqWltFkJTEgkTJ6uravnJrEMA==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js-win32-x64-msvc@2.2.0": {
-        "integrity": "sha512-4coA6J+MfrpbMaPynSLmmiq3DutmvNmCcNFyjnhhnytQW7+8zbrkVZGra7fty3364LY3unZGxS878WRa/AU7tw==",
-        "dependencies": {}
-      },
-      "@resvg/resvg-js@2.2.0": {
-        "integrity": "sha512-Btc6Bht2Y8jBlS1RqVYsPWQaL1WgeGZd/TasmQpCsh0s5Ax1Kw0zyr6DCpvlNYG6b3mNnmJ5ib44A5MIQZmrEQ==",
-        "dependencies": {
-          "@resvg/resvg-js-android-arm-eabi": "@resvg/resvg-js-android-arm-eabi@2.2.0",
-          "@resvg/resvg-js-android-arm64": "@resvg/resvg-js-android-arm64@2.2.0",
-          "@resvg/resvg-js-darwin-arm64": "@resvg/resvg-js-darwin-arm64@2.2.0",
-          "@resvg/resvg-js-darwin-x64": "@resvg/resvg-js-darwin-x64@2.2.0",
-          "@resvg/resvg-js-linux-arm-gnueabihf": "@resvg/resvg-js-linux-arm-gnueabihf@2.2.0",
-          "@resvg/resvg-js-linux-arm64-gnu": "@resvg/resvg-js-linux-arm64-gnu@2.2.0",
-          "@resvg/resvg-js-linux-arm64-musl": "@resvg/resvg-js-linux-arm64-musl@2.2.0",
-          "@resvg/resvg-js-linux-x64-gnu": "@resvg/resvg-js-linux-x64-gnu@2.2.0",
-          "@resvg/resvg-js-linux-x64-musl": "@resvg/resvg-js-linux-x64-musl@2.2.0",
-          "@resvg/resvg-js-win32-arm64-msvc": "@resvg/resvg-js-win32-arm64-msvc@2.2.0",
-          "@resvg/resvg-js-win32-ia32-msvc": "@resvg/resvg-js-win32-ia32-msvc@2.2.0",
-          "@resvg/resvg-js-win32-x64-msvc": "@resvg/resvg-js-win32-x64-msvc@2.2.0"
-        }
-      },
       "@shuding/opentype.js@1.4.0-beta.0": {
         "integrity": "sha512-3NgmNyH3l/Hv6EvsWJbsvpcpUba6R8IREQ83nH83cyakCw7uM1arZKNfHwv1Wz6jgqrF/j4x5ELvR6PnK9nTcA==",
         "dependencies": {

@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "start": "deno run -A --unstable --watch=static/,routes/ dev.ts"
+    "start": "deno run -A --unstable --watch=static/,routes/ dev.ts",
+    "recache": "deno cache -r --lock=deno.lock --lock-write ./main.ts"
   },
   "importMap": "./import_map.json"
 }
