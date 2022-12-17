@@ -5,7 +5,7 @@ type Config = {
 export function cacheMiddleware(resp: Response, config: Config) {
   if (resp.ok && Deno.env.get("APP_ENV") === "prod") {
     if (config.time) {
-      resp.headers.set("cache-control", `max-age=${config.time}`);
+      resp.headers.set("cache-control", `public, max-age=${config.time}`);
     }
   }
   return resp;
