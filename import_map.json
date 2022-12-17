@@ -14,6 +14,7 @@
     "i18next": "https://deno.land/x/i18next@v21.8.14/index.js",
     "clsx": "https://esm.sh/clsx@1.2.1",
     "octokit": "https://cdn.skypack.dev/octokit@2.0.10?dts",
+    "satori": "npm:satori@0.0.44",
     "@shared/": "./shared/",
     "@core/": "./core/",
     "@home/": "./domains/home/"

@@ -24,7 +24,7 @@ export function Home({ data }: PageProps<Data>) {
   return (
     <DefaultAppShell>
       <Head>
-        <title>neko-note'</title>
+        <title>neko-note′</title>
       </Head>
       <Section
         level="1"
