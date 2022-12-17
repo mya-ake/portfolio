@@ -1,10 +1,10 @@
-import { ComponentChildren, createElement, VNode } from "preact";
+import { Attributes, ComponentChildren, createElement, VNode } from "preact";
 
 type ElementType = "a" | "button";
 
 export function createActionComponent<P = Record<string, unknown>>(
   type: ElementType,
-  props: P,
+  props: Attributes,
   children: ComponentChildren,
 ): VNode<P> {
   const component = createElement(type, props, children);
