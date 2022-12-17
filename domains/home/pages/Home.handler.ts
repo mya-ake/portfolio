@@ -4,6 +4,7 @@ import {
   getOctokit,
   Repository,
 } from "@shared/github/mod.ts";
+import { cacheMiddleware } from "@shared/middleware/cache.ts";
 
 export type Data = {
   repositories: Repository[];
@@ -18,6 +19,9 @@ export const handler: Handlers<Data> = {
   async GET(_, ctx) {
     const repositories = await getRepositories();
     const data: Data = { repositories };
-    return ctx.render(data);
+
+    const resp = await ctx.render(data);
+    cacheMiddleware(resp, { time: 10 });
+    return resp;
   },
 };
