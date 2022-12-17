@@ -1,4 +1,5 @@
 import satori from "satori";
+import { Resvg } from "@resvg/resvg-js";
 import { Handlers } from "$fresh/server.ts";
 import { getRedHatDisplay } from "@shared/font/mod.ts";
 
@@ -43,8 +44,11 @@ export const handler: Handlers = {
         ],
       },
     );
-    const res = new Response(svg, { status: 200 });
-    res.headers.set("content-type", "image/svg+xml");
+    const resvg = new Resvg(svg);
+    const pngData = resvg.render();
+    const pngBuffer = pngData.asPng();
+    const res = new Response(pngBuffer, { status: 200 });
+    res.headers.set("content-type", "image/png");
     return res;
   },
 };
