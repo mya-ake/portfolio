@@ -1,6 +1,6 @@
 import { ComponentChildren, createElement } from "preact";
 import { clsx } from "clsx";
-import { css, FontSize } from "@shared/styles/css.ts";
+import { CSS, css, filterInvalidStyle, FontSize } from "@shared/styles/css.ts";
 import { srOnlyStyle } from "@shared/styles/utility_styles.ts";
 
 const style = css({
@@ -30,17 +30,28 @@ export type HeadingProps = {
   children?: ComponentChildren;
   leading?: Leading;
   fontSize?: FontSize;
+  css?: CSS;
 };
 
 export function Heading(props: HeadingProps) {
-  const { level, leading = "base", srOnly = false, children, fontSize } = props;
+  const {
+    level,
+    leading = "base",
+    srOnly = false,
+    children,
+    fontSize,
+    css = {},
+  } = props;
 
   const className = clsx(
     srOnly && srOnlyStyle().toString(),
     style({
       css: {
-        fontSize: fontSize ? `$${fontSize}` : `$${fontSizeMap[level]}`,
-        lineHeight: leadingMap[leading],
+        ...filterInvalidStyle({
+          fontSize: fontSize ? `$${fontSize}` : `$${fontSizeMap[level]}`,
+          lineHeight: leadingMap[leading],
+        }),
+        ...css,
       },
     }).toString(),
   );

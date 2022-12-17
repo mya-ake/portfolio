@@ -1,13 +1,12 @@
 /** @jsx h */
 import { Fragment, h } from "preact";
 import { css } from "@shared/styles/css.ts";
-import { getCurrentYear } from "@shared/date/get_current_year.ts";
-import { Logo } from "@shared/symbol/Logo.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
+import { Copyright } from "./children/Copyright.tsx";
 
 const styles = {
   footer: css({}),
@@ -28,13 +27,6 @@ const styles = {
     }),
     bio: css({}),
   },
-  copyright: {
-    container: css({
-      textAlign: "center",
-      py: "$2",
-    }),
-    text: css({}),
-  },
 };
 
 function getSocialItems(): { label: string; name: string; uri: string }[] {
@@ -54,7 +46,6 @@ function getSocialItems(): { label: string; name: string; uri: string }[] {
 }
 
 export function DefaultFooter() {
-  const currentYear = getCurrentYear();
   return (
     <footer class={styles.footer()}>
       <div class={styles.profile.container()}>
@@ -108,11 +99,7 @@ export function DefaultFooter() {
         </Section>
       </div>
 
-      <div class={styles.copyright.container()}>
-        <Text fontSize="sm" leading="none">
-          {translate("footer:copyright", { year: currentYear })} <Logo />
-        </Text>
-      </div>
+      <Copyright />
     </footer>
   );
 }

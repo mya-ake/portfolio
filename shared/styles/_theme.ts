@@ -1,6 +1,15 @@
 import { createStitches, CSS as BaseCSS } from "stitches";
 
-export type FontSize = "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
+export type FontSize =
+  | "sm"
+  | "base"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "5xl"
+  | "6xl";
 const createFontSize = (sizes: Record<FontSize, string>) => sizes;
 
 export type FontWeight = BaseCSS["fontWeight"];
@@ -34,6 +43,8 @@ export const stitches = createStitches({
       "2xl": "1.5rem",
       "3xl": "1.875rem",
       "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
     }),
   },
   media: {
