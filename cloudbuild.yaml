@@ -1,0 +1,49 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    env:
+      - GIT_REVISION=$REVISION_ID
+    args:
+      - compose
+      - '-f'
+      - docker-compose.yml
+      - build
+    id: Build
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - tag
+      - deno-image
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
+    id: Push
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    args:
+      - run
+      - services
+      - update
+      - $_SERVICE_NAME
+      - '--platform=managed'
+      - '--image=$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
+      - >-
+        --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID,$_LABELS
+      - '--region=$_DEPLOY_REGION'
+      - '--quiet'
+    id: Deploy
+    entrypoint: gcloud
+images:
+  - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
+options:
+  substitutionOption: ALLOW_LOOSE
+substitutions:
+  _SERVICE_NAME: portfolio
+  _DEPLOY_REGION: asia-northeast1
+  _LABELS: gcb-trigger-id=bbdaf18d-5cf4-4dc9-835a-b99fc3726633
+  _TRIGGER_ID: bbdaf18d-5cf4-4dc9-835a-b99fc3726633
+  _GCR_HOSTNAME: asia.gcr.io
+  _PLATFORM: managed
+tags:
+  - gcp-cloud-build-deploy-cloud-run
+  - gcp-cloud-build-deploy-cloud-run-managed
+  - portfolio
