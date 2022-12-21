@@ -18,6 +18,7 @@
     "resvg/": "https://deno.land/x/resvg_wasm@0.2.0/",
     "@shared/": "./shared/",
     "@core/": "./core/",
-    "@home/": "./domains/home/"
+    "@home/": "./domains/home/",
+    "@og/": "./domains/og/"
   }
 }
