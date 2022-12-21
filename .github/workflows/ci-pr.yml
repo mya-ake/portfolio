@@ -25,7 +25,7 @@ jobs:
       - name: Check types
         run: deno check ./main.ts
       - name: Testing
-        run: deno test --allow-read
+        run: deno test --allow-read --allow-env
       # - name: Upload to Deno Deploy
       #   uses: denoland/deployctl@v1
       #   with:
