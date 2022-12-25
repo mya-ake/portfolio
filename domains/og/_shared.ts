@@ -15,6 +15,7 @@ export async function getFonts() {
 }
 
 export const backgroundStyle = {
+  position: "relative",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
