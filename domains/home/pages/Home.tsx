@@ -43,6 +43,9 @@ export function Home({ data }: PageProps<Data>) {
                   Fresh
                 </StyledExternalLink>で改めて作り直し中。
               </Text>
+              <Text>
+                数年前の記事やスライドは移行が大変&情報として古いので削除する予定です。再度見たいものがあれば書き直したりするので、Twitterのアカウントまでご連絡ください。
+              </Text>
             </Box>
 
             <Section
