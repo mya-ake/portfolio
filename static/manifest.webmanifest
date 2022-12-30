@@ -1,4 +1,9 @@
 {
+  "name": "neko-note′",
+	"short_name": "neko-note′",
+	"theme_color": "#1e293b",
+	"background_color": "#1e293b",
+	"start_url": "https://mya-ake.com/",
   "icons": [
     { "src": "/og?type=icon&size=192", "type": "image/png", "sizes": "192x192" },
     { "src": "/og?type=icon&size-512", "type": "image/png", "sizes": "512x512" }
