@@ -5,14 +5,14 @@ import { parseParameter } from "./parse_parameter.ts";
 describe("validateParameter", () => {
   it("default", () => {
     const parameter = parseParameter(new URL("https://exmaple.com"));
-    assertEquals(parameter, { type: "square", size: 640 });
+    assertEquals(parameter, { type: "square", ext: "png", size: 640 });
   });
 
   it("set values", () => {
     const parameter = parseParameter(
-      new URL("https://exmaple.com?type=icon&size=1960"),
+      new URL("https://exmaple.com?type=icon&ext=svg&size=1960"),
     );
-    assertEquals(parameter, { type: "icon", size: 1960 });
+    assertEquals(parameter, { type: "icon", ext: "svg", size: 1960 });
   });
 
   it("throw error", () => {

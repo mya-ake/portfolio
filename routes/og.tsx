@@ -1,10 +1,9 @@
 import { render } from "resvg/mod.ts";
 import { Handlers } from "$fresh/server.ts";
 import { getIconImage, getSquareOgImage } from "@og/generator/mod.ts";
-import { parseParameter } from "@og/paser/parse_parameter.ts";
+import { Parameter, parseParameter } from "@og/paser/parse_parameter.ts";
 
-function getSvg(url: URL) {
-  const parameter = parseParameter(url);
+function getSvg(parameter: Parameter) {
   switch (parameter.type) {
     case "square":
       return getSquareOgImage({ size: parameter.size });
@@ -15,15 +14,37 @@ function getSvg(url: URL) {
   }
 }
 
+function createSvgResponse(svg: string) {
+  return new Response(svg, {
+    status: 200,
+    headers: {
+      "content-type": "image/svg+xml",
+    },
+  });
+}
+
+async function createPngResponse(svg: string) {
+  const data = await render(svg);
+  return new Response(data, {
+    status: 200,
+    headers: {
+      "content-type": "image/png",
+    },
+  });
+}
+
 export const handler: Handlers = {
   async GET(req) {
     const url = new URL(req.url);
     try {
-      const svg = await getSvg(url);
-      const data = await render(svg);
-      const res = new Response(data, { status: 200 });
-      res.headers.set("content-type", "image/png");
-      return res;
+      const parameter = parseParameter(url);
+      const svg = await getSvg(parameter);
+      switch (parameter.ext) {
+        case "svg":
+          return createSvgResponse(svg);
+        case "png":
+          return createPngResponse(svg);
+      }
     } catch (error) {
       console.log(error);
       return new Response("Bad Request", { status: 400 });
