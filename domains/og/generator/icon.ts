@@ -7,7 +7,7 @@ type Parameters = {
 
 export async function getIconImage({ size }: Parameters) {
   const fonts = await getFonts();
-  const fontSize = size * 1;
+  const fontSize = size * 0.85;
   const adjustedPosition = size * 0.05;
   return satori({
     type: "div",

@@ -6,6 +6,7 @@ import { Box } from "@shared/ui/layout/Box.tsx";
 import { DefaultMeta } from "./children/DefaultMeta.tsx";
 import { DefaultHeader } from "./children/DefaultHeader.tsx";
 import { DefaultFooter } from "./children/footer/DefaultFooter.tsx";
+import { IconHead } from "@shared/head/IconHead.tsx";
 
 const styles = {
   main: css({
@@ -25,6 +26,8 @@ export function DefaultAppShell(props: Props) {
       templateRows="auto 1fr auto"
       css={{ minHeight: "100dvh", overflow: "auto" }}
     >
+      <IconHead />
+
       <DefaultMeta />
 
       <DefaultHeader />
