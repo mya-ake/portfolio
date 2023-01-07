@@ -10,6 +10,7 @@ import { Text } from "@shared/ui/text/Text.tsx";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { translate } from "@shared/i18n/mod.ts";
+import { SEOHead } from "@shared/head/SEOHead.tsx";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./Home.handler.ts";
 
@@ -23,9 +24,10 @@ const styles = {
 export function Home({ data }: PageProps<Data>) {
   return (
     <DefaultAppShell>
-      <Head>
-        <title>neko-note′</title>
-      </Head>
+      <SEOHead
+        description="猫好きのwebエンジニアが気まぐれで運営してるサイトです。現在リニューアル中です。"
+        path="/"
+      />
       <Section
         level="1"
         heading={translate("home:heading")}
