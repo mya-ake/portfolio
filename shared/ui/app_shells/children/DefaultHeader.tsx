@@ -7,7 +7,7 @@ import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
 const styles = {
   header: css({
     textAlign: "center",
-    py: "$2",
+    py: "$4",
   }),
   link: css({
     lineHeight: "1",

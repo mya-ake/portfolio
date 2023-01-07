@@ -34,7 +34,7 @@ export function Home({ data }: PageProps<Data>) {
         headingProps={{ srOnly: true }}
         class={styles.container()}
       >
-        <Grid templateColumns="auto" gap="$8">
+        <Grid templateColumns="auto" rowGap="$16">
           <Section level="2" heading={"About"}>
             <Box css={{ marginTop: "$2" }}>
               <Text>
