@@ -2,6 +2,7 @@ import { render } from "resvg/mod.ts";
 import { Handlers } from "$fresh/server.ts";
 import { getIconImage, getSquareOgImage } from "@og/generator/mod.ts";
 import { Parameter, parseParameter } from "@og/paser/parse_parameter.ts";
+import { cacheMiddleware } from "@shared/middleware/cache.ts";
 
 function getSvg(parameter: Parameter) {
   switch (parameter.type) {
@@ -39,12 +40,17 @@ export const handler: Handlers = {
     try {
       const parameter = parseParameter(url);
       const svg = await getSvg(parameter);
+      let response: Response;
       switch (parameter.ext) {
         case "svg":
-          return createSvgResponse(svg);
+          response = createSvgResponse(svg);
+          break;
         case "png":
-          return createPngResponse(svg);
+          response = await createPngResponse(svg);
+          break;
       }
+      cacheMiddleware(response, { time: 600 });
+      return response;
     } catch (error) {
       console.log(error);
       return new Response("Bad Request", { status: 400 });
