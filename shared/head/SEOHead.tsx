@@ -21,7 +21,7 @@ export function SEOHead(props: SEOHeadProps) {
 
   const displayTitle = title ? `${title} | ${siteName}` : siteName;
   const url = new URL(path, origin);
-  const displayImagePath = imagePath ?? defaultImagePath;
+  const displayImagePath = `${origin}${imagePath ?? defaultImagePath}`;
 
   return (
     <Head>
