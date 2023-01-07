@@ -49,7 +49,7 @@ export const handler: Handlers = {
           response = await createPngResponse(svg);
           break;
       }
-      cacheMiddleware(response, { time: 600 });
+      cacheMiddleware(response, { time: 60 * 60 * 24 * 7 * 4 });
       return response;
     } catch (error) {
       console.log(error);

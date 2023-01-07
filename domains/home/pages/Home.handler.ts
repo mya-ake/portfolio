@@ -21,7 +21,7 @@ export const handler: Handlers<Data> = {
     const data: Data = { repositories };
 
     const resp = await ctx.render(data);
-    cacheMiddleware(resp, { time: 10 });
+    cacheMiddleware(resp, { time: 60 * 60 * 24 * 7 });
     return resp;
   },
 };
