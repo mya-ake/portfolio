@@ -78,6 +78,11 @@ export function Home({ data }: PageProps<Data>) {
                     Reactのchildrenの型で子コンポーネントを制御する（したかった）
                   </StyledExternalLink>
                 </ListItem>
+                <ListItem>
+                  <StyledExternalLink href="https://speakerdeck.com/myaake/fu-gang-falsecxptimufalseshao-jie-tokai-fa-falsegong-fu">
+                    福岡のCXPチームの紹介と開発の工夫
+                  </StyledExternalLink>
+                </ListItem>
               </UnorderList>
             </Box>
           </Section>
