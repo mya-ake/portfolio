@@ -25,7 +25,7 @@ export function Home({ data }: PageProps<Data>) {
   return (
     <DefaultAppShell>
       <SEOHead
-        description="猫好きのwebエンジニアが気まぐれで運営してるサイトです。現在リニューアル中です。"
+        description={translate("description:default")}
         path="/"
       />
       <Section

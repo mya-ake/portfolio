@@ -8,6 +8,10 @@ export const ja: LocaleResouce = {
     bio:
       "福岡在住の猫好きwebエンジニア。\n最近はwebのフロントエンドを中心にやってます。PWAとかサーバーレスアーキテクチャとかが好きです。",
   },
+  description: {
+    default:
+      "猫好きのwebエンジニアが気まぐれで運営してるサイトです。現在リニューアル中です。",
+  },
   home: {
     heading: "ネコノテ ホーム",
   },

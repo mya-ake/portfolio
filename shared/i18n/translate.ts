@@ -3,6 +3,7 @@ import { LocaleResouce } from "./locales/mod.ts";
 
 type TranslateKey =
   | `profile:${keyof LocaleResouce["profile"]}`
+  | `description:${keyof LocaleResouce["description"]}`
   | `footer:${keyof LocaleResouce["footer"]}`
   | `home:${keyof LocaleResouce["home"]}`
   | `social:${keyof LocaleResouce["social"]}`;
