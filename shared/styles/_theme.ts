@@ -22,12 +22,12 @@ export const stitches = createStitches({
       link: "#7dd3fc", // sky300
     },
     space: {
-      1: "0.25rem",
-      2: "0.5rem",
-      4: "1rem",
-      8: "2rem",
-      12: "3rem",
-      16: "4rem",
+      1: "4px",
+      2: "8px",
+      4: "16px",
+      8: "32px",
+      12: "48px",
+      16: "64px",
     },
     sizes: {
       sm: "640px",
