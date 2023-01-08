@@ -15,7 +15,7 @@ jobs:
       contents: read
     steps:
       - name: Purge Cache
-        run: aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths "$TARGET_PATHS"
+        run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "$TARGET_PATHS"
         env:
           TARGET_PATHS: ${{ inputs.paths }}
           CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
