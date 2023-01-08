@@ -14,13 +14,8 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.29.1
       - name: Purge Cache
-        run: deno task purge_cdn_cache
+        run: aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "${TARGET_PATHS}"
         env:
           TARGET_PATHS: ${{ inputs.paths }}
-      - run: aws --version
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
