@@ -2,12 +2,16 @@ name: Purge Cache
 
 on:
   workflow_dispatch:
+    inputs:
+      paths:
+        description: ""
+        required: true
+        type: string
 
 jobs:
   purge_cache:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: read
     steps:
       - uses: actions/checkout@v3
@@ -15,3 +19,7 @@ jobs:
         uses: denoland/setup-deno@v1
         with:
           deno-version: v1.29.1
+      - name: Purge Cache
+        run: deno task purge_cdn_cache
+        env:
+          TARGET_PATHS: {{ inputs.paths }}

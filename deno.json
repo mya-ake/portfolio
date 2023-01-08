@@ -1,7 +1,8 @@
 {
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ dev.ts",
-    "recache": "deno cache -r --lock=deno.lock --lock-write ./main.ts"
+    "recache": "deno cache -r --lock=deno.lock --lock-write ./main.ts",
+    "purge_cdn_cache": "deno run --allow-env scripts/purge_cdn_cache/main.ts"
   },
   "importMap": "./import_map.json"
 }
