@@ -26,6 +26,9 @@ jobs:
         run: deno check ./main.ts
       - name: Testing
         run: deno test --allow-read --allow-env
+        env:
+          MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+          MICRO_CMS_API_ENDPOINT: ${{ secrests.MICRO_CMS_API_ENDPOINT }}
       # - name: Upload to Deno Deploy
       #   uses: denoland/deployctl@v1
       #   with:
