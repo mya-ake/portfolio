@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { FetchError } from "@shared/fetch/error.ts";
 
 const Config = z.object({
   apiKey: z.string(),
@@ -7,6 +8,10 @@ const Config = z.object({
 type Config = z.infer<typeof Config>;
 
 type Resource = "posts";
+type RequestParameter = {
+  resource: Resource;
+  id?: string;
+};
 
 export class MicroCmsClient {
   #config: Config;
@@ -22,8 +27,11 @@ export class MicroCmsClient {
     return Config.parse({ apiKey, endpoint });
   }
 
-  fetch(resource: Resource, config: RequestInit) {
-    const url = new URL(`/api/v1/${resource}`, this.#config.endpoint);
+  fetch(parameter: RequestParameter, config: RequestInit) {
+    const pathname = ["api", "v1", parameter.resource, parameter.id].filter(
+      Boolean,
+    ).join("/");
+    const url = new URL(pathname, this.#config.endpoint);
     const request = new Request(url, {
       ...config,
       headers: {
@@ -34,7 +42,12 @@ export class MicroCmsClient {
     return fetch(request);
   }
 
-  get<Data>(resource: Resource): Promise<Data> {
-    return this.fetch(resource, { method: "get" }).then((res) => res.json());
+  get<Data>(parameter: RequestParameter): Promise<Data> {
+    return this.fetch(parameter, { method: "get" }).then((res) => {
+      if (res.ok === false) {
+        return new FetchError(res.statusText, res);
+      }
+      return res.json();
+    });
   }
 }
