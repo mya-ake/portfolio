@@ -20,6 +20,7 @@
     "@shared/": "./shared/",
     "@core/": "./core/",
     "@home/": "./domains/home/",
-    "@og/": "./domains/og/"
+    "@og/": "./domains/og/",
+    "@post/": "./domains/post/"
   }
 }
