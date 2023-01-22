@@ -16,8 +16,9 @@ export type Content<
 
 export type MicroCMSList<
   CustomData extends Record<string, CustomDataValue> = EmptyCustomData,
+  PickValues extends keyof Content<CustomData> = never,
 > = {
-  contents: Content<CustomData>[];
+  contents: Pick<Content<CustomData>, PickValues>[];
   totalCount: number;
   offset: number;
   limit: number;
@@ -30,4 +31,7 @@ type PostData = {
 };
 
 export type Post = Content<PostData>;
-export type Posts = MicroCMSList<PostData>;
+export type Posts<PickValues extends keyof Content<PostData>> = MicroCMSList<
+  PostData,
+  PickValues
+>;
