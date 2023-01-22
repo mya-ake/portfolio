@@ -62,6 +62,37 @@ describe("MicroCmsClient", () => {
     fetchStub.restore();
   });
 
+  it("expected URL is set with parameter", async () => {
+    const fetchStub = stub(
+      globalThis,
+      "fetch",
+      () => Promise.resolve(new Response(JSON.stringify({}))),
+    );
+
+    const response = await client.get({
+      resource: "posts",
+      fields: ["id", "title"].join(","),
+      orders: "-publishedAt",
+      limit: 10,
+      offset: 2,
+      richEditorFormat: "object",
+    });
+
+    const fetchArgs = fetchStub.calls[0].args;
+    const fetchRequest = fetchArgs[0] as Request;
+
+    assertEquals(response, {});
+    assertEquals(
+      fetchRequest.url,
+      new URL(
+        "/api/v1/posts?fields=id%2Ctitle&orders=-publishedAt&limit=10&offset=2&richEditorFormat=object",
+        endpoint,
+      ).toString(),
+    );
+
+    fetchStub.restore();
+  });
+
   describe("error", () => {
     it("in the case of FetchError", async () => {
       const fetchStub = stub(

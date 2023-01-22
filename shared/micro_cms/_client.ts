@@ -11,6 +11,11 @@ type Resource = "posts";
 type RequestParameter = {
   resource: Resource;
   id?: string;
+  fields?: string;
+  orders?: "-publishedAt";
+  limit?: number;
+  offset?: number;
+  richEditorFormat?: "html" | "object";
 };
 
 export class MicroCmsClient {
@@ -28,10 +33,14 @@ export class MicroCmsClient {
   }
 
   fetch(parameter: RequestParameter, config: RequestInit) {
-    const pathname = ["api", "v1", parameter.resource, parameter.id].filter(
+    const { resource, id, ...rest } = parameter;
+    const pathname = ["api", "v1", resource, id].filter(
       Boolean,
     ).join("/");
     const url = new URL(pathname, this.#config.endpoint);
+    Object.entries(rest).forEach(([key, value]) => {
+      url.searchParams.append(key, String(value));
+    });
     const request = new Request(url, {
       ...config,
       headers: {
