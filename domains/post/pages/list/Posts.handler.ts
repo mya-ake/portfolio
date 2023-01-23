@@ -1,4 +1,4 @@
-import { getMicroCmsClient } from "@shared/micro_cms/core.ts";
+import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type { Posts as OriginalPosts } from "@shared/micro_cms/type.ts";
 
