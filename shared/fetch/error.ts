@@ -7,3 +7,7 @@ export class FetchError extends Error {
     this.response = response;
   }
 }
+
+export function isFetchError(error: unknown): error is FetchError {
+  return error instanceof FetchError;
+}

@@ -54,7 +54,7 @@ export class MicroCmsClient {
   get<Data>(parameter: RequestParameter): Promise<Data> {
     return this.fetch(parameter, { method: "get" }).then((res) => {
       if (res.ok === false) {
-        return new FetchError(res.statusText, res);
+        throw new FetchError(res.statusText, res);
       }
       return res.json();
     });
