@@ -6,8 +6,16 @@ export type ContentMetadata = {
   revisedAt: string;
 };
 
-type CustomDataValue = string;
+export type CustomDataValue =
+  | string
+  | Content<
+    Record<string, string>
+  >
+  | Content<
+    Record<string, string>
+  >[];
 type EmptyCustomData = Record<string, never>;
+
 export type Content<
   CustomData extends Record<string, CustomDataValue> = EmptyCustomData,
 > =
@@ -15,23 +23,26 @@ export type Content<
   & CustomData;
 
 export type MicroCMSList<
-  CustomData extends Record<string, CustomDataValue> = EmptyCustomData,
-  PickValues extends keyof Content<CustomData> = never,
+  // deno-lint-ignore no-explicit-any
+  C extends Content<any>,
 > = {
-  contents: Pick<Content<CustomData>, PickValues>[];
+  contents: C[];
   totalCount: number;
   offset: number;
   limit: number;
 };
 
+type TagData = {
+  title: string;
+};
+
+export type Tag = Content<TagData>;
+
 type PostData = {
   title: string;
   description: string;
   body: string;
+  tags: Content<TagData>[];
 };
 
 export type Post = Content<PostData>;
-export type Posts<PickValues extends keyof Content<PostData>> = MicroCMSList<
-  PostData,
-  PickValues
->;
