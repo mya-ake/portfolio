@@ -8,7 +8,6 @@ export type ContentMetadata = {
 
 export type CustomDataValue =
   | string
-  | RichEditor
   | Content<
     Record<string, string>
   >
@@ -42,7 +41,7 @@ export type Tag = Content<TagData>;
 type PostData = {
   title: string;
   description: string;
-  body: RichEditor;
+  body: string;
   tags: Content<TagData>[];
 };
 
