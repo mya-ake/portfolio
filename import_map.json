@@ -17,10 +17,12 @@
     "satori": "npm:satori@0.0.44",
     "resvg/": "https://deno.land/x/resvg_wasm@0.2.0/",
     "zod": "https://deno.land/x/zod@v3.16.1/mod.ts",
+    "hljs": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js",
     "@shared/": "./shared/",
     "@core/": "./core/",
     "@home/": "./domains/home/",
     "@og/": "./domains/og/",
-    "@post/": "./domains/post/"
+    "@post/": "./domains/post/",
+    "@islands/": "./islands/"
   }
 }

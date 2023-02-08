@@ -284,6 +284,7 @@
     "https://cdn.skypack.dev/error/unknown:@octokit/webhooks?from=octokit": "da4eac731e69c05d778a4f31135b25e5095cbe2c99486fa2803df790872a046a",
     "https://cdn.skypack.dev/error/unknown:aws-lambda?from=@octokit/oauth-app": "8803cf8fe2f1e2cae9a69f64250b7a74ea152d074014804741ff8ae86e552385",
     "https://cdn.skypack.dev/octokit@2.0.10?dts": "b6a6430fbb5919fcc915905d065e8be27ab7195bb5ce826f2e07cd464009b81b",
+    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js": "69f14712953b725c3a81250737931446997607087dd8c02c89420b1661884516",
     "https://deno.land/std@0.140.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.140.0/_util/os.ts": "3b4c6e27febd119d36a416d7a97bd3b0251b77c88942c8f16ee5953ea13e2e49",
     "https://deno.land/std@0.140.0/fs/_util.ts": "0fb24eb4bfebc2c194fb1afdb42b9c3dda12e368f43e8f2321f84fc77d42cb0f",
@@ -488,7 +489,9 @@
     "https://esm.sh/v103/preact@10.11.3/src/jsx.d.ts": "77ce5bd7324455c9f6dc85bfc3c94b733acb92cc98fdf82e4b1059c8bca7866d"
   },
   "npm": {
-    "specifiers": { "satori@0.0.44": "satori@0.0.44" },
+    "specifiers": {
+      "satori@0.0.44": "satori@0.0.44"
+    },
     "packages": {
       "@shuding/opentype.js@1.4.0-beta.0": {
         "integrity": "sha512-3NgmNyH3l/Hv6EvsWJbsvpcpUba6R8IREQ83nH83cyakCw7uM1arZKNfHwv1Wz6jgqrF/j4x5ELvR6PnK9nTcA==",
@@ -555,7 +558,9 @@
       },
       "yoga-layout-prebuilt@1.10.0": {
         "integrity": "sha512-YnOmtSbv4MTf7RGJMK0FvZ+KD8OEe/J5BNnR0GHhD8J/XcG/Qvxgszm0Un6FTHWW4uHlTgP0IztiXQnGyIR45g==",
-        "dependencies": { "@types/yoga-layout": "@types/yoga-layout@1.9.2" }
+        "dependencies": {
+          "@types/yoga-layout": "@types/yoga-layout@1.9.2"
+        }
       }
     }
   }
