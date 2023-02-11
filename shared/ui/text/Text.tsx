@@ -1,4 +1,4 @@
-import { ComponentChildren, createElement } from "preact";
+import { ComponentChildren, createElement, JSX } from "preact";
 import { clsx } from "clsx";
 import {
   CSS,
@@ -33,7 +33,7 @@ type Props = {
   lineStyle?: LineStyle;
   class?: string;
   css?: CSS;
-};
+} & JSX.HTMLAttributes<HTMLParagraphElement>;
 
 export function Text(props: Props) {
   const {
@@ -44,6 +44,7 @@ export function Text(props: Props) {
     leading = "paragraph",
     lineStyle = "new-line",
     css = {},
+    style: attrStyle,
   } = props;
 
   const className = clsx(
@@ -61,5 +62,5 @@ export function Text(props: Props) {
     }).toString(),
   );
 
-  return createElement(as, { class: className }, children);
+  return createElement(as, { class: className, style: attrStyle }, children);
 }

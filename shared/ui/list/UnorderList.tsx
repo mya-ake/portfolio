@@ -1,11 +1,6 @@
 /** @jsx h */
 import { ComponentChildren, h } from "preact";
-import { css } from "@shared/styles/css.ts";
-
-const style = css({
-  margin: 0,
-  listStylePosition: "outside",
-});
+import { baseListStyle } from "./_style.ts";
 
 type ListStyleType = "disc" | "none";
 type Props = {
@@ -27,13 +22,9 @@ export function UnorderList(props: Props) {
 
   return (
     <ul
-      class={style({
-        css: {
-          padding: computePadding(listStyleType),
-          listStyleType,
-          display: "grid",
-          rowGap: "$2",
-        },
+      class={baseListStyle({
+        padding: computePadding(listStyleType),
+        listStyleType,
       })}
     >
       {children}

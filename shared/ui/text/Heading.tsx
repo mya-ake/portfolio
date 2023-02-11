@@ -1,4 +1,4 @@
-import { ComponentChildren, createElement } from "preact";
+import { ComponentChildren, createElement, JSX } from "preact";
 import { clsx } from "clsx";
 import { CSS, css, filterInvalidStyle, FontSize } from "@shared/styles/css.ts";
 import { srOnlyStyle } from "@shared/styles/utility_styles.ts";
@@ -31,7 +31,7 @@ export type HeadingProps = {
   leading?: Leading;
   fontSize?: FontSize;
   css?: CSS;
-};
+} & JSX.HTMLAttributes<HTMLHeadElement>;
 
 export function Heading(props: HeadingProps) {
   const {
@@ -41,6 +41,7 @@ export function Heading(props: HeadingProps) {
     children,
     fontSize,
     css = {},
+    style: attrStyle,
   } = props;
 
   const className = clsx(
@@ -58,5 +59,6 @@ export function Heading(props: HeadingProps) {
 
   return createElement(`h${level}`, {
     class: className,
+    style: attrStyle,
   }, children);
 }

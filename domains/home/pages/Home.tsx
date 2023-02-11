@@ -1,6 +1,5 @@
 /** @jsx h */
 import { Fragment, h } from "preact";
-import { Head } from "$fresh/runtime.ts";
 import { css } from "@shared/styles/css.ts";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
@@ -16,7 +15,6 @@ import type { Data } from "./Home.handler.ts";
 
 const styles = {
   container: css({
-    container: "",
     px: "$4",
   }),
 };
@@ -33,6 +31,7 @@ export function Home({ data }: PageProps<Data>) {
         heading={translate("home:heading")}
         headingProps={{ srOnly: true }}
         class={styles.container()}
+        isContainer
       >
         <Grid templateColumns="auto" rowGap="$12">
           <Section level="2" heading={"About"}>
