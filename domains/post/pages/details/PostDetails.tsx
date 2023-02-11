@@ -1,6 +1,5 @@
 /** @jsx h */
 import { h } from "preact";
-import { Head } from "$fresh/runtime.ts";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { HighlightJSHead } from "@shared/head/HighlightJSHead.tsx";
