@@ -2,8 +2,8 @@ import { z } from "zod";
 import { FetchError } from "@shared/fetch/error.ts";
 
 const Config = z.object({
-  apiKey: z.string(),
-  endpoint: z.string(),
+  apiKey: z.string().min(1),
+  endpoint: z.string().min(1),
 });
 type Config = z.infer<typeof Config>;
 
