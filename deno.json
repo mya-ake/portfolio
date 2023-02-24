@@ -28,6 +28,5 @@
     "@post/": "./domains/post/",
     "@islands/": "./islands/"
   },
-  // If you don't write it down, fresh will make an error.
   "importMap": "./deno.json"
 }
