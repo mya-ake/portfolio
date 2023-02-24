@@ -8,7 +8,7 @@ const Config = z.object({
 type Config = z.infer<typeof Config>;
 
 type Resource = "posts";
-type RequestParameter = {
+export type RequestParameter = {
   resource: Resource;
   id?: string;
   fields?: string;
