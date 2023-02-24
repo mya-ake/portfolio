@@ -5,6 +5,7 @@ import { Heading, Level } from "@shared/ui/text/Heading.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
+import { replaceToReplacedUrl } from "@post/shared/replace_image.ts";
 import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
 import { css } from "@shared/styles/css.ts";
 
@@ -68,9 +69,10 @@ function render(nodes: Node[]) {
         );
       }
       case "img": {
+        const src = replaceToReplacedUrl(new URL(node.attrs.src));
         return (
           <img
-            src={node.attrs.src}
+            src={src}
             alt={node.attrs.alt}
             class={css({
               width: "100%",

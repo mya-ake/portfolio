@@ -9,7 +9,8 @@ import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/index.tsx";
 import * as $4 from "./routes/og.tsx";
 import * as $5 from "./routes/posts/[id].tsx";
-import * as $6 from "./routes/posts/index.tsx";
+import * as $6 from "./routes/posts/images/[...path].ts";
+import * as $7 from "./routes/posts/index.tsx";
 import * as $$0 from "./islands/Highlight.tsx";
 
 const manifest = {
@@ -20,7 +21,8 @@ const manifest = {
     "./routes/index.tsx": $3,
     "./routes/og.tsx": $4,
     "./routes/posts/[id].tsx": $5,
-    "./routes/posts/index.tsx": $6,
+    "./routes/posts/images/[...path].ts": $6,
+    "./routes/posts/index.tsx": $7,
   },
   islands: {
     "./islands/Highlight.tsx": $$0,
