@@ -45,7 +45,7 @@ export function createInstantCacheFactory(
       const result = input
         ? await task(input)
         : await (task as TaskNoneInput<Data>)();
-      _adapter.put(key, result);
+      await _adapter.put(key, result);
       return result;
     };
 

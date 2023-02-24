@@ -1,5 +1,7 @@
 import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { createFields } from "@shared/micro_cms/utils.ts";
+import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
+import { getUseMicroCMSCache } from "@shared/env/mod.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type {
   MicroCMSList,
@@ -28,7 +30,7 @@ export type Data = {
   posts: Posts;
 };
 
-function getPosts() {
+function getPostsFromCMS() {
   const client = getMicroCmsClient();
   return client.get<Posts>({
     resource: "posts",
@@ -37,6 +39,10 @@ function getPosts() {
     limit: 10,
   });
 }
+
+const getPosts = getUseMicroCMSCache()
+  ? createInstantCache("posts")(getPostsFromCMS)
+  : getPostsFromCMS;
 
 export const handler: Handlers<Data> = {
   async GET(_, ctx) {

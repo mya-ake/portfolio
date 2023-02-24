@@ -2,7 +2,7 @@ import { testBasicSpec } from "./_instant_cache_test_cast.ts";
 import {
   CacheAdapter,
   createInstantCacheFactory,
-} from "./create_instant_cache.ts";
+} from "./_create_instant_cache.ts";
 
 class TestAdapter implements CacheAdapter {
   #key = "__undefined__";

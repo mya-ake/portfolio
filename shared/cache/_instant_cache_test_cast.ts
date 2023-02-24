@@ -1,7 +1,7 @@
 import { describe, it } from "std/testing/bdd.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 import { assertSpyCalls, spy } from "std/testing/mock.ts";
-import type { CreateInstantCache } from "./create_instant_cache.ts";
+import type { CreateInstantCache } from "./_create_instant_cache.ts";
 
 export function testBasicSpec(createInstantCache: CreateInstantCache) {
   describe("createInstantCacheFactory", () => {

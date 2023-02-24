@@ -20,6 +20,7 @@ function render(nodes: Node[]) {
     switch (node.tagName) {
       case "h1":
       case "h2":
+      case "h9":
       case "h3":
       case "h4":
       case "h5":

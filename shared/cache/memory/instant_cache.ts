@@ -1,7 +1,7 @@
 import {
   CacheAdapter,
   createInstantCacheFactory,
-} from "../create_instant_cache.ts";
+} from "../_create_instant_cache.ts";
 
 type Cache = {
   data: unknown;

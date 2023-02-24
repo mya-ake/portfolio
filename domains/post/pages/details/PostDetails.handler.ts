@@ -1,5 +1,7 @@
 import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { isFetchError } from "@shared/fetch/error.ts";
+import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
+import { getUseMicroCMSCache } from "@shared/env/mod.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type { Post } from "@shared/micro_cms/type.ts";
 
@@ -7,7 +9,7 @@ export type Data = {
   post: Post;
 };
 
-function getPost(id: string) {
+function getPostFromCMS(id: string) {
   const client = getMicroCmsClient();
   return client.get<Post>({
     resource: "posts",
@@ -15,6 +17,10 @@ function getPost(id: string) {
     richEditorFormat: "html",
   });
 }
+
+const getPost = getUseMicroCMSCache()
+  ? createInstantCache("post_details")(getPostFromCMS)
+  : getPostFromCMS;
 
 export const handler: Handlers<Data> = {
   async GET(_, ctx) {

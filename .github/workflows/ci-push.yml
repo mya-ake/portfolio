@@ -25,7 +25,7 @@ jobs:
       - name: Check types
         run: deno check ./main.ts
       - name: Testing
-        run: deno test --allow-read --allow-env --allow-net
+        run: deno task test
         env:
           MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
           MICRO_CMS_API_ENDPOINT: ${{ secrets.MICRO_CMS_API_ENDPOINT }}
