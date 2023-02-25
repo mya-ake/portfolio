@@ -1,6 +1,10 @@
 import { render } from "resvg/mod.ts";
 import { Handlers } from "$fresh/server.ts";
-import { getIconImage, getSquareOgImage } from "@og/generator/mod.ts";
+import {
+  getIconImage,
+  getSquareOgImage,
+  getTextOgImage,
+} from "@og/generator/mod.ts";
 import { Parameter, parseParameter } from "@og/paser/parse_parameter.ts";
 import { cacheMiddleware } from "@shared/middleware/cache.ts";
 
@@ -10,6 +14,8 @@ function getSvg(parameter: Parameter) {
       return getSquareOgImage({ size: parameter.size });
     case "icon":
       return getIconImage({ size: parameter.size });
+    case "text":
+      return getTextOgImage({ size: parameter.size, text: parameter.text });
     default:
       throw new Error("");
   }
