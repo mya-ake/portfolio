@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { extractParameter } from "@shared/url/extract_parameter.ts";
+import { enableTextOgImage } from "@shared/feature_flag/mod.ts";
 
 export const Parameter = z.object({
   type: z.enum(["square", "icon", "text"]).default("square"),
@@ -15,6 +16,10 @@ export const Parameter = z.object({
       code: "custom",
       message: "When type is text, text is required.",
     });
+  }
+  // Not yet used
+  if (type === "text" && !enableTextOgImage()) {
+    ctx.addIssue({ code: "custom" });
   }
 });
 
