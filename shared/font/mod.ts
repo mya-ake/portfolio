@@ -8,10 +8,10 @@ export function getRedHatDisplay() {
   return Deno.readFile(path);
 }
 
-export function getRoboto() {
+export function getNotoSansJP() {
   const path = join(
     Deno.cwd(),
-    "shared/font/fonts/Roboto-Regular.ttf",
+    "shared/font/fonts/NotoSansJP-Medium.otf",
   );
   return Deno.readFile(path);
 }
