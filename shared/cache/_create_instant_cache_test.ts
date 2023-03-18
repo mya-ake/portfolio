@@ -1,4 +1,4 @@
-import { testBasicSpec } from "./_instant_cache_test_cast.ts";
+import { testBasicSpec } from "./_instant_cache_test_case.ts";
 import {
   CacheAdapter,
   createInstantCacheFactory,
