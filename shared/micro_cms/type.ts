@@ -47,6 +47,12 @@ type PostData = {
 
 export type Post = Content<PostData>;
 
+export type WidgetData = {
+  content: string;
+};
+
+export type Widget = Content<WidgetData>;
+
 /** Rich Editor Object */
 export type RichEditorItemText = {
   type: "text";
