@@ -7,10 +7,11 @@ const Config = z.object({
 });
 type Config = z.infer<typeof Config>;
 
-type Resource = "posts";
+type Resource = "posts" | "widgets";
 export type RequestParameter = {
   resource: Resource;
   id?: string;
+  ids?: string[];
   fields?: string;
   orders?: "-publishedAt";
   limit?: number;
