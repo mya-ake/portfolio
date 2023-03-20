@@ -5,7 +5,10 @@ import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Box } from "@shared/ui/layout/Box.tsx";
 import { DefaultMeta } from "./children/DefaultMeta.tsx";
 import { DefaultHeader } from "./children/DefaultHeader.tsx";
-import { DefaultFooter } from "./children/footer/DefaultFooter.tsx";
+import {
+  DefaultFooter,
+  Props as DefaultFooterProps,
+} from "./children/footer/DefaultFooter.tsx";
 import { IconHead } from "@shared/head/IconHead.tsx";
 
 const styles = {
@@ -15,8 +18,9 @@ const styles = {
   }),
 };
 
-type Props = {
+export type Props = {
   children: ComponentChildren;
+  widgetMap: DefaultFooterProps["widgetMap"];
 };
 
 export function DefaultAppShell(props: Props) {
@@ -35,7 +39,7 @@ export function DefaultAppShell(props: Props) {
       <main class={styles.main()}>{children}</main>
 
       <Box css={{ marginTop: "$16" }}>
-        <DefaultFooter />
+        <DefaultFooter widgetMap={props.widgetMap} />
       </Box>
     </Grid>
   );

@@ -8,14 +8,14 @@ import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Box } from "@shared/ui/layout/Box.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { Time } from "@shared/ui/text/Time.tsx";
-import { RenderBody } from "./children/RenderBody.tsx";
+import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import Highlight from "@islands/Highlight.tsx";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./PostDetails.handler.ts";
 
 export function PostDetails({ data }: PageProps<Data>) {
   return (
-    <DefaultAppShell>
+    <DefaultAppShell widgetMap={data.widgetMap}>
       <SEOHead
         title={data.post.title}
         description={data.post.description}
@@ -46,7 +46,7 @@ export function PostDetails({ data }: PageProps<Data>) {
             )}
           </Grid>
           <Box css={{ marginTop: "$8" }}>
-            <RenderBody html={data.post.body} />
+            <RenderHTML html={data.post.body} />
           </Box>
         </Section>
       </Box>

@@ -116,7 +116,7 @@ function render(nodes: Node[]) {
   });
 }
 
-export function RenderBody({ html }: Props) {
+export function RenderHTML({ html }: Props) {
   const nodes = parseHtml(html);
   const elements = render(nodes);
   return <Fragment>{elements}</Fragment>;

@@ -14,7 +14,7 @@ import type { Data } from "./Posts.handler.ts";
 
 export function Posts({ data }: PageProps<Data>) {
   return (
-    <DefaultAppShell>
+    <DefaultAppShell widgetMap={data.widgetMap}>
       <SEOHead
         description=""
         path="/posts/"
