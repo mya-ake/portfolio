@@ -22,7 +22,7 @@ const styles = {
 
 export function Home({ data }: PageProps<Data>) {
   return (
-    <DefaultAppShell>
+    <DefaultAppShell widgetMap={data.widgetMap}>
       <SEOHead
         description={translate("description:default")}
         path="/"
