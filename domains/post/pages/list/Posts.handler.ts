@@ -2,6 +2,10 @@ import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { createFields } from "@shared/micro_cms/utils.ts";
 import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
 import { getUseMicroCMSCache } from "@shared/env/mod.ts";
+import {
+  DefaultAppShellWidgetMap,
+  getDefaultAppShellWidgetMap,
+} from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type {
   MicroCMSList,
@@ -28,6 +32,7 @@ type Posts = MicroCMSList<Post>;
 
 export type Data = {
   posts: Posts;
+  widgetMap: DefaultAppShellWidgetMap;
 };
 
 function getPostsFromCMS() {
@@ -47,8 +52,10 @@ const getPosts = getUseMicroCMSCache()
 export const handler: Handlers<Data> = {
   async GET(_, ctx) {
     const postsData = await getPosts();
+    const widgetMap = await getDefaultAppShellWidgetMap();
     const data: Data = {
       posts: postsData,
+      widgetMap,
     };
     const resp = await ctx.render(data);
     return resp;

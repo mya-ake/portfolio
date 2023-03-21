@@ -10,6 +10,7 @@ import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { translate } from "@shared/i18n/mod.ts";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
+import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./Home.handler.ts";
 
@@ -21,7 +22,7 @@ const styles = {
 
 export function Home({ data }: PageProps<Data>) {
   return (
-    <DefaultAppShell>
+    <DefaultAppShell widgetMap={data.widgetMap}>
       <SEOHead
         description={translate("description:default")}
         path="/"
@@ -36,17 +37,7 @@ export function Home({ data }: PageProps<Data>) {
         <Grid templateColumns="auto" rowGap="$12">
           <Section level="2" heading={"About"}>
             <Box css={{ marginTop: "$2" }}>
-              <Text>
-                猫好きのwebエンジニアが気まぐれで運営してるサイトです。リニューアルしようとしてますが、ずっと完成してないです。
-              </Text>
-              <Text>
-                手早く作るためにNext.js/GraphQLで作っていたのを止めて、<StyledExternalLink href="https://fresh.deno.dev/">
-                  Fresh
-                </StyledExternalLink>で改めて作り直し中。
-              </Text>
-              <Text>
-                数年前の記事やスライドは移行が大変&情報として古いので削除する予定です。再度見たいものがあれば書き直したりするので、Twitterのアカウントまでご連絡ください。
-              </Text>
+              <RenderHTML html={data.widgetMap.home_about} />
             </Box>
 
             <Section
@@ -71,18 +62,7 @@ export function Home({ data }: PageProps<Data>) {
 
           <Section level="2" heading={"Recent Activities"}>
             <Box css={{ marginTop: "$2" }}>
-              <UnorderList>
-                <ListItem>
-                  <StyledExternalLink href="https://zenn.dev/mya_ake/articles/5517a5001db48e">
-                    Reactのchildrenの型で子コンポーネントを制御する（したかった）
-                  </StyledExternalLink>
-                </ListItem>
-                <ListItem>
-                  <StyledExternalLink href="https://speakerdeck.com/myaake/fu-gang-falsecxptimufalseshao-jie-tokai-fa-falsegong-fu">
-                    福岡のCXPチームの紹介と開発の工夫
-                  </StyledExternalLink>
-                </ListItem>
-              </UnorderList>
+              <RenderHTML html={data.widgetMap.home_recent_activities} />
             </Box>
           </Section>
 

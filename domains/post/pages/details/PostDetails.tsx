@@ -15,7 +15,7 @@ import type { Data } from "./PostDetails.handler.ts";
 
 export function PostDetails({ data }: PageProps<Data>) {
   return (
-    <DefaultAppShell>
+    <DefaultAppShell widgetMap={data.widgetMap}>
       <SEOHead
         title={data.post.title}
         description={data.post.description}

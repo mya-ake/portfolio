@@ -3,7 +3,6 @@ export type LocaleResouce = {
     heading: string;
     name: string;
     nameWithYomi: string;
-    bio: string;
   };
   description: {
     default: string;

@@ -2,11 +2,16 @@ import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { isFetchError } from "@shared/fetch/error.ts";
 import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
 import { getUseMicroCMSCache } from "@shared/env/mod.ts";
+import {
+  DefaultAppShellWidgetMap,
+  getDefaultAppShellWidgetMap,
+} from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type { Post } from "@shared/micro_cms/type.ts";
 
 export type Data = {
   post: Post;
+  widgetMap: DefaultAppShellWidgetMap;
 };
 
 function getPostFromCMS(id: string) {
@@ -27,7 +32,8 @@ export const handler: Handlers<Data> = {
     try {
       const id = ctx.params.id;
       const post = await getPost(id);
-      const data: Data = { post };
+      const widgetMap = await getDefaultAppShellWidgetMap();
+      const data: Data = { post, widgetMap };
       const resp = await ctx.render(data);
       return resp;
     } catch (error) {

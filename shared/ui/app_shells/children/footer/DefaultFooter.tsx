@@ -7,17 +7,16 @@ import { Text } from "@shared/ui/text/Text.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Copyright } from "./children/Copyright.tsx";
+import { RenderHTML } from "@shared/render/RenderHTML.tsx";
+import type { WidgetMap } from "@shared/widget/mod.ts";
 
 const styles = {
-  footer: css({}),
   profile: {
     container: css({
       container: "",
       px: "$4",
       paddingBottom: "$4",
     }),
-    content: css({}),
-    avatar: css({}),
     name: css({
       order: "1",
     }),
@@ -25,7 +24,6 @@ const styles = {
       borderRadius: "50%",
       order: "0",
     }),
-    bio: css({}),
   },
 };
 
@@ -45,9 +43,13 @@ function getSocialItems(): { label: string; name: string; uri: string }[] {
   }];
 }
 
-export function DefaultFooter() {
+export type Props = {
+  widgetMap: WidgetMap<"footer_bio">;
+};
+
+export function DefaultFooter(props: Props) {
   return (
-    <footer class={styles.footer()}>
+    <footer>
       <div class={styles.profile.container()}>
         <Section
           level="1"
@@ -77,10 +79,8 @@ export function DefaultFooter() {
                 class={styles.profile.icon()}
               />
             </Grid>
-            <div class={styles.profile.bio()}>
-              <Text>
-                {translate("profile:bio")}
-              </Text>
+            <div>
+              <RenderHTML html={props.widgetMap.footer_bio} />
             </div>
 
             <Section level="2" heading={translate("social:heading")}>

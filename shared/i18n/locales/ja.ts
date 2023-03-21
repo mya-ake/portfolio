@@ -5,8 +5,6 @@ export const ja: LocaleResouce = {
     heading: "Profile",
     name: "mya-ake",
     nameWithYomi: "mya-ake（みゃけ）",
-    bio:
-      "福岡在住の猫好きwebエンジニア。\n最近はwebのフロントエンドを中心にやってます。PWAとかサーバーレスアーキテクチャとかが好きです。",
   },
   description: {
     default:
