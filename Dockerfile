@@ -1,4 +1,4 @@
-FROM denoland/deno:1.31.2
+FROM denoland/deno:1.32.1
 
 EXPOSE 8000
 
