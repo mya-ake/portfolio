@@ -7,7 +7,7 @@ import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { replaceToReplacedUrl } from "@post/shared/replace_image.ts";
 import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
-import { css } from "@shared/styles/css.ts";
+import { CSS, css } from "@shared/styles/css.ts";
 
 type Props = {
   html: string;
@@ -21,13 +21,25 @@ function render(nodes: Node[]) {
     switch (node.tagName) {
       case "h1":
       case "h2":
-      case "h9":
       case "h3":
       case "h4":
       case "h5":
       case "h6": {
         const level = node.tagName.substring(1) as Level;
-        return <Heading level={level}>{render(node.childNodes)}</Heading>;
+        const style: CSS = ["h1", "h2"].includes(node.tagName)
+          ? {
+            marginTop: "$12",
+            marginBottom: "$4",
+          }
+          : {
+            marginTop: "$4",
+            marginBottom: "$2",
+          };
+        return (
+          <Heading level={level} css={style} style={node.attrs.style}>
+            {render(node.childNodes)}
+          </Heading>
+        );
       }
       case "p": {
         return (

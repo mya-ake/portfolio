@@ -15,7 +15,7 @@ const style = css({
 type Leading = "none" | "paragraph";
 const leadingMap: Record<Leading, CSS["lineHeight"]> = {
   none: "1",
-  paragraph: "1.5",
+  paragraph: "1.6",
 };
 
 type LineStyle = "new-line" | "nowrap";
