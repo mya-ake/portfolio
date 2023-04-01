@@ -77,6 +77,7 @@ describe("MicroCmsClient", () => {
       offset: 2,
       ids: ["id_1", "id_2"],
       richEditorFormat: "object",
+      filters: "tags[contains]post",
     });
 
     const fetchArgs = fetchStub.calls[0].args;
@@ -86,7 +87,7 @@ describe("MicroCmsClient", () => {
     assertEquals(
       fetchRequest.url,
       new URL(
-        "/api/v1/posts?fields=id%2Ctitle&orders=-publishedAt&limit=10&offset=2&ids=id_1%2Cid_2&richEditorFormat=object",
+        "/api/v1/posts?fields=id%2Ctitle&orders=-publishedAt&limit=10&offset=2&ids=id_1%2Cid_2&richEditorFormat=object&filters=tags%5Bcontains%5Dpost",
         endpoint,
       ).toString(),
     );

@@ -32,8 +32,10 @@ export type MicroCMSList<
   limit: number;
 };
 
+type TagStatus = "visible" | "hidden";
 type TagData = {
   title: string;
+  status: TagStatus;
 };
 
 export type Tag = Content<TagData>;

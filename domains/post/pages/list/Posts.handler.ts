@@ -1,7 +1,7 @@
 import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { createFields } from "@shared/micro_cms/utils.ts";
 import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
-import { getUseMicroCMSCache } from "@shared/env/mod.ts";
+import { getUseMicroCMSCache, getUsePostsFilter } from "@shared/env/mod.ts";
 import {
   DefaultAppShellWidgetMap,
   getDefaultAppShellWidgetMap,
@@ -19,7 +19,7 @@ const postFields = [
   "publishedAt",
   "updatedAt",
 ] as const;
-const tagFields = ["id", "title"] as const;
+const tagFields = ["id", "title", "status"] as const;
 const fields = createFields<OriginalPost>(postFields, {
   tags: tagFields,
 });
@@ -42,6 +42,7 @@ function getPostsFromCMS() {
     fields,
     orders: "-publishedAt",
     limit: 10,
+    filters: getUsePostsFilter() ? "tags[contains]post" : "",
   });
 }
 
