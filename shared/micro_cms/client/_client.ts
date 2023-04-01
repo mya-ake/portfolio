@@ -17,6 +17,7 @@ export type RequestParameter = {
   limit?: number;
   offset?: number;
   richEditorFormat?: "html" | "object";
+  filters?: string;
 };
 
 export class MicroCmsClient {
