@@ -1,13 +1,13 @@
 type PostHasPublishedDates = {
   publishedAt: string;
-  publicationDate?: string;
+  manualPublishedAt?: string;
 };
 
 export function decidePublishedAt<P extends PostHasPublishedDates>(
   post: P,
-): Omit<P, "publicationDate"> {
+): Omit<P, "manualPublishedAt"> {
   return {
     ...post,
-    publishedAt: post.publicationDate ?? post.publishedAt,
+    publishedAt: post.manualPublishedAt ?? post.publishedAt,
   };
 }

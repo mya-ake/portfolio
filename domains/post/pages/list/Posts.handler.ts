@@ -17,7 +17,7 @@ import type {
 const postFields = [
   "id",
   "title",
-  "publicationDate",
+  "manualPublishedAt",
   "publishedAt",
   "updatedAt",
 ] as const;
@@ -30,7 +30,7 @@ type Tag = Pick<OriginalTag, typeof tagFields[number]>;
 type Post = Pick<OriginalPost, typeof postFields[number]> & {
   tags: Tag[];
 };
-type DisplayPost = Omit<Post, "publicationDate">;
+type DisplayPost = Omit<Post, "manualPublishedAt">;
 type Posts = MicroCMSList<Post>;
 
 export type Data = {

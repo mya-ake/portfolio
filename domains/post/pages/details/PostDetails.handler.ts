@@ -11,7 +11,7 @@ import type { Handlers } from "$fresh/server.ts";
 import type { Post } from "@shared/micro_cms/type.ts";
 
 export type Data = {
-  post: Omit<Post, "publicationDate">;
+  post: Omit<Post, "manualPublishedAt">;
   widgetMap: DefaultAppShellWidgetMap;
 };
 
