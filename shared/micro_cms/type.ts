@@ -42,6 +42,7 @@ export type Tag = Content<TagData>;
 
 type PostData = {
   title: string;
+  publicationDate: string;
   description: string;
   body: string;
   tags: Content<TagData>[];

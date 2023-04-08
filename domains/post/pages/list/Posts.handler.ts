@@ -6,6 +6,7 @@ import {
   DefaultAppShellWidgetMap,
   getDefaultAppShellWidgetMap,
 } from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
+import { decidePublishedAt } from "@post/shared/decide_published_at.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type {
   MicroCMSList,
@@ -16,6 +17,7 @@ import type {
 const postFields = [
   "id",
   "title",
+  "publicationDate",
   "publishedAt",
   "updatedAt",
 ] as const;
@@ -28,10 +30,11 @@ type Tag = Pick<OriginalTag, typeof tagFields[number]>;
 type Post = Pick<OriginalPost, typeof postFields[number]> & {
   tags: Tag[];
 };
+type DisplayPost = Omit<Post, "publicationDate">;
 type Posts = MicroCMSList<Post>;
 
 export type Data = {
-  posts: Posts;
+  posts: MicroCMSList<DisplayPost>;
   widgetMap: DefaultAppShellWidgetMap;
 };
 
@@ -52,7 +55,10 @@ const getPosts = getUseMicroCMSCache()
 
 export const handler: Handlers<Data> = {
   async GET(_, ctx) {
-    const postsData = await getPosts();
+    const postsData = await getPosts().then((posts) => ({
+      ...posts,
+      contents: posts.contents.map(decidePublishedAt),
+    }));
     const widgetMap = await getDefaultAppShellWidgetMap();
     const data: Data = {
       posts: postsData,

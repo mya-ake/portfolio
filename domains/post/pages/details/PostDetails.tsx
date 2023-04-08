@@ -10,6 +10,7 @@ import { Text } from "@shared/ui/text/Text.tsx";
 import { Time } from "@shared/ui/text/Time.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import Highlight from "@islands/Highlight.tsx";
+import { isSameDate } from "@shared/date/is_same_date.ts";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./PostDetails.handler.ts";
 
@@ -35,7 +36,7 @@ export function PostDetails({ data }: PageProps<Data>) {
                 displayFormat="YYYY.MM.DD"
               />
             </Text>
-            {data.post.publishedAt !== data.post.updatedAt && (
+            {!isSameDate(data.post.publishedAt, data.post.updatedAt) && (
               <Text fontSize="sm">
                 (更新日:{" "}
                 <Time

@@ -6,11 +6,12 @@ import {
   DefaultAppShellWidgetMap,
   getDefaultAppShellWidgetMap,
 } from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
+import { decidePublishedAt } from "@post/shared/decide_published_at.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type { Post } from "@shared/micro_cms/type.ts";
 
 export type Data = {
-  post: Post;
+  post: Omit<Post, "publicationDate">;
   widgetMap: DefaultAppShellWidgetMap;
 };
 
@@ -31,7 +32,7 @@ export const handler: Handlers<Data> = {
   async GET(_, ctx) {
     try {
       const id = ctx.params.id;
-      const post = await getPost(id);
+      const post = await getPost(id).then(decidePublishedAt);
       const widgetMap = await getDefaultAppShellWidgetMap();
       const data: Data = { post, widgetMap };
       const resp = await ctx.render(data);
