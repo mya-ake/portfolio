@@ -9,6 +9,7 @@ import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { Time } from "@shared/ui/text/Time.tsx";
+import { isSameDate } from "@shared/date/is_same_date.ts";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./Posts.handler.ts";
 
@@ -38,7 +39,7 @@ export function Posts({ data }: PageProps<Data>) {
                           displayFormat="YYYY.MM.DD"
                         />
                       </Text>
-                      {publishedAt !== updatedAt && (
+                      {!isSameDate(publishedAt, updatedAt) && (
                         <Text fontSize="sm">
                           (更新日:{" "}
                           <Time
