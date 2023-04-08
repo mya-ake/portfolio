@@ -24,4 +24,7 @@ dayjs.extend(timezone);
 
 dayjs.tz.setDefault("Asia/Tokyo");
 
-export default dayjs;
+export default function (value?: dayjs.ConfigType) {
+  return dayjs(value).tz();
+}
+export type ConfigType = dayjs.ConfigType;
