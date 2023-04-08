@@ -15,6 +15,7 @@
     "parse5": "https://esm.sh/v106/parse5@7.1.2",
     "stitches": "https://esm.sh/v106/@stitches/core@1.2.8",
     "dayjs": "https://esm.sh/v106/dayjs@1.11.7",
+    "dayjs/": "https://esm.sh/v106/dayjs@1.11.7/",
     "i18next": "https://deno.land/x/i18next@v22.4.9/index.js",
     "clsx": "https://esm.sh/v106/clsx@1.2.1",
     "octokit": "https://cdn.skypack.dev/octokit@2.0.14?dts",

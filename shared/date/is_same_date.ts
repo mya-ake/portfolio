@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import dayjs from "./_dayjs.ts";
 
 export function isSameDate(
   date1: dayjs.ConfigType,
