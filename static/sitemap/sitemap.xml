@@ -1,55 +1,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-  <loc>https://mya-ake.com/</loc>
+  <loc>https://mya-ake.com</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mya-ake.com/posts/nuxtjs-on-aws-lambda/</loc>
-    <priority>0.8</priority>
-    <lastmod>2019-04-18</lastmod>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/release-info-aws-icon-searcher/</loc>
+    <loc>https://mya-ake.com/posts<loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mya-ake.com/posts/techbook-fest-4-neko-note/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/techbook-fest-4-neko-note-after/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/techbook-fest-5-neko-note/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/techbook-fest-5-neko-note-after/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/component-design-based-on-atomic-design/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/release-info-vue-uid/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/vuejs-component-with-css-framework/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/vue-composition-api-columns/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/software-engineer-may-breaks-business/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mya-ake.com/posts/join-mercari/</loc>
+    <loc>https://mya-ake.com/posts/renewal-2023<loc>
     <priority>0.8</priority>
   </url>
 </urlset>
