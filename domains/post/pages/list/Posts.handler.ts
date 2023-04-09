@@ -6,6 +6,7 @@ import {
 } from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
 import { getPosts as getPostsFromCMS, Posts } from "@shared/post/list.ts";
 import { decidePublishedAt } from "@post/shared/decide_published_at.ts";
+import { cacheMiddleware } from "@shared/middleware/cache.ts";
 import type { Handlers } from "$fresh/server.ts";
 
 export type Data = {
@@ -29,6 +30,7 @@ export const handler: Handlers<Data> = {
       widgetMap,
     };
     const resp = await ctx.render(data);
+    cacheMiddleware(resp, { time: 60 * 60 * 24 * 7 });
     return resp;
   },
 };

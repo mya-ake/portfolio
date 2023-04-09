@@ -7,6 +7,7 @@ import {
   getDefaultAppShellWidgetMap,
 } from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
 import { decidePublishedAt } from "@post/shared/decide_published_at.ts";
+import { cacheMiddleware } from "@shared/middleware/cache.ts";
 import type { Handlers } from "$fresh/server.ts";
 import type { Post } from "@shared/micro_cms/type.ts";
 
@@ -36,6 +37,7 @@ export const handler: Handlers<Data> = {
       const widgetMap = await getDefaultAppShellWidgetMap();
       const data: Data = { post, widgetMap };
       const resp = await ctx.render(data);
+      cacheMiddleware(resp, { time: 60 * 60 * 24 * 7 });
       return resp;
     } catch (error) {
       if (isFetchError(error)) {
