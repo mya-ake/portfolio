@@ -41,25 +41,6 @@ export function Home({ data }: PageProps<Data>) {
             <Box css={{ marginTop: "$2" }}>
               <RenderHTML html={data.widgetMap.home_about} />
             </Box>
-
-            <Section
-              level="3"
-              heading={"Current Status"}
-              css={{ marginTop: "$4" }}
-            >
-              <Grid
-                templateColumns="auto 1fr"
-                columnGap="$2"
-                css={{ marginTop: "$2" }}
-              >
-                <Text fontWeight={"bolder"}>Home:</Text>
-                <Text>Fresh</Text>
-                <Text fontWeight={"bolder"}>Blog:</Text>
-                <Text>Nuxt.js v2</Text>
-                <Text fontWeight={"bolder"}>Other:</Text>
-                <Text>Vue.js v2</Text>
-              </Grid>
-            </Section>
           </Section>
 
           <Section level="2" heading={"Posts"}>
