@@ -5,7 +5,6 @@ import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Box } from "@shared/ui/layout/Box.tsx";
-import { Text } from "@shared/ui/text/Text.tsx";
 import { Time } from "@shared/ui/text/Time.tsx";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
