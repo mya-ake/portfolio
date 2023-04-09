@@ -10,7 +10,7 @@ import {
   ServerContext,
   StartOptions,
 } from "$fresh/server.ts";
-import { serve } from "$fresh/src/server/deps.ts";
+import { serve, Status } from "$fresh/src/server/deps.ts";
 import manifest from "./fresh.gen.ts";
 import { readNormalizeCss } from "./core/css/mod.ts";
 import { getCssText, reset } from "@shared/styles/core.ts";
@@ -38,8 +38,16 @@ async function start() {
   const ctx = await ServerContext.fromManifest(manifest, options);
 
   const handler: Handler = (req, connInfo) => {
-    console.log(req.headers.get("host"));
-    console.log(new URL(req.url));
+    // Emergency response to redirect to a different host.
+    const url = new URL(req.url);
+    if (Deno.env.get("APP_ENV") === "prod") {
+      url.hostname = "mya-ake.com";
+    }
+    if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
+      url.pathname = url.pathname.slice(0, -1);
+      return Response.redirect(url.href, Status.TemporaryRedirect);
+    }
+
     return ctx.handler()(req, connInfo);
   };
 
