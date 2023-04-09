@@ -6,7 +6,9 @@ import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Box } from "@shared/ui/layout/Box.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
+import { Time } from "@shared/ui/text/Time.tsx";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
+import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { translate } from "@shared/i18n/mod.ts";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
@@ -58,6 +60,31 @@ export function Home({ data }: PageProps<Data>) {
                 <Text>Vue.js v2</Text>
               </Grid>
             </Section>
+          </Section>
+
+          <Section level="2" heading={"Posts"}>
+            <Box css={{ marginTop: "$2" }}>
+              <UnorderList>
+                {data.posts.contents.map(({ id, title, publishedAt }) => (
+                  <Fragment key={id}>
+                    <ListItem>
+                      <Time
+                        datetime={publishedAt}
+                        displayFormat="YYYY.MM.DD"
+                      />{" "}
+                      <StyledInternalLink href={`/posts/${id}`}>
+                        {title}
+                      </StyledInternalLink>
+                    </ListItem>
+                  </Fragment>
+                ))}
+              </UnorderList>
+            </Box>
+            <Box css={{ marginTop: "$4" }}>
+              <StyledInternalLink href="/posts">
+                一覧へ
+              </StyledInternalLink>
+            </Box>
           </Section>
 
           <Section level="2" heading={"Recent Activities"}>
