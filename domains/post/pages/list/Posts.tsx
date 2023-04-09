@@ -29,7 +29,7 @@ export function Posts({ data }: PageProps<Data>) {
               ) => (
                 <Fragment key={id}>
                   <ListItem>
-                    <StyledInternalLink href={`/posts/${id}/`}>
+                    <StyledInternalLink href={`/posts/${id}`}>
                       {title}
                     </StyledInternalLink>
                     <Grid templateColumns="auto 1fr" columnGap="$2">
