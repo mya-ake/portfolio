@@ -59,8 +59,7 @@ snapshot[`parse some content 1`] = `
           alt: "",
           src: "/static/sample.png",
         },
-        childNodes: [
-        ],
+        childNodes: [],
         nodeType: "tag",
         tagName: "img",
       },
