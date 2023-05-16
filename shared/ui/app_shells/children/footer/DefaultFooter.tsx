@@ -77,6 +77,7 @@ export function DefaultFooter(props: Props) {
                 width="60"
                 height="60"
                 class={styles.profile.icon()}
+                alt=""
               />
             </Grid>
             <div>
