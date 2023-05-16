@@ -8,6 +8,7 @@ import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { replaceToReplacedUrl } from "@post/shared/replace_image.ts";
 import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
 import { CSS, css } from "@shared/styles/css.ts";
+import { backgroundStyle } from "../../domains/og/generator/_shared.ts";
 
 type Props = {
   html: string;
@@ -71,7 +72,17 @@ function render(nodes: Node[]) {
         return <s style={node.attrs.style}>{render(node.childNodes)}</s>;
       }
       case "code": {
-        return <code style={node.attrs.style}>{render(node.childNodes)}</code>;
+        return (
+          <code
+            style={node.attrs.style}
+            class={css({
+              color: "$code",
+              px: "1px",
+            })()}
+          >
+            {render(node.childNodes)}
+          </code>
+        );
       }
       case "blockquote": {
         return (

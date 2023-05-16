@@ -2,7 +2,9 @@
 import { ComponentChildren, h } from "preact";
 import { css } from "@shared/styles/css.ts";
 
-const style = css({});
+const style = css({
+  lineHeight: "1.6",
+});
 
 type Props = {
   children: ComponentChildren;
