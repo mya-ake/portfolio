@@ -8,7 +8,6 @@ import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { replaceToReplacedUrl } from "@post/shared/replace_image.ts";
 import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
 import { CSS, css } from "@shared/styles/css.ts";
-import { backgroundStyle } from "../../domains/og/generator/_shared.ts";
 
 type Props = {
   html: string;
