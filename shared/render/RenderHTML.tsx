@@ -76,7 +76,9 @@ function render(nodes: Node[]) {
             style={node.attrs.style}
             class={css({
               color: "$code",
-              px: "1px",
+              px: "7px",
+              backgroundColor: "$codeBackground",
+              borderRadius: "$4",
             })()}
           >
             {render(node.childNodes)}
