@@ -9,9 +9,6 @@ const _baseListStyle = css({
 export function baseListStyle(css?: CSS) {
   return _baseListStyle({
     css: {
-      [`.${_baseListStyle}`]: {
-        marginTop: "$2",
-      },
       ...css,
     },
   });

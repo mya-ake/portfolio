@@ -21,7 +21,7 @@ export const stitches = createStitches({
       background: "#1e293b", // gray800
       link: "#7dd3fc", // sky300
       code: "#f3f4f6", // #gray100
-      codeBackground: "#4b5563",
+      codeBackground: "#4b5563", // #gray600
     },
     space: {
       1: "4px",
