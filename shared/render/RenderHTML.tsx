@@ -87,7 +87,13 @@ function render(nodes: Node[]) {
       }
       case "blockquote": {
         return (
-          <blockquote style={node.attrs.style}>
+          <blockquote
+            style={node.attrs.style}
+            class={css({
+              margin: "$4 0",
+              borderLeft: "4px solid $text",
+            })()}
+          >
             {render(node.childNodes)}
           </blockquote>
         );
