@@ -1,22 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-  <loc>https://mya-ake.com</loc>
-    <priority>1.0</priority>
+    <loc>https://mya-ake.com</loc>
   </url>
   <url>
     <loc>https://mya-ake.com/posts<loc>
-    <priority>0.8</priority>
+    <lastmod>2023-05-27</lastmod>
   </url>
   <url>
     <loc>https://mya-ake.com/posts/renewal-2023<loc>
-    <priority>0.8</priority>
+    <lastmod>2023-04-12</lastmod>
   </url>
   <url>
     <loc>https://mya-ake.com/posts/fresh-with-twind-and-tailwindcss-intellisense<loc>
-    <priority>0.8</priority>
+    <lastmod>2023-05-17</lastmod>
   </url>
   <url>
     <loc>https://mya-ake.com/posts/different-versions-in-monorepo<loc>
-    <priority>0.8</priority>
+    <lastmod>2023-05-27</lastmod>
   </url>
 </urlset>
