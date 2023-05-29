@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 
-export function DefaultMeta() {
+export function DefaultHead() {
   return (
     <Head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />

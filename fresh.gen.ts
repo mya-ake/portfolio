@@ -5,24 +5,26 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_500.tsx";
-import * as $2 from "./routes/_middleware.ts";
-import * as $3 from "./routes/index.tsx";
-import * as $4 from "./routes/og.tsx";
-import * as $5 from "./routes/posts/[id].tsx";
-import * as $6 from "./routes/posts/images/[...path].ts";
-import * as $7 from "./routes/posts/index.tsx";
+import * as $2 from "./routes/_app.tsx";
+import * as $3 from "./routes/_middleware.ts";
+import * as $4 from "./routes/index.tsx";
+import * as $5 from "./routes/og.tsx";
+import * as $6 from "./routes/posts/[id].tsx";
+import * as $7 from "./routes/posts/images/[...path].ts";
+import * as $8 from "./routes/posts/index.tsx";
 import * as $$0 from "./islands/Highlight.tsx";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $0,
     "./routes/_500.tsx": $1,
-    "./routes/_middleware.ts": $2,
-    "./routes/index.tsx": $3,
-    "./routes/og.tsx": $4,
-    "./routes/posts/[id].tsx": $5,
-    "./routes/posts/images/[...path].ts": $6,
-    "./routes/posts/index.tsx": $7,
+    "./routes/_app.tsx": $2,
+    "./routes/_middleware.ts": $3,
+    "./routes/index.tsx": $4,
+    "./routes/og.tsx": $5,
+    "./routes/posts/[id].tsx": $6,
+    "./routes/posts/images/[...path].ts": $7,
+    "./routes/posts/index.tsx": $8,
   },
   islands: {
     "./islands/Highlight.tsx": $$0,
