@@ -22,7 +22,6 @@
     "dayjs/": "https://esm.sh/v124/dayjs@1.11.7/",
     "parse5": "https://esm.sh/v124/parse5@7.1.2",
     "preact-render-to-string": "https://esm.sh/v124/*preact-render-to-string@6.0.3",
-    "preact-render-to-string/": "https://esm.sh/v124/*preact-render-to-string@6.0.3/",
     "preact": "https://esm.sh/v124/preact@10.15.1",
     "preact/": "https://esm.sh/v124/preact@10.15.1/",
     "satori": "npm:satori@0.8.0"
