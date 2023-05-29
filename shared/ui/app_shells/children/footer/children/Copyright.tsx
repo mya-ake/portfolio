@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { getCurrentYear } from "@shared/date/get_current_year.ts";
 import { Box } from "@shared/ui/layout/Box.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";

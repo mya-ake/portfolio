@@ -1,5 +1,3 @@
-/** @jsx h */
-import { Fragment, h } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
@@ -87,12 +85,12 @@ export function DefaultFooter(props: Props) {
             <Section level="2" heading={translate("social:heading")}>
               <Grid templateColumns="auto 1fr" gap="$1 $2">
                 {getSocialItems().map(({ label, name, uri }) => (
-                  <Fragment>
+                  <>
                     <Text leading="none">{label}:</Text>
                     <Text leading="none">
                       <StyledExternalLink href={uri}>{name}</StyledExternalLink>
                     </Text>
-                  </Fragment>
+                  </>
                 ))}
               </Grid>
             </Section>

@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-
 import { InternalLink, InternalLinkProps } from "./InternalLink.tsx";
 import { css } from "@shared/styles/css.ts";
 

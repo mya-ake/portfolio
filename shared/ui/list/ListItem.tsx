@@ -1,5 +1,4 @@
-/** @jsx h */
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
 import { css } from "@shared/styles/css.ts";
 
 const style = css({

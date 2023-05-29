@@ -1,5 +1,4 @@
-/** @jsx h */
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { DefaultMeta } from "./children/DefaultMeta.tsx";

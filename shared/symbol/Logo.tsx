@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { CSS, css } from "@shared/styles/css.ts";
 
 const styles = {
