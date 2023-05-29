@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { Head } from "$fresh/runtime.ts";
 
 const siteName = "neko-note′";

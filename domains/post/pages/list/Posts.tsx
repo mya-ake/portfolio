@@ -1,5 +1,4 @@
-/** @jsx h */
-import { Fragment, h } from "preact";
+import { Fragment } from "preact";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";

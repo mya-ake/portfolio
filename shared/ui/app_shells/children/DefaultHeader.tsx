@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { InternalLink } from "@shared/ui/link/InternalLink.tsx";

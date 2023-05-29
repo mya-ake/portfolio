@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { formatDate } from "@shared/date/format.ts";
 
 export type Props = {

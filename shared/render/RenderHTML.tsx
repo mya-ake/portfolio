@@ -1,5 +1,3 @@
-/** @jsx h */
-import { Fragment, h } from "preact";
 import { Node, parseHtml } from "@shared/parser/html_parser.ts";
 import { Heading, Level } from "@shared/ui/text/Heading.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
@@ -16,7 +14,7 @@ type Props = {
 function render(nodes: Node[]) {
   return nodes.map((node) => {
     if (node.nodeType === "text") {
-      return <Fragment>{node.content}</Fragment>;
+      return <>{node.content}</>;
     }
     switch (node.tagName) {
       case "h1":
@@ -149,5 +147,5 @@ function render(nodes: Node[]) {
 export function RenderHTML({ html }: Props) {
   const nodes = parseHtml(html);
   const elements = render(nodes);
-  return <Fragment>{elements}</Fragment>;
+  return <>{elements}</>;
 }

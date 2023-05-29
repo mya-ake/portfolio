@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-
 import { ExternalLink, ExternalLinkProps } from "./ExternalLink.tsx";
 import { css } from "@shared/styles/css.ts";
 

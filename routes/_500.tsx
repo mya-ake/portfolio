@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { SimpleAppShell } from "@shared/ui/app_shells/SimpleAppShell.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Heading } from "@shared/ui/text/Heading.tsx";

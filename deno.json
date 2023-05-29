@@ -7,5 +7,9 @@
     "esm:update": "deno run -A https://esm.sh/v124 update",
     "esm:remove": "deno run -A https://esm.sh/v124 remove"
   },
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
 }
