@@ -9,7 +9,7 @@
     "octokit": "https://cdn.skypack.dev/octokit@2.0.14?dts",
     "hljs": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js",
     "std/": "https://deno.land/std@0.185.0/",
-    "$fresh/": "https://deno.land/x/fresh@1.1.5/",
+    "$fresh/": "https://deno.land/x/fresh@1.1.6/",
     "i18next": "https://deno.land/x/i18next@v22.4.15/index.js",
     "resvg/": "https://deno.land/x/resvg_wasm@0.2.0/",
     "zod": "https://deno.land/x/zod@v3.21.4/mod.ts",
