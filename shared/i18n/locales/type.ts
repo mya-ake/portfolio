@@ -7,6 +7,9 @@ export type LocaleResouce = {
   description: {
     default: string;
   };
+  breadcrumbs: {
+    heading: string;
+  };
   home: {
     name: string;
     heading: string;

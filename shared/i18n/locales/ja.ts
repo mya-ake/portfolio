@@ -10,6 +10,9 @@ export const ja: LocaleResouce = {
     default:
       "猫好きのwebエンジニアが気まぐれで運営してるサイトです。現在リニューアル中です。",
   },
+  breadcrumbs: {
+    heading: "パンくずリスト",
+  },
   home: {
     name: "Home",
     heading: "ネコノテ ホーム",

@@ -17,11 +17,12 @@ export type FontWeight = BaseCSS["fontWeight"];
 export const stitches = createStitches({
   theme: {
     colors: {
-      text: "#f3f4f6", // #gray100
+      text: "#f3f4f6", // gray100
       background: "#1e293b", // gray800
       link: "#7dd3fc", // sky300
-      code: "#f3f4f6", // #gray100
-      codeBackground: "#4b5563", // #gray600
+      code: "#f3f4f6", // gray100
+      codeBackground: "#4b5563", // gray600
+      border: "#374151", // gray700
     },
     space: {
       1: "4px",

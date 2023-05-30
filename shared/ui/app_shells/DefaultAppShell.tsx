@@ -1,7 +1,7 @@
 import type { ComponentChildren } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { Box } from "@shared/ui/layout/Box.tsx";
-import { DefaultHeader } from "./children/DefaultHeader.tsx";
+import { DefaultHeader } from "./children/header/DefaultHeader.tsx";
 import {
   BreadcrumbItem,
   Breadcrumbs,
@@ -31,9 +31,7 @@ export function DefaultAppShell(props: Props) {
     <>
       <IconHead />
 
-      <DefaultHeader>
-        <Breadcrumbs items={breadcrumbs} />
-      </DefaultHeader>
+      <DefaultHeader breadcrumbs={breadcrumbs} />
 
       <main class={styles.main()}>{children}</main>
 

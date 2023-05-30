@@ -4,6 +4,7 @@ import { LocaleResouce } from "./locales/mod.ts";
 type TranslateKey =
   | `profile:${keyof LocaleResouce["profile"]}`
   | `description:${keyof LocaleResouce["description"]}`
+  | `breadcrumbs:${keyof LocaleResouce["breadcrumbs"]}`
   | `footer:${keyof LocaleResouce["footer"]}`
   | `home:${keyof LocaleResouce["home"]}`
   | `posts:${keyof LocaleResouce["posts"]}`

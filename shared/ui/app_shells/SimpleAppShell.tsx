@@ -1,6 +1,6 @@
 import { ComponentChildren } from "preact";
 import { css } from "@shared/styles/css.ts";
-import { DefaultHeader } from "./children/DefaultHeader.tsx";
+import { BasicHeader } from "./children/header/BasicHeader.tsx";
 import { SimpleFooter } from "./children/footer/SimpleFooter.tsx";
 
 const styles = {
@@ -19,7 +19,7 @@ export function SimpleAppShell(props: Props) {
 
   return (
     <>
-      <DefaultHeader />
+      <BasicHeader />
 
       <main class={styles.main()}>{children}</main>
 

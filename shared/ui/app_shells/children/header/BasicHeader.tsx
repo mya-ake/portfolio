@@ -1,11 +1,11 @@
 import { css } from "@shared/styles/css.ts";
+import { Box } from "@shared/ui/layout/Box.tsx";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
 import type { ComponentChildren } from "preact";
 
 const styles = {
   header: css({
-    textAlign: "center",
     py: "$4",
   }),
   link: css({
@@ -20,14 +20,14 @@ type Props = {
   children?: ComponentChildren;
 };
 
-export function DefaultHeader(props: Props) {
+export function BasicHeader(props: Props) {
   return (
-    <header>
-      <div class={styles.header()}>
+    <header class={styles.header()}>
+      <Box css={{ textAlign: "center" }}>
         <InternalLink href="/" class={styles.link()}>
           <Logo />
         </InternalLink>
-      </div>
+      </Box>
       {props.children}
     </header>
   );
