@@ -11,6 +11,7 @@ import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { translate } from "@shared/i18n/mod.ts";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
+import { createBreadcrumbs } from "@shared/breadcrumbs/manager.ts";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./Home.handler.ts";
 
@@ -22,7 +23,10 @@ const styles = {
 
 export function Home({ data }: PageProps<Data>) {
   return (
-    <DefaultAppShell widgetMap={data.widgetMap}>
+    <DefaultAppShell
+      widgetMap={data.widgetMap}
+      breadcrumbs={createBreadcrumbs()}
+    >
       <SEOHead
         description={translate("description:default")}
         path="/"

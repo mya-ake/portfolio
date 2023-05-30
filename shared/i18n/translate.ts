@@ -6,7 +6,9 @@ type TranslateKey =
   | `description:${keyof LocaleResouce["description"]}`
   | `footer:${keyof LocaleResouce["footer"]}`
   | `home:${keyof LocaleResouce["home"]}`
-  | `social:${keyof LocaleResouce["social"]}`;
+  | `posts:${keyof LocaleResouce["posts"]}`
+  | `social:${keyof LocaleResouce["social"]}`
+  | `immutable:${keyof LocaleResouce["immutable"]}`;
 
 // https://www.i18next.com/translation-function/essentials#overview-options
 type TranslateOption = {

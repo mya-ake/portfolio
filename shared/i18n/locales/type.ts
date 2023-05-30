@@ -8,6 +8,11 @@ export type LocaleResouce = {
     default: string;
   };
   home: {
+    name: string;
+    heading: string;
+  };
+  posts: {
+    name: string;
     heading: string;
   };
   footer: {
@@ -21,5 +26,8 @@ export type LocaleResouce = {
     twitterName: string;
     zenn: "Zenn";
     zennName: string;
+  };
+  immutable: {
+    updatedDate: string;
   };
 };

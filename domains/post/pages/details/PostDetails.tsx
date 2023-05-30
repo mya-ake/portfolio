@@ -9,12 +9,25 @@ import { Time } from "@shared/ui/text/Time.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import Highlight from "@islands/Highlight.tsx";
 import { isSameDate } from "@shared/date/is_same_date.ts";
+import { createBreadcrumbs } from "@shared/breadcrumbs/manager.ts";
+import { translate } from "@shared/i18n/mod.ts";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./PostDetails.handler.ts";
 
 export function PostDetails({ data }: PageProps<Data>) {
+  const breadcrumbs = createBreadcrumbs({
+    label: translate("posts:name"),
+    to: "/posts",
+  }, {
+    label: data.post.title,
+    to: `/posts/${data.post.id}`,
+  });
+
   return (
-    <DefaultAppShell widgetMap={data.widgetMap}>
+    <DefaultAppShell
+      widgetMap={data.widgetMap}
+      breadcrumbs={breadcrumbs}
+    >
       <SEOHead
         title={data.post.title}
         description={data.post.description}
@@ -36,7 +49,7 @@ export function PostDetails({ data }: PageProps<Data>) {
             </Text>
             {!isSameDate(data.post.publishedAt, data.post.updatedAt) && (
               <Text fontSize="sm">
-                (更新日:{" "}
+                ({translate("immutable:updatedDate")}:{" "}
                 <Time
                   datetime={data.post.updatedAt}
                   displayFormat="YYYY.MM.DD"

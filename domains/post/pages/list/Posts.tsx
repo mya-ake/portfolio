@@ -9,18 +9,28 @@ import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { Time } from "@shared/ui/text/Time.tsx";
 import { isSameDate } from "@shared/date/is_same_date.ts";
+import { createBreadcrumbs } from "@shared/breadcrumbs/manager.ts";
+import { translate } from "@shared/i18n/mod.ts";
 import type { PageProps } from "$fresh/server.ts";
 import type { Data } from "./Posts.handler.ts";
 
 export function Posts({ data }: PageProps<Data>) {
+  const breadcrumbs = createBreadcrumbs({
+    label: translate("posts:name"),
+    to: "/posts",
+  });
+
   return (
-    <DefaultAppShell widgetMap={data.widgetMap}>
+    <DefaultAppShell
+      widgetMap={data.widgetMap}
+      breadcrumbs={breadcrumbs}
+    >
       <SEOHead
         description=""
         path="/posts/"
       />
       <Box css={{ px: "$4" }}>
-        <Section level="1" heading="Posts" isContainer>
+        <Section level="1" heading={translate("posts:heading")} isContainer>
           <Box css={{ marginTop: "$2" }}>
             <UnorderList>
               {data.posts.contents.map((
@@ -40,7 +50,7 @@ export function Posts({ data }: PageProps<Data>) {
                       </Text>
                       {!isSameDate(publishedAt, updatedAt) && (
                         <Text fontSize="sm">
-                          (更新日:{" "}
+                          ({translate("immutable:updatedDate")}:{" "}
                           <Time
                             datetime={updatedAt}
                             displayFormat="YYYY.MM.DD"

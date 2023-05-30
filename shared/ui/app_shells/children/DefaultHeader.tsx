@@ -1,6 +1,7 @@
 import { css } from "@shared/styles/css.ts";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
+import type { ComponentChildren } from "preact";
 
 const styles = {
   header: css({
@@ -15,12 +16,19 @@ const styles = {
   }),
 };
 
-export function DefaultHeader() {
+type Props = {
+  children?: ComponentChildren;
+};
+
+export function DefaultHeader(props: Props) {
   return (
-    <header class={styles.header()}>
-      <InternalLink href="/" class={styles.link()}>
-        <Logo />
-      </InternalLink>
+    <header>
+      <div class={styles.header()}>
+        <InternalLink href="/" class={styles.link()}>
+          <Logo />
+        </InternalLink>
+      </div>
+      {props.children}
     </header>
   );
 }
