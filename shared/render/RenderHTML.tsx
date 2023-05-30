@@ -134,7 +134,16 @@ function render(nodes: Node[]) {
         return <ListItem>{render(node.childNodes)}</ListItem>;
       }
       case "pre": {
-        return <pre>{render(node.childNodes)}</pre>;
+        return (
+          <pre
+            class={css({
+              display: "block",
+              margin: "0",
+              my: "$4",
+              maxWidth: "calc(100vw - calc($4 * 2))",
+            })()}
+          >{render(node.childNodes)}</pre>
+        );
       }
       default: {
         console.log(node);
