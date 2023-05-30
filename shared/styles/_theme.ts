@@ -14,6 +14,15 @@ const createFontSize = (sizes: Record<FontSize, string>) => sizes;
 
 export type FontWeight = BaseCSS["fontWeight"];
 
+const sizes = {
+  1: "4px",
+  2: "8px",
+  4: "16px",
+  8: "32px",
+  12: "48px",
+  16: "64px",
+};
+
 export const stitches = createStitches({
   theme: {
     colors: {
@@ -25,14 +34,10 @@ export const stitches = createStitches({
       border: "#374151", // gray700
     },
     space: {
-      1: "4px",
-      2: "8px",
-      4: "16px",
-      8: "32px",
-      12: "48px",
-      16: "64px",
+      ...sizes,
     },
     sizes: {
+      ...sizes,
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -73,6 +78,10 @@ export const stitches = createStitches({
     mx: (value: string) => ({
       marginLeft: value,
       marginRight: value,
+    }),
+    my: (value: string) => ({
+      marginTop: value,
+      marginBottom: value,
     }),
     container: () => ({
       mx: "auto",
