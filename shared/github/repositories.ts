@@ -1,4 +1,3 @@
-import { waitUntil } from "@shared/utils/wait.ts";
 import type { OctokitInstance } from "./core.ts";
 
 export type Repository = {
@@ -27,7 +26,6 @@ export function getMyRepositories(
         per_page: perPage,
       },
     ).then((res) => res.data),
-    waitUntil(5000).then(() => Promise.reject(new Error("timeout"))),
   ]).catch((err: unknown) => {
     return Promise.reject(err);
   });
