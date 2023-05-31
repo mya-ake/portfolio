@@ -10,8 +10,16 @@ export const ja: LocaleResouce = {
     default:
       "猫好きのwebエンジニアが気まぐれで運営してるサイトです。現在リニューアル中です。",
   },
+  breadcrumbs: {
+    heading: "パンくずリスト",
+  },
   home: {
+    name: "Home",
     heading: "ネコノテ ホーム",
+  },
+  posts: {
+    name: "記事一覧",
+    heading: "Posts",
   },
   footer: {
     copyright: "© {{year}}",
@@ -24,5 +32,8 @@ export const ja: LocaleResouce = {
     twitterName: "mya_ake",
     zenn: "Zenn",
     zennName: "mya_ake",
+  },
+  immutable: {
+    updatedDate: "更新日",
   },
 };

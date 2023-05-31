@@ -1,7 +1,11 @@
-import { ComponentChildren } from "preact";
+import type { ComponentChildren } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { Box } from "@shared/ui/layout/Box.tsx";
-import { DefaultHeader } from "./children/DefaultHeader.tsx";
+import { DefaultHeader } from "./children/header/DefaultHeader.tsx";
+import {
+  BreadcrumbItem,
+  Breadcrumbs,
+} from "@shared/breadcrumbs/components/Breadcrumbs.tsx";
 import {
   DefaultFooter,
   Props as DefaultFooterProps,
@@ -11,6 +15,7 @@ import { IconHead } from "@shared/head/IconHead.tsx";
 const styles = {
   main: css({
     width: "100%",
+    marginTop: "$8",
     mx: "auto",
   }),
 };
@@ -18,15 +23,16 @@ const styles = {
 export type Props = {
   children: ComponentChildren;
   widgetMap: DefaultFooterProps["widgetMap"];
+  breadcrumbs: BreadcrumbItem[];
 };
 
 export function DefaultAppShell(props: Props) {
-  const { children } = props;
+  const { children, breadcrumbs } = props;
   return (
     <>
       <IconHead />
 
-      <DefaultHeader />
+      <DefaultHeader breadcrumbs={breadcrumbs} />
 
       <main class={styles.main()}>{children}</main>
 

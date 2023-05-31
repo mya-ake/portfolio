@@ -17,14 +17,16 @@ export function getMyRepositories(
   option?: GetMyRepositoriesInput,
 ): Promise<Repository[]> {
   const { perPage = 3 } = option ?? {};
-  return octokit.request<Repository[]>(
-    "GET /users/{username}/repos",
-    {
-      username: "mya-ake",
-      sort: "pushed",
-      per_page: perPage,
-    },
-  ).then((res) => res.data).catch((err: unknown) => {
+  return Promise.race([
+    octokit.request<Repository[]>(
+      "GET /users/{username}/repos",
+      {
+        username: "mya-ake",
+        sort: "pushed",
+        per_page: perPage,
+      },
+    ).then((res) => res.data),
+  ]).catch((err: unknown) => {
     return Promise.reject(err);
   });
 }

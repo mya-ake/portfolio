@@ -4,9 +4,12 @@ import { LocaleResouce } from "./locales/mod.ts";
 type TranslateKey =
   | `profile:${keyof LocaleResouce["profile"]}`
   | `description:${keyof LocaleResouce["description"]}`
+  | `breadcrumbs:${keyof LocaleResouce["breadcrumbs"]}`
   | `footer:${keyof LocaleResouce["footer"]}`
   | `home:${keyof LocaleResouce["home"]}`
-  | `social:${keyof LocaleResouce["social"]}`;
+  | `posts:${keyof LocaleResouce["posts"]}`
+  | `social:${keyof LocaleResouce["social"]}`
+  | `immutable:${keyof LocaleResouce["immutable"]}`;
 
 // https://www.i18next.com/translation-function/essentials#overview-options
 type TranslateOption = {
