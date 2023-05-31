@@ -15,6 +15,7 @@ import { IconHead } from "@shared/head/IconHead.tsx";
 const styles = {
   main: css({
     width: "100%",
+    marginTop: "$8",
     mx: "auto",
   }),
 };

@@ -5,9 +5,6 @@ import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
 import type { ComponentChildren } from "preact";
 
 const styles = {
-  header: css({
-    py: "$4",
-  }),
   link: css({
     lineHeight: "1",
     fontSize: "$2xl",
@@ -22,8 +19,8 @@ type Props = {
 
 export function BasicHeader(props: Props) {
   return (
-    <header class={styles.header()}>
-      <Box css={{ textAlign: "center" }}>
+    <header>
+      <Box css={{ textAlign: "center", marginTop: "$4" }}>
         <InternalLink href="/" class={styles.link()}>
           <Logo />
         </InternalLink>
