@@ -90,6 +90,7 @@ function render(nodes: Node[]) {
             class={css({
               margin: "$4 0",
               borderLeft: "4px solid $text",
+              lineHeight: "1.6",
             })()}
           >
             {render(node.childNodes)}
