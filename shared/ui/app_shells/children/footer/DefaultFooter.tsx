@@ -3,18 +3,13 @@ import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
-import { Grid } from "@shared/ui/layout/Grid.tsx";
+import { Box, Grid } from "@shared/ui/layout/mod.ts";
 import { Copyright } from "./children/Copyright.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import type { WidgetMap } from "@shared/widget/mod.ts";
 
 const styles = {
   profile: {
-    container: css({
-      container: "",
-      px: "$4",
-      paddingBottom: "$4",
-    }),
     name: css({
       order: "1",
     }),
@@ -48,11 +43,17 @@ export type Props = {
 export function DefaultFooter(props: Props) {
   return (
     <footer>
-      <div class={styles.profile.container()}>
+      <Box
+        css={{
+          paddingBottom: "$4",
+          px: "$4",
+        }}
+      >
         <Section
           level="1"
           heading={translate("profile:heading")}
           headingProps={{ fontSize: "2xl" }}
+          isContainer
         >
           <Grid templateColumns="auto" gap="$4">
             <Grid
@@ -96,7 +97,7 @@ export function DefaultFooter(props: Props) {
             </Section>
           </Grid>
         </Section>
-      </div>
+      </Box>
 
       <Copyright />
     </footer>
