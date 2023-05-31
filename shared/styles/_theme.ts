@@ -28,7 +28,8 @@ export const stitches = createStitches({
     colors: {
       text: "#f3f4f6", // gray100
       background: "#1e293b", // gray800
-      link: "#7dd3fc", // sky300
+      // link: "#7dd3fc", // sky300
+      link: "#f3f4f6", // same as text
       code: "#f3f4f6", // gray100
       codeBackground: "#4b5563", // gray600
       border: "#374151", // gray700

@@ -30,8 +30,8 @@ function render(nodes: Node[]) {
             marginBottom: "$4",
           }
           : {
-            marginTop: "$4",
-            marginBottom: "$2",
+            marginTop: "$8",
+            marginBottom: "$4",
           };
         return (
           <Heading level={level} css={style} style={node.attrs.style}>
