@@ -8,6 +8,10 @@ import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
 import { CSS, css } from "@shared/styles/css.ts";
 import { clsx } from "clsx";
 
+const customClasses = {
+  spacer: "cms-space",
+};
+
 type Props = {
   html: string;
 };
@@ -51,7 +55,7 @@ function render(nodes: Node[]) {
             css={{
               "& + ul": { marginTop: "$4" },
               "& + ol": { marginTop: "$4" },
-              "&:has(span.cms-space-text)": { marginTop: "$4" },
+              [`&:has(span.${customClasses.spacer})`]: { marginTop: "$4" },
             }}
             style={node.attrs.style}
             class={node.attrs.class}
