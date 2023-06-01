@@ -48,7 +48,11 @@ function render(nodes: Node[]) {
       case "p": {
         return (
           <Text
-            css={{ "& + ul": { marginTop: "$4" } }}
+            css={{
+              "& + ul": { marginTop: "$4" },
+              "& + ol": { marginTop: "$4" },
+              "&:has(span.cms-space-text)": { marginTop: "$4" },
+            }}
             style={node.attrs.style}
             class={node.attrs.class}
           >
@@ -57,7 +61,11 @@ function render(nodes: Node[]) {
         );
       }
       case "span": {
-        return <span style={node.attrs.style}>{render(node.childNodes)}</span>;
+        return (
+          <span class={node.attrs.class ?? ""} style={node.attrs.style}>
+            {render(node.childNodes)}
+          </span>
+        );
       }
       case "br": {
         return <br />;
