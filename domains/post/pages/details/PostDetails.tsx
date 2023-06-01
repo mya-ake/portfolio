@@ -58,7 +58,7 @@ export function PostDetails({ data }: PageProps<Data>) {
             )}
           </Grid>
           <Box css={{ marginTop: "$8" }}>
-            <RenderHTML html={data.post.body} />
+            <RenderHTML html={data.post.tmp_body ?? data.post.body} />
           </Box>
         </Section>
       </Box>

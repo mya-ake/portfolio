@@ -46,6 +46,7 @@ type PostData = {
   description: string;
   body: string;
   tags: Content<TagData>[];
+  tmp_body: string;
 };
 
 export type Post = Content<PostData>;
