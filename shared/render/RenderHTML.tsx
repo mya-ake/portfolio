@@ -6,6 +6,11 @@ import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { replaceToReplacedUrl } from "@post/shared/replace_image.ts";
 import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
 import { CSS, css } from "@shared/styles/css.ts";
+import { clsx } from "clsx";
+
+const customClasses = {
+  spacer: "cms-space",
+};
 
 type Props = {
   html: string;
@@ -34,7 +39,12 @@ function render(nodes: Node[]) {
             marginBottom: "$4",
           };
         return (
-          <Heading level={level} css={style} style={node.attrs.style}>
+          <Heading
+            id={node.attrs.id}
+            level={level}
+            css={style}
+            style={node.attrs.style}
+          >
             {render(node.childNodes)}
           </Heading>
         );
@@ -42,14 +52,24 @@ function render(nodes: Node[]) {
       case "p": {
         return (
           <Text
+            css={{
+              "& + ul": { marginTop: "$4" },
+              "& + ol": { marginTop: "$4" },
+              [`&:has(span.${customClasses.spacer})`]: { marginTop: "$4" },
+            }}
             style={node.attrs.style}
+            class={node.attrs.class}
           >
             {render(node.childNodes)}
           </Text>
         );
       }
       case "span": {
-        return <span style={node.attrs.style}>{render(node.childNodes)}</span>;
+        return (
+          <span class={node.attrs.class ?? ""} style={node.attrs.style}>
+            {render(node.childNodes)}
+          </span>
+        );
       }
       case "br": {
         return <br />;
@@ -72,12 +92,15 @@ function render(nodes: Node[]) {
         return (
           <code
             style={node.attrs.style}
-            class={css({
-              color: "$code",
-              px: "7px",
-              backgroundColor: "$codeBackground",
-              borderRadius: "$4",
-            })()}
+            class={clsx(
+              node.attrs.class,
+              css({
+                color: "$code",
+                px: "7px",
+                backgroundColor: "$codeBackground",
+                borderRadius: "$4",
+              })().toString(),
+            )}
           >
             {render(node.childNodes)}
           </code>
@@ -95,6 +118,13 @@ function render(nodes: Node[]) {
           >
             {render(node.childNodes)}
           </blockquote>
+        );
+      }
+      case "figure": {
+        return (
+          <figure class={css({ margin: "$4 0" })()}>
+            {render(node.childNodes)}
+          </figure>
         );
       }
       case "img": {
@@ -126,10 +156,18 @@ function render(nodes: Node[]) {
           );
       }
       case "ul": {
-        return <UnorderList>{render(node.childNodes)}</UnorderList>;
+        return (
+          <UnorderList css={{ "& + p": { marginTop: "$4" } }}>
+            {render(node.childNodes)}
+          </UnorderList>
+        );
       }
       case "ol": {
-        return <OrderList>{render(node.childNodes)}</OrderList>;
+        return (
+          <OrderList css={{ "& + p": { marginTop: "$4" } }}>
+            {render(node.childNodes)}
+          </OrderList>
+        );
       }
       case "li": {
         return <ListItem>{render(node.childNodes)}</ListItem>;

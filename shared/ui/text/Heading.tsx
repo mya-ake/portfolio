@@ -42,6 +42,7 @@ export function Heading(props: HeadingProps) {
     fontSize,
     css = {},
     style: attrStyle,
+    ...attrs
   } = props;
 
   const className = clsx(
@@ -58,6 +59,7 @@ export function Heading(props: HeadingProps) {
   );
 
   return createElement(`h${level}`, {
+    ...attrs,
     class: className,
     style: attrStyle,
   }, children);
