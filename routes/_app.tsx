@@ -5,10 +5,20 @@ import Gtag from "@islands/Gtag.tsx";
 import { getGATagId } from "@shared/env/mod.ts";
 
 export default function App({ Component }: AppProps) {
+  const gaTagId = getGATagId();
+
   return (
     <>
+      {gaTagId && (
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaTagId}`}
+        >
+        </script>
+      )}
+
       <DefaultHead />
-      <Gtag gaTagId={getGATagId()} />
+      <Gtag gaTagId={gaTagId} />
 
       <Grid
         templateRows="auto 1fr auto"
