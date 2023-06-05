@@ -1,3 +1,5 @@
+/// <reference types="./type.d.ts" />
+
 type Gtag = {
   (action: "js", date: Date): void;
   (
