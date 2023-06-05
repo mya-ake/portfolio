@@ -1,26 +1,28 @@
 import { useEffect } from "preact/hooks";
 import { gtag } from "@shared/gtag/mod.ts";
-import { getGATagId } from "@shared/env/mod.ts";
 
-const gaTagId = getGATagId();
-
-function init() {
-  if (gaTagId === "") {
-    return;
-  }
-
+function init(gaTagId: string) {
   window.dataLayer = window.dataLayer || [];
 
   gtag("js", new Date());
-  gtag("config", getGATagId(), {
+  gtag("config", gaTagId, {
     send_page_view: true,
     cookie_expires: 0,
   });
 }
 
-export default function Gtag() {
+type Props = {
+  gaTagId: string;
+};
+
+export default function Gtag(props: Props) {
+  const { gaTagId } = props;
+
   useEffect(() => {
-    init();
+    if (gaTagId === "") {
+      return;
+    }
+    init(gaTagId);
   }, []);
 
   return <div></div>;

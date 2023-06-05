@@ -2,10 +2,7 @@ import type { ComponentChildren } from "preact";
 import { css } from "@shared/styles/css.ts";
 import { Box } from "@shared/ui/layout/Box.tsx";
 import { DefaultHeader } from "./children/header/DefaultHeader.tsx";
-import {
-  BreadcrumbItem,
-  Breadcrumbs,
-} from "@shared/breadcrumbs/components/Breadcrumbs.tsx";
+import { BreadcrumbItem } from "@shared/breadcrumbs/components/Breadcrumbs.tsx";
 import {
   DefaultFooter,
   Props as DefaultFooterProps,
