@@ -3,6 +3,11 @@
 type Gtag = {
   (action: "js", date: Date): void;
   (
+    action: "consent",
+    value: "default",
+    option?: Record<string, string>,
+  ): void;
+  (
     action: "config",
     value: string,
     option?: Record<string, string | boolean | number>,
