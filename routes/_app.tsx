@@ -1,11 +1,13 @@
 import { AppProps } from "$fresh/server.ts";
 import { DefaultHead } from "@shared/head/DefaultHead.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
+import Gtag from "@islands/Gtag.tsx";
 
 export default function App({ Component }: AppProps) {
   return (
     <>
       <DefaultHead />
+      <Gtag />
 
       <Grid
         templateRows="auto 1fr auto"
