@@ -5,6 +5,11 @@ function init(gaTagId: string) {
   window.dataLayer = window.dataLayer || [];
 
   gtag("js", new Date());
+  gtag("consent", "default", {
+    "ad_storage": "denied",
+    "ads_data_redaction": "denied",
+    "analytics_storage": "denied",
+  });
   gtag("config", gaTagId, {
     send_page_view: true,
     cookie_expires: 0,
