@@ -2,8 +2,9 @@ import { useEffect } from "preact/hooks";
 import { gtag } from "@shared/gtag/mod.ts";
 import { getGATagId } from "@shared/env/mod.ts";
 
+const gaTagId = getGATagId();
+
 function init() {
-  const gaTagId = getGATagId();
   if (gaTagId === "") {
     return;
   }
