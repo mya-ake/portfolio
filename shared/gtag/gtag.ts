@@ -1,19 +1,19 @@
 /// <reference types="./type.d.ts" />
 
 type Gtag = {
-  (action: "js", date: Date): void;
+  (command: "js", date: Date): void;
   (
-    action: "consent",
-    value: "default",
+    command: "consent",
+    type: "default",
     option?: Record<string, string>,
   ): void;
   (
-    action: "config",
-    value: string,
+    command: "config",
+    id: string,
     option?: Record<string, string | boolean | number>,
   ): void;
 };
 
-export const gtag: Gtag = (...args) => {
-  window.dataLayer.push(args);
+export const gtag: Gtag = function () {
+  window.dataLayer.push(arguments);
 };

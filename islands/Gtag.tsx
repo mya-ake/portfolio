@@ -6,14 +6,10 @@ function init(gaTagId: string) {
 
   gtag("consent", "default", {
     "ad_storage": "denied",
-    "ads_data_redaction": "denied",
     "analytics_storage": "denied",
   });
   gtag("js", new Date());
-  gtag("config", gaTagId, {
-    send_page_view: true,
-    cookie_expires: 0,
-  });
+  gtag("config", gaTagId);
 }
 
 type Props = {
