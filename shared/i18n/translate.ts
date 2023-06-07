@@ -8,6 +8,7 @@ type TranslateKey =
   | `footer:${keyof LocaleResouce["footer"]}`
   | `home:${keyof LocaleResouce["home"]}`
   | `posts:${keyof LocaleResouce["posts"]}`
+  | `privacy_policy:${keyof LocaleResouce["privacy_policy"]}`
   | `social:${keyof LocaleResouce["social"]}`
   | `immutable:${keyof LocaleResouce["immutable"]}`;
 

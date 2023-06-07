@@ -4,6 +4,7 @@
     "@home/": "./domains/home/",
     "@og/": "./domains/og/",
     "@post/": "./domains/post/",
+    "@privacy/": "./domains/privacy/",
     "@islands/": "./islands/",
     "@shared/": "./shared/",
     "octokit": "https://cdn.skypack.dev/octokit@2.0.14?dts",

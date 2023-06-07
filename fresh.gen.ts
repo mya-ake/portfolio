@@ -12,6 +12,7 @@ import * as $5 from "./routes/og.tsx";
 import * as $6 from "./routes/posts/[id].tsx";
 import * as $7 from "./routes/posts/images/[...path].ts";
 import * as $8 from "./routes/posts/index.tsx";
+import * as $9 from "./routes/privacy_policy.tsx";
 import * as $$0 from "./islands/Gtag.tsx";
 import * as $$1 from "./islands/Highlight.tsx";
 
@@ -26,6 +27,7 @@ const manifest = {
     "./routes/posts/[id].tsx": $6,
     "./routes/posts/images/[...path].ts": $7,
     "./routes/posts/index.tsx": $8,
+    "./routes/privacy_policy.tsx": $9,
   },
   islands: {
     "./islands/Gtag.tsx": $$0,
