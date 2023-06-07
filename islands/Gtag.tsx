@@ -5,8 +5,12 @@ function init(gaTagId: string) {
   window.dataLayer = window.dataLayer || [];
 
   gtag("consent", "default", {
-    "ad_storage": "denied",
     "analytics_storage": "denied",
+    "ad_storage": "denied",
+  });
+  gtag("consent", "default", {
+    "analytics_storage": "granted",
+    "region": ["JP"],
   });
   gtag("js", new Date());
   gtag("config", gaTagId);

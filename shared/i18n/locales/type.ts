@@ -18,8 +18,16 @@ export type LocaleResouce = {
     name: string;
     heading: string;
   };
+  privacy_policy: {
+    name: string;
+    heading: string;
+  };
   footer: {
     copyright: string;
+  };
+  footer_links: {
+    heading: string;
+    privacy_policy: string;
   };
   social: {
     heading: string;

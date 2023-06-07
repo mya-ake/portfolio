@@ -5,7 +5,11 @@ type Gtag = {
   (
     command: "consent",
     type: "default",
-    option?: Record<string, string>,
+    option?: {
+      analytics_storage?: "granted" | "denied";
+      ad_storage?: "denied";
+      region?: string[];
+    },
   ): void;
   (
     command: "config",

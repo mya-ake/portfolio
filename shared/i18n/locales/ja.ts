@@ -8,7 +8,7 @@ export const ja: LocaleResouce = {
   },
   description: {
     default:
-      "猫好きのwebエンジニアが気まぐれで運営してるサイトです。現在リニューアル中です。",
+      "猫好きのwebエンジニアが気まぐれで運営してるサイトです。リニューアル間もないためコンテンツ少なめです。",
   },
   breadcrumbs: {
     heading: "パンくずリスト",
@@ -21,8 +21,16 @@ export const ja: LocaleResouce = {
     name: "記事一覧",
     heading: "Posts",
   },
+  privacy_policy: {
+    name: "プライバシーポリシー",
+    heading: "プライバシーポリシー",
+  },
   footer: {
     copyright: "© {{year}}",
+  },
+  footer_links: {
+    heading: "Other Links",
+    privacy_policy: "プライバシーポリシー",
   },
   social: {
     heading: "Social",
