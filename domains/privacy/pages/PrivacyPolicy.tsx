@@ -19,6 +19,7 @@ export function PrivacyPolicy({ data, route }: PageProps<Data>) {
       })}
     >
       <SEOHead
+        title={translate("privacy_policy:name")}
         description={translate("description:default")}
         path={route}
       />
