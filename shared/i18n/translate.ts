@@ -5,10 +5,11 @@ type TranslateKey =
   | `profile:${keyof LocaleResouce["profile"]}`
   | `description:${keyof LocaleResouce["description"]}`
   | `breadcrumbs:${keyof LocaleResouce["breadcrumbs"]}`
-  | `footer:${keyof LocaleResouce["footer"]}`
   | `home:${keyof LocaleResouce["home"]}`
   | `posts:${keyof LocaleResouce["posts"]}`
   | `privacy_policy:${keyof LocaleResouce["privacy_policy"]}`
+  | `footer:${keyof LocaleResouce["footer"]}`
+  | `footer_links:${keyof LocaleResouce["footer_links"]}`
   | `social:${keyof LocaleResouce["social"]}`
   | `immutable:${keyof LocaleResouce["immutable"]}`;
 

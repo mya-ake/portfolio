@@ -25,6 +25,10 @@ export type LocaleResouce = {
   footer: {
     copyright: string;
   };
+  footer_links: {
+    heading: string;
+    privacy_policy: string;
+  };
   social: {
     heading: string;
     github: "GitHub";

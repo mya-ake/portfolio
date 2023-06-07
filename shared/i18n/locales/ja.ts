@@ -28,6 +28,10 @@ export const ja: LocaleResouce = {
   footer: {
     copyright: "© {{year}}",
   },
+  footer_links: {
+    heading: "Other Links",
+    privacy_policy: "プライバシーポリシー",
+  },
   social: {
     heading: "Social",
     github: "GitHub",
