@@ -33,6 +33,7 @@ export const stitches = createStitches({
       code: "#f3f4f6", // gray100
       codeBackground: "#4b5563", // gray600
       border: "#374151", // gray700
+      hr: "#9ca3af", // gray400
     },
     space: {
       ...sizes,

@@ -184,6 +184,17 @@ function render(nodes: Node[]) {
           >{render(node.childNodes)}</pre>
         );
       }
+      case "hr": {
+        return (
+          <hr
+            class={css({
+              margin: "$12 0",
+              border: 0,
+              borderTop: "1px solid $hr",
+            })()}
+          />
+        );
+      }
       default: {
         console.log(node);
       }
