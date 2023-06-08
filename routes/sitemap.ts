@@ -1,9 +1,9 @@
 import { Handlers } from "$fresh/server.ts";
-import { createStaticSitemap } from "@sitemap/static.ts";
+import { createSitemap } from "@sitemap/mod.ts";
 
 export const handler: Handlers = {
   async GET() {
-    const sitemap = await createStaticSitemap();
+    const sitemap = await createSitemap();
     return new Response(sitemap, {
       status: 200,
       headers: {

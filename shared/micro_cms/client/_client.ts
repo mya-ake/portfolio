@@ -13,7 +13,7 @@ export type RequestParameter = {
   id?: string;
   ids?: string[];
   fields?: string;
-  orders?: "-publishedAt";
+  orders?: "-publishedAt" | "-updatedAt";
   limit?: number;
   offset?: number;
   richEditorFormat?: "html" | "object";

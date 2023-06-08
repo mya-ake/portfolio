@@ -1,5 +1,4 @@
-import { stringify } from "xml";
-import { formatDate } from "./_utils.ts";
+import { createLoc, formatDate } from "./_utils.ts";
 import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { createFields } from "@shared/micro_cms/utils.ts";
 import type { Item } from "./type.ts";
@@ -10,10 +9,11 @@ import type {
 
 const items: Item[] = [
   {
-    loc: "https://mya-ake.com",
+    loc: createLoc(""),
   },
 ];
 
+// widgets
 const ids = ["privacy_policy"] as const;
 const widgetFields = ["id", "updatedAt"] as const;
 const fields = createFields(widgetFields);
@@ -23,7 +23,7 @@ type Widget = Pick<OriginalWidget, typeof widgetFields[number]>;
 type Widgets = MicroCMSList<Widget>;
 type WidgetMap<Id extends Widget["id"]> = Record<Id, Widget>;
 
-async function createWidgetItems() {
+async function _createWidgetItems() {
   const client = getMicroCmsClient();
   const widgets = await client.get<Widgets>({
     resource: "widgets",
@@ -40,20 +40,15 @@ async function createWidgetItems() {
 
   const widgetItems: Item[] = [
     {
-      loc: "https://mya-ake.com/privacy_policy",
+      loc: createLoc("privacy_policy"),
       lastmod: formatDate(widgetMap.privacy_policy.updatedAt),
     },
   ];
   return widgetItems;
 }
 
-export async function createStaticSitemap() {
-  const widgetItems = await createWidgetItems();
+export async function createStaticItems() {
+  const widgetItems = await _createWidgetItems();
 
-  return stringify({
-    urlset: {
-      "@xmlns": "http://www.sitemaps.org/schemas/sitemap/0.9",
-      url: [...items, ...widgetItems],
-    },
-  });
+  return [...items, ...widgetItems];
 }
