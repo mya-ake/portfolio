@@ -1,4 +1,4 @@
-name: update-sitemap
+name: Update Sitemap
 
 on:
   schedule:
