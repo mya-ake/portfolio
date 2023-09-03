@@ -14,5 +14,6 @@ WORKDIR /app
 ADD . /app
 
 RUN deno cache main.ts
+RUN deno task build
 
 CMD ["run", "--allow-net", "--allow-env", "--allow-read", "--allow-write", "--allow-run",  "main.ts"]
