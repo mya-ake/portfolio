@@ -9,3 +9,7 @@ export function getUsePostsFilter() {
 export function getGATagId() {
   return Deno.env.get("GA_TAG_ID") ?? "";
 }
+
+export function getGAdId() {
+  return Deno.env.get("GAD_ID") ?? "";
+}
