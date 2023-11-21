@@ -455,7 +455,7 @@
     "https://deno.land/x/zod@v3.21.4/locales/en.ts": "a7a25cd23563ccb5e0eed214d9b31846305ddbcdb9c5c8f508b108943366ab4c",
     "https://deno.land/x/zod@v3.21.4/mod.ts": "64e55237cb4410e17d968cd08975566059f27638ebb0b86048031b987ba251c4",
     "https://deno.land/x/zod@v3.21.4/types.ts": "b5d061babea250de14fc63764df5b3afa24f2b088a1d797fc060ba49a0ddff28",
-    "https://esm.sh/*preact-render-to-string@6.2.1": "6724f1eaf27206b9ba0e604f4b3fa294c9f3e80969216e11ecfc23f56e0ec04e",
+    "https://esm.sh/*preact-render-to-string@6.2.1": "3de1c59123244c450dc65b79492cad5868dc49ddba0c84cae63760733c087e7e",
     "https://esm.sh/preact@10.15.1": "2b79349676a4942fbcf835c4efa909791c2f0aeca195225bf22bac9866e94b4e",
     "https://esm.sh/preact@10.15.1/debug": "eb12af10d41f793ab3a8cf90bff89a9cd8efab57b541d43dada6efc5e3fa8e3c",
     "https://esm.sh/preact@10.15.1/hooks": "185148362b77acad3fec1be815c42505a68c0a9b159948ed056a8612a0d4eb3b",
@@ -479,7 +479,7 @@
     "https://esm.sh/v131/entities@4.5.0/denonext/lib/escape.js": "7ebdc622bf3618bab25db40da4a49e2b9d03f044745f125f0bc3359f2d060def",
     "https://esm.sh/v131/parse5@7.1.2": "207ce2fb38a3ddca1aaed0573de5c5ec60afaf2aa1c141bac520434fdee6d472",
     "https://esm.sh/v131/parse5@7.1.2/denonext/parse5.mjs": "ec23d1c6250ca1254e8b091b10132e5f9e9250d4bdcc7b37fd814c53a2adbc8e",
-    "https://esm.sh/v132/preact-render-to-string@6.2.1/X-ZS8q/denonext/preact-render-to-string.mjs": "7a5a7c19872e0cb93fe6aa398c20510b3d9f34bd6565c0ccc30cb1a90d53a6c4"
+    "https://esm.sh/v134/preact-render-to-string@6.2.1/X-ZS8q/denonext/preact-render-to-string.mjs": "7a5a7c19872e0cb93fe6aa398c20510b3d9f34bd6565c0ccc30cb1a90d53a6c4"
   },
   "npm": {
     "specifiers": {
@@ -525,8 +525,8 @@
           "postcss-value-parser": "postcss-value-parser@4.2.0"
         }
       },
-      "emoji-regex@10.2.1": {
-        "integrity": "sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA==",
+      "emoji-regex@10.3.0": {
+        "integrity": "sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==",
         "dependencies": {}
       },
       "fflate@0.7.4": {
@@ -566,7 +566,7 @@
           "css-background-parser": "css-background-parser@0.1.0",
           "css-box-shadow": "css-box-shadow@1.0.0-3",
           "css-to-react-native": "css-to-react-native@3.2.0",
-          "emoji-regex": "emoji-regex@10.2.1",
+          "emoji-regex": "emoji-regex@10.3.0",
           "linebreak": "linebreak@1.1.0",
           "parse-css-color": "parse-css-color@0.2.1",
           "postcss-value-parser": "postcss-value-parser@4.2.0",
