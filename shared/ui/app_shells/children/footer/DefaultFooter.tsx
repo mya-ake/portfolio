@@ -27,8 +27,8 @@ function getSocialItems(): { label: string; name: string; uri: string }[] {
     name: translate("social:gitHubName"),
     uri: "https://github.com/mya-ake",
   }, {
-    label: translate("social:twitter"),
-    name: translate("social:twitterName"),
+    label: translate("social:x"),
+    name: translate("social:xName"),
     uri: "https://twitter.com/mya_ake",
   }, {
     label: translate("social:zenn"),

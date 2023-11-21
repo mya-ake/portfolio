@@ -33,8 +33,8 @@ export type LocaleResouce = {
     heading: string;
     github: "GitHub";
     gitHubName: string;
-    twitter: "Twitter";
-    twitterName: string;
+    x: "X(Twitter)";
+    xName: string;
     zenn: "Zenn";
     zennName: string;
   };
