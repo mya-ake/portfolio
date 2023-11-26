@@ -597,7 +597,7 @@
     "https://deno.land/x/zod@v3.21.4/locales/en.ts": "a7a25cd23563ccb5e0eed214d9b31846305ddbcdb9c5c8f508b108943366ab4c",
     "https://deno.land/x/zod@v3.21.4/mod.ts": "64e55237cb4410e17d968cd08975566059f27638ebb0b86048031b987ba251c4",
     "https://deno.land/x/zod@v3.21.4/types.ts": "b5d061babea250de14fc63764df5b3afa24f2b088a1d797fc060ba49a0ddff28",
-    "https://esm.sh/*preact-render-to-string@6.2.2": "f4a98206f5dd80ffc2a724be220f41e393821e6895e67b61683b00867fedcf00",
+    "https://esm.sh/*preact-render-to-string@6.2.2": "a12b5944fb39390b1aa9bfe5d25fdf5b34d2af277bd5e39d4c625c5b1352684c",
     "https://esm.sh/preact@10.18.1": "94e175027f630c795ee1bde782564f4b9bed98db1e04cc7e07241a02c8d62358",
     "https://esm.sh/preact@10.18.1/debug": "abcf4a90f00e74034c3fc2f4faeb72e00ed6d75208441905ad4e07e70226a7f1",
     "https://esm.sh/preact@10.18.1/hooks": "f6dae7168765949a86987b09883d7cd850b4b73eab53ad78cfbead5cbd1c0771",
@@ -621,6 +621,6 @@
     "https://esm.sh/v131/entities@4.5.0/denonext/lib/escape.js": "7ebdc622bf3618bab25db40da4a49e2b9d03f044745f125f0bc3359f2d060def",
     "https://esm.sh/v131/parse5@7.1.2": "207ce2fb38a3ddca1aaed0573de5c5ec60afaf2aa1c141bac520434fdee6d472",
     "https://esm.sh/v131/parse5@7.1.2/denonext/parse5.mjs": "ec23d1c6250ca1254e8b091b10132e5f9e9250d4bdcc7b37fd814c53a2adbc8e",
-    "https://esm.sh/v134/preact-render-to-string@6.2.2/X-ZS8q/denonext/preact-render-to-string.mjs": "55283fc14993c67474322e5632215b2a06deeb7d4ff986031dcfff31a5b0b74c"
+    "https://esm.sh/v135/preact-render-to-string@6.2.2/X-ZS8q/denonext/preact-render-to-string.mjs": "55283fc14993c67474322e5632215b2a06deeb7d4ff986031dcfff31a5b0b74c"
   }
 }
