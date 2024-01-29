@@ -1,5 +1,5 @@
 import { describe, it } from "std/testing/bdd.ts";
-import { assertEquals, assertObjectMatch } from "std/testing/asserts.ts";
+import { assertEquals, assertObjectMatch } from "std/assert/mod.ts";
 import { decidePublishedAt } from "./decide_published_at.ts";
 
 describe("decidePublishedAt", () => {

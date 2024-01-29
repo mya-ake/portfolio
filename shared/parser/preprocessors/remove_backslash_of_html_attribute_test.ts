@@ -1,4 +1,4 @@
-import { assertEquals } from "std/testing/asserts.ts";
+import { assertEquals } from "std/assert/mod.ts";
 import { removeBackslashOfHTMLAttribute } from "./remove_backslash_of_html_attribute.ts";
 
 Deno.test({

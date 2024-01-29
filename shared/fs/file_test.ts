@@ -1,5 +1,5 @@
 import { afterAll, describe, it } from "std/testing/bdd.ts";
-import { assertEquals } from "std/testing/asserts.ts";
+import { assertEquals } from "std/assert/mod.ts";
 import { join } from "std/path/mod.ts";
 import { readFile, writeFile } from "./file.ts";
 

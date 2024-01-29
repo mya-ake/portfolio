@@ -1,4 +1,4 @@
-import { assert } from "std/testing/asserts.ts";
+import { assert } from "std/assert/mod.ts";
 import { readNormalizeCss } from "./read_normalize_css.ts";
 
 Deno.test({

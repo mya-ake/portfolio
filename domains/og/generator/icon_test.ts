@@ -1,5 +1,5 @@
 import { describe, it } from "std/testing/bdd.ts";
-import { assertEquals } from "std/testing/asserts.ts";
+import { assertEquals } from "std/assert/mod.ts";
 import { getIconImage } from "./icon.ts";
 
 describe("getIconImage", () => {

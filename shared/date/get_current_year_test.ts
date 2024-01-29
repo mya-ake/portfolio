@@ -1,4 +1,4 @@
-import { assertEquals } from "std/testing/asserts.ts";
+import { assertEquals } from "std/assert/mod.ts";
 import { getCurrentYear } from "./get_current_year.ts";
 
 Deno.test({

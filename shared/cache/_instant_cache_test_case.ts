@@ -1,5 +1,5 @@
 import { describe, it } from "std/testing/bdd.ts";
-import { assertEquals } from "std/testing/asserts.ts";
+import { assertEquals } from "std/assert/mod.ts";
 import { assertSpyCalls, spy } from "std/testing/mock.ts";
 import type { CreateInstantCache } from "./_create_instant_cache.ts";
 

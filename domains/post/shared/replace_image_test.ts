@@ -1,5 +1,5 @@
 import { describe, it } from "std/testing/bdd.ts";
-import { assertEquals } from "std/testing/asserts.ts";
+import { assertEquals } from "std/assert/mod.ts";
 import { replaceToOriginalUrl, replaceToReplacedUrl } from "./replace_image.ts";
 
 describe("replaceToOriginalUrl/replaceToReplacedUrl", () => {
