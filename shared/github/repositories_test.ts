@@ -1,5 +1,5 @@
 import { describe, it } from "std/testing/bdd.ts";
-import { assertEquals, assertRejects } from "std/testing/asserts.ts";
+import { assertEquals, assertRejects } from "std/assert/mod.ts";
 import { getMyRepositories, Repository } from "./repositories.ts";
 import { createOctokitMock } from "./_mock.ts";
 

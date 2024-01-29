@@ -1,5 +1,5 @@
 import { describe, it } from "std/testing/bdd.ts";
-import { assertEquals, assertThrows } from "std/testing/asserts.ts";
+import { assertEquals, assertThrows } from "std/assert/mod.ts";
 import { detectLang, getCurrentLang } from "./language.ts";
 
 const samples = {

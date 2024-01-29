@@ -3,7 +3,7 @@ import {
   assertEquals,
   assertObjectMatch,
   assertThrows,
-} from "std/testing/asserts.ts";
+} from "std/assert/mod.ts";
 import { z } from "zod";
 import { parseParameter } from "./parse_parameter.ts";
 

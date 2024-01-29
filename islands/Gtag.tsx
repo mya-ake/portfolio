@@ -2,7 +2,7 @@ import { useEffect } from "preact/hooks";
 import { gtag } from "@shared/gtag/mod.ts";
 
 function init(gaTagId: string) {
-  window.dataLayer = window.dataLayer || [];
+  globalThis.dataLayer = globalThis.dataLayer || [];
 
   gtag("consent", "default", {
     "analytics_storage": "denied",

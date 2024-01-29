@@ -1,5 +1,5 @@
 import { beforeEach, describe, it } from "std/testing/bdd.ts";
-import { assertEquals, assertInstanceOf } from "std/testing/asserts.ts";
+import { assertEquals, assertInstanceOf } from "std/assert/mod.ts";
 import { stub } from "std/testing/mock.ts";
 import { MicroCmsClient } from "./_client.ts";
 import { FetchError } from "@shared/fetch/error.ts";
