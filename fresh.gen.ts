@@ -2,39 +2,40 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/_404.tsx";
-import * as $1 from "./routes/_500.tsx";
-import * as $2 from "./routes/_app.tsx";
-import * as $3 from "./routes/_middleware.ts";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/og.tsx";
-import * as $6 from "./routes/posts/[id].tsx";
-import * as $7 from "./routes/posts/images/[...path].ts";
-import * as $8 from "./routes/posts/index.tsx";
-import * as $9 from "./routes/privacy_policy.tsx";
-import * as $10 from "./routes/sitemap.ts";
-import * as $$0 from "./islands/Gtag.tsx";
-import * as $$1 from "./islands/Highlight.tsx";
+import * as $_404 from "./routes/_404.tsx";
+import * as $_500 from "./routes/_500.tsx";
+import * as $_app from "./routes/_app.tsx";
+import * as $_middleware from "./routes/_middleware.ts";
+import * as $index from "./routes/index.tsx";
+import * as $og from "./routes/og.tsx";
+import * as $posts_id_ from "./routes/posts/[id].tsx";
+import * as $posts_images_path_ from "./routes/posts/images/[...path].ts";
+import * as $posts_index from "./routes/posts/index.tsx";
+import * as $privacy_policy from "./routes/privacy_policy.tsx";
+import * as $sitemap from "./routes/sitemap.ts";
+import * as $Gtag from "./islands/Gtag.tsx";
+import * as $Highlight from "./islands/Highlight.tsx";
+import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
-    "./routes/_404.tsx": $0,
-    "./routes/_500.tsx": $1,
-    "./routes/_app.tsx": $2,
-    "./routes/_middleware.ts": $3,
-    "./routes/index.tsx": $4,
-    "./routes/og.tsx": $5,
-    "./routes/posts/[id].tsx": $6,
-    "./routes/posts/images/[...path].ts": $7,
-    "./routes/posts/index.tsx": $8,
-    "./routes/privacy_policy.tsx": $9,
-    "./routes/sitemap.ts": $10,
+    "./routes/_404.tsx": $_404,
+    "./routes/_500.tsx": $_500,
+    "./routes/_app.tsx": $_app,
+    "./routes/_middleware.ts": $_middleware,
+    "./routes/index.tsx": $index,
+    "./routes/og.tsx": $og,
+    "./routes/posts/[id].tsx": $posts_id_,
+    "./routes/posts/images/[...path].ts": $posts_images_path_,
+    "./routes/posts/index.tsx": $posts_index,
+    "./routes/privacy_policy.tsx": $privacy_policy,
+    "./routes/sitemap.ts": $sitemap,
   },
   islands: {
-    "./islands/Gtag.tsx": $$0,
-    "./islands/Highlight.tsx": $$1,
+    "./islands/Gtag.tsx": $Gtag,
+    "./islands/Highlight.tsx": $Highlight,
   },
   baseUrl: import.meta.url,
-};
+} satisfies Manifest;
 
 export default manifest;

@@ -22,7 +22,7 @@
     "octokit": "https://cdn.skypack.dev/octokit@2.0.14?dts",
     "hljs": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js",
     "std/": "https://deno.land/std@0.213.0/",
-    "$fresh/": "https://deno.land/x/fresh@1.5.4/",
+    "$fresh/": "https://deno.land/x/fresh@1.6.3/",
     "i18next": "https://deno.land/x/i18next@v22.4.15/index.js",
     "resvg/": "https://deno.land/x/resvg_wasm@0.2.0/",
     "zod": "https://deno.land/x/zod@v3.21.4/mod.ts",
@@ -36,8 +36,8 @@
     "dayjs/": "https://esm.sh/v131/dayjs@1.11.7/",
     "parse5": "https://esm.sh/v131/parse5@7.1.2",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.2",
-    "preact": "https://esm.sh/preact@10.18.1",
-    "preact/": "https://esm.sh/preact@10.18.1/",
+    "preact": "https://esm.sh/preact@10.19.2",
+    "preact/": "https://esm.sh/preact@10.19.2/",
     "satori": "npm:satori@0.8.0"
   },
   "scopes": {
