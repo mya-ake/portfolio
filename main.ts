@@ -1,7 +1,7 @@
 import { App, staticFiles } from "fresh";
 import { readNormalizeCss } from "./core/css/mod.ts";
 
-export const app = new App({ root: import.meta.url });
+export const app = new App();
 
 app.use(staticFiles());
 app.fsRoutes();
