@@ -1,5 +1,4 @@
 import type { PageProps } from "fresh";
-import { Head } from "fresh/runtime";
 import { DefaultHead } from "@shared/head/DefaultHead.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import Gtag from "@islands/Gtag.tsx";
@@ -21,35 +20,35 @@ export default function App({ Component }: PageProps) {
   const normalizeCss = getNormalizeCss();
 
   return (
-    <>
-      <Head>
+    <html lang="ja">
+      <head>
         <InlineStyle css={normalizeCss + css} />
-      </Head>
-      {gaTagId && (
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaTagId}`}
+        {gaTagId && (
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaTagId}`}
+          >
+          </script>
+        )}
+        {gAdId && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${gAdId}`}
+            crossOrigin="anonymous"
+          >
+          </script>
+        )}
+      </head>
+      <body>
+        <DefaultHead />
+        <Gtag gaTagId={gaTagId} />
+        <Grid
+          templateRows="auto 1fr auto"
+          css={{ minHeight: "100dvh", overflow: "auto" }}
         >
-        </script>
-      )}
-      {gAdId && (
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${gAdId}`}
-          crossOrigin="anonymous"
-        >
-        </script>
-      )}
-
-      <DefaultHead />
-      <Gtag gaTagId={gaTagId} />
-
-      <Grid
-        templateRows="auto 1fr auto"
-        css={{ minHeight: "100dvh", overflow: "auto" }}
-      >
-        <Component />
-      </Grid>
-    </>
+          <Component />
+        </Grid>
+      </body>
+    </html>
   );
 }
