@@ -1,4 +1,4 @@
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "fresh/runtime";
 
 const siteName = "neko-note′";
 const twitterAccount = "@mya_ake";

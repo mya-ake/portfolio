@@ -1,5 +1,6 @@
-import type { Handlers } from "$fresh/server.ts";
-import { cacheMiddleware } from "@shared/middleware/cache.ts";
+import { page } from "fresh";
+import type { FreshContext } from "fresh";
+import { pageCacheHeaders } from "@shared/middleware/cache.ts";
 import {
   getPrivacyPolicyWidgets,
   PrivacyPolicyWidgetMap,
@@ -9,15 +10,14 @@ export type Data = {
   widgetMap: PrivacyPolicyWidgetMap;
 };
 
-export const handler: Handlers<Data> = {
-  async GET(_, ctx) {
+export const handler = {
+  async GET(_ctx: FreshContext) {
     const widgetMap = await getPrivacyPolicyWidgets();
     const data: Data = {
       widgetMap,
     };
-
-    const resp = await ctx.render(data);
-    cacheMiddleware(resp, { time: 60 * 60 * 24 * 7 });
-    return resp;
+    return page(data, {
+      headers: pageCacheHeaders({ time: 60 * 60 * 24 * 7 }),
+    });
   },
 };

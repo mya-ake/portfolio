@@ -11,7 +11,7 @@ import { translate } from "@shared/i18n/mod.ts";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import { createBreadcrumbs } from "@shared/breadcrumbs/manager.ts";
-import type { PageProps } from "$fresh/server.ts";
+import type { PageProps } from "fresh";
 import type { Data } from "./Home.handler.ts";
 
 export function Home({ data }: PageProps<Data>) {

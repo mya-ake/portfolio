@@ -10,3 +10,10 @@ export function cacheMiddleware(resp: Response, config: Config) {
   }
   return resp;
 }
+
+export function pageCacheHeaders(config: Config): HeadersInit | undefined {
+  if (Deno.env.get("APP_ENV") === "prod" && config.time) {
+    return { "cache-control": `public, max-age=${config.time}` };
+  }
+  return undefined;
+}

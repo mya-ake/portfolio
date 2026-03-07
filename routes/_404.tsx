@@ -1,3 +1,5 @@
+import type { FreshContext } from "fresh";
+import { page } from "fresh";
 import { SimpleAppShell } from "@shared/ui/app_shells/SimpleAppShell.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { Heading } from "@shared/ui/text/Heading.tsx";
@@ -6,6 +8,12 @@ import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { IconHead } from "@shared/head/IconHead.tsx";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { translate } from "@shared/i18n/mod.ts";
+
+export const handler = {
+  GET(_ctx: FreshContext) {
+    return page(null, { status: 404 });
+  },
+};
 
 export default function NotFound() {
   return (

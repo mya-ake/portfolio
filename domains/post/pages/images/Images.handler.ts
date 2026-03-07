@@ -1,10 +1,11 @@
 import { replaceToOriginalUrl } from "@post/shared/replace_image.ts";
 import { cacheMiddleware } from "@shared/middleware/cache.ts";
-import type { Handlers } from "$fresh/server.ts";
+import type { FreshContext } from "fresh";
 
-export const handler: Handlers = {
-  async GET(req) {
+export const handler = {
+  async GET(ctx: FreshContext) {
     try {
+      const req = ctx.req;
       const originalUrl = replaceToOriginalUrl(new URL(req.url));
       const response = await fetch(originalUrl);
       cacheMiddleware(response, { time: 60 * 60 * 24 * 365 });

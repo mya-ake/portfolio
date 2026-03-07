@@ -11,7 +11,7 @@ import { Time } from "@shared/ui/text/Time.tsx";
 import { isSameDate } from "@shared/date/is_same_date.ts";
 import { createBreadcrumbs } from "@shared/breadcrumbs/manager.ts";
 import { translate } from "@shared/i18n/mod.ts";
-import type { PageProps } from "$fresh/server.ts";
+import type { PageProps } from "fresh";
 import type { Data } from "./Posts.handler.ts";
 
 export function Posts({ data }: PageProps<Data>) {
