@@ -23,7 +23,7 @@
     "std/testing/snapshot.ts": "jsr:@std/testing/snapshot",
     "std/testing/mock.ts": "jsr:@std/testing/mock",
     "$fresh/": "https://deno.land/x/fresh@1.6.3/",
-    "i18next": "npm:i18next@^22.4.15",
+    "i18next": "https://deno.land/x/i18next@v22.4.15/index.js",
     "resvg/": "https://deno.land/x/resvg_wasm@0.2.0/",
     "zod": "npm:zod@^3.21.4",
     "xml": "https://deno.land/x/xml@2.1.1/mod.ts",

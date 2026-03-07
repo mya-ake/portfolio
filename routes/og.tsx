@@ -32,7 +32,8 @@ function createSvgResponse(svg: string) {
 
 async function createPngResponse(svg: string) {
   const data = await render(svg);
-  return new Response(data, {
+  const bytes = new Uint8Array(data);
+  return new Response(bytes, {
     status: 200,
     headers: {
       "content-type": "image/png",

@@ -8,7 +8,6 @@
     "npm:dayjs@1.11.7": "1.11.7",
     "npm:dayjs@^1.11.7": "1.11.7",
     "npm:highlight.js@11.7.0": "11.7.0",
-    "npm:i18next@^22.4.15": "22.5.1",
     "npm:octokit@^2.0.14": "2.1.0",
     "npm:parse5@^7.1.2": "7.3.0",
     "npm:satori@0.8.0": "0.8.0",
@@ -26,9 +25,6 @@
     }
   },
   "npm": {
-    "@babel/runtime@7.28.6": {
-      "integrity": "sha512-05WQkdpL9COIMz4LjTxGpPNCdlpyimKppYNoJ5Di5EUObifl8t4tuLuUBBZEpoLYOmfvIWrsp9fCl0HoPRVTdA=="
-    },
     "@octokit/app@13.1.8": {
       "integrity": "sha512-bCncePMguVyFpdBbnceFKfmPOuUD94T189GuQ0l00ZcQ+mX4hyPqnaWJlsXE2HSdA71eV7p8GPDZ+ErplTkzow==",
       "dependencies": [
@@ -348,12 +344,6 @@
     },
     "highlight.js@11.7.0": {
       "integrity": "sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ=="
-    },
-    "i18next@22.5.1": {
-      "integrity": "sha512-8TGPgM3pAD+VRsMtUMNknRz3kzqwp/gPALrWMsDnmC1mKqJwpWyooQRLMcbTwq8z8YwSmuj+ZYvc+xCuEpkssA==",
-      "dependencies": [
-        "@babel/runtime"
-      ]
     },
     "indent-string@4.0.0": {
       "integrity": "sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg=="
@@ -856,6 +846,20 @@
     "https://deno.land/x/fresh@1.6.3/src/server/types.ts": "f5911c9eef864df8ef58fe5bd353ebd22267b35ef2ef8b21def825fd274d05a6",
     "https://deno.land/x/fresh@1.6.3/src/types.ts": "05169e3389979d8283de0ec1db3a765324ffd730b6af29ffe02752f341ae7d35",
     "https://deno.land/x/fresh@1.6.3/versions.json": "66c5f18a78fa7df6fdb5d117c035dd0543c29128437357a9d95d28180f147bb4",
+    "https://deno.land/x/i18next@v22.4.15/BackendConnector.js": "2c989e9448a8bc78c7170f7d0ca3f9c4954881242aaf6ecd5b3de7b9df0c0a77",
+    "https://deno.land/x/i18next@v22.4.15/EventEmitter.js": "8831b642cd1c567ec391c17df2b4b731aee27b12f4d3c7a972209c09e696b3d9",
+    "https://deno.land/x/i18next@v22.4.15/Formatter.js": "cf07ccbdd42ab4e77c2bdc40c517d85fc040f27f1317a117a1f018ac5b81a18e",
+    "https://deno.land/x/i18next@v22.4.15/Interpolator.js": "8f1fb724962ef77914b52035267ff84080cc0652d6261867d86c3b2d7f48fd14",
+    "https://deno.land/x/i18next@v22.4.15/LanguageUtils.js": "3d087034615b5a3aaef9919c8f32b2e2c04591cc4bd563d2b7492ae2713a2c27",
+    "https://deno.land/x/i18next@v22.4.15/PluralResolver.js": "5d7ab07a0185b5ae9c4804ad9e179c75d66b27d2b66d16860a73494343475f27",
+    "https://deno.land/x/i18next@v22.4.15/ResourceStore.js": "b42adbf28e8179d1bda186fb1797b5ea21b4e1dd2aeeafe3a8406be1d40d3f9b",
+    "https://deno.land/x/i18next@v22.4.15/Translator.js": "9206476af165ca8c6ea4b301d97c8c25f0bbc5090a824ed100aeb7924c50d21f",
+    "https://deno.land/x/i18next@v22.4.15/defaults.js": "12ab607a1066a0640a6a9fdfe5010a1f83d838f6fae04614830765cb033f7d39",
+    "https://deno.land/x/i18next@v22.4.15/i18next.js": "61ff8592d2b16f2c668c8b6a8d3ca333d51796edaff9794428f6ff6f3dc000c2",
+    "https://deno.land/x/i18next@v22.4.15/index.js": "2b3174388a937f60c0ad24442585a747886eb0deacc0cbaddf18609d2032b0c4",
+    "https://deno.land/x/i18next@v22.4.15/logger.js": "3b5788e61ef65a3f740a43efbbb8b93835ba0a08516ca752dc1fbbd4e6361aea",
+    "https://deno.land/x/i18next@v22.4.15/postProcessor.js": "f332e0043d612af521637f6de8c8ad690b7ac4043bab8f936345b21f05af5d4d",
+    "https://deno.land/x/i18next@v22.4.15/utils.js": "05f03feb9a31fe7e337061a0c9d6c0d417e84c58176ea0fccefc33899055c351",
     "https://deno.land/x/importmap@0.2.1/_util.ts": "ada9a9618b537e6c0316c048a898352396c882b9f2de38aba18fd3f2950ede89",
     "https://deno.land/x/importmap@0.2.1/mod.ts": "ae3d1cd7eabd18c01a4960d57db471126b020f23b37ef14e1359bbb949227ade",
     "https://deno.land/x/resvg_wasm@0.2.0/lib/resvg_wasm.generated.js": "29247e1c473c35f302d8c3741d369e2e999df6b3978cf2c975f701d2fb39c63e",
@@ -904,7 +908,6 @@
       "npm:dayjs@1.11.7",
       "npm:dayjs@^1.11.7",
       "npm:highlight.js@11.7.0",
-      "npm:i18next@^22.4.15",
       "npm:octokit@^2.0.14",
       "npm:parse5@^7.1.2",
       "npm:satori@0.8.0",
