@@ -1,4 +1,4 @@
-FROM denoland/deno:1.40.2
+FROM denoland/deno:2.7.2
 
 EXPOSE 8000
 
@@ -16,4 +16,4 @@ ADD . /app
 RUN deno cache main.ts
 RUN deno task build
 
-CMD ["run", "--allow-net", "--allow-env", "--allow-read", "--allow-write", "--allow-run",  "main.ts"]
+CMD ["serve", "--allow-net", "--allow-env", "--allow-read", "--allow-write", "_fresh/server.js"]
