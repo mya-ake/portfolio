@@ -10,7 +10,6 @@ import type { Data } from "./PrivacyPolicy.handler.ts";
 
 export function PrivacyPolicy({ data, route }: PageProps<Data>) {
   const path = route ?? "/privacy_policy";
-  console.log(route);
   return (
     <DefaultAppShell
       widgetMap={data.widgetMap}
