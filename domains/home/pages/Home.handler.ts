@@ -1,6 +1,7 @@
-import type { Handlers } from "$fresh/server.ts";
+import { page } from "fresh";
+import type { Context } from "fresh";
 import type { Repository } from "@shared/github/mod.ts";
-import { cacheMiddleware } from "@shared/middleware/cache.ts";
+import { pageCacheHeaders } from "@shared/middleware/cache.ts";
 import {
   getHomeWidgets,
   getPosts,
@@ -15,19 +16,20 @@ export type Data = {
   posts: Posts;
 };
 
-export const handler: Handlers<Data> = {
-  async GET(_, ctx) {
-    const repositories = await getRepositories();
-    const widgetMap = await getHomeWidgets();
-    const posts = await getPosts({ limit: 5 });
+export const handler = {
+  async GET(_ctx: Context<unknown>) {
+    const [repositories, widgetMap, posts] = await Promise.all([
+      getRepositories(),
+      getHomeWidgets(),
+      getPosts({ limit: 5 }),
+    ]);
     const data: Data = {
       repositories,
       widgetMap,
       posts,
     };
-
-    const resp = await ctx.render(data);
-    cacheMiddleware(resp, { time: 60 * 60 * 24 * 7 });
-    return resp;
+    return page(data, {
+      headers: pageCacheHeaders({ time: 60 * 60 * 24 * 7 }),
+    });
   },
 };

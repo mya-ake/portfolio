@@ -1,29 +1,14 @@
-/// <reference no-default-lib="true" />
-/// <reference lib="dom" />
-/// <reference lib="dom.asynciterable" />
-/// <reference lib="deno.ns" />
-/// <reference lib="deno.unstable" />
-
-import { InnerRenderFunction, RenderContext, start } from "$fresh/server.ts";
-import manifest from "./fresh.gen.ts";
+import { App, staticFiles } from "fresh";
 import { readNormalizeCss } from "./core/css/mod.ts";
-import { getCssText, reset } from "@shared/styles/core.ts";
-import { globalStyles } from "@shared/styles/global_styles.ts";
-import { getCurrentLang } from "@shared/i18n/mod.ts";
 
-async function render(ctx: RenderContext, render: InnerRenderFunction) {
-  // lang
-  ctx.lang = getCurrentLang();
+export const app = new App();
 
-  // normalize
-  const normalizeCss = await readNormalizeCss(Deno.cwd());
-  ctx.styles.push(normalizeCss);
+app.use(staticFiles());
+app.fsRoutes();
 
-  // stitches
-  reset();
-  render();
-  globalStyles();
-  ctx.styles.push(getCssText());
+// Pre-warm normalize CSS cache so _app.tsx can access it synchronously
+await readNormalizeCss(import.meta.dirname!);
+
+if (import.meta.main) {
+  await app.listen({ port: 8000 });
 }
-
-await start(manifest, { render, port: 8000 });

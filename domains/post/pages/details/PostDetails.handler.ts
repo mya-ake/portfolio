@@ -1,3 +1,5 @@
+import { HttpError, page } from "fresh";
+import type { Context } from "fresh";
 import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { isFetchError } from "@shared/fetch/error.ts";
 import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
@@ -7,8 +9,7 @@ import {
   getDefaultAppShellWidgetMap,
 } from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
 import { decidePublishedAt } from "@post/shared/decide_published_at.ts";
-import { cacheMiddleware } from "@shared/middleware/cache.ts";
-import type { Handlers } from "$fresh/server.ts";
+import { pageCacheHeaders } from "@shared/middleware/cache.ts";
 import type { Post } from "@shared/micro_cms/type.ts";
 
 export type Data = {
@@ -29,20 +30,20 @@ const getPost = getUseMicroCMSCache()
   ? createInstantCache("post_details")(getPostFromCMS)
   : getPostFromCMS;
 
-export const handler: Handlers<Data> = {
-  async GET(_, ctx) {
+export const handler = {
+  async GET(ctx: Context<unknown>) {
     try {
       const id = ctx.params.id;
       const post = await getPost(id).then(decidePublishedAt);
       const widgetMap = await getDefaultAppShellWidgetMap();
       const data: Data = { post, widgetMap };
-      const resp = await ctx.render(data);
-      cacheMiddleware(resp, { time: 60 * 60 * 24 * 7 });
-      return resp;
+      return page(data, {
+        headers: pageCacheHeaders({ time: 60 * 60 * 24 * 7 }),
+      });
     } catch (error) {
       if (isFetchError(error)) {
         if (error.response.status === 404) {
-          return ctx.renderNotFound();
+          throw new HttpError(404);
         }
       }
       return Promise.reject(error);

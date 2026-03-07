@@ -5,8 +5,8 @@ import { readFile, writeFile } from "./file.ts";
 
 const tmpDir = join(Deno.cwd(), ".tmp", "file_test");
 
-afterAll(() => {
-  Deno.remove(tmpDir, { recursive: true });
+afterAll(async () => {
+  await Deno.remove(tmpDir, { recursive: true });
 });
 
 describe("readFile, writeFile", () => {

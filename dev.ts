@@ -1,5 +1,10 @@
-#!/usr/bin/env -S deno run -A --watch=static/,routes/
+import { Builder } from "fresh/dev";
 
-import dev from "$fresh/dev.ts";
-
-await dev(import.meta.url, "./main.ts");
+const builder = new Builder();
+if (Deno.args.includes("build")) {
+  const finish = await builder.build();
+  const { app } = await import("./main.ts");
+  finish(app);
+} else {
+  await builder.listen(() => import("./main.ts"));
+}
