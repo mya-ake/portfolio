@@ -33,7 +33,9 @@ type Data = { statusCode: number; title: string };
 
 export const handler = {
   GET(ctx: Context<Data>) {
-    const statusCode = ctx.error instanceof HttpError ? ctx.error.status : DEFAULT_STATUS;
+    const statusCode = ctx.error instanceof HttpError
+      ? ctx.error.status
+      : DEFAULT_STATUS;
     const title = STATUS_TITLES[statusCode] ?? STATUS_TITLES[DEFAULT_STATUS];
     return page<Data>({ statusCode, title }, { status: statusCode });
   },
