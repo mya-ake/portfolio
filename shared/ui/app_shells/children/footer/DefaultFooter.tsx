@@ -84,7 +84,7 @@ export function DefaultFooter(props: Props) {
               <RenderHTML html={props.widgetMap.footer_bio} />
             </div>
 
-            <Flex gap={"$8"}>
+            <Flex gap="$8">
               <Section level="2" heading={translate("social:heading")}>
                 <Grid
                   templateColumns="auto 1fr"
