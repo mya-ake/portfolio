@@ -1,3 +1,4 @@
+import { Fragment } from "preact";
 import { Node, parseHtml } from "@shared/parser/html_parser.ts";
 import { Heading, Level } from "@shared/ui/text/Heading.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
@@ -17,9 +18,9 @@ type Props = {
 };
 
 function render(nodes: Node[]) {
-  return nodes.map((node) => {
+  return nodes.map((node, index) => {
     if (node.nodeType === "text") {
-      return <>{node.content}</>;
+      return <Fragment key={index}>{node.content}</Fragment>;
     }
     switch (node.tagName) {
       case "h1":

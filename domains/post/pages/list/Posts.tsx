@@ -34,7 +34,7 @@ export function Posts({ data }: PageProps<Data>) {
           <Box css={{ marginTop: "$2" }}>
             <UnorderList>
               {data.posts.contents.map((
-                { id, title, publishedAt, updatedAt, tags },
+                { id, title, publishedAt, updatedAt },
               ) => (
                 <Fragment key={id}>
                   <ListItem>

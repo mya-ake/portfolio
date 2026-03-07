@@ -1,12 +1,9 @@
 import { BasicHeader } from "./BasicHeader.tsx";
 import { Box } from "@shared/ui/layout/Box.tsx";
-import { css } from "@shared/styles/css.ts";
 import {
   BreadcrumbItem,
   Breadcrumbs,
 } from "@shared/breadcrumbs/components/Breadcrumbs.tsx";
-
-const styles = {};
 
 type Props = {
   breadcrumbs: BreadcrumbItem[];

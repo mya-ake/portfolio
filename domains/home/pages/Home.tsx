@@ -32,13 +32,13 @@ export function Home({ data }: PageProps<Data>) {
           isContainer
         >
           <Grid templateColumns="auto" rowGap="$12">
-            <Section level="2" heading={"About"}>
+            <Section level="2" heading="About">
               <Box css={{ marginTop: "$2" }}>
                 <RenderHTML html={data.widgetMap.home_about} />
               </Box>
             </Section>
 
-            <Section level="2" heading={"Posts"}>
+            <Section level="2" heading="Posts">
               <Box css={{ marginTop: "$2" }}>
                 <UnorderList>
                   {data.posts.contents.map(({ id, title, publishedAt }) => (
@@ -63,13 +63,13 @@ export function Home({ data }: PageProps<Data>) {
               </Box>
             </Section>
 
-            <Section level="2" heading={"Recent Activities"}>
+            <Section level="2" heading="Recent Activities">
               <Box css={{ marginTop: "$2" }}>
                 <RenderHTML html={data.widgetMap.home_recent_activities} />
               </Box>
             </Section>
 
-            <Section level="2" heading={"GitHub Activities"}>
+            <Section level="2" heading="GitHub Activities">
               <Box css={{ marginTop: "$2" }}>
                 <UnorderList>
                   {data.repositories.map((

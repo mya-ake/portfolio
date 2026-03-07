@@ -19,5 +19,5 @@ type Gtag = {
 };
 
 export const gtag: Gtag = function () {
-  window.dataLayer.push(arguments);
+  globalThis.dataLayer.push(arguments);
 };
