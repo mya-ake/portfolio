@@ -1,8 +1,8 @@
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import { detectLang, init } from "@shared/i18n/mod.ts";
 import { reset } from "@shared/styles/core.ts";
 
-export async function handler(ctx: FreshContext) {
+export async function handler(ctx: Context<unknown>) {
   const req = ctx.req;
   const log = `[${req.method}] ${req.url}`;
   console.log(log);

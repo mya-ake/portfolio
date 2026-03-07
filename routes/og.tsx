@@ -1,5 +1,5 @@
 import { render } from "resvg/mod.ts";
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import {
   getIconImage,
   getSquareOgImage,
@@ -42,7 +42,7 @@ async function createPngResponse(svg: string) {
 }
 
 export const handler = {
-  async GET(ctx: FreshContext) {
+  async GET(ctx: Context<unknown>) {
     const req = ctx.req;
     const url = new URL(req.url);
     try {

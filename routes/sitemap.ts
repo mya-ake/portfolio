@@ -1,9 +1,9 @@
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import { createSitemap } from "@sitemap/mod.ts";
 import { cacheMiddleware } from "@shared/middleware/cache.ts";
 
 export const handler = {
-  async GET(_ctx: FreshContext) {
+  async GET(_ctx: Context<unknown>) {
     const sitemap = await createSitemap();
 
     const resp = new Response(sitemap, {

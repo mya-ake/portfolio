@@ -1,4 +1,4 @@
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import { page } from "fresh";
 import { SimpleAppShell } from "@shared/ui/app_shells/SimpleAppShell.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
@@ -10,7 +10,7 @@ import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 
 export const handler = {
-  GET(_ctx: FreshContext) {
+  GET(_ctx: Context<unknown>) {
     return page(null, { status: 404 });
   },
 };

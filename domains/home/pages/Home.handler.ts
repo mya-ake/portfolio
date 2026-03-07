@@ -1,5 +1,5 @@
 import { page } from "fresh";
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import type { Repository } from "@shared/github/mod.ts";
 import { pageCacheHeaders } from "@shared/middleware/cache.ts";
 import {
@@ -17,7 +17,7 @@ export type Data = {
 };
 
 export const handler = {
-  async GET(_ctx: FreshContext) {
+  async GET(_ctx: Context<unknown>) {
     const [repositories, widgetMap, posts] = await Promise.all([
       getRepositories(),
       getHomeWidgets(),

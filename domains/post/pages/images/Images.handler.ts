@@ -1,9 +1,9 @@
 import { replaceToOriginalUrl } from "@post/shared/replace_image.ts";
 import { cacheMiddleware } from "@shared/middleware/cache.ts";
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 
 export const handler = {
-  async GET(ctx: FreshContext) {
+  async GET(ctx: Context<unknown>) {
     try {
       const req = ctx.req;
       const originalUrl = replaceToOriginalUrl(new URL(req.url));

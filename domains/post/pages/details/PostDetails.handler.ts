@@ -1,5 +1,5 @@
 import { HttpError, page } from "fresh";
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { isFetchError } from "@shared/fetch/error.ts";
 import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
@@ -31,7 +31,7 @@ const getPost = getUseMicroCMSCache()
   : getPostFromCMS;
 
 export const handler = {
-  async GET(ctx: FreshContext) {
+  async GET(ctx: Context<unknown>) {
     try {
       const id = ctx.params.id;
       const post = await getPost(id).then(decidePublishedAt);

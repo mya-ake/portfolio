@@ -1,5 +1,5 @@
 import { page } from "fresh";
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import { createInstantCache } from "@shared/cache/local/instant_cache.ts";
 import { getUseMicroCMSCache } from "@shared/env/mod.ts";
 import {
@@ -20,7 +20,7 @@ const getPosts = getUseMicroCMSCache()
   : getPostsFromCMS;
 
 export const handler = {
-  async GET(_ctx: FreshContext) {
+  async GET(_ctx: Context<unknown>) {
     const postsData = await getPosts().then((posts) => ({
       ...posts,
       contents: posts.contents.map(decidePublishedAt),

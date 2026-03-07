@@ -1,5 +1,5 @@
 import { page } from "fresh";
-import type { FreshContext } from "fresh";
+import type { Context } from "fresh";
 import { pageCacheHeaders } from "@shared/middleware/cache.ts";
 import {
   getPrivacyPolicyWidgets,
@@ -11,7 +11,7 @@ export type Data = {
 };
 
 export const handler = {
-  async GET(_ctx: FreshContext) {
+  async GET(_ctx: Context<unknown>) {
     const widgetMap = await getPrivacyPolicyWidgets();
     const data: Data = {
       widgetMap,
