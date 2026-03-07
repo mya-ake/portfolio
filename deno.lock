@@ -45,6 +45,7 @@
     "npm:octokit@^2.0.14": "2.1.0",
     "npm:parse5@^7.1.2": "7.3.0",
     "npm:preact-render-to-string@^6.6.3": "6.6.6_preact@10.28.4",
+    "npm:preact@^10.27.0": "10.28.4",
     "npm:preact@^10.27.2": "10.28.4",
     "npm:satori@0.8.0": "0.8.0",
     "npm:zod@^3.21.4": "3.25.76"
@@ -85,8 +86,9 @@
         "npm:@preact/signals",
         "npm:esbuild",
         "npm:esbuild-wasm",
-        "npm:preact",
-        "npm:preact-render-to-string"
+        "npm:preact-render-to-string",
+        "npm:preact@^10.27.0",
+        "npm:preact@^10.27.2"
       ]
     },
     "@fresh/plugin-vite@1.0.8": {
