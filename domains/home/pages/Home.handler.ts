@@ -18,9 +18,11 @@ export type Data = {
 
 export const handler = {
   async GET(_ctx: FreshContext) {
-    const repositories = await getRepositories();
-    const widgetMap = await getHomeWidgets();
-    const posts = await getPosts({ limit: 5 });
+    const [repositories, widgetMap, posts] = await Promise.all([
+      getRepositories(),
+      getHomeWidgets(),
+      getPosts({ limit: 5 }),
+    ]);
     const data: Data = {
       repositories,
       widgetMap,
