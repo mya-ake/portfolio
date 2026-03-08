@@ -7,7 +7,7 @@ export function DefaultHead() {
       <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
-        crossOrigin=""
+        crossOrigin="anonymous"
       />
       <link
         href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap"

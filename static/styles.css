@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "../core/css/modern-normalize.css";
+
+@theme {
+  /* Colors */
+  --color-text: #f3f4f6;
+  --color-background: #1e293b;
+  --color-link: #f3f4f6;
+  --color-code: #f3f4f6;
+  --color-code-bg: #4b5563;
+  --color-border: #374151;
+  --color-hr: #9ca3af;
+
+  /* Display font */
+  --font-display: "Red Hat Display", sans-serif;
+}
+
+@layer base {
+  body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* RenderHTML: adjacent selectors */
+  .rh-p + ul,
+  .rh-p + ol {
+    margin-top: 1rem;
+  }
+  .rh-ul + p,
+  .rh-ol + p {
+    margin-top: 1rem;
+  }
+  .rh-p:has(span.cms-space) {
+    margin-top: 1rem;
+  }
+
+  /* Breadcrumbs: ::after pseudo-element */
+  .bc-link-item::after {
+    content: ">";
+    padding-left: 0.5rem;
+  }
+
+  /* Container */
+  .app-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 640px) {
+    .app-container {
+      max-width: 640px;
+    }
+  }
+  @media (min-width: 768px) {
+    .app-container {
+      max-width: 768px;
+    }
+  }
+}

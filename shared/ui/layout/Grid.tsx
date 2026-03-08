@@ -1,39 +1,40 @@
-import { ComponentChildren } from "preact";
-import { CSS, css, filterInvalidStyle } from "@shared/styles/css.ts";
-
-const style = css({
-  display: "grid",
-});
+import { ComponentChildren, JSX } from "preact";
+import { clsx } from "clsx";
 
 type Props = {
-  templateColumns?: CSS["gridTemplateColumns"];
-  templateRows?: CSS["gridTemplateRows"];
-  gap?: CSS["gap"];
-  rowGap?: CSS["rowGap"];
-  columnGap?: CSS["columnGap"];
-  justifyContent?: CSS["justifyContent"];
-  alignItems?: CSS["alignItems"];
+  templateColumns?: string;
+  templateRows?: string;
+  gap?: string;
+  rowGap?: string;
+  columnGap?: string;
+  justifyContent?: string;
+  alignItems?: string;
+  class?: string;
   children: ComponentChildren;
-  css?: CSS;
 };
 
 export function Grid(props: Props) {
-  const { children, css = {} } = props;
+  const {
+    templateColumns,
+    templateRows,
+    gap,
+    rowGap,
+    columnGap,
+    justifyContent,
+    alignItems,
+    children,
+  } = props;
 
-  const className = style({
-    css: {
-      ...filterInvalidStyle({
-        gridTemplateColumns: props.templateColumns,
-        gridTemplateRows: props.templateRows,
-        gap: props.gap,
-        rowGap: props.rowGap,
-        columnGap: props.columnGap,
-        justifyContent: props.justifyContent,
-        alignItems: props.alignItems,
-      }),
-      ...css,
-    },
-  });
+  const inlineStyle: JSX.CSSProperties = {};
+  if (templateColumns) inlineStyle.gridTemplateColumns = templateColumns;
+  if (templateRows) inlineStyle.gridTemplateRows = templateRows;
+  if (gap) inlineStyle.gap = gap;
+  if (rowGap) inlineStyle.rowGap = rowGap;
+  if (columnGap) inlineStyle.columnGap = columnGap;
+  if (justifyContent) inlineStyle.justifyContent = justifyContent;
+  if (alignItems) inlineStyle.alignItems = alignItems;
 
-  return <div class={className}>{children}</div>;
+  return (
+    <div class={clsx("grid", props.class)} style={inlineStyle}>{children}</div>
+  );
 }

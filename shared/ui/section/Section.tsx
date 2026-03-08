@@ -1,11 +1,6 @@
 import { ComponentChildren, createElement } from "preact";
 import { clsx } from "clsx";
 import { Heading, HeadingProps, Level } from "../text/Heading.tsx";
-import { CSS, css } from "@shared/styles/css.ts";
-
-const styles = {
-  wrapper: css({}),
-};
 
 type Props = {
   as?: "section" | "article" | "nav" | "aside";
@@ -13,7 +8,6 @@ type Props = {
   heading: string;
   headingProps?: Omit<HeadingProps, "level">;
   class?: string;
-  css?: CSS;
   isContainer?: boolean;
   children: ComponentChildren;
 };
@@ -34,22 +28,13 @@ export function Section(props: Props) {
     heading,
     headingProps = {},
     children,
-    css = {},
     isContainer = false,
   } = props;
 
-  const internalCss: CSS = {};
-  if (isContainer) internalCss.container = "";
-
   const className = clsx(
-    props.class?.toString(),
-    styles.wrapper({
-      css: {
-        ...internalCss,
-        ...css,
-      },
-    }).toString(),
-  );
+    isContainer && "app-container",
+    props.class,
+  ) || undefined;
 
   return createElement(
     as ?? wrapTag[level],

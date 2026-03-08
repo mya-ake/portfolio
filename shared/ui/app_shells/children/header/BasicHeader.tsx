@@ -1,17 +1,6 @@
-import { css } from "@shared/styles/css.ts";
-import { Box } from "@shared/ui/layout/Box.tsx";
-import { Logo } from "@shared/symbol/Logo.tsx";
 import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
+import { Logo } from "@shared/symbol/Logo.tsx";
 import type { ComponentChildren } from "preact";
-
-const styles = {
-  link: css({
-    lineHeight: "1",
-    fontSize: "$2xl",
-    color: "inherit",
-    textDecoration: "none",
-  }),
-};
 
 type Props = {
   children?: ComponentChildren;
@@ -20,11 +9,14 @@ type Props = {
 export function BasicHeader(props: Props) {
   return (
     <header>
-      <Box css={{ textAlign: "center", marginTop: "$4" }}>
-        <InternalLink href="/" class={styles.link()}>
+      <div class="text-center mt-4">
+        <InternalLink
+          href="/"
+          class="leading-none text-2xl text-inherit no-underline"
+        >
           <Logo />
         </InternalLink>
-      </Box>
+      </div>
       {props.children}
     </header>
   );

@@ -1,27 +1,21 @@
 import { ComponentChildren, createElement, JSX } from "preact";
 import { clsx } from "clsx";
-import { CSS, css, filterInvalidStyle, FontSize } from "@shared/styles/css.ts";
-import { srOnlyStyle } from "@shared/styles/utility_styles.ts";
-
-const style = css({
-  margin: 0,
-  fontWeight: "bolder",
-});
+import type { FontSize } from "./Text.tsx";
 
 export type Level = "1" | "2" | "3" | "4" | "5" | "6";
-const fontSizeMap: Record<Level, FontSize> = {
-  "1": "3xl",
-  "2": "2xl",
-  "3": "xl",
-  "4": "lg",
-  "5": "base",
-  "6": "base",
+const fontSizeMap: Record<Level, string> = {
+  "1": "text-3xl",
+  "2": "text-2xl",
+  "3": "text-xl",
+  "4": "text-lg",
+  "5": "text-base",
+  "6": "text-base",
 };
 
 type Leading = "none" | "base";
 const leadingMap: Record<Leading, string> = {
-  none: "1",
-  base: "1.3",
+  none: "leading-none",
+  base: "leading-[1.3]",
 };
 
 export type HeadingProps = {
@@ -30,8 +24,7 @@ export type HeadingProps = {
   children?: ComponentChildren;
   leading?: Leading;
   fontSize?: FontSize;
-  css?: CSS;
-} & JSX.HTMLAttributes<HTMLHeadElement>;
+} & JSX.HTMLAttributes<HTMLHeadingElement>;
 
 export function Heading(props: HeadingProps) {
   const {
@@ -40,26 +33,21 @@ export function Heading(props: HeadingProps) {
     srOnly = false,
     children,
     fontSize,
-    css = {},
     style: attrStyle,
-    ...attrs
+    class: extraClass,
+    ...restAttrs
   } = props;
 
   const className = clsx(
-    srOnly && srOnlyStyle().toString(),
-    style({
-      css: {
-        ...filterInvalidStyle({
-          fontSize: fontSize ? `$${fontSize}` : `$${fontSizeMap[level]}`,
-          lineHeight: leadingMap[leading],
-        }),
-        ...css,
-      },
-    }).toString(),
+    "m-0 font-bold",
+    fontSize ? `text-${fontSize}` : fontSizeMap[level],
+    leadingMap[leading],
+    srOnly && "sr-only",
+    extraClass?.toString(),
   );
 
   return createElement(`h${level}`, {
-    ...attrs,
+    ...restAttrs,
     class: className,
     style: attrStyle,
   }, children);

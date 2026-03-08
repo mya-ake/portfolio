@@ -1,37 +1,19 @@
 import { ComponentChildren } from "preact";
-import { baseListStyle } from "./_style.ts";
-import { CSS, css } from "@shared/styles/css.ts";
 import { clsx } from "clsx";
 
 type ListStyleType = "disc" | "none";
 type Props = {
   children: ComponentChildren;
   listStyleType?: ListStyleType;
-  css?: CSS;
-};
-
-const computePadding = (listStyleType: ListStyleType) => {
-  switch (listStyleType) {
-    case "disc":
-      return "0 0 0 $4";
-    default:
-      return "0";
-  }
+  class?: string;
 };
 
 export function UnorderList(props: Props) {
-  const { children, listStyleType = "disc", css: extendCss = {} } = props;
+  const { children, listStyleType = "disc", class: cls } = props;
   const className = clsx(
-    baseListStyle({
-      padding: computePadding(listStyleType),
-      listStyleType,
-    }).toString(),
-    css(extendCss).toString(),
+    "grid m-0 list-outside",
+    listStyleType === "disc" ? "pl-4 list-disc" : "p-0 list-none",
+    cls,
   );
-
-  return (
-    <ul class={className}>
-      {children}
-    </ul>
-  );
+  return <ul class={className}>{children}</ul>;
 }

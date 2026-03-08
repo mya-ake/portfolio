@@ -3,7 +3,6 @@ import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { HighlightJSHead } from "@shared/head/HighlightJSHead.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
-import { Box } from "@shared/ui/layout/Box.tsx";
 import { Text } from "@shared/ui/text/Text.tsx";
 import { Time } from "@shared/ui/text/Time.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
@@ -34,12 +33,12 @@ export function PostDetails({ data }: PageProps<Data>) {
         path="/posts/"
       />
       <HighlightJSHead />
-      <Box css={{ px: "$4" }}>
+      <div class="px-4">
         <Section level="1" heading={data.post.title} isContainer>
           <Grid
             templateColumns="auto 1fr"
-            columnGap="$2"
-            css={{ marginTop: "$4" }}
+            columnGap="8px"
+            class="mt-4"
           >
             <Text fontSize="sm">
               <Time
@@ -57,11 +56,11 @@ export function PostDetails({ data }: PageProps<Data>) {
               </Text>
             )}
           </Grid>
-          <Box css={{ marginTop: "$8" }}>
+          <div class="mt-8">
             <RenderHTML html={data.post.body} />
-          </Box>
+          </div>
         </Section>
-      </Box>
+      </div>
       <Highlight />
     </DefaultAppShell>
   );

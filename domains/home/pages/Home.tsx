@@ -2,7 +2,6 @@ import { Fragment } from "preact";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
-import { Box } from "@shared/ui/layout/Box.tsx";
 import { Time } from "@shared/ui/text/Time.tsx";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
@@ -24,22 +23,22 @@ export function Home({ data }: PageProps<Data>) {
         description={translate("description:default")}
         path="/"
       />
-      <Box css={{ px: "$4" }}>
+      <div class="px-4">
         <Section
           level="1"
           heading={translate("home:heading")}
           headingProps={{ srOnly: true }}
           isContainer
         >
-          <Grid templateColumns="auto" rowGap="$12">
+          <Grid templateColumns="auto" rowGap="48px">
             <Section level="2" heading="About">
-              <Box css={{ marginTop: "$2" }}>
+              <div class="mt-2">
                 <RenderHTML html={data.widgetMap.home_about} />
-              </Box>
+              </div>
             </Section>
 
             <Section level="2" heading="Posts">
-              <Box css={{ marginTop: "$2" }}>
+              <div class="mt-2">
                 <UnorderList>
                   {data.posts.contents.map(({ id, title, publishedAt }) => (
                     <Fragment key={id}>
@@ -55,22 +54,22 @@ export function Home({ data }: PageProps<Data>) {
                     </Fragment>
                   ))}
                 </UnorderList>
-              </Box>
-              <Box css={{ marginTop: "$4" }}>
+              </div>
+              <div class="mt-4">
                 <StyledInternalLink href="/posts">
                   一覧へ
                 </StyledInternalLink>
-              </Box>
+              </div>
             </Section>
 
             <Section level="2" heading="Recent Activities">
-              <Box css={{ marginTop: "$2" }}>
+              <div class="mt-2">
                 <RenderHTML html={data.widgetMap.home_recent_activities} />
-              </Box>
+              </div>
             </Section>
 
             <Section level="2" heading="GitHub Activities">
-              <Box css={{ marginTop: "$2" }}>
+              <div class="mt-2">
                 <UnorderList>
                   {data.repositories.map((
                     { id, name, html_url, description },
@@ -85,11 +84,11 @@ export function Home({ data }: PageProps<Data>) {
                     </Fragment>
                   ))}
                 </UnorderList>
-              </Box>
+              </div>
             </Section>
           </Grid>
         </Section>
-      </Box>
+      </div>
     </DefaultAppShell>
   );
 }

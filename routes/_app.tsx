@@ -3,26 +3,15 @@ import { DefaultHead } from "@shared/head/DefaultHead.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import Gtag from "@islands/Gtag.tsx";
 import { getGAdId, getGATagId } from "@shared/env/mod.ts";
-import { getCssText } from "@shared/styles/core.ts";
-import { globalStyles } from "@shared/styles/global_styles.ts";
-import { getNormalizeCss } from "@core/css/mod.ts";
-
-function InlineStyle({ css }: { css: string }) {
-  // deno-lint-ignore react-no-danger
-  return <style dangerouslySetInnerHTML={{ __html: css }} />;
-}
 
 export default function App({ Component }: PageProps) {
   const gaTagId = getGATagId();
   const gAdId = getGAdId();
-  globalStyles();
-  const css = getCssText();
-  const normalizeCss = getNormalizeCss();
 
   return (
     <html lang="ja">
       <head>
-        <InlineStyle css={normalizeCss + css} />
+        <link rel="stylesheet" href="/styles.css" />
         {gaTagId && (
           <script
             async
@@ -44,7 +33,7 @@ export default function App({ Component }: PageProps) {
         <Gtag gaTagId={gaTagId} />
         <Grid
           templateRows="auto 1fr auto"
-          css={{ minHeight: "100dvh", overflow: "auto" }}
+          class="min-h-dvh overflow-auto"
         >
           <Component />
         </Grid>

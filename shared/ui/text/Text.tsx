@@ -1,38 +1,37 @@
 import { ComponentChildren, createElement, JSX } from "preact";
 import { clsx } from "clsx";
-import {
-  CSS,
-  css,
-  filterInvalidStyle,
-  FontSize,
-  FontWeight,
-} from "@shared/styles/css.ts";
 
-const style = css({
-  margin: 0,
-});
+export type FontSize =
+  | "sm"
+  | "base"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "5xl"
+  | "6xl";
 
 type Leading = "none" | "paragraph";
-const leadingMap: Record<Leading, CSS["lineHeight"]> = {
-  none: "1",
-  paragraph: "1.6",
+const leadingMap: Record<Leading, string> = {
+  none: "leading-none",
+  paragraph: "leading-relaxed",
 };
 
 type LineStyle = "new-line" | "nowrap";
-const lineStyleMap: Record<LineStyle, CSS["whiteSpace"]> = {
-  "new-line": "pre-line",
-  "nowrap": "nowrap",
+const lineStyleMap: Record<LineStyle, string> = {
+  "new-line": "whitespace-pre-line",
+  "nowrap": "whitespace-nowrap",
 };
 
 type Props = {
   as?: "p" | "span";
   children: ComponentChildren;
   fontSize?: FontSize;
-  fontWeight?: FontWeight;
+  fontWeight?: string;
   leading?: Leading;
   lineStyle?: LineStyle;
   class?: string;
-  css?: CSS;
 } & JSX.HTMLAttributes<HTMLParagraphElement>;
 
 export function Text(props: Props) {
@@ -43,24 +42,27 @@ export function Text(props: Props) {
     fontWeight = "normal",
     leading = "paragraph",
     lineStyle = "new-line",
-    css = {},
     style: attrStyle,
+    class: extraClass,
+    ...restAttrs
   } = props;
 
+  const fontWeightClass = fontWeight === "bolder"
+    ? "font-bold"
+    : `font-${fontWeight}`;
+
   const className = clsx(
-    props.class?.toString(),
-    style({
-      css: {
-        ...filterInvalidStyle({
-          fontSize: `$${fontSize}`,
-          fontWeight,
-          lineHeight: leadingMap[leading],
-          whiteSpace: lineStyleMap[lineStyle] as string,
-        }),
-        ...css,
-      },
-    }).toString(),
+    "m-0",
+    `text-${fontSize}`,
+    fontWeightClass,
+    leadingMap[leading],
+    lineStyleMap[lineStyle],
+    extraClass?.toString(),
   );
 
-  return createElement(as, { class: className, style: attrStyle }, children);
+  return createElement(
+    as,
+    { ...restAttrs, class: className, style: attrStyle },
+    children,
+  );
 }
