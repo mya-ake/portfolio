@@ -38,6 +38,7 @@
     "npm:@opentelemetry/api@^1.9.0": "1.9.0",
     "npm:@preact/signals@^2.2.1": "2.8.1_preact@10.28.4",
     "npm:@preact/signals@^2.5.0": "2.8.1_preact@10.28.4",
+    "npm:@resvg/resvg-wasm@^2.6.2": "2.6.2",
     "npm:@tailwindcss/postcss@^4.1.10": "4.2.1",
     "npm:clsx@^2.1.1": "2.1.1",
     "npm:dayjs@1.11.19": "1.11.19",
@@ -551,6 +552,7 @@
     "@octokit/endpoint@10.1.4": {
       "integrity": "sha512-OlYOlZIsfEVZm5HCSR8aSg02T2lbUWOsCQoPKfTXJwDzcHQBrVBGdGXb89dv2Kw2ToZaRtudp8O3ZIYoaOjKlA==",
       "dependencies": [
+        "@octokit/types@14.1.0",
         "universal-user-agent"
       ]
     },
@@ -637,6 +639,9 @@
         "@preact/signals-core",
         "preact"
       ]
+    },
+    "@resvg/resvg-wasm@2.6.2": {
+      "integrity": "sha512-FqALmHI8D4o6lk/LRWDnhw95z5eO+eAa6ORjVg09YRR7BkcM6oPHU9uyC0gtQG5vpFLvgpeU4+zEAz2H8APHNw=="
     },
     "@shuding/opentype.js@1.4.0-beta.0": {
       "integrity": "sha512-3NgmNyH3l/Hv6EvsWJbsvpcpUba6R8IREQ83nH83cyakCw7uM1arZKNfHwv1Wz6jgqrF/j4x5ELvR6PnK9nTcA==",
@@ -1480,6 +1485,7 @@
       "jsr:@std/testing@*",
       "npm:@octokit/rest@21",
       "npm:@preact/signals@^2.5.0",
+      "npm:@resvg/resvg-wasm@^2.6.2",
       "npm:clsx@^2.1.1",
       "npm:dayjs@1.11.19",
       "npm:dayjs@^1.11.19",
