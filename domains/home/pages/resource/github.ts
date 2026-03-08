@@ -1,4 +1,8 @@
-import { getMyRepositories, getOctokit, type Repository } from "@shared/github/mod.ts";
+import {
+  getMyRepositories,
+  getOctokit,
+  type Repository,
+} from "@shared/github/mod.ts";
 
 export function getRepositories(): Promise<Repository[]> {
   const oktkit = getOctokit();
