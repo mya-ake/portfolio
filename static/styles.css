@@ -12,7 +12,7 @@
   --color-hr: #9ca3af;
 
   /* Display font */
-  --font-display: "Red Hat Display", sans-serif;
+  --font-logo: "Red Hat Display", sans-serif;
 }
 
 @layer base {

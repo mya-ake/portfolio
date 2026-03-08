@@ -54,7 +54,7 @@ export default function ErrorPage({ data }: PageProps<Data>) {
       <Grid
         justifyContent="center"
         rowGap="16px"
-        class="font-display mt-16"
+        class="font-logo mt-16"
       >
         <Heading level="1" class="order-2 text-center text-4xl">
           {title}
