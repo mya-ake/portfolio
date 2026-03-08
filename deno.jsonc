@@ -1,4 +1,5 @@
 {
+  "nodeModulesDir": "auto",
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ dev.ts",
     "build": "deno run -A dev.ts build",
@@ -27,7 +28,6 @@
     "zod": "npm:zod@^3.21.4",
     "xml": "https://deno.land/x/xml@2.1.1/mod.ts",
     "@preact/signals": "npm:@preact/signals@^2.5.0",
-    "stitches": "npm:@stitches/core@^1.2.8",
     "clsx": "npm:clsx@^1.2.1",
     "dayjs": "npm:dayjs@^1.11.7",
     "dayjs/plugin/utc": "npm:dayjs@1.11.7/plugin/utc.js",
@@ -39,7 +39,9 @@
     "satori": "npm:satori@0.8.0",
     "fresh": "jsr:@fresh/core@^2.2.0",
     "fresh/dev": "jsr:@fresh/core@^2.2.0/dev",
-    "fresh/runtime": "jsr:@fresh/core@^2.2.0/runtime"
+    "fresh/runtime": "jsr:@fresh/core@^2.2.0/runtime",
+    "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@^1.0.0",
+    "tailwindcss": "npm:tailwindcss@^4.2.1"
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"]

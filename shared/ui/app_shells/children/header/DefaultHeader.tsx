@@ -1,5 +1,4 @@
 import { BasicHeader } from "./BasicHeader.tsx";
-import { Box } from "@shared/ui/layout/Box.tsx";
 import {
   BreadcrumbItem,
   Breadcrumbs,
@@ -12,17 +11,9 @@ type Props = {
 export function DefaultHeader(props: Props) {
   return (
     <BasicHeader>
-      <Box
-        css={{
-          marginTop: "$4",
-          border: "1px $border solid",
-          borderLeft: "0",
-          borderRight: "0",
-          py: "$2",
-        }}
-      >
+      <div class="mt-4 border-y border-border py-2">
         <Breadcrumbs items={props.breadcrumbs} />
-      </Box>
+      </div>
     </BasicHeader>
   );
 }

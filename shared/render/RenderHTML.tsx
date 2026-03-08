@@ -6,12 +6,7 @@ import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { replaceToReplacedUrl } from "@post/shared/replace_image.ts";
 import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
-import { CSS, css } from "@shared/styles/css.ts";
 import { clsx } from "clsx";
-
-const customClasses = {
-  spacer: "cms-space",
-};
 
 type Props = {
   html: string;
@@ -30,20 +25,14 @@ function render(nodes: Node[]) {
       case "h5":
       case "h6": {
         const level = node.tagName.substring(1) as Level;
-        const style: CSS = ["h1", "h2"].includes(node.tagName)
-          ? {
-            marginTop: "$12",
-            marginBottom: "$4",
-          }
-          : {
-            marginTop: "$8",
-            marginBottom: "$4",
-          };
+        const marginClass = ["h1", "h2"].includes(node.tagName)
+          ? "mt-12 mb-4"
+          : "mt-8 mb-4";
         return (
           <Heading
             id={node.attrs.id}
             level={level}
-            css={style}
+            class={marginClass}
             style={node.attrs.style}
           >
             {render(node.childNodes)}
@@ -53,13 +42,8 @@ function render(nodes: Node[]) {
       case "p": {
         return (
           <Text
-            css={{
-              "& + ul": { marginTop: "$4" },
-              "& + ol": { marginTop: "$4" },
-              [`&:has(span.${customClasses.spacer})`]: { marginTop: "$4" },
-            }}
+            class={clsx("rh-p", node.attrs.class)}
             style={node.attrs.style}
-            class={node.attrs.class}
           >
             {render(node.childNodes)}
           </Text>
@@ -95,12 +79,7 @@ function render(nodes: Node[]) {
             style={node.attrs.style}
             class={clsx(
               node.attrs.class,
-              css({
-                color: "$code",
-                px: "7px",
-                backgroundColor: "$codeBackground",
-                borderRadius: "$4",
-              })().toString(),
+              "text-code px-[7px] bg-code-bg rounded",
             )}
           >
             {render(node.childNodes)}
@@ -111,11 +90,7 @@ function render(nodes: Node[]) {
         return (
           <blockquote
             style={node.attrs.style}
-            class={css({
-              margin: "$4 0",
-              borderLeft: "4px solid $text",
-              lineHeight: "1.6",
-            })()}
+            class="my-4 border-l-4 border-text leading-relaxed"
           >
             {render(node.childNodes)}
           </blockquote>
@@ -123,7 +98,7 @@ function render(nodes: Node[]) {
       }
       case "figure": {
         return (
-          <figure class={css({ margin: "$4 0" })()}>
+          <figure class="my-4" style={node.attrs.style}>
             {render(node.childNodes)}
           </figure>
         );
@@ -134,11 +109,11 @@ function render(nodes: Node[]) {
           <img
             src={src}
             alt={node.attrs.alt}
-            class={css({
-              width: "100%",
+            class="w-full"
+            style={{
               maxWidth: `${node.attrs.width}px`,
               maxHeight: `${node.attrs.height}px`,
-            })()}
+            }}
           />
         );
       }
@@ -158,14 +133,14 @@ function render(nodes: Node[]) {
       }
       case "ul": {
         return (
-          <UnorderList css={{ "& + p": { marginTop: "$4" } }}>
+          <UnorderList class="rh-ul">
             {render(node.childNodes)}
           </UnorderList>
         );
       }
       case "ol": {
         return (
-          <OrderList css={{ "& + p": { marginTop: "$4" } }}>
+          <OrderList class="rh-ol">
             {render(node.childNodes)}
           </OrderList>
         );
@@ -175,26 +150,11 @@ function render(nodes: Node[]) {
       }
       case "pre": {
         return (
-          <pre
-            class={css({
-              display: "block",
-              margin: "0",
-              my: "$4",
-              maxWidth: "calc(100vw - calc($4 * 2))",
-            })()}
-          >{render(node.childNodes)}</pre>
+          <pre class="block m-0 my-4 max-w-[calc(100vw-2rem)]">{render(node.childNodes)}</pre>
         );
       }
       case "hr": {
-        return (
-          <hr
-            class={css({
-              margin: "$12 0",
-              border: 0,
-              borderTop: "1px solid $hr",
-            })()}
-          />
-        );
+        return <hr class="my-12 border-0 border-t border-hr" />;
       }
       default: {
         console.log(node);

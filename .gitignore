@@ -1,3 +1,4 @@
 .envrc
 .tmp
 _fresh
+node_modules

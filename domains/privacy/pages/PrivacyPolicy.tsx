@@ -2,7 +2,6 @@ import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { translate } from "@shared/i18n/mod.ts";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { createBreadcrumbs } from "@shared/breadcrumbs/manager.ts";
-import { Box } from "@shared/ui/layout/Box.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import type { PageProps } from "fresh";
@@ -23,17 +22,17 @@ export function PrivacyPolicy({ data, route }: PageProps<Data>) {
         description={translate("description:default")}
         path={path}
       />
-      <Box css={{ px: "$4" }}>
+      <div class="px-4">
         <Section
           level="1"
           heading={translate("privacy_policy:heading")}
           isContainer
         >
-          <Box css={{ marginTop: "$4" }}>
+          <div class="mt-4">
             <RenderHTML html={data.widgetMap.privacy_policy} />
-          </Box>
+          </div>
         </Section>
-      </Box>
+      </div>
     </DefaultAppShell>
   );
 }

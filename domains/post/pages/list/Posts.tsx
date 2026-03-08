@@ -2,7 +2,6 @@ import { Fragment } from "preact";
 import { DefaultAppShell } from "@shared/ui/app_shells/DefaultAppShell.tsx";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { Section } from "@shared/ui/section/Section.tsx";
-import { Box } from "@shared/ui/layout/Box.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import { ListItem, UnorderList } from "@shared/ui/list/mod.ts";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
@@ -29,9 +28,9 @@ export function Posts({ data }: PageProps<Data>) {
         description=""
         path="/posts/"
       />
-      <Box css={{ px: "$4" }}>
+      <div class="px-4">
         <Section level="1" heading={translate("posts:heading")} isContainer>
-          <Box css={{ marginTop: "$2" }}>
+          <div class="mt-2">
             <UnorderList>
               {data.posts.contents.map((
                 { id, title, publishedAt, updatedAt },
@@ -41,7 +40,7 @@ export function Posts({ data }: PageProps<Data>) {
                     <StyledInternalLink href={`/posts/${id}`}>
                       {title}
                     </StyledInternalLink>
-                    <Grid templateColumns="auto 1fr" columnGap="$2">
+                    <Grid templateColumns="auto 1fr" columnGap="8px">
                       <Text fontSize="sm">
                         <Time
                           datetime={publishedAt}
@@ -62,9 +61,9 @@ export function Posts({ data }: PageProps<Data>) {
                 </Fragment>
               ))}
             </UnorderList>
-          </Box>
+          </div>
         </Section>
-      </Box>
+      </div>
     </DefaultAppShell>
   );
 }

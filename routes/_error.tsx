@@ -53,23 +53,20 @@ export default function ErrorPage({ data }: PageProps<Data>) {
       />
       <Grid
         justifyContent="center"
-        rowGap="$4"
-        css={{ fontFamily: "'Red Hat Display', sans-serif", marginTop: "$16" }}
+        rowGap="16px"
+        class="font-logo mt-16"
       >
-        <Heading
-          level="1"
-          css={{ order: 2, textAlign: "center", fontSize: "$4xl" }}
-        >
+        <Heading level="1" class="order-2 text-center text-4xl">
           {title}
         </Heading>
         <Text
           fontSize="6xl"
           leading="none"
-          css={{ order: 1, textAlign: "center" }}
+          class="order-1 text-center"
         >
           {statusCode}
         </Text>
-        <Text leading="none" css={{ order: 3, textAlign: "center" }}>
+        <Text leading="none" class="order-3 text-center">
           <StyledInternalLink href="/">To Home</StyledInternalLink>
         </Text>
       </Grid>

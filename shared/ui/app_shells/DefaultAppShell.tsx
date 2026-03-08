@@ -1,6 +1,4 @@
 import type { ComponentChildren } from "preact";
-import { css } from "@shared/styles/css.ts";
-import { Box } from "@shared/ui/layout/Box.tsx";
 import { DefaultHeader } from "./children/header/DefaultHeader.tsx";
 import { BreadcrumbItem } from "@shared/breadcrumbs/components/Breadcrumbs.tsx";
 import {
@@ -8,14 +6,6 @@ import {
   Props as DefaultFooterProps,
 } from "./children/footer/DefaultFooter.tsx";
 import { IconHead } from "@shared/head/IconHead.tsx";
-
-const styles = {
-  main: css({
-    width: "100%",
-    marginTop: "$8",
-    mx: "auto",
-  }),
-};
 
 export type Props = {
   children: ComponentChildren;
@@ -31,11 +21,11 @@ export function DefaultAppShell(props: Props) {
 
       <DefaultHeader breadcrumbs={breadcrumbs} />
 
-      <main class={styles.main()}>{children}</main>
+      <main class="w-full mt-8 mx-auto">{children}</main>
 
-      <Box css={{ marginTop: "$16" }}>
+      <div class="mt-16">
         <DefaultFooter widgetMap={props.widgetMap} />
-      </Box>
+      </div>
     </>
   );
 }

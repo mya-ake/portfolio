@@ -23,7 +23,7 @@ jobs:
       - name: Check format
         run: deno fmt --check
       - name: Check types
-        run: deno check ./main.ts
+        run: find . \( -name "*.ts" -o -name "*.tsx" \) -not -path "./_fresh/*" | xargs deno check
       - name: Testing
         run: deno task test
         env:
