@@ -52,6 +52,7 @@
     "npm:preact@^10.27.0": "10.28.4",
     "npm:preact@^10.27.2": "10.28.4",
     "npm:satori@0.8.0": "0.8.0",
+    "npm:tailwindcss@^4.2.1": "4.2.1",
     "npm:zod@^3.21.4": "3.25.76"
   },
   "jsr": {
@@ -1751,6 +1752,7 @@
       "npm:parse5@^7.1.2",
       "npm:preact@^10.27.2",
       "npm:satori@0.8.0",
+      "npm:tailwindcss@^4.2.1",
       "npm:zod@^3.21.4"
     ]
   }
