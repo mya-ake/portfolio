@@ -2,6 +2,18 @@ import { ComponentChildren, createElement, JSX } from "preact";
 import { clsx } from "clsx";
 import type { FontSize } from "./Text.tsx";
 
+const fontSizeClassMap: Record<FontSize, string> = {
+  sm: "text-sm",
+  base: "text-base",
+  lg: "text-lg",
+  xl: "text-xl",
+  "2xl": "text-2xl",
+  "3xl": "text-3xl",
+  "4xl": "text-4xl",
+  "5xl": "text-5xl",
+  "6xl": "text-6xl",
+};
+
 export type Level = "1" | "2" | "3" | "4" | "5" | "6";
 const fontSizeMap: Record<Level, string> = {
   "1": "text-3xl",
@@ -40,7 +52,7 @@ export function Heading(props: HeadingProps) {
 
   const className = clsx(
     "m-0 font-bold",
-    fontSize ? `text-${fontSize}` : fontSizeMap[level],
+    fontSize ? fontSizeClassMap[fontSize] : fontSizeMap[level],
     leadingMap[leading],
     srOnly && "sr-only",
     extraClass?.toString(),

@@ -12,6 +12,25 @@ export type FontSize =
   | "5xl"
   | "6xl";
 
+const fontSizeMap: Record<FontSize, string> = {
+  sm: "text-sm",
+  base: "text-base",
+  lg: "text-lg",
+  xl: "text-xl",
+  "2xl": "text-2xl",
+  "3xl": "text-3xl",
+  "4xl": "text-4xl",
+  "5xl": "text-5xl",
+  "6xl": "text-6xl",
+};
+
+type FontWeight = "normal" | "bold" | "bolder";
+const fontWeightMap: Record<FontWeight, string> = {
+  normal: "font-normal",
+  bold: "font-bold",
+  bolder: "font-bold",
+};
+
 type Leading = "none" | "paragraph";
 const leadingMap: Record<Leading, string> = {
   none: "leading-none",
@@ -28,7 +47,7 @@ type Props = {
   as?: "p" | "span";
   children: ComponentChildren;
   fontSize?: FontSize;
-  fontWeight?: string;
+  fontWeight?: FontWeight;
   leading?: Leading;
   lineStyle?: LineStyle;
   class?: string;
@@ -47,14 +66,9 @@ export function Text(props: Props) {
     ...restAttrs
   } = props;
 
-  const fontWeightClass = fontWeight === "bolder"
-    ? "font-bold"
-    : `font-${fontWeight}`;
-
   const className = clsx(
-    "m-0",
-    `text-${fontSize}`,
-    fontWeightClass,
+    fontSizeMap[fontSize],
+    fontWeightMap[fontWeight],
     leadingMap[leading],
     lineStyleMap[lineStyle],
     extraClass?.toString(),

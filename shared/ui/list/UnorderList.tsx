@@ -11,7 +11,7 @@ type Props = {
 export function UnorderList(props: Props) {
   const { children, listStyleType = "disc", class: cls } = props;
   const className = clsx(
-    "grid m-0 list-outside",
+    "grid list-outside",
     listStyleType === "disc" ? "pl-4 list-disc" : "p-0 list-none",
     cls,
   );

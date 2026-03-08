@@ -1,5 +1,4 @@
 import type { PageProps } from "fresh";
-import { DefaultHead } from "@shared/head/DefaultHead.tsx";
 import { Grid } from "@shared/ui/layout/Grid.tsx";
 import Gtag from "@islands/Gtag.tsx";
 import { getGAdId, getGATagId } from "@shared/env/mod.ts";
@@ -11,6 +10,16 @@ export default function App({ Component }: PageProps) {
   return (
     <html lang="ja">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap"
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="/styles.css" />
         {gaTagId && (
           <script
@@ -29,7 +38,6 @@ export default function App({ Component }: PageProps) {
         )}
       </head>
       <body>
-        <DefaultHead />
         <Gtag gaTagId={gaTagId} />
         <Grid
           templateRows="auto 1fr auto"

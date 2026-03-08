@@ -7,6 +7,6 @@ type Props = {
 };
 
 export function OrderList(props: Props) {
-  const className = clsx("grid m-0 list-outside pl-4", props.class);
+  const className = clsx("grid list-outside list-decimal pl-4", props.class);
   return <ol class={className}>{props.children}</ol>;
 }
