@@ -16,7 +16,6 @@ let octokit: Octokit;
 export function getOctokit(): OctokitInstance {
   if (!octokit) {
     octokit = new Octokit({
-      throttle: { enabled: false },
       request: {
         timeout: 5000,
       },
