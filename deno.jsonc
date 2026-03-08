@@ -4,7 +4,7 @@
     "start": "deno run -A --watch=static/,routes/ dev.ts",
     "build": "deno run -A dev.ts build",
     "preview": "deno serve -A _fresh/server.js",
-    "test": "deno test --allow-read --allow-write --allow-env --allow-net --allow-sys=homedir"
+    "test": "deno test --allow-read --allow-write --allow-env --allow-net"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "imports": {
