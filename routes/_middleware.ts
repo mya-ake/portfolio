@@ -1,5 +1,6 @@
 import type { Context } from "fresh";
 import { detectLang, init } from "@shared/i18n/mod.ts";
+import { applySecurityHeaders } from "@shared/middleware/security_headers.ts";
 
 export async function handler(ctx: Context<unknown>) {
   const req = ctx.req;
@@ -13,5 +14,5 @@ export async function handler(ctx: Context<unknown>) {
   await init({ lang });
 
   const resp = await ctx.next();
-  return resp;
+  return applySecurityHeaders(resp);
 }
