@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       paths:
-        description: Enter the path to be purged."
+        description: Path(s) to invalidate, space-separated. Use /* for everything.
         required: true
         type: string
 
@@ -15,7 +15,15 @@ jobs:
       contents: read
     steps:
       - name: Purge Cache
-        run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths $TARGET_PATHS
+        # `set -f` disables filename globbing so a value like `/*` is sent to
+        # CloudFront literally instead of expanding to the runner's root dirs
+        # (/bin /etc ...). $TARGET_PATHS stays unquoted so multiple
+        # space-separated paths are still passed as separate arguments.
+        run: |
+          set -f
+          aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths $TARGET_PATHS
         env:
           TARGET_PATHS: ${{ inputs.paths }}
           CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
