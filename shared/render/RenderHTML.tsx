@@ -5,6 +5,7 @@ import { Text } from "@shared/ui/text/Text.tsx";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
 import { StyledInternalLink } from "@shared/ui/link/StyledInternalLink.tsx";
 import { replaceToReplacedUrl } from "@post/shared/replace_image.ts";
+import { safeHref } from "@shared/url/safe_href.ts";
 import { ListItem, OrderList, UnorderList } from "@shared/ui/list/mod.ts";
 import { clsx } from "clsx";
 
@@ -118,15 +119,16 @@ function render(nodes: Node[]) {
         );
       }
       case "a": {
+        const href = safeHref(node.attrs.href ?? "");
         const isExternal = Boolean(node.attrs.target);
         return isExternal
           ? (
-            <StyledExternalLink href={node.attrs.href}>
+            <StyledExternalLink href={href}>
               {render(node.childNodes)}
             </StyledExternalLink>
           )
           : (
-            <StyledInternalLink href={node.attrs.href}>
+            <StyledInternalLink href={href}>
               {render(node.childNodes)}
             </StyledInternalLink>
           );
