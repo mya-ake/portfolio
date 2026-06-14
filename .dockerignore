@@ -1,0 +1,22 @@
+# VCS / editor / tooling
+.git
+.github
+.githooks
+.vscode
+.claude
+
+# Local env & secrets — must never be copied into the image
+.envrc
+
+# Build artifacts & dependencies: regenerated inside the container, and the
+# host copies are the wrong architecture (macOS) for the linux image.
+_fresh
+node_modules
+.tmp
+
+# Docker / CI / docs not needed inside the image
+Dockerfile
+.dockerignore
+docker-compose.yml
+cloudbuild.yaml
+*.md
