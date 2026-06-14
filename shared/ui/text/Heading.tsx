@@ -15,10 +15,14 @@ const fontSizeClassMap: Record<FontSize, string> = {
 };
 
 export type Level = "1" | "2" | "3" | "4" | "5" | "6";
+
+// Default level sizing uses the fluid display scale from S01 (text-h*), which
+// carries its own paired line-height — so no leading class is applied by
+// default, keeping that paired line-height the single source (review note D3).
 const fontSizeMap: Record<Level, string> = {
-  "1": "text-3xl",
-  "2": "text-2xl",
-  "3": "text-xl",
+  "1": "text-h1",
+  "2": "text-h2",
+  "3": "text-h3",
   "4": "text-lg",
   "5": "text-base",
   "6": "text-base",
@@ -41,7 +45,7 @@ export type HeadingProps = {
 export function Heading(props: HeadingProps) {
   const {
     level,
-    leading = "base",
+    leading,
     srOnly = false,
     children,
     fontSize,
@@ -53,7 +57,7 @@ export function Heading(props: HeadingProps) {
   const className = clsx(
     "m-0 font-bold",
     fontSize ? fontSizeClassMap[fontSize] : fontSizeMap[level],
-    leadingMap[leading],
+    leading && leadingMap[leading],
     srOnly && "sr-only",
     extraClass?.toString(),
   );
