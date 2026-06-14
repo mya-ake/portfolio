@@ -3,17 +3,19 @@ FROM denoland/deno:2.7.2
 EXPOSE 8000
 
 ARG GIT_REVISION
-ARG MICRO_CMS_API_KEY
-ARG MICRO_CMS_API_ENDPOINT
 ENV DENO_DEPLOYMENT_ID=${GIT_REVISION}
-ENV MICRO_CMS_API_KEY=${MICRO_CMS_API_KEY}
-ENV MICRO_CMS_API_ENDPOINT=${MICRO_CMS_API_ENDPOINT}
+
+# Secrets (MICRO_CMS_API_KEY / MICRO_CMS_API_ENDPOINT) are NOT baked into the
+# image. They are injected at runtime as Cloud Run service env vars, and are not
+# needed for `deno task build`.
 
 WORKDIR /app
 
-ADD . /app
+COPY . /app
 
 RUN deno cache main.ts
 RUN deno task build
 
-CMD ["serve", "--allow-net", "--allow-env", "--allow-read", "--allow-write", "_fresh/server.js"]
+# No --allow-write: the local file cache only runs when APP_ENV != "prod"
+# (getUseMicroCMSCache), so the production server never writes to disk.
+CMD ["serve", "--allow-net", "--allow-env", "--allow-read", "_fresh/server.js"]
