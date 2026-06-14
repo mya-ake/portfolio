@@ -2,29 +2,71 @@
 @import "../core/css/modern-normalize.css";
 
 @theme {
-  /* Colors */
-  --color-text: #f3f4f6;
-  --color-background: #1e293b;
-  --color-link: #f3f4f6;
-  --color-code: #f3f4f6;
-  --color-code-bg: #4b5563;
-  --color-border: #374151;
-  --color-hr: #9ca3af;
+  /* Colors — refined neutral dark ramp (quiet dark minimalism).
+     Token names are unchanged so existing utilities keep working; only the
+     values are refined, plus a few new semantic tokens for later slices. */
+  --color-background: #18181b; /* deep neutral charcoal (was blue-ish slate) */
+  --color-surface: #1f1f23; /* raised surface for cards/sections */
+  --color-text: #e8e8ea; /* soft off-white, less glare than pure #fff */
+  --color-muted: #a1a1aa; /* secondary text / metadata */
+  --color-link: #e8e8ea; /* monochrome links; underline refined in base */
+  --color-border: #2a2a30; /* subtle, low-contrast hairline */
+  --color-hr: #3f3f46; /* quiet rule */
+  --color-code: #e8e8ea; /* inline code text */
+  --color-code-bg: #27272a; /* inline code background */
+
+  /* Fluid display type scale (clamp: rem + vw) — consumed by headings in S02 */
+  --text-display: clamp(2.25rem, 1.6rem + 2.6vw, 3.25rem);
+  --text-display--line-height: 1.1;
+  --text-h1: clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem);
+  --text-h1--line-height: 1.2;
+  --text-h2: clamp(1.4rem, 1.2rem + 0.9vw, 1.7rem);
+  --text-h2--line-height: 1.25;
+  --text-h3: clamp(1.2rem, 1.1rem + 0.5vw, 1.35rem);
+  --text-h3--line-height: 1.3;
 
   /* Display font */
   --font-logo: "Red Hat Display", sans-serif;
 }
 
 @layer base {
+  html {
+    color-scheme: dark; /* native dark scrollbars / form controls */
+  }
+
   body {
     color: var(--color-text);
     background-color: var(--color-background);
+    line-height: 1.75; /* relaxed reading rhythm */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  p {
+    text-wrap: pretty; /* fewer orphans; degrades gracefully where unsupported */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    text-wrap: balance;
   }
 
   a {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    /* quiet underline at rest, full on hover */
+    text-decoration-color: color-mix(in oklab, currentColor 45%, transparent);
+    transition: text-decoration-color 0.15s ease;
+  }
+  a:hover {
+    text-decoration-color: currentColor;
   }
 }
 
