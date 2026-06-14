@@ -40,7 +40,6 @@
     line-height: 1.75; /* relaxed reading rhythm */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
   }
 
   p {
