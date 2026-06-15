@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@import "../core/css/modern-normalize.css";
+/* Layered so the reset no longer outranks `@layer base` — otherwise its
+   unlayered `body { font-family: system-ui }` defeats the editorial body font. */
+@import "../core/css/modern-normalize.css" layer(base);
 
 @theme {
   /* Colors — refined editorial dark */
