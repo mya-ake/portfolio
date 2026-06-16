@@ -31,7 +31,9 @@ export function DefaultHeader(props: Props) {
         <div class="masthead-rule mt-[1.375rem]" />
         <div class="eyebrow mt-1 flex justify-between">
           <span>EST. 2026</span>
-          <span>Personal Site — mya-ake</span>
+          <span>
+            Personal Site — <span class="normal-case">mya-ake</span>
+          </span>
         </div>
       </header>
     );
