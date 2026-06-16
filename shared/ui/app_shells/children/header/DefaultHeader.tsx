@@ -1,4 +1,6 @@
 import { BasicHeader } from "./BasicHeader.tsx";
+import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
+import { Logo } from "@shared/symbol/Logo.tsx";
 import {
   BreadcrumbItem,
   Breadcrumbs,
@@ -9,9 +11,29 @@ type Props = {
 };
 
 export function DefaultHeader(props: Props) {
+  // Home (no breadcrumbs) gets the editorial masthead; lower pages get a small
+  // wordmark plus breadcrumbs.
+  if (props.breadcrumbs.length === 0) {
+    return (
+      <header class="app-container px-4 pt-10">
+        <InternalLink
+          href="/"
+          class="block text-inherit no-underline text-masthead leading-none"
+        >
+          <Logo />
+        </InternalLink>
+        <div class="masthead-rule mt-5" />
+        <div class="eyebrow mt-3 flex justify-between">
+          <span>EST. 2026</span>
+          <span>Personal Site</span>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <BasicHeader>
-      <div class="mt-4 border-y border-border py-2">
+      <div class="mt-4 border-y border-rule py-2">
         <Breadcrumbs items={props.breadcrumbs} />
       </div>
     </BasicHeader>
