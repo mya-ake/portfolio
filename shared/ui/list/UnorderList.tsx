@@ -1,7 +1,16 @@
 import { ComponentChildren } from "preact";
 import { clsx } from "clsx";
 
-type ListStyleType = "disc" | "none";
+type ListStyleType = "arrow" | "disc" | "none";
+
+const markerMap: Record<ListStyleType, string> = {
+  // editorial "▸" markers in the accent colour; each item becomes a flex row
+  arrow:
+    "p-0 list-none [&>li]:flex [&>li]:gap-2 [&>li]:before:content-['▸'] [&>li]:before:text-accent [&>li]:before:shrink-0",
+  disc: "pl-4 list-disc",
+  none: "p-0 list-none",
+};
+
 type Props = {
   children: ComponentChildren;
   listStyleType?: ListStyleType;
@@ -9,10 +18,10 @@ type Props = {
 };
 
 export function UnorderList(props: Props) {
-  const { children, listStyleType = "disc", class: cls } = props;
+  const { children, listStyleType = "arrow", class: cls } = props;
   const className = clsx(
     "grid gap-2 list-outside",
-    listStyleType === "disc" ? "pl-4 list-disc" : "p-0 list-none",
+    markerMap[listStyleType],
     cls,
   );
   return <ul class={className}>{children}</ul>;

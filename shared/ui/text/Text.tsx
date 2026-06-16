@@ -43,10 +43,17 @@ const lineStyleMap: Record<LineStyle, string> = {
   "nowrap": "whitespace-nowrap",
 };
 
-type Tone = "default" | "muted";
+type Tone = "default" | "muted" | "faint";
 const toneMap: Record<Tone, string> = {
   default: "",
   muted: "text-muted",
+  faint: "text-faint",
+};
+
+type FontFamily = "sans" | "mono";
+const fontFamilyMap: Record<FontFamily, string> = {
+  sans: "",
+  mono: "font-mono",
 };
 
 type Props = {
@@ -57,6 +64,7 @@ type Props = {
   leading?: Leading;
   lineStyle?: LineStyle;
   tone?: Tone;
+  font?: FontFamily;
   class?: string;
 } & JSX.HTMLAttributes<HTMLParagraphElement>;
 
@@ -69,6 +77,7 @@ export function Text(props: Props) {
     leading = "paragraph",
     lineStyle = "new-line",
     tone = "default",
+    font = "sans",
     style: attrStyle,
     class: extraClass,
     ...restAttrs
@@ -80,6 +89,7 @@ export function Text(props: Props) {
     leadingMap[leading],
     lineStyleMap[lineStyle],
     toneMap[tone],
+    fontFamilyMap[font],
     extraClass?.toString(),
   );
 
