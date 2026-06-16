@@ -1,6 +1,7 @@
 import { BasicHeader } from "./BasicHeader.tsx";
 import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
 import { Logo } from "@shared/symbol/Logo.tsx";
+import { shouldShowMasthead } from "./should_show_masthead.ts";
 import {
   BreadcrumbItem,
   Breadcrumbs,
@@ -11,9 +12,9 @@ type Props = {
 };
 
 export function DefaultHeader(props: Props) {
-  // Home (no breadcrumbs) gets the editorial masthead; lower pages get a small
-  // wordmark plus breadcrumbs.
-  if (props.breadcrumbs.length === 0) {
+  // Home gets the editorial masthead; lower pages get a small wordmark plus
+  // breadcrumbs. Home is the only page whose breadcrumbs are just the home crumb.
+  if (shouldShowMasthead(props.breadcrumbs)) {
     return (
       <header class="app-container px-4 pt-10">
         <InternalLink

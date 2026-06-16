@@ -29,7 +29,7 @@ export function Breadcrumbs(props: Props) {
               <StyledInternalLink href={to}>{label}</StyledInternalLink>
             </li>
           ))}
-          {tailItem && <li>{tailItem.label}</li>}
+          {tailItem && <li aria-current="page">{tailItem.label}</li>}
         </ol>
       </Section>
     </div>
