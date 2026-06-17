@@ -1,13 +1,10 @@
 import { translate } from "@shared/i18n/mod.ts";
 import { StyledExternalLink } from "@shared/ui/link/StyledExternalLink.tsx";
-import { Text } from "@shared/ui/text/Text.tsx";
-import { Section } from "@shared/ui/section/Section.tsx";
-import { Grid } from "@shared/ui/layout/Grid.tsx";
-import { Flex } from "@shared/ui/layout/Flex.tsx";
-import { Copyright } from "./children/Copyright.tsx";
-import { RenderHTML } from "@shared/render/RenderHTML.tsx";
-import type { WidgetMap } from "@shared/widget/mod.ts";
 import { StyledInternalLink } from "../../../link/StyledInternalLink.tsx";
+import { RenderHTML } from "@shared/render/RenderHTML.tsx";
+import { PawMark } from "@shared/ui/icon/PawMark.tsx";
+import { Copyright } from "./children/Copyright.tsx";
+import type { WidgetMap } from "@shared/widget/mod.ts";
 
 function getSocialItems(): { label: string; name: string; uri: string }[] {
   return [{
@@ -31,79 +28,65 @@ export type Props = {
 
 export function DefaultFooter(props: Props) {
   return (
-    <footer>
-      <div class="pb-4 px-4">
-        <Section
-          level="1"
-          heading={translate("profile:heading")}
-          headingProps={{ fontSize: "2xl" }}
-          isContainer
-        >
-          <Grid templateColumns="auto" gap="16px">
-            <Grid
-              templateColumns="auto auto"
-              justifyContent="start"
-              alignItems="center"
-              gap="16px"
-              class="mt-2"
-            >
-              <Text
-                fontSize="xl"
-                leading="none"
-                fontWeight="bolder"
-                class="order-1"
-              >
-                {translate("profile:nameWithYomi")}
-              </Text>
+    <footer class="bg-elevated">
+      <div class="app-container px-4 py-12">
+        <div class="grid gap-12 md:grid-cols-[200px_1fr_auto]">
+          {/* Profile */}
+          <section>
+            <h2 class="eyebrow">{translate("profile:heading")}</h2>
+            <div class="mt-4 flex items-center gap-4">
               <img
                 src="/assets/v3/images/avatar.jpg"
-                width="60"
-                height="60"
-                class="rounded-full order-none"
+                width="56"
+                height="56"
+                class="rounded-full"
                 alt=""
               />
-            </Grid>
-            <div>
+              <span class="font-logo text-xl">
+                {translate("profile:nameWithYomi")}
+              </span>
+            </div>
+            <div class="mt-4 text-muted text-[0.9375rem] leading-relaxed">
               <RenderHTML html={props.widgetMap.footer_bio} />
             </div>
+          </section>
 
-            <Flex class="gap-8">
-              <Section level="2" heading={translate("social:heading")}>
-                <Grid
-                  templateColumns="auto 1fr"
-                  gap="4px 8px"
-                  class="mt-4"
-                >
-                  {getSocialItems().map(({ label, name, uri }) => (
-                    <>
-                      <Text leading="none">{label}:</Text>
-                      <Text leading="none">
-                        <StyledExternalLink href={uri}>
-                          {name}
-                        </StyledExternalLink>
-                      </Text>
-                    </>
-                  ))}
-                </Grid>
-              </Section>
-              <Section
-                level="2"
-                heading={translate("footer_links:heading")}
-              >
-                <Grid gap="4px 8px" class="mt-4">
-                  <Text>
-                    <StyledInternalLink href="/privacy_policy">
-                      {translate("footer_links:privacy_policy")}
-                    </StyledInternalLink>
-                  </Text>
-                </Grid>
-              </Section>
-            </Flex>
-          </Grid>
-        </Section>
+          {/* Social */}
+          <section>
+            <h2 class="eyebrow">{translate("social:heading")}</h2>
+            <ul class="mt-4 grid gap-2 list-none p-0 max-w-[260px]">
+              {getSocialItems().map(({ label, name, uri }) => (
+                <li key={uri} class="flex justify-between gap-4">
+                  <span class="text-muted">{label}</span>
+                  <StyledExternalLink href={uri}>{name}</StyledExternalLink>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Other Links */}
+          <section>
+            <h2 class="eyebrow">{translate("footer_links:heading")}</h2>
+            <ul class="mt-4 grid gap-2 list-none p-0">
+              <li>
+                <StyledInternalLink href="/privacy_policy">
+                  {translate("footer_links:privacy_policy")}
+                </StyledInternalLink>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="mt-12 flex items-center justify-between border-t border-rule pt-6">
+          <div class="flex items-center gap-2.5">
+            <PawMark size={22} class="text-accent" />
+            <span class="font-mono text-muted text-[0.6875rem] tracking-[0.1em]">
+              neko-note′
+            </span>
+          </div>
+          <Copyright />
+        </div>
       </div>
-
-      <Copyright />
     </footer>
   );
 }

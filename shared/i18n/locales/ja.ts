@@ -26,7 +26,7 @@ export const ja: LocaleResouce = {
     heading: "プライバシーポリシー",
   },
   footer: {
-    copyright: "© {{year}}",
+    copyright: "© {{year}} mya-ake",
   },
   footer_links: {
     heading: "Other Links",

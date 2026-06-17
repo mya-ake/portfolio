@@ -23,13 +23,13 @@ export function Breadcrumbs(props: Props) {
         headingProps={{ srOnly: true }}
         isContainer
       >
-        <ol class="flex gap-x-2 gap-y-2 flex-wrap m-0 p-0 list-none">
+        <ol class="flex gap-x-2 gap-y-2 flex-wrap m-0 p-0 list-none font-mono text-muted text-[0.8125rem]">
           {items.map(({ label, to }) => (
             <li key={to} class="bc-link-item">
               <StyledInternalLink href={to}>{label}</StyledInternalLink>
             </li>
           ))}
-          {tailItem && <li>{tailItem.label}</li>}
+          {tailItem && <li aria-current="page">{tailItem.label}</li>}
         </ol>
       </Section>
     </div>
