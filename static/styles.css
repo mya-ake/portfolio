@@ -106,13 +106,15 @@
     margin-inline: auto;
   }
 
-  /* Mono eyebrow label — "01 — ABOUT" */
+  /* Mono eyebrow label — "01 — ABOUT".
+     Uses --color-muted (not --color-faint) so this readable meta label clears
+     WCAG AA (4.5:1) on both #141416 and the footer's #0f0f11. */
   .eyebrow {
     font-family: var(--font-mono);
     font-size: 0.6875rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-faint);
+    color: var(--color-muted);
   }
 
   /* Heavy rule under the masthead */
@@ -134,11 +136,11 @@
     transform: translateY(-4px);
   }
 
-  /* Breadcrumbs separator */
+  /* Breadcrumbs separator (decorative, but kept muted to match the AA crumb text) */
   .bc-link-item::after {
     content: "›";
     padding-left: 0.5rem;
-    color: var(--color-faint);
+    color: var(--color-muted);
   }
 
   /* RenderHTML: adjacent selectors */

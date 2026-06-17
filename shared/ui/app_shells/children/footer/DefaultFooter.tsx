@@ -57,7 +57,7 @@ export function DefaultFooter(props: Props) {
             <ul class="mt-4 grid gap-2 list-none p-0 max-w-[260px]">
               {getSocialItems().map(({ label, name, uri }) => (
                 <li key={uri} class="flex justify-between gap-4">
-                  <span class="text-faint">{label}</span>
+                  <span class="text-muted">{label}</span>
                   <StyledExternalLink href={uri}>{name}</StyledExternalLink>
                 </li>
               ))}
@@ -80,7 +80,7 @@ export function DefaultFooter(props: Props) {
         <div class="mt-12 flex items-center justify-between border-t border-rule pt-6">
           <div class="flex items-center gap-2.5">
             <PawMark size={22} class="text-accent" />
-            <span class="font-mono text-faint text-[0.6875rem] tracking-[0.1em]">
+            <span class="font-mono text-muted text-[0.6875rem] tracking-[0.1em]">
               neko-note′
             </span>
           </div>

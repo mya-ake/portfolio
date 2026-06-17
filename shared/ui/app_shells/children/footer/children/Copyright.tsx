@@ -8,7 +8,7 @@ export function Copyright() {
     <div class="text-center py-2">
       <Text
         font="mono"
-        tone="faint"
+        tone="muted"
         leading="none"
         class="text-[0.6875rem] tracking-[0.1em]"
       >

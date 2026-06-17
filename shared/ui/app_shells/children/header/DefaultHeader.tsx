@@ -24,7 +24,7 @@ export function DefaultHeader(props: Props) {
           >
             <Logo />
           </InternalLink>
-          <p class="m-0 shrink-0 text-right font-mono text-faint text-[0.6875rem] tracking-[0.16em] leading-[1.8]">
+          <p class="m-0 shrink-0 text-right font-mono text-muted text-[0.6875rem] tracking-[0.16em] leading-[1.8]">
             Cat-loving<br />Web Engineer
           </p>
         </div>
