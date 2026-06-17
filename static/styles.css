@@ -86,8 +86,12 @@
 }
 
 @layer components {
-  /* Container — index pages widen; articles use .reading */
+  /* Container — index pages widen; articles use .reading.
+     width:100% is required so the box reaches max-width even as a grid/flex
+     item: an inline-axis `margin:auto` disables stretch, leaving `width:auto`
+     to shrink to content (the app shell wraps pages in a CSS grid). */
   .app-container {
+    width: 100%;
     margin-inline: auto;
   }
   @media (min-width: 768px) {
