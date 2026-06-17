@@ -78,7 +78,12 @@ export function DefaultFooter(props: Props) {
         </div>
 
         <div class="mt-12 flex items-center justify-between border-t border-rule pt-6">
-          <PawMark size={22} class="text-accent" />
+          <div class="flex items-center gap-2.5">
+            <PawMark size={22} class="text-accent" />
+            <span class="font-mono text-faint text-[0.6875rem] tracking-[0.1em]">
+              neko-note′
+            </span>
+          </div>
           <Copyright />
         </div>
       </div>
