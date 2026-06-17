@@ -30,7 +30,7 @@ export function DefaultFooter(props: Props) {
   return (
     <footer class="bg-elevated">
       <div class="app-container px-4 py-12">
-        <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div class="grid gap-12 md:grid-cols-[200px_1fr_auto]">
           {/* Profile */}
           <section>
             <h2 class="eyebrow">{translate("profile:heading")}</h2>
@@ -54,7 +54,7 @@ export function DefaultFooter(props: Props) {
           {/* Social */}
           <section>
             <h2 class="eyebrow">{translate("social:heading")}</h2>
-            <ul class="mt-4 grid gap-2 list-none p-0">
+            <ul class="mt-4 grid gap-2 list-none p-0 max-w-[260px]">
               {getSocialItems().map(({ label, name, uri }) => (
                 <li key={uri} class="flex justify-between gap-4">
                   <span class="text-faint">{label}</span>
