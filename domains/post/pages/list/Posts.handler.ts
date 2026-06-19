@@ -19,12 +19,20 @@ const getPosts = getUseMicroCMSCache()
   ? createInstantCache("posts")(getPostsFromCMS)
   : getPostsFromCMS;
 
+// The archive renders every published post grouped by year, so fetch the whole
+// list in one request. MicroCMS caps `limit` at 100/request; the post count is
+// well under that, so a single raised-limit request is enough (paginate-all is
+// deferred until the count approaches 100 — see stack Follow-ups).
+const POSTS_ARCHIVE_LIMIT = 100;
+
 export const handler = {
   async GET(_ctx: Context<unknown>) {
-    const postsData = await getPosts().then((posts) => ({
-      ...posts,
-      contents: posts.contents.map(decidePublishedAt),
-    }));
+    const postsData = await getPosts({ limit: POSTS_ARCHIVE_LIMIT }).then(
+      (posts) => ({
+        ...posts,
+        contents: posts.contents.map(decidePublishedAt),
+      }),
+    );
     const widgetMap = await getDefaultAppShellWidgetMap();
     const data: Data = {
       posts: postsData,
