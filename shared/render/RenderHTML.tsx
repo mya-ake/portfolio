@@ -33,7 +33,7 @@ function render(nodes: Node[]) {
           <Heading
             id={node.attrs.id}
             level={level}
-            class={marginClass}
+            class={clsx(marginClass, "text-text")}
             style={node.attrs.style}
           >
             {render(node.childNodes)}
@@ -75,12 +75,16 @@ function render(nodes: Node[]) {
         return <s style={node.attrs.style}>{render(node.childNodes)}</s>;
       }
       case "code": {
+        // Block code (inside <pre>, carries a `language-*` class) is left plain
+        // for highlight.js / the code-block chrome; only inline code gets the
+        // editorial accent chip.
+        const isBlockCode = (node.attrs.class ?? "").includes("language");
         return (
           <code
             style={node.attrs.style}
-            class={clsx(
+            class={isBlockCode ? node.attrs.class : clsx(
               node.attrs.class,
-              "text-code px-[7px] bg-code-bg rounded",
+              "text-accent px-[7px] py-px bg-code-bg rounded",
             )}
           >
             {render(node.childNodes)}
@@ -91,7 +95,7 @@ function render(nodes: Node[]) {
         return (
           <blockquote
             style={node.attrs.style}
-            class="my-4 border-l-4 border-text leading-relaxed"
+            class="my-7 border-l-2 border-accent pl-[22px] italic text-muted leading-relaxed"
           >
             {render(node.childNodes)}
           </blockquote>
@@ -99,9 +103,19 @@ function render(nodes: Node[]) {
       }
       case "figure": {
         return (
-          <figure class="my-4" style={node.attrs.style}>
+          <figure class="my-7" style={node.attrs.style}>
             {render(node.childNodes)}
           </figure>
+        );
+      }
+      case "figcaption": {
+        return (
+          <figcaption
+            class="mt-2.5 text-center font-mono text-muted text-xs"
+            style={node.attrs.style}
+          >
+            {render(node.childNodes)}
+          </figcaption>
         );
       }
       case "img": {
@@ -152,7 +166,9 @@ function render(nodes: Node[]) {
       }
       case "pre": {
         return (
-          <pre class="block m-0 my-4 max-w-[calc(100vw-2rem)]">{render(node.childNodes)}</pre>
+          <pre class="block m-0 my-7 max-w-[calc(100vw-2rem)] overflow-x-auto rounded-xl border border-rule bg-surface p-[18px] font-mono text-[0.8125rem] leading-[1.85] text-code">
+            {render(node.childNodes)}
+          </pre>
         );
       }
       case "hr": {
