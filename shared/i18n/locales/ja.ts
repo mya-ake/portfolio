@@ -20,6 +20,7 @@ export const ja: LocaleResouce = {
   posts: {
     name: "記事一覧",
     heading: "Posts",
+    total: "全 {{total}} 記事 — 新しい順",
   },
   privacy_policy: {
     name: "プライバシーポリシー",
