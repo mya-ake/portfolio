@@ -17,6 +17,7 @@ export type LocaleResouce = {
   posts: {
     name: string;
     heading: string;
+    total: string;
   };
   privacy_policy: {
     name: string;
