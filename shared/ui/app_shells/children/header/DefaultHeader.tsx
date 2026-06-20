@@ -1,4 +1,4 @@
-import { BasicHeader } from "./BasicHeader.tsx";
+import { BasicHeader, type HeaderNavItem } from "./BasicHeader.tsx";
 import { InternalLink } from "@shared/ui/link/InternalLink.tsx";
 import { Logo } from "@shared/symbol/Logo.tsx";
 import { shouldShowMasthead } from "./should_show_masthead.ts";
@@ -17,7 +17,7 @@ export function DefaultHeader(props: Props) {
   if (shouldShowMasthead(props.breadcrumbs)) {
     return (
       <header class="app-container px-4 pt-10">
-        <div class="flex items-end justify-between gap-6">
+        <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
           <InternalLink
             href="/"
             class="block text-inherit no-underline text-masthead font-extrabold tracking-[-0.04em] leading-[0.9]"
@@ -39,8 +39,17 @@ export function DefaultHeader(props: Props) {
     );
   }
 
+  // The section nav highlights "Posts" whenever the breadcrumb trail passes
+  // through /posts (the list and every article); Home is never current here
+  // because Home renders the masthead instead.
+  const isPostsSection = props.breadcrumbs.some((item) => item.to === "/posts");
+  const nav: HeaderNavItem[] = [
+    { label: "Home", href: "/", current: false },
+    { label: "Posts", href: "/posts", current: isPostsSection },
+  ];
+
   return (
-    <BasicHeader>
+    <BasicHeader nav={nav}>
       <div class="mt-4 border-y border-rule py-2">
         <Breadcrumbs items={props.breadcrumbs} />
       </div>
