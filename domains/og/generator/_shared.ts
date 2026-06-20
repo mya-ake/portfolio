@@ -1,12 +1,12 @@
-import { getNotoSansJP, getRedHatDisplay } from "@shared/font/mod.ts";
+import { getNotoSansJP, getSchibstedGrotesk } from "@shared/font/mod.ts";
 import type { SatoriOptions } from "satori";
 
 export async function getFonts() {
-  const fontData1 = await getRedHatDisplay();
+  const fontData1 = await getSchibstedGrotesk();
   const fontData2 = await getNotoSansJP();
   const fonts: SatoriOptions["fonts"] = [
     {
-      name: "Red_Hat_Display",
+      name: "Schibsted_Grotesk",
       data: fontData1.buffer,
       weight: 400,
       style: "normal",
@@ -21,6 +21,7 @@ export async function getFonts() {
   return fonts;
 }
 
+// Editorial palette (S01 tokens): deep neutral background, soft off-white text.
 export const backgroundStyle = {
   position: "relative",
   display: "flex",
@@ -28,9 +29,9 @@ export const backgroundStyle = {
   alignItems: "center",
   width: "100%",
   height: "100%",
-  backgroundColor: "#1e293b",
-  fontFamily: "Red_Hat_Display",
-  color: "#f3f4f6",
+  backgroundColor: "#141416",
+  fontFamily: "Schibsted_Grotesk",
+  color: "#ededee",
 };
 
 export const textStyle = {
