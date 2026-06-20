@@ -1,9 +1,9 @@
 import { join } from "std/path/mod.ts";
 
-export function getRedHatDisplay() {
+export function getSchibstedGrotesk() {
   const path = join(
     Deno.cwd(),
-    "shared/font/fonts/RedHatDisplay-Regular.ttf",
+    "shared/font/fonts/SchibstedGrotesk.woff",
   );
   return Deno.readFile(path);
 }
