@@ -4,23 +4,8 @@ import { StyledInternalLink } from "../../../link/StyledInternalLink.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import { PawMark } from "@shared/ui/icon/PawMark.tsx";
 import { Copyright } from "./children/Copyright.tsx";
+import { getSocialItems } from "@shared/profile/social.ts";
 import type { WidgetMap } from "@shared/widget/mod.ts";
-
-function getSocialItems(): { label: string; name: string; uri: string }[] {
-  return [{
-    label: translate("social:github"),
-    name: translate("social:gitHubName"),
-    uri: "https://github.com/mya-ake",
-  }, {
-    label: translate("social:x"),
-    name: translate("social:xName"),
-    uri: "https://twitter.com/mya_ake",
-  }, {
-    label: translate("social:zenn"),
-    name: translate("social:zennName"),
-    uri: "https://zenn.dev/mya_ake",
-  }];
-}
 
 export type Props = {
   widgetMap: WidgetMap<"footer_bio">;
