@@ -19,11 +19,19 @@ export default function App({ Component }: PageProps) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        {
+          /* Unique `key`s keep these static stylesheets from colliding with
+            <Head>-injected <link rel="stylesheet"> (e.g. HighlightJSHead on
+            article pages): Fresh's head dedup ignores `href`, so every
+            rel="stylesheet" otherwise shares one cacheKey and the later one
+            replaces the earlier — which dropped the web-font link on /posts/:id. */
+        }
         <link
+          key="gfonts"
           href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/styles.css" />
+        <link key="app-styles" rel="stylesheet" href="/styles.css" />
         {gaTagId && (
           <script
             async
