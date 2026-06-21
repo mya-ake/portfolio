@@ -28,7 +28,7 @@ export default function App({ Component }: PageProps) {
         }
         <link
           key="gfonts"
-          href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
         <link key="app-styles" rel="stylesheet" href="/styles.css" />
