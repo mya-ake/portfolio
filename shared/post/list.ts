@@ -1,7 +1,7 @@
 import { getMicroCmsClient } from "@shared/micro_cms/client/mod.ts";
 import { createFields } from "@shared/micro_cms/utils.ts";
 import { getUsePostsFilter } from "@shared/env/mod.ts";
-import { decidePublishedAt } from "@post/shared/decide_published_at.ts";
+import { decidePublishedAt } from "@shared/post/decide_published_at.ts";
 
 import type {
   Content,
