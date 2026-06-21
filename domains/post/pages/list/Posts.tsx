@@ -36,7 +36,7 @@ export function Posts({ data }: PageProps<Data>) {
           {groups.map(({ year, posts }) => (
             <div
               key={year}
-              class="grid grid-cols-[auto_1fr] gap-8 border-t border-rule pt-3 pb-6 md:grid-cols-[120px_1fr]"
+              class="grid grid-cols-[auto_1fr] gap-4 border-t border-rule pt-3 pb-6 md:grid-cols-[120px_1fr] md:gap-8"
             >
               <div class="pt-1.5 font-mono text-[1.875rem] font-medium leading-none tracking-[-0.02em] text-faint">
                 {year}
