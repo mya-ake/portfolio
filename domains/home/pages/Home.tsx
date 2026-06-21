@@ -8,30 +8,9 @@ import { translate } from "@shared/i18n/mod.ts";
 import { SEOHead } from "@shared/head/SEOHead.tsx";
 import { RenderHTML } from "@shared/render/RenderHTML.tsx";
 import { createBreadcrumbs } from "@shared/breadcrumbs/manager.ts";
+import { getSocialItems } from "@shared/profile/social.ts";
 import type { PageProps } from "fresh";
 import type { Data } from "./Home.handler.ts";
-
-// Same source as the footer colophon; kept local until a shared profile resource
-// is extracted (follow-up — see DefaultFooter.getSocialItems).
-function getSocialItems(): { label: string; name: string; uri: string }[] {
-  return [
-    {
-      label: translate("social:github"),
-      name: translate("social:gitHubName"),
-      uri: "https://github.com/mya-ake",
-    },
-    {
-      label: translate("social:x"),
-      name: translate("social:xName"),
-      uri: "https://twitter.com/mya_ake",
-    },
-    {
-      label: translate("social:zenn"),
-      name: translate("social:zennName"),
-      uri: "https://zenn.dev/mya_ake",
-    },
-  ];
-}
 
 export function Home({ data }: PageProps<Data>) {
   const socialItems = getSocialItems();
@@ -50,28 +29,44 @@ export function Home({ data }: PageProps<Data>) {
 
         <div class="grid gap-12 md:grid-cols-[200px_1fr]">
           {/* Left rail — profile + social */}
-          <aside aria-label={translate("profile:heading")}>
+          <aside
+            aria-label={translate("profile:heading")}
+            class="flex items-center gap-3 rounded-xl border border-rule bg-surface p-3 md:block md:gap-0 md:rounded-none md:border-0 md:bg-transparent md:p-0"
+          >
             <img
               src="/assets/v3/images/avatar.jpg"
               width="60"
               height="60"
-              class="rounded-full"
+              class="rounded-full shrink-0"
               alt=""
             />
-            <p class="mt-4 font-logo text-xl">
-              {translate("profile:nameWithYomi")}
-            </p>
-            <ul class="mt-6 grid gap-2 list-none p-0 font-mono text-[0.78rem]">
-              {socialItems.map(({ label, name, uri }) => (
-                <li
-                  key={uri}
-                  class="flex justify-between gap-3 border-b border-hairline pb-[7px]"
-                >
-                  <span class="text-muted">{label}</span>
-                  <StyledExternalLink href={uri}>@{name}</StyledExternalLink>
-                </li>
-              ))}
-            </ul>
+            <div class="min-w-0 md:contents">
+              <p class="font-logo text-base md:mt-4 md:text-xl">
+                {translate("profile:nameWithYomi")}
+              </p>
+              <ul class="mt-1 flex flex-wrap gap-x-3 gap-y-1 list-none p-0 font-mono text-xs md:mt-6 md:grid md:gap-2">
+                {socialItems.map(({ label, name, uri }) => (
+                  <li
+                    key={uri}
+                    class="flex items-center md:justify-between md:gap-3 md:border-b md:border-hairline md:pb-[7px]"
+                  >
+                    <StyledExternalLink
+                      href={uri}
+                      class="md:hidden text-muted"
+                    >
+                      {label}
+                    </StyledExternalLink>
+                    <span class="hidden md:inline text-muted">{label}</span>
+                    <StyledExternalLink
+                      href={uri}
+                      class="hidden md:inline text-link"
+                    >
+                      @{name}
+                    </StyledExternalLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </aside>
 
           {/* Right column — numbered editorial index */}
@@ -128,11 +123,11 @@ export function Home({ data }: PageProps<Data>) {
                   ({ id, name, html_url, description }) => (
                     <li
                       key={id}
-                      class="grid grid-cols-[140px_1fr] gap-4 border-t border-hairline py-3"
+                      class="grid grid-cols-1 gap-1 md:grid-cols-[140px_1fr] md:gap-4 border-t border-hairline py-3"
                     >
                       <StyledExternalLink
                         href={html_url}
-                        class="font-mono text-link text-[0.84rem]"
+                        class="font-mono text-link text-sm"
                       >
                         {name}
                       </StyledExternalLink>
