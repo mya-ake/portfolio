@@ -8,7 +8,7 @@ import {
   DefaultAppShellWidgetMap,
   getDefaultAppShellWidgetMap,
 } from "@shared/ui/app_shells/services/default_app_shell_wedgets.ts";
-import { decidePublishedAt } from "@post/shared/decide_published_at.ts";
+import { decidePublishedAt } from "@shared/post/decide_published_at.ts";
 import { pageCacheHeaders } from "@shared/middleware/cache.ts";
 import type { Post } from "@shared/micro_cms/type.ts";
 
