@@ -15,6 +15,6 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v2.7.2
+          deno-version: v2.8.3
       - name: Fetch sitemap
         run: deno run --allow-net scripts/fetch_sitemap.ts
