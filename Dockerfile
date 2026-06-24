@@ -1,4 +1,8 @@
-FROM denoland/deno:2.8.3
+# Pinned by digest for reproducible, tamper-evident builds. The :2.8.3 tag is kept
+# for readability; the digest is the multi-arch index for that tag. When bumping the
+# version, update BOTH the tag and the digest (e.g. `docker buildx imagetools inspect
+# denoland/deno:<version>`, or the registry manifest digest).
+FROM denoland/deno:2.8.3@sha256:438618d8c0678c3154fc77ad6edad61f38cbc42803a181e7908d3e2c9e645022
 
 EXPOSE 8000
 
