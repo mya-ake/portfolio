@@ -23,7 +23,7 @@
     "std/testing/bdd.ts": "jsr:@std/testing/bdd",
     "std/testing/snapshot.ts": "jsr:@std/testing/snapshot",
     "std/testing/mock.ts": "jsr:@std/testing/mock",
-    "i18next": "npm:i18next@^24.2.1",
+    "i18next": "npm:i18next@^26.0.0",
     "resvg/": "./shared/resvg/",
     "@resvg/resvg-wasm": "npm:@resvg/resvg-wasm@^2.6.2",
     "zod": "npm:zod@^4.4.3",
