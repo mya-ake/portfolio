@@ -37,7 +37,7 @@
     "preact": "npm:preact@^10.27.2",
     "preact/hooks": "npm:preact@^10.27.2/hooks",
     "preact/jsx-runtime": "npm:preact@^10.27.2/jsx-runtime",
-    "satori": "npm:satori@^0.18.3",
+    "satori": "npm:satori@^0.26.0",
     "fresh": "jsr:@fresh/core@^2.3.3",
     "fresh/dev": "jsr:@fresh/core@^2.3.3/dev",
     "fresh/runtime": "jsr:@fresh/core@^2.3.3/runtime",
