@@ -16,7 +16,7 @@
     "@sitemap/": "./domains/sitemap/",
     "@islands/": "./islands/",
     "@shared/": "./shared/",
-    "octokit": "npm:@octokit/rest@^21.0.0",
+    "octokit": "npm:@octokit/rest@^22.0.0",
     "hljs": "npm:highlight.js@11.11.1",
     "std/path/mod.ts": "jsr:@std/path",
     "std/assert/mod.ts": "jsr:@std/assert",
