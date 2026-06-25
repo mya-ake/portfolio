@@ -1,7 +1,10 @@
 import type { OctokitInstance } from "./core.ts";
 
 export type MockOption = {
-  request?: () => Promise<unknown>;
+  request?: (
+    resource: string,
+    input?: Record<string, unknown>,
+  ) => Promise<unknown>;
 };
 
 export function createOctokitMock(option: MockOption): OctokitInstance {

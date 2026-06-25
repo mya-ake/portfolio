@@ -12,21 +12,21 @@ type GetMyRepositoriesInput = {
   perPage?: number;
 };
 
-export function getMyRepositories(
+const requestTimeoutMs = 5000;
+
+export async function getMyRepositories(
   octokit: OctokitInstance,
   option?: GetMyRepositoriesInput,
 ): Promise<Repository[]> {
   const { perPage = 3 } = option ?? {};
-  return Promise.race([
-    octokit.request<Repository[]>(
-      "GET /users/{username}/repos",
-      {
-        username: "mya-ake",
-        sort: "pushed",
-        per_page: perPage,
-      },
-    ).then((res) => res.data),
-  ]).catch((err: unknown) => {
-    return Promise.reject(err);
-  });
+  const res = await octokit.request<Repository[]>(
+    "GET /users/{username}/repos",
+    {
+      username: "mya-ake",
+      sort: "pushed",
+      per_page: perPage,
+      request: { signal: AbortSignal.timeout(requestTimeoutMs) },
+    },
+  );
+  return res.data;
 }
