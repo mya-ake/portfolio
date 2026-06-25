@@ -51,8 +51,8 @@
     "npm:preact@^10.27.2": "10.29.2",
     "npm:preact@^10.28.2": "10.29.2",
     "npm:preact@^10.29.1": "10.29.2",
+    "npm:satori@0.26": "0.26.0",
     "npm:satori@0.26.0": "0.26.0",
-    "npm:satori@~0.18.3": "0.18.4",
     "npm:tailwindcss@^4.3.1": "4.3.1",
     "npm:zod@^4.4.3": "4.4.3"
   },
@@ -814,22 +814,6 @@
     "preact@10.29.2": {
       "integrity": "sha512-7tNmwg/7mzzAoB/8kSg6Hl37JraAZw3Z3A0JSY7VXlZwo82Xn0G7wKbNNs2qoF4ZEEsQGTwDAroNdqKs1ofJxQ=="
     },
-    "satori@0.18.4": {
-      "integrity": "sha512-HanEzgXHlX3fzpGgxPoR3qI7FDpc/B+uE/KplzA6BkZGlWMaH98B/1Amq+OBF1pYPlGNzAXPYNHlrEVBvRBnHQ==",
-      "dependencies": [
-        "@shuding/opentype.js",
-        "css-background-parser",
-        "css-box-shadow",
-        "css-gradient-parser",
-        "css-to-react-native",
-        "emoji-regex-xs",
-        "escape-html",
-        "linebreak",
-        "parse-css-color",
-        "postcss-value-parser",
-        "yoga-layout"
-      ]
-    },
     "satori@0.26.0": {
       "integrity": "sha512-tkMFrfIs3l2mQ2JEcyW0ADTy3zGggFRFzi6Ef8YozQSFsFKEqaSO1Y8F9wJg4//PJGQauMalHGTUEkPrFwhVPA==",
       "dependencies": [
@@ -1263,7 +1247,7 @@
       "npm:i18next@^24.2.1",
       "npm:parse5@^8.0.1",
       "npm:preact@^10.27.2",
-      "npm:satori@~0.18.3",
+      "npm:satori@0.26",
       "npm:tailwindcss@^4.3.1",
       "npm:zod@^4.4.3"
     ]
