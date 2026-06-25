@@ -15,11 +15,7 @@ export type OctokitInstance = {
 let octokit: Octokit;
 export function getOctokit(): OctokitInstance {
   if (!octokit) {
-    octokit = new Octokit({
-      request: {
-        timeout: 5000,
-      },
-    });
+    octokit = new Octokit();
   }
   return octokit;
 }
